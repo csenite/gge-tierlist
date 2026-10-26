@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>G Generation Eternal Tiers</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Barlow:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: a hangar-console index. Tab rail of the six Game8 lists, then tier rows (rank plate left, unit chips right). RX-78 tricolor accents. */
+:root{
+  --bg:#eef1f6; --panel:#ffffff; --ink:#151b2b; --muted:#5b6478; --line:#d5dbe6;
+  --blue:#1d4fbf; --red:#c4262e; --yellow:#e9a800; --chip:#f4f6fa;
+  --atk:#c4262e; --sup:#1d7f5a; --def:#1d4fbf;
+  --t0:#c4262e; --t1:#e3601c; --t2:#e9a800; --t3:#3a9b4f; --t4:#1d4fbf; --t5:#6a4fb8; --t6:#6b7280;
+  --display:"Chakra Petch","Barlow",system-ui,sans-serif;
+  --body:"Barlow",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0f1420; --panel:#171e2e; --ink:#e8ecf4; --muted:#9aa4b8; --line:#2a3347;
+  --blue:#6f9bff; --red:#ff6b6f; --yellow:#ffc533; --chip:#1f2739;
+  --atk:#ff7a7d; --sup:#4fd19c; --def:#7fa6ff;
+  --t0:#ff5c61; --t1:#ff8a4a; --t2:#ffc533; --t3:#5cc874; --t4:#6f9bff; --t5:#a58bff; --t6:#9aa4b8;
+  color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f1420; --panel:#171e2e; --ink:#e8ecf4; --muted:#9aa4b8; --line:#2a3347;
+  --blue:#6f9bff; --red:#ff6b6f; --yellow:#ffc533; --chip:#1f2739;
+  --atk:#ff7a7d; --sup:#4fd19c; --def:#7fa6ff;
+  --t0:#ff5c61; --t1:#ff8a4a; --t2:#ffc533; --t3:#5cc874; --t4:#6f9bff; --t5:#a58bff; --t6:#9aa4b8;
+  color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.5;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 48px}
+.wrap{max-width:1180px;margin:0 auto;display:flex;flex-direction:column;gap:20px}
+header{padding-block:28px 4px;display:flex;flex-direction:column;gap:8px}
+.stripe{display:flex;gap:4px;height:6px;width:120px}
+.stripe span{flex:1}
+.stripe span:nth-child(1){background:var(--blue)}.stripe span:nth-child(2){background:var(--red)}.stripe span:nth-child(3){background:var(--yellow)}
+h1{font-family:var(--display);font-weight:700;font-size:clamp(28px,4.4vw,44px);line-height:1.05;margin:0;letter-spacing:.01em;text-wrap:balance}
+.sub{color:var(--muted);max-width:68ch;margin:0}
+nav{display:flex;flex-wrap:wrap;gap:6px;border-bottom:2px solid var(--line);padding-bottom:10px}
+nav button{font-family:var(--display);font-weight:600;font-size:14px;letter-spacing:.04em;text-transform:uppercase;
+  background:transparent;color:var(--muted);border:1px solid var(--line);padding:8px 12px;cursor:pointer;border-radius:2px}
+nav button:hover{color:var(--ink);border-color:var(--muted)}
+nav button[aria-selected="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+button:focus-visible,input:focus-visible{outline:2px solid var(--yellow);outline-offset:2px}
+.tools{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.tools input{flex:1 1 240px;min-width:0;font:inherit;padding:9px 12px;border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:2px}
+.filt{display:flex;gap:4px;flex-wrap:wrap}
+.filt button{font-family:var(--mono);font-size:12px;padding:7px 10px;border:1px solid var(--line);background:var(--panel);color:var(--muted);cursor:pointer;border-radius:2px}
+.filt button[aria-pressed="true"]{color:var(--ink);border-color:var(--ink)}
+.intro{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:16px}
+@media (max-width:760px){.intro{grid-template-columns:1fr}}
+.card{background:var(--panel);border:1px solid var(--line);padding:16px 18px;border-radius:2px;min-width:0}
+.card h2{font-family:var(--display);font-size:22px;margin:0 0 6px;text-wrap:balance}
+.card h3{font-family:var(--display);font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 8px}
+.card p{margin:0 0 8px;max-width:72ch}.card p:last-child{margin-bottom:0}
+.card ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px}
+.src{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.src a{color:var(--blue)}
+.tiers{display:flex;flex-direction:column;gap:8px}
+.group-title{font-family:var(--display);font-weight:700;font-size:18px;letter-spacing:.06em;text-transform:uppercase;margin:14px 0 2px;display:flex;align-items:center;gap:8px}
+.group-title i{width:10px;height:10px;display:inline-block}
+.row{display:grid;grid-template-columns:92px minmax(0,1fr);background:var(--panel);border:1px solid var(--line);border-radius:2px;overflow:hidden}
+.rank{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;color:#fff;padding:10px 4px;background:var(--tc)}
+.rank b{font-family:var(--display);font-size:30px;line-height:1}
+.rank small{font-family:var(--mono);font-size:11px;opacity:.9}
+.units{display:flex;flex-wrap:wrap;gap:6px;padding:10px;align-content:flex-start;min-width:0}
+.u{display:inline-flex;align-items:center;gap:6px;background:var(--chip);border:1px solid var(--line);padding:4px 8px;border-radius:2px;font-weight:500;max-width:100%}
+.u span{overflow-wrap:anywhere}
+.u em{font-style:normal;font-family:var(--mono);font-size:10.5px;color:var(--muted);white-space:nowrap}
+.u.new{border-color:var(--yellow);box-shadow:inset 3px 0 0 var(--yellow)}
+.t{font-family:var(--mono);font-size:10.5px;font-weight:500;padding:1px 4px;border-radius:2px;white-space:nowrap}
+.t.ATK{color:var(--atk);border:1px solid var(--atk)}.t.SUP{color:var(--sup);border:1px solid var(--sup)}.t.DEF{color:var(--def);border:1px solid var(--def)}
+.gap{font-size:13px;color:var(--muted);padding:10px;font-style:italic}
+.empty{color:var(--muted);padding:10px;font-size:13px}
+@media (max-width:520px){.row{grid-template-columns:62px minmax(0,1fr)}.rank b{font-size:22px}}
+footer{color:var(--muted);font-size:13px;display:flex;flex-direction:column;gap:6px;border-top:1px solid var(--line);padding-top:14px}
+footer p{margin:0;max-width:90ch}
+footer a{color:var(--blue)}
+</style>
+<style>body{margin:0;font-size:14px}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+
+
+<div class="wrap">
+  <header>
+    <div class="stripe"><span></span><span></span><span></span></div>
+    <h1>SD Gundam G Generation Eternal Tier Lists</h1>
+    <p class="sub">Every Game8 (Japan) ranking in one place, translated into English with official unit names. Pick a list, search for a unit, or filter by Attack, Support or Defense.</p>
+  </header>
+  <nav id="tabs" role="tablist" aria-label="Tier lists"></nav>
+  <div class="tools">
+    <input id="q" type="search" placeholder="Search units, e.g. Barbatos, Phenex, Wing Zero" aria-label="Search units">
+    <div class="filt" id="filt" role="group" aria-label="Filter by type">
+      <button data-f="all" aria-pressed="true">All</button>
+      <button data-f="ATK" aria-pressed="false">Attack</button>
+      <button data-f="SUP" aria-pressed="false">Support</button>
+      <button data-f="DEF" aria-pressed="false">Defense</button>
+    </div>
+  </div>
+  <section class="intro" id="intro"></section>
+  <section class="tiers" id="tiers" aria-live="polite"></section>
+  <footer>
+    <p><strong>How to read the tags.</strong> ATK, SUP and DEF are the unit's role (Attack, Support, Defense). EX, UR, SSR and SR are rarities. SD marks SD Gundam character units such as Knight Gundam. Every unit has its role. Where a Game8 ranking left the role off, it comes from Game8's own unit list and its type filter (game8.jp/ggene-eternal/683026).</p>
+    <p><strong>Translation.</strong> Unit names follow Bandai's official English naming where it exists. A handful of SD Gundam Gaiden and side-story units have no settled English name yet, so those use the closest standard romanization. Game8's explanations are translated by hand and lightly condensed.</p>
+    <p><strong>Freshness.</strong> Every tier on every list was read from Game8 on October 26, 2026. Game8 updates these rankings about once a week, so check the linked pages for later changes.</p>
+  </footer>
+</div>
+
+<script>
+const TIERS={SSS:["SSS","Tier 0","--t0"],SS:["SS","Tier 1","--t1"],S:["S","Tier 2","--t2"],A:["A","Tier 3","--t3"],B:["B","Tier 4","--t4"],C:["C","Tier 5","--t5"],D:["D","Tier 6","--t6"]};
+const ORDER=["SSS","SS","S","A","B","C","D"];
+const L=s=>s.split(";").map(x=>x.trim()).filter(Boolean);
+
+const LISTS=[
+{id:"strongest",tab:"UR",title:"Strongest UR units (high difficulty)",
+ url:"https://game8.jp/ggene-eternal/682964",updated:"Oct 26, 2026",
+ about:[
+  "This is Game8's main tier table for UR units (including their EX forms) in high-difficulty content. It has 89 units. Tiers run from SSS (Tier 0) down to D (Tier 6). Higher-tier units have better firepower or survivability and can be used in more quests.",
+  "Each role is judged on its own terms. Attack units are rated on single-hit damage. Support units are rated on how many range-5 debuff weapons they carry and on their abilities. Defense units are rated on shields, damage reduction and similar defensive tools.",
+  "Some units rate differently in the Master League (PvP), so this list is for PvE."],
+ notes:[
+  "<b>New: Reborns Gundam (UR, Support)</b> is SSS for high difficulty and SS in the Master League. It is time-limited and only drops from the Reborns & Dynames banner.",
+  "<b>New: Gundam Dynames (UR, Attack)</b> is S in both high difficulty and the Master League.",
+  "Best Attack units: Gundam F91 (Twin V.S.B.R.), God Gundam and Wing Gundam Zero (EW). They stand out for raw damage, first-hit negation and MAP weapons usable after moving.",
+  "Best Defense unit: 00 Raiser (Final Battle). Best Support units: Altron Gundam (EW), Zanspine and Reborns Gundam.",
+  "Best in Master League Season 17: Gundam F91 (Twin V.S.B.R.) and Gundam Barbatos Lupus Rex."],
+ new:["Reborns Gundam","Gundam Dynames"],
+ tiers:{
+ SSS:L("Reborns Gundam|UR SUP;Zanspine|EX SUP;Altron Gundam (EW)|EX SUP;Gundam F91 (Twin V.S.B.R.)|EX ATK;00 Raiser (Final Battle)|EX DEF;Wing Gundam Zero (EW)|EX ATK;God Gundam|EX ATK"),
+ SS:L("V2 Assault-Buster Gundam|EX ATK;Full Armor Hyaku Shiki Kai|EX ATK;Strike Noir Gundam|EX SUP;ν Gundam (Double Fin Funnel)|EX DEF;Nightingale|EX SUP;Unicorn Gundam 03 Phenex (Destroy Mode)|EX ATK;Ex-S Gundam|EX ATK;Gundam AGE-2 Normal|EX SUP;Gundam Double X|EX ATK;Destiny Gundam|EX ATK;Sinanju|EX SUP;Gundam Barbatos Lupus Rex|EX ATK;Gundam F91|EX DEF;Force Impulse Gundam|EX SUP;Hi-ν Gundam|EX ATK;Strike Freedom Gundam|EX ATK"),
+ S:L("Gundam Dynames|UR ATK;Gottratan|EX DEF;Susanowo|EX ATK;Gundam Avalanche Astraea Type-F Dash|EX DEF;D Gundam Third|EX SUP;Versal Knight Gundam|EX SD ATK;Darilbalde (Season 2)|EX ATK;Gundam F90 (A.D.S. Mixed Equipment)|EX SUP;Great Zeong|EX SUP;Halphas Gundam|EX SUP;Gundam Pharact (Season 2)|EX SUP;Gundam Calibarn (Final Battle)|EX ATK;Penelope|EX DEF;Ξ Gundam|EX ATK;Gundam GP03|EX DEF;Unicorn Gundam (Destroy Mode / Awakened)|EX SUP;Gundam Deathscythe Hell (EW)|EX DEF;Char's Zaku II (The Origin)|EX ATK;Zeta Gundam|EX ATK;ν Gundam|EX SUP"),
+ A:L("Infinite Justice Gundam|EX ATK;Psycho Haro|EX ATK;Gundam Virsago Chest Break|EX SUP;Providence Gundam|EX SUP;Gundam Aerial Rebuild|EX DEF;Neue Ziel|EX ATK;Zeong|EX ATK;Full Armor ZZ Gundam|EX DEF;Qubeley (ZZ)|EX ATK;Monster Black Dragon|EX SD SUP;Master Gundam|EX ATK;Banshee Norn (Destroy Mode)|EX DEF;Psycho Zaku|EX SUP;Gundam GP02|EX SUP;Gundam Aerial|EX SUP;Unicorn Gundam (Destroy Mode)|EX ATK;Sazabi|EX ATK"),
+ B:L("Sandaime Daishogun|EX SD SUP;Gundam Heavyarms Custom (EW)|EX ATK;Atlas Gundam|EX ATK;Tallgeese III|EX SUP;Gundam AGE-1 Normal|EX ATK;Gundam Astray Red Frame Kai|EX ATK;Gundam Kimaris Vidar|EX DEF;Kämpfer|EX ATK;The O|EX SUP;Justice Gundam|EX DEF;Phoenix Gundam (Power Unleashed)|EX SUP;Gundam Exia|EX ATK;Gundam|EX DEF"),
+ C:L("Michaelis (Season 2)|EX DEF;Gouf Custom|EX DEF;Blue Destiny Unit 1|EX ATK;Gundam Astaroth Rinascimento|EX SUP;Gundam Barbatos (6th Form)|EX DEF;Freedom Gundam|EX SUP;Le Cygne|EX SUP;Gundam Ez8|EX ATK"),
+ D:L("Gundam Astray Gold Frame Amatsu Mina|EX DEF;Big Rang|EX SUP;Liu Bei Unicorn Gundam|EX SD ATK;Full Armor Gundam (Thunderbolt)|EX DEF;Build Strike Gundam Full Package|EX SUP;Crossbone Gundam X1 Kai|EX ATK;Narrative Gundam A-Packs|EX DEF;Striker Custom|EX ATK")
+ }},
+
+{id:"ssr",tab:"SSR dev & events",title:"Strongest SSR units (development & events)",
+ url:"https://game8.jp/ggene-eternal/685124",updated:"Oct 26, 2026",
+ about:["Game8's ranking of SSR-rarity units. Useful for picking which SSRs to build before you have many EX or UR units.",
+  "Game8 splits this ranking in two. This tab covers units you get from Development or events. Gacha SSRs are on the SSR gacha tab.",
+  "Game8 only edits the tier table, the article text and the unit's own review together, and only when a role tier actually changes."],
+ notes:["The top SSS tier is unchanged this update.",
+  "<b>New: GM Sniper II (White Dingo Team)</b> enters at S. It carries a range-5 weapon that lowers enemy attack, which makes it easy to use.",
+  "<b>New: Graham's Union Flag Custom II (GN Flag)</b> enters at A. <b>Gelgoog Ground Type (Visch Donahue)</b> and <b>Rhinosaurus Type B</b> enter at B."],
+ new:["GM Sniper II (White Dingo Team)"],
+ tiers:{
+ SSS:L("Devil Gundam (Final Form)|ATK;Strike Freedom Gundam (METEOR)|SSR ATK;G-Falcon DX|SSR ATK;00 Raiser (Final Battle)|SSR ATK;Unicorn Gundam 03 Phenex (Destroy Mode)|SSR ATK"),
+ SS:L("Gundam Astray Gold Frame Amatsu|ATK;Hi-ν Gundam|SSR DEF;Byarlant Custom Unit 2|ATK;Unicorn Gundam (Destroy Mode)|SSR DEF;Full Armor Unicorn Gundam (Destroy Mode)|DEF;Neo Zeong|ATK;Gundam GP03|SSR ATK;Gundam Kimaris Vidar|SSR SUP;Gundam Flauros (Ryusei-Go)|SSR ATK;Gundam Barbatos Lupus Rex|SSR ATK;Penelope|SSR ATK;Strike Freedom Gundam|SSR SUP;Gundam Virsago Chest Break|SSR ATK;Cherudim Gundam GNHW/R|SSR DEF;Seravee Gundam GNHW/B|SSR SUP;Reborns Gundam|SSR ATK;Wing Gundam Zero (EW)|SSR SUP;Altron Gundam (EW)|SSR ATK;Gundam Dynames|SSR SUP;Unicorn Gundam 03 Phenex (Unicorn Mode)|SSR DEF;Narrative Gundam A-Packs|SSR ATK;Granzam|SSR ATK;Full Armor Gundam|SSR ATK;Martial Artist Nemo|SD SSR ATK;Fighter ZZ Gundam|SD SSR ATK;Sorcerer ν Gundam|SD SSR SUP;Netix|SSR ATK;V2 Gundam|SSR ATK"),
+ S:L("Gundam Aerial Rebuild|ATK;Master Gundam|ATK;Freedom Gundam [METEOR]|SUP;Perfect Strike Gundam|SUP;Justice Gundam [METEOR]|ATK;Wing Gundam Zero|SUP;Big Zam|ATK;Dragoon Strike|ATK;Gundam GP01Fb (Full Burnern)|ATK;Destiny Impulse|ATK;ν Gundam|SSR ATK;Legend Gundam|ATK;Destiny Gundam|DEF;Psycho Zaku|SSR ATK;Knight Gundam|SD DEF;Qubeley Mk-II (Elpeo Ple)|SSR SUP;God Gundam|SSR DEF;Grand Master Gundam|SUP;Banshee Norn (Destroy Mode)|SSR SUP;Shamblo|ATK;Gundam Barbatos Lupus|SSR ATK;Blue Destiny Unit 3 [EXAM]|SSR DEF;Full Armor Gundam Mk-III|SUP;Hyaku Shiki|SSR SUP;Ξ Gundam|SSR DEF;Duel Gundam Assault Shroud|SSR ATK;Kämpfer|SSR ATK;Infinite Justice Gundam|SSR ATK;Infinite Justice Gundam (METEOR)|SSR SUP;Gundam Calibarn|SSR SUP;Gundam Schwarzette|SSR ATK;Darilbalde (Season 2)|SSR DEF;Gundam Aerial|SSR DEF;ZAKU Warrior (Live Concert)|SUP;G-Falcon GX|SSR SUP;Gundam Airmaster Burst|SSR SUP;Gundam Double X|SSR DEF;Gundam Leopard Destroy|SSR ATK;Aluzeus|SSR SUP;Hyperion Gundam|SSR ATK;Gundam AGE-1 Unit 2 Assault Jacket|SSR DEF;Gundam AGE-2 Double Bullet|SSR ATK;Chronos|SSR SUP;Apsalus III|SSR ATK;Gouf Custom|SSR ATK;00 Raiser|SSR SUP;Gundam Deathscythe Hell (EW)|SSR ATK;Char's Zaku II (The Origin)|SSR SUP;Gundam Astray Gold Frame Amatsu Mina|SSR SUP;Atlas Gundam|SSR SUP;Guncannon Aqua|SSR ATK;Gublo (Thunderbolt)|SSR ATK;Psycho Gundam|SSR ATK;Gundam F91|SSR SUP;Rafflesia|SSR SUP;Perfect Zeong|SSR SUP;Unicorn Gundam Ver. TWC FINAL|SSR SUP;Swordsman Zeta Gundam|SD SSR DEF;V2 Assault Gundam|SSR DEF;V2 Assault-Buster Gundam|SSR ATK;V2 Buster Gundam|SSR SUP;Zanneck|SSR SUP;Gengaozo|SSR ATK;Extreme Gundam Excelia|SSR SUP;GM Sniper II (White Dingo Team)|SSR DEF"),
+ A:L("Red Gundam|SUP;Gundam X Divider|DEF;Gundam Lfrith Thorn|SUP;Zeta Gundam|SUP;Psycho Gundam|DEF;Providence Gundam|DEF;Hyaku Shiki|ATK;Full Armor ZZ Gundam|ATK;Qubeley (ZZ)|SUP;Quin Mantha|DEF;Gundam Epyon|ATK;Zeong|SUP;G-3 Gundam|ATK;Full Armor Hyaku Shiki Kai|DEF;Sazabi|SSR SUP;Nightingale|ATK;Destroy Gundam|SUP;Full Armor Gundam (Thunderbolt)|SSR SUP;Demon King Satan Gundam|SD SUP;Knight Zeong|SD ATK;Musha Gundam|SD ATK;Gundam Astaroth Rinascimento|ATK;Gundam Vual Juhana|DEF;Shining Gundam (Super Mode)|SUP;Kshatriya Repaired|SUP;Sinanju|ATK;Neue Ziel|SSR DEF;Gundam GP04|SSR ATK;Wing Gundam (EW)|SSR ATK;Gundam Bael|SSR ATK;Reginlaze Julia (Ground Combat)|SSR DEF;Gundam Gusion Rebake Full City|SSR SUP;Blue Destiny Unit 2 [EXAM]|SSR ATK;Gundam Barbatos (Adapt)|SSR SUP;Akatsuki (Shiranui)|SSR DEF;Michaelis (Season 2)|SSR SUP;Gundam Pharact (Season 2)|SSR ATK;Gundam Ashtaron Hermit Crab|SSR DEF;X Astray|SSR SUP;G-Xiphos|SSR SUP;Gundam AGE-1 Spallow|SSR SUP;Gundam AGE-2 Normal|SSR DEF;Gundam AGE-2 Artimes|SSR SUP;Zeydra|SSR ATK;Gundam Exia [TRANS-AM]|SSR ATK;Full Armor 0 Gundam|SSR DEF;Arios Gundam GNHW/M|SSR SUP;Regnant|SSR SUP;Arche Gundam|SSR ATK;Gundam Sandrock Custom (EW)|SSR ATK;Tallgeese III|SSR DEF;Gundam Heavyarms Custom (EW)|SSR SUP;Narrative Gundam B-Packs|SSR SUP;II Neo Zeong|SSR DEF;Gromlin|SSR ATK;Gundam Pixie & Efreet|SSR ATK;Gundam Mk-IV|SSR ATK;Strike Noir Gundam|SSR ATK;Stargazer|SSR DEF;Gundam F90 (Mars Independent Zeon Forces)|SSR ATK;Gundam F90 (A.D.S. Mixed Equipment)|SSR ATK;Gundam F90II I-Type|SSR DEF;Gundam F90II L-Type|SSR ATK;Tallgeese|SSR ATK;Musha Ghost|SD SSR ATK;Knight Gundam (Centaur Form)|SD SSR DEF;Full Armor Knight Gundam (Two Sacred Treasures)|SD SSR SUP;Giant Psycho Golem|SD SSR ATK;Geodante|SD SSR DEF;Quin Mantha|SSR SUP;Gundam Astraea Type-F2|SSR ATK;GN-X II Sword|SSR ATK;Rig Contio|SSR SUP;Gottratan|SSR ATK;Doggorla|SSR DEF;Rig Ring|SSR SUP;Graham's Union Flag Custom II (GN Flag)|SSR ATK"),
+ B:L("GQuuuuuuX (Omega Psycommu Active)|ATK;Bertigo|SUP;Patulia|ATK;Gundam Barbatos (6th Form)|ATK;Gundam Gusion Rebake|SUP;GN Arms Type-E|DEF;GN Arms Type-D|SUP;The O|DEF;Qubeley|SUP;Gemark|ATK;Tallgeese II|DEF;Altron Gundam|ATK;Gundam Astray Blue Frame Second L|SUP;Overon (Armor Form)|ATK;Val Walo|DEF;α Azieru|DEF;Command Gundam|SD DEF;Titania|DEF;Gundam Dantalion (T-Booster)|SUP;Banshee (Destroy Mode)|ATK;Hashmal|SSR ATK;Gundam NT-1 (Chobham Armor)|SSR DEF;Big Rang|SSR ATK;Hildolfr|SSR SUP;Gelgoog (Herbert von Kaspen)|SSR DEF;Gundam AGE-1 Titus|SSR ATK;Defarth|SSR ATK;Gundam Ez8|SSR SUP;Susanowo|SSR ATK;Scorpio|SSR DEF;Sinanju Stein|SSR ATK;Acguy Recon Type|SSR DEF;F80 Gunraid|SSR ATK;Berga Giros (Enhanced Armament)|SSR DEF;Black Sephar Raziel|SSR DEF;Zoloat (League Militaire)|SSR ATK;Gelgoog Ground Type (Visch Donahue)|SSR ATK;Rhinosaurus Type B|SSR SUP"),
+ C:L("Gundam Lfrith Ur|DEF;Graze Ein|DEF;Alvatore|ATK;Gundam Spiegel|SUP;Devil Gundam (1st Form)|DEF;Zaku III Kai|DEF;Gundam Deathscythe Hell|ATK;Gyan Eos|DEF;Saikoro Gundam|DEF;Murasame (Flight Test Type)|SUP;GQuuuuuuX|SUP;The Gundam|SSR ATK")
+ }},
+
+{id:"gacha",tab:"SSR gacha",title:"Strongest SSR gacha units",
+ url:"https://game8.jp/ggene-eternal/685124",updated:"Oct 26, 2026",
+ about:["The gacha half of Game8's SSR ranking. These are SSR units you pull from banners rather than build through Development or get from events.",
+  "Game8 shows this table under the Gacha tab of the same SSR ranking page."],
+ notes:["Game8 gives no per-tier reasons for this table. The latest additions this update all landed in the Development & events list."],
+ new:[],
+ tiers:{
+ SSS:L("S Gundam|ATK;Gundam Astaroth Origin|DEF;Gundam Epyon (EW)|SSR DEF"),
+ SS:L("Red Warrior|ATK;Vayeate Shuivan|ATK;Knight Sazabi|SD DEF;Geara Zulu (Angelo Sauper)|ATK;Gundam Rose (Super Mode)|DEF;Messer Type-F Naked (Commander)|SUP;Gundam Mk-V|SSR ATK;V-Dash Gundam Hexa|SSR SUP"),
+ S:L("Zeta Gundam Unit 3|SUP;1.5 Gundam|DEF;Blue Destiny Unit 1 [EXAM]|ATK;Regenerate Gundam|ATK;Gundam Dantalion (Half Cowl T)|ATK;Dragon Gundam (Super Mode)|ATK;ReZEL (Commander Type)|SUP;Gundam Maxter (Super Mode)|DEF;Gundam Lfrith Ur (with Gundvolva)|ATK;Gundam Lfrith Thorn (with Gundvolva)|DEF;Gouf Ignited (Heine Westenfluss)|ATK;G-Falcon Leopard|SSR ATK;Gundam Astray Blue Frame Second G Sniper Pack|SSR ATK;Tieren All-Region Type|SSR DEF;Gadessa (Hiling Care)|SSR ATK;Zodiac|SSR ATK;Gundam Astray Blue Frame Second L (Lohengrin Launcher)|SSR SUP;RF Gelgoog (Charles Rowchester)|SSR ATK;Golden Knight|SD SSR SUP;Victory Gundam Hexa|SSR DEF"),
+ A:L("Gundam Ez8 High Mobility Custom|SUP;Haro|DEF;Halphas Gundam|ATK;Gyan Krieger|ATK;Gundam Astaroth|ATK;Mack Knife (Barara Peor)|SUP;Rising Freedom Gundam|SUP;∀ Gundam (Turn A)|SUP;Zero-Shiki|SUP;Gaplant TR-5 [Hrairoo] Unit 1|ATK;Beargguy|SUP;Sword Calamity Gundam|ATK;White Gundam|DEF;GM Sniper II|SUP;High Mobility Gelgoog Kai (Johnny Ridden)|DEF;Strike Rouge (I.W.S.P.)|SUP;Gundam GP01 (Chobham Armor)|DEF;Windam (Neo Lorrnoke)|DEF;Gundam Gremory|SUP;Bolt Gundam (Super Mode)|SUP;Jegan (ECOAS)|DEF;Reginlaze (Iok)|SSR SUP;G-Falcon Airmaster|SSR SUP;Farsia|SSR DEF;Gundam AGE-1 Flat|SSR SUP;Gaddes|SSR SUP;FAZZ|SSR SUP;Zeck Zwei|SSR SUP;Dahgi Iris (Earth Federation)|SSR DEF;Berga Giros (Black Vanguard)|SSR SUP;Giant Mud Golem|SD SSR ATK;GN-X III (Federation Type)|SSR DEF;Jagd Arche Gundam|SSR ATK;Bruckeng (Lupe Cineau)|SSR SUP"),
+ B:L("Gundam Ez8 Heavy Armed Custom|DEF;GuAIZ (Commander Type)|ATK;Gundam Geminass 01|ATK;Gaplant (Ingrid 0)|SUP;Gundam Mk-III|DEF;Gundam TR-1 [Hazel Rah]|ATK;Gundam GP00|DEF;Gelgoog (Anavel Gato)|ATK;Gelgoog Marine (Commander)|ATK;Graze Ritter (Commander / Duel Spec)|DEF;Wadom|ATK;Jenice Kai (Enil Custom)|ATK;Gundam Geminass 02|DEF;Doven Wolf (Commander)|DEF;Gundam NT-1|ATK;Hildolfr|ATK;Zaku II (Dozle Zabi)|ATK;Gundam Unit 2 (Early Type)|DEF;Gundam Astray Red Frame Flight Unit|SSR DEF;Gundam Mk-II Prototype 0|SUP;Gunner ZAKU Warrior (Dearka Elsman)|SUP;Slash ZAKU Phantom (Yzak Jule)|ATK;Neue Ziel II|DEF;Dilanza (Guel, Final Battle)|SUP;Gouf Ignited (Yzak Jule)|ATK;Blaze ZAKU Phantom (Dearka Elsman)|SUP;Gaia Gundam (Andrew Waltfeld)|DEF;Clowda (Lancelot Dawell)|SSR DEF;Gundam Astray Red Frame Powered Red|SSR ATK;Zolo (Kronokle Asher)|SSR ATK;Rig Shokew (Imperial Guard)|SSR DEF"),
+ C:L("Zeta Gundam Unit 3 B Type|DEF;G-Self|ATK;Gundam AGE-1 Razor|ATK;Gundam AGE-1 Sodia|DEF;Gundam AGE-1 Normal|SUP;Superbia GN-X|DEF;Devil Gundam (Ultimate Gundam)|DEF;Victory Gundam|ATK;D Gundam First|DEF;Gouf Vigilante|ATK;Zeck Eins|SUP;Efreet Nacht|ATK;Pale Rider (Ground Heavy Armor)|SUP;Beginning Gundam|ATK;Hyakuren (Amida)|ATK;Advanced GN-X|SUP;Gundam Plutone|ATK;Gundam Raziel|SUP;Gundam F90|SSR ATK;Zaku II (Shin Matsunaga)|DEF;Efreet|SUP;Gundam Pixie|ATK;Prototype Kämpfer|ATK;High Mobility Gelgoog (Johnny Ridden)|SUP;Zaku II Kai|DEF;Big Rang|DEF;Zuda (Unit 1)|SUP;Char's Gelgoog|ATK;Geara Doga (Rezin Schnyder)|ATK;Gunner ZAKU Warrior (Lunamaria Hawke)|SUP;Blaze ZAKU Phantom (Rey Za Burrel)|DEF;Reginlaze (Julieta)|SSR DEF;Shiden (Orga)|SSR ATK;Adele (Starks)|SSR ATK;Geara Zulu (Erik)|SSR SUP;Gundam F90 Unit 2|SSR SUP")
+ }},
+
+{id:"dev",tab:"Development",title:"Best units to develop",
+ url:"https://game8.jp/ggene-eternal/684941",updated:"Oct 20, 2026",
+ about:["Priority list for regular and event Development (turning units you own into new ones through the development tree).",
+  "Develop high-firepower Attack units first, such as 00 Raiser (Final Battle) and Phenex (Destroy Mode). If you are short on damage dealers, work through Tier 0 first.",
+  "Units with wide-area MAP weapons are also strong picks, so check whether a target has one before you develop it."],
+ notes:["<b>New: GM Sniper II (White Dingo Team)</b> is recommended because of its range-5 attack-down debuff weapon.",
+  "Ultimate Development has its own short list. Open the Ultimate tab to see it."],
+ new:["GM Sniper II (White Dingo Team)"],
+ tiers:{
+ SSS:L("Gundam Astray Gold Frame Amatsu|ATK;Devil Gundam (Final Form)|ATK;Strike Freedom Gundam (METEOR)|SSR ATK;G-Falcon DX|SSR ATK;00 Raiser (Final Battle)|SSR ATK;Unicorn Gundam 03 Phenex (Destroy Mode)|SSR ATK"),
+ SS:L("Gublo (Thunderbolt)|SSR ATK;Cherudim Gundam GNHW/R|SSR DEF;Seravee Gundam GNHW/B|SSR SUP;Reborns Gundam|SSR ATK;Wing Gundam Zero (EW)|SSR SUP;Altron Gundam (EW)|SSR ATK;Unicorn Gundam 03 Phenex (Unicorn Mode)|SSR DEF;Narrative Gundam A-Packs|SSR ATK;Guncannon Aqua|SSR ATK;Gundam Calibarn|SSR SUP;Martial Artist Nemo|SD SSR ATK;Fighter ZZ Gundam|SD SSR ATK;Sorcerer ν Gundam|SD SSR SUP;Netix|SSR ATK;V2 Gundam|SSR ATK;V2 Assault Gundam|SSR DEF;V2 Assault-Buster Gundam|SSR ATK;Neo Zeong|ATK;Wing Gundam Zero|SUP;ν Gundam|SSR ATK;Hi-ν Gundam|SSR DEF;Psycho Zaku|SSR ATK;Unicorn Gundam (Destroy Mode)|SSR DEF;Full Armor Unicorn Gundam (Destroy Mode)|DEF;Banshee Norn (Destroy Mode)|SSR SUP;Gundam Aerial Rebuild|ATK;Gundam GP03|SSR ATK;Gundam Kimaris Vidar|SSR SUP;Gundam Flauros (Ryusei-Go)|SSR ATK;Gundam Barbatos Lupus Rex|SSR ATK;Penelope|SSR ATK;Strike Freedom Gundam|SSR SUP;Infinite Justice Gundam (METEOR)|SSR SUP;Freedom Gundam|SR ATK"),
+ S:L("Atlas Gundam|SSR SUP;Gundam Leopard Destroy|SSR ATK;Gundam Virsago Chest Break|SSR ATK;Hyperion Gundam|SSR ATK;Gundam AGE-1 Unit 2 Assault Jacket|SSR DEF;Gundam AGE-2 Double Bullet|SSR ATK;Chronos|SSR SUP;Apsalus III|SSR ATK;00 Raiser|SSR SUP;Gundam Deathscythe Hell (EW)|SSR ATK;II Neo Zeong|SSR DEF;Gundam Double X|SSR DEF;Gundam F91|SSR SUP;Rafflesia|SSR SUP;Swordsman Zeta Gundam|SD SSR DEF;Gundam Astraea Type-F2|SSR ATK;V2 Buster Gundam|SSR SUP;Rig Contio|SSR SUP;Gengaozo|SSR ATK;Gottratan|SSR ATK;Doggorla|SSR DEF;GM Sniper II (White Dingo Team)|SSR DEF;God Gundam|SSR DEF;Zeta Gundam|SUP;Freedom Gundam [METEOR]|SUP;Perfect Strike Gundam|SUP;Justice Gundam [METEOR]|ATK;Big Zam|ATK;Gundam GP01Fb (Full Burnern)|ATK;Nightingale|ATK;Legend Gundam|ATK;Destiny Gundam|DEF;Gundam Vual Juhana|DEF;Master Gundam|ATK;Grand Master Gundam|SUP;Kshatriya Repaired|SUP;Gundam Barbatos Lupus|SSR ATK;Blue Destiny Unit 3 [EXAM]|SSR DEF;Ξ Gundam|SSR DEF;Kämpfer|SSR ATK;Infinite Justice Gundam|SSR ATK;Gundam Schwarzette|SSR ATK;Darilbalde (Season 2)|SSR DEF;Gundam Airmaster Burst|SSR SUP"),
+ A:L("Narrative Gundam B-Packs|SSR SUP;Gundam Ashtaron Hermit Crab|SSR DEF;X Astray|SSR SUP;Gundam AGE-1 Spallow|SSR SUP;Gundam AGE-2 Normal|SSR DEF;Gundam AGE-2 Artimes|SSR SUP;Zeydra|SSR ATK;Gouf Custom|SSR ATK;Full Armor 0 Gundam|SSR DEF;Arios Gundam GNHW/M|SSR SUP;Regnant|SSR SUP;Arche Gundam|SSR ATK;Gundam Sandrock Custom (EW)|SSR ATK;Tallgeese III|SSR DEF;Gundam Heavyarms Custom (EW)|SSR SUP;Gundam Pharact (Season 2)|SSR ATK;Gromlin|SSR ATK;Gundam Mk-IV|SSR ATK;Strike Noir Gundam|SSR ATK;Stargazer|SSR DEF;Gundam F90 (A.D.S. Mixed Equipment)|SSR ATK;Gundam F90II I-Type|SSR DEF;Gundam F90II L-Type|SSR ATK;Granzam|SSR ATK;Full Armor Knight Gundam (Two Sacred Treasures)|SD SSR SUP;Giant Psycho Golem|SD SSR ATK;Geodante|SD SSR DEF;Black Sephar Raziel|SSR DEF;GN-X II Sword|SSR ATK;Zanneck|SSR SUP;Michaelis (Season 2)|SSR SUP;Gundam Lfrith Thorn|SUP;Psycho Gundam|DEF;Providence Gundam|DEF;Hyaku Shiki|ATK;Full Armor ZZ Gundam|ATK;Qubeley (ZZ)|SUP;Quin Mantha|DEF;Gundam Epyon|ATK;Zeong|SUP;G-3 Gundam|ATK;Gundam Astray Blue Frame Second L|SUP;Dragoon Strike|ATK;Sazabi|SSR SUP;Destroy Gundam|SUP;Full Armor Gundam (Thunderbolt)|SSR SUP;Gundam Astaroth Rinascimento|ATK;Shamblo|ATK;Sinanju|ATK;Neue Ziel|SSR DEF;Gundam GP04|SSR ATK;Reginlaze Julia (Ground Combat)|SSR DEF;Gundam Gusion Rebake Full City|SSR SUP;Blue Destiny Unit 2 [EXAM]|SSR ATK;Akatsuki (Shiranui)|SSR DEF;Gundam X Divider|DEF;Justice Gundam|SR ATK;ZZ Gundam|SR ATK;Shining Gundam|SR ATK;Enhanced ZZ Gundam|SR ATK"),
+ B:L("Gundam Dantalion (T-Booster)|SUP;Rhinosaurus Type B|SSR SUP;Gelgoog Ground Type (Visch Donahue)|SSR ATK;Berga Giros (Enhanced Armament)|SSR DEF;Acguy Recon Type|SSR DEF;Sinanju Stein|SSR ATK;Scorpio|SSR DEF;Susanowo|SSR ATK;Gundam Ez8|SSR SUP;Defarth|SSR ATK;Gundam AGE-1 Titus|SSR ATK;Gundam NT-1 (Chobham Armor)|SSR DEF;Hashmal|SSR ATK;Gundam Bael|SSR ATK;Banshee (Destroy Mode)|ATK;Bertigo|SUP;α Azieru|DEF;Val Walo|DEF;Altron Gundam|ATK;Tallgeese II|DEF;Gemark|ATK;Qubeley|SUP;The O|DEF;GN Arms Type-D|SUP;GN Arms Type-E|DEF;Gundam Gusion Rebake|SUP;Gundam Barbatos (6th Form)|ATK;Patulia|ATK;Psycho Gundam Mk-II|DEF;Forbidden Gundam|SR DEF"),
+ C:L("Gundam Lfrith Ur|DEF;Graze Ein|DEF;Alvatore|ATK;Gundam Spiegel|SUP;Devil Gundam (1st Form)|DEF;Zaku III Kai|DEF;Gundam Deathscythe Hell|ATK;Gyan Eos|DEF;Murasame (Flight Test Type)|SUP")
+ }},
+
+{id:"ult",tab:"Ultimate dev",title:"Ultimate Development priorities",
+ url:"https://game8.jp/ggene-eternal/684941",updated:"Oct 20, 2026",
+ about:["Game8's separate ranking for Ultimate Development targets, from the same page as the regular Development list.",
+  "Second V is the clear top pick."],
+ notes:["Game8 gives no per-tier reasons for this table."],
+ new:[],
+ tiers:{
+ SSS:L("Second V|SSR ATK"),
+ SS:L("Zeta Gundam Unit 3 P2 Type|SUP;Casval's Gundam|ATK;Gundam Throne Eins Turbulenz|SSR SUP"),
+ S:L("Gundam Delta Kai|ATK;Gundam Astray Gold Frame Amaterasu|SSR DEF;Narrative Gundam C-Packs (Awakened)|SSR SUP"),
+ A:L("Super Hyperion Gundam|DEF;Gundam Epyon (EW / Sturm und Drang)|SSR ATK"),
+ B:L("Psycho Gundam Mk-III|DEF;Gundam Aquarius|SUP;Gundam Belphegor|SSR ATK"),
+ C:L("β Azieru|SUP;Ulube's Gundam|SUP;Gundam Barbatos Lupus Rex (Alaya-Vijnana Limiter Off / Damaged)|SSR SUP;Beguir-Pente (Dominicus Squad)|SSR SUP")
+ }},
+
+{id:"sp",tab:"SP upgrade",title:"Best units to SP upgrade",
+ url:"https://game8.jp/ggene-eternal/684033",updated:"Oct 26, 2026",
+ about:["Which units to SP-upgrade first, ranked separately for Attack, Support and Defense roles.",
+  "Rarity tags are left off on this list because Game8 shows the role through the table each unit sits in."],
+ notes:["Four units were added through the <i>Mobile Suit Gundam Side Story 0079: Rise from the Ashes</i> event and the Gundam 00 Story Challenge.",
+  "<b>Graham's Union Flag Custom II (GN Flag)</b> rates SSS for SP upgrading. Story progress gives you its dedicated SP material, so upgrading it is recommended. It is strong against Gundam 00 enemies and carries a MAP weapon usable after moving."],
+ new:["Graham's Union Flag Custom II (GN Flag)"],
+ groups:{
+ ATK:{
+  SSS:L("Gundam Astray Gold Frame Amatsu;Devil Gundam (Final Form);Strike Freedom Gundam (METEOR);G-Falcon DX;00 Raiser (Final Battle);Unicorn Gundam 03 Phenex (Destroy Mode);Psycho Gundam;Tallgeese;Martial Artist Nemo|SD;Graham's Union Flag Custom II (GN Flag);Freedom Gundam|SR"),
+  SS:L("Psycho Zaku;Byarlant Custom Unit 2;Neo Zeong;Gundam GP03;Gundam Barbatos Lupus Rex;Gundam Virsago Chest Break;Reborns Gundam;Altron Gundam (EW);Gundam Deathscythe Hell (EW);Narrative Gundam A-Packs;Guncannon Aqua;Granzam;Full Armor Gundam;Fighter ZZ Gundam|SD;Netix;V2 Gundam"),
+  S:L("S Gundam;Gundam Aerial Rebuild;Gundam Epyon;Big Zam;Destiny Impulse;ν Gundam;Musha Gundam|SD;Gundam GP04;Gundam Flauros (Ryusei-Go);Gundam AGE-2 Double Bullet;Gouf Custom;Gublo (Thunderbolt)"),
+  A:L("Gundam Schwarzette;Gottratan;Gengaozo;Gundam Astraea Type-F2;Giant Psycho Golem|SD;Musha Ghost|SD;Gromlin;Zodiac;Gundam Mk-V;Apsalus III;Zeydra;Hyperion Gundam;Gundam Leopard Destroy;Big Rang;Red Warrior;Infinite Justice Gundam;Kämpfer;Duel Gundam Assault Shroud;Penelope;Wing Gundam (EW);Nightingale;Vayeate Shuivan;Gundam GP01Fb (Full Burnern);Dragoon Strike;Full Armor ZZ Gundam;Justice Gundam [METEOR];Enhanced ZZ Gundam"),
+  B:L("Gundam Bael;Gelgoog Ground Type (Visch Donahue);Gundam F90II L-Type;Gundam F90 (A.D.S. Mixed Equipment);Strike Noir Gundam;Gundam Pixie & Efreet;Gundam Sandrock Custom (EW);Gundam Exia [TRANS-AM];Gundam Astray Blue Frame Second G Sniper Pack;Gundam Pharact (Season 2);Hashmal;GQuuuuuuX (Omega Psycommu Active);Gundam Barbatos Lupus;Sinanju;Shamblo;Banshee (Destroy Mode);Dragon Gundam (Super Mode);Legend Gundam;G-3 Gundam;Hyaku Shiki;Wing Gundam Proto Zero (EW);Justice Gundam|SR;Shining Gundam|SR"),
+  C:L("Defarth;Zoloat (League Militaire);V2 Assault-Buster Gundam;Gundam F90 (Mars Independent Zeon Forces);F80 Gunraid;RF Gelgoog (Charles Rowchester);Gundam Astray Red Frame Powered Red;Gundam Mk-IV;Sinanju Stein;Susanowo;Arche Gundam;Gadessa (Hiling Care);Gundam Geminass 01;Gundam AGE-1 Titus;G-Falcon Leopard;Gundam Hajiroboshi;Geara Zulu (Angelo Sauper);Knight Zeong|SD;Altron Gundam;Gundam Deathscythe Hell;Master Gundam;Gundam Barbatos (6th Form);Blue Destiny Unit 1 [EXAM]")},
+ SUP:{
+  SSS:L("Strike Freedom Gundam;Wing Gundam Zero (EW);Char's Zaku II (The Origin);Gundam Astray Gold Frame Amatsu Mina;Gundam Dynames;Quin Mantha"),
+  SS:L("Red Gundam;Wing Gundam Zero;Qubeley Mk-II (Elpeo Ple);Banshee Norn (Destroy Mode);Gundam Kimaris Vidar;Infinite Justice Gundam (METEOR);Gundam Calibarn;00 Raiser"),
+  S:L("Hyaku Shiki;V2 Buster Gundam;V-Dash Gundam Hexa;Sorcerer ν Gundam|SD;Perfect Zeong;Gundam Astray Blue Frame Second L (Lohengrin Launcher);Seravee Gundam GNHW/B;Gundam Airmaster Burst;Messer Type-F Naked (Commander);Zeta Gundam;Full Armor Gundam Mk-III;Grand Master Gundam;Shining Gundam (Super Mode);Full Armor Gundam (Thunderbolt);Sazabi;Qubeley (ZZ);Perfect Strike Gundam;Freedom Gundam [METEOR]"),
+  A:L("Gundam AGE-1 Spallow;Zanneck;Golden Knight|SD;Unicorn Gundam Ver. TWC FINAL;Rafflesia;Gundam F91;Atlas Gundam;Regnant;Chronos;Gundam AGE-2 Artimes;Zeong;Gundam AGE-1 Flat;X Astray;Aluzeus;G-Falcon GX;ZAKU Warrior (Live Concert);Michaelis (Season 2);Kshatriya Repaired;Destroy Gundam"),
+  B:L("G-Xiphos;Extreme Gundam Excelia;Rig Contio;Bruckeng (Lupe Cineau);Full Armor Knight Gundam (Two Sacred Treasures)|SD;Narrative Gundam B-Packs;Zeck Zwei;FAZZ;Gundam Heavyarms Custom (EW);Arios Gundam GNHW/M;Rising Freedom Gundam;G-Falcon Airmaster;Hildolfr;Gundam Gusion Rebake Full City;Bolt Gundam (Super Mode);Demon King Satan Gundam|SD;Gundam Astray Blue Frame Second L;Strike Rouge (I.W.S.P.);Zeta Gundam Unit 3"),
+  C:L("Gundam Gusion Rebake;Gundam Spiegel;Qubeley;ReZEL (Commander Type);Gundam Ez8;Gaddes;Geara Zulu (Erik);Gundam F90 Unit 2;Berga Giros (Black Vanguard)")},
+ DEF:{
+  SSS:L("Unicorn Gundam (Destroy Mode);Full Armor Unicorn Gundam (Destroy Mode);Cherudim Gundam GNHW/R;Unicorn Gundam 03 Phenex (Unicorn Mode);Gundam Epyon (EW)"),
+  SS:L("Hi-ν Gundam;Knight Sazabi|SD;Gundam Astaroth Origin;Gundam Rose (Super Mode);Darilbalde (Season 2);Gundam Double X"),
+  S:L("Destiny Gundam;Knight Gundam|SD;Gundam Vual Juhana;God Gundam;Ξ Gundam;Akatsuki (Shiranui);Gundam Aerial;Gundam Ashtaron Hermit Crab;Gundam AGE-1 Unit 2 Assault Jacket;Swordsman Zeta Gundam|SD;GM Sniper II (White Dingo Team)"),
+  A:L("1.5 Gundam;Windam (Neo Lorrnoke);Gundam Maxter (Super Mode);Neue Ziel;Neue Ziel II;Reginlaze Julia (Ground Combat);Tieren All-Region Type;Full Armor 0 Gundam;Tallgeese III;Knight Gundam (Centaur Form)|SD;Geodante|SD;Victory Gundam Hexa;V2 Assault Gundam;Doggorla;Forbidden Gundam|SR"),
+  B:L("Gundam Lfrith Thorn (with Gundvolva);Rig Shokew (Imperial Guard);Berga Giros (Enhanced Armament);Gundam F90II I-Type;Dahgi Iris (Earth Federation);Stargazer;Acguy Recon Type;II Neo Zeong;Gundam AGE-2 Normal;Farsia;Clowda (Lancelot Dawell);Gaia Gundam (Andrew Waltfeld);Haro;Blue Destiny Unit 3 [EXAM];Titania;Gundam Astray Red Frame Flight Unit;Tallgeese II;Quin Mantha;Providence Gundam;Psycho Gundam;Gundam Lfrith Ur;Gundam X Divider;White Gundam;Graze Ritter (Commander / Duel Spec)"),
+  C:L("The O;Saikoro Gundam;Full Armor Hyaku Shiki Kai;α Azieru;Command Gundam|SD;XK;Gelgoog (Herbert von Kaspen)")}
+ }},
+
+{id:"ssp",tab:"SSP upgrade",title:"Best units to SSP upgrade",
+ url:"https://game8.jp/ggene-eternal/750190",updated:"Oct 26, 2026",
+ about:["Which units to SSP-upgrade first, ranked separately for Attack, Support and Defense roles.",
+  "Game8 doesn't label the three tables. They are grouped here by the role tags of the units inside them."],
+ notes:["<b>GM Sniper II (White Dingo Team)</b> is Game8's pick among the new units because SSP upgrading gives it underwater terrain adaptability.",
+  "<b>Rhinosaurus Type B</b> gets range 6 on both of its debuff weapons. Its weak points are low movement and poor terrain adaptability."],
+ new:["GM Sniper II (White Dingo Team)","Rhinosaurus Type B"],
+ groups:{
+ ATK:{
+  SSS:L("G-Falcon DX|SSR ATK;00 Raiser (Final Battle)|SSR ATK;Unicorn Gundam 03 Phenex (Destroy Mode)|SSR ATK"),
+  SS:L("Gundam Astray Gold Frame Amatsu;Dragoon Strike;Devil Gundam (Final Form);Penelope|SSR;Strike Freedom Gundam (METEOR)|SSR ATK;Altron Gundam (EW)|SSR ATK;Granzam|SSR ATK;Full Armor Gundam|SSR ATK;Netix|SSR ATK;V2 Gundam|SSR ATK;V2 Assault-Buster Gundam|SSR ATK"),
+  S:L("G-3 Gundam;Destiny Impulse;Gundam Flauros (Ryusei-Go)|SSR;Gundam Leopard Destroy|SSR ATK;Gundam Virsago Chest Break|SSR ATK;Gundam AGE-2 Double Bullet|SSR ATK;Reborns Gundam|SSR ATK;Gundam Deathscythe Hell (EW)|SSR ATK;Narrative Gundam A-Packs|SSR ATK;Gublo (Thunderbolt)|SSR ATK;Giant Psycho Golem|SD SSR ATK;Fighter ZZ Gundam|SD SSR ATK;Gengaozo|SSR ATK;Freedom Gundam|SR;Enhanced ZZ Gundam|SR;Wing Gundam Proto Zero (EW)|SR ATK"),
+  A:L("Gundam Schwarzette|SSR ATK;Gelgoog Ground Type (Visch Donahue)|SSR ATK;Gundam Astraea Type-F2|SSR ATK;Martial Artist Nemo|SD SSR ATK;Musha Ghost|SD SSR ATK;F80 Gunraid|SSR ATK;Gundam Astray Red Frame Powered Red|SSR ATK;Guncannon Aqua|SSR ATK;Zodiac|SSR ATK;Gundam Mk-V|SSR ATK;Susanowo|SSR ATK;Gundam Astray Blue Frame Second G Sniper Pack|SSR ATK;Hyperion Gundam|SSR ATK;S Gundam;Infinite Justice Gundam|SSR ATK;Gundam Barbatos Lupus Rex|SSR;Gundam Barbatos Lupus|SSR;Neo Zeong;Byarlant Custom Unit 2;Dragon Gundam (Super Mode);Knight Zeong|SD;ν Gundam|SSR;Gundam Aerial Rebuild;Justice Gundam|SR;ZZ Gundam|SR"),
+  B:L("Gundam Pharact (Season 2)|SSR ATK;Graham's Union Flag Custom II (GN Flag)|SSR ATK;Gottratan|SSR ATK;Zolo (Kronokle Asher)|SSR ATK;GN-X II Sword|SSR ATK;Jagd Arche Gundam|SSR ATK;Tallgeese|SSR ATK;Gundam F90II L-Type|SSR ATK;Psycho Gundam|SSR ATK;Strike Noir Gundam|SSR ATK;Gundam Pixie & Efreet|SSR ATK;Gundam Sandrock Custom (EW)|SSR ATK;Zeydra|SSR ATK;Master Gundam;Blue Destiny Unit 2 [EXAM]|SSR;Wing Gundam (EW)|SSR;Gundam GP04|SSR;Sinanju;Musha Gundam|SD;Psycho Zaku|SSR;Legend Gundam;Altron Gundam;Gundam Epyon;Full Armor ZZ Gundam;Shining Gundam|SR"),
+  C:L("Gundam AGE-1 Titus|SSR ATK;Zoloat (League Militaire)|SSR ATK;Giant Mud Golem|SD SSR ATK;Gundam F90 (A.D.S. Mixed Equipment)|SSR ATK;Gundam F90 (Mars Independent Zeon Forces)|SSR ATK;RF Gelgoog (Charles Rowchester)|SSR ATK;Gundam Mk-IV|SSR ATK;Gromlin|SSR ATK;Sinanju Stein|SSR ATK;Arche Gundam|SSR ATK;Gundam Exia [TRANS-AM]|SSR ATK;Gadessa (Hiling Care)|SSR ATK;Apsalus III|SSR ATK;Defarth|SSR ATK;GQuuuuuuX (Omega Psycommu Active);G-Falcon Leopard|SSR ATK;Big Rang|SSR ATK;Gundam Hajiroboshi;Gundam GP03|SSR;Gundam Astaroth Rinascimento;Nightingale;Overon (Armor Form);Big Zam;Gundam Deathscythe Hell;Gemark;Hyaku Shiki;Justice Gundam [METEOR];Wadom")},
+ SUP:{
+  SSS:L("Wing Gundam Zero;Wing Gundam Zero (EW)|SSR SUP;Zanneck|SSR SUP"),
+  SS:L("Freedom Gundam [METEOR];Gundam Kimaris Vidar|SSR;Full Armor Gundam Mk-III;Messer Type-F Naked (Commander);Strike Freedom Gundam|SSR SUP;Infinite Justice Gundam (METEOR)|SSR SUP;Chronos|SSR SUP;00 Raiser|SSR SUP;Sorcerer ν Gundam|SD SSR SUP"),
+  S:L("Gaddes|SSR SUP;Extreme Gundam Excelia|SSR SUP;Rig Contio|SSR SUP;V-Dash Gundam Hexa|SSR SUP;Quin Mantha|SSR SUP;Golden Knight|SD SSR SUP;Full Armor Knight Gundam (Two Sacred Treasures)|SD SSR SUP;Unicorn Gundam Ver. TWC FINAL|SSR SUP;Gundam Astray Blue Frame Second L (Lohengrin Launcher)|SSR SUP;Zeck Zwei|SSR SUP;FAZZ|SSR SUP;Gundam Dynames|SSR SUP;Char's Zaku II (The Origin)|SSR SUP;Gundam Heavyarms Custom (EW)|SSR SUP;Beargguy;Gundam AGE-2 Artimes|SSR SUP;Gundam AGE-1 Flat|SSR SUP;G-Xiphos|SSR SUP;X Astray|SSR SUP;Aluzeus|SSR SUP;ZAKU Warrior (Live Concert);Gundam Calibarn|SSR SUP;Hyaku Shiki|SSR SUP;Banshee Norn (Destroy Mode)|SSR;Shining Gundam (Super Mode);Strike Rouge (I.W.S.P.);GN Arms Type-D;GM Sniper II"),
+  A:L("Hildolfr|SSR SUP;Rhinosaurus Type B|SSR SUP;V2 Buster Gundam|SSR SUP;Bruckeng (Lupe Cineau)|SSR SUP;Rafflesia|SSR SUP;Gundam F91|SSR SUP;Atlas Gundam|SSR SUP;Narrative Gundam B-Packs|SSR SUP;Regnant|SSR SUP;Seravee Gundam GNHW/B|SSR SUP;Arios Gundam GNHW/M|SSR SUP;Gundam AGE-1 Spallow|SSR SUP;Bertigo;Michaelis (Season 2)|SSR SUP;Blaze ZAKU Phantom (Dearka Elsman);Dilanza (Guel, Final Battle);Gundam Gusion Rebake Full City|SSR;Kshatriya Repaired;Grand Master Gundam;Gundam Dantalion (T-Booster);Full Armor Gundam (Thunderbolt)|SSR;Sazabi|SSR;Gundam Spiegel;Gundam Gusion Rebake"),
+  B:L("Red Gundam;Qubeley (ZZ);Zeong;Gundam Astray Blue Frame Second L;Qubeley Mk-II (Elpeo Ple)|SSR;G-Falcon Airmaster|SSR SUP;Gundam Airmaster Burst|SSR SUP;Gundam Ez8|SSR SUP;Gundam Astray Gold Frame Amatsu Mina|SSR SUP;Geara Zulu (Erik)|SSR SUP;Berga Giros (Black Vanguard)|SSR SUP;Perfect Zeong|SSR SUP"),
+  C:L("Zeck Eins;Zeta Gundam;Qubeley;Gundam Barbatos (Adapt)|SSR;Gundam F90 Unit 2|SSR SUP")},
+ DEF:{
+  SSS:L("Gundam X Divider;God Gundam|SSR;Ξ Gundam|SSR"),
+  SS:L("Quin Mantha;Full Armor Hyaku Shiki Kai;Gundam Double X|SSR DEF;Cherudim Gundam GNHW/R|SSR DEF;Unicorn Gundam 03 Phenex (Unicorn Mode)|SSR DEF;Gundam Epyon (EW)|SSR DEF;Swordsman Zeta Gundam|SD SSR DEF;V2 Assault Gundam|SSR DEF"),
+  S:L("GN Arms Type-E;Psycho Gundam;Providence Gundam;Tallgeese II;Windam (Neo Lorrnoke);Destiny Gundam;Knight Sazabi|SD;Gundam Astaroth Origin;Unicorn Gundam (Destroy Mode)|SSR;Gaia Gundam (Andrew Waltfeld);Darilbalde (Season 2)|SSR DEF;Gundam Aerial|SSR DEF;Gelgoog (Herbert von Kaspen)|SSR DEF;Tieren All-Region Type|SSR DEF;Tallgeese III|SSR DEF;GM Sniper II (White Dingo Team)|SSR DEF"),
+  A:L("Gundam Mk-III;Hi-ν Gundam|SSR;Full Armor Unicorn Gundam (Destroy Mode);Blue Destiny Unit 3 [EXAM]|SSR;Gundam Ashtaron Hermit Crab|SSR DEF;Farsia|SSR DEF;Gundam AGE-1 Unit 2 Assault Jacket|SSR DEF;Gundam AGE-2 Normal|SSR DEF;Full Armor 0 Gundam|SSR DEF;II Neo Zeong|SSR DEF;Berga Giros (Enhanced Armament)|SSR DEF;Geodante|SD SSR DEF;GN-X III (Federation Type)|SSR DEF"),
+  B:L("1.5 Gundam;Knight Gundam|SD;Titania;Gundam Vual Juhana;Gundam Rose (Super Mode);Gundam Maxter (Super Mode);Neue Ziel|SSR;XK|SSR;Gundam Lfrith Thorn (with Gundvolva);Gaia Gundam (Andrew Waltfeld) [MA Mode];Clowda (Lancelot Dawell)|SSR DEF;Scorpio|SSR DEF;Stargazer|SSR DEF;Gundam F90II I-Type|SSR DEF;Black Sephar Raziel|SSR DEF;Victory Gundam Hexa|SSR DEF"),
+  C:L("Gyan Eos;Doggorla|SSR DEF;Rig Shokew (Imperial Guard)|SSR DEF;Knight Gundam (Centaur Form)|SD SSR DEF;Dahgi Iris (Earth Federation)|SSR DEF;Akatsuki (Shiranui)|SSR DEF;Blaze ZAKU Phantom (Rey Za Burrel);Val Walo;Gundam Astray Red Frame Flight Unit|SSR DEF;Saikoro Gundam;Gundam Ez8 Heavy Armed Custom;The O;Graze Ein;Gundam Lfrith Ur;Doven Wolf (Commander);Graze Ritter (Commander / Duel Spec);Gundam GP00;D Gundam First;Superbia GN-X;Haro;Gundam Astray Red Frame")}
+ }}
+];
+
+const GROUPNAMES={ATK:"Attack",SUP:"Support",DEF:"Defense"};
+const tabsEl=document.getElementById("tabs"),tiersEl=document.getElementById("tiers"),introEl=document.getElementById("intro"),qEl=document.getElementById("q");
+let cur=LISTS[0].id,filt="all";
+try{const h=location.hash.slice(1);if(LISTS.some(l=>l.id===h))cur=h;else{const s=localStorage.getItem("ggeTab");if(LISTS.some(l=>l.id===s))cur=s;}}catch(e){}
+
+const esc=s=>s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+function parse(raw,groupType){
+  const [name,tag=""]=raw.split("|");const parts=tag.split(" ").filter(Boolean);
+  let type=parts.find(p=>GROUPNAMES[p])||groupType||null;
+  const rest=parts.filter(p=>!GROUPNAMES[p]);
+  return {name,type,shownType:parts.find(p=>GROUPNAMES[p]),rest};
+}
+function chip(u,list){
+  const isNew=list.new.includes(u.name);
+  return `<span class="u${isNew?" new":""}" title="${isNew?"Newly added":""}"><span>${esc(u.name)}</span>${u.rest.length?`<em>${u.rest.join(" ")}</em>`:""}${u.shownType?`<b class="t ${u.shownType}">${u.shownType}</b>`:""}</span>`;
+}
+function rowsFor(tiers,gaps,list,groupType){
+  const q=qEl.value.trim().toLowerCase();let html="",count=0;
+  for(const k of ORDER){
+    const arr=tiers[k];const gap=gaps&&gaps[k];
+    if(!arr&&!gap)continue;
+    let units=(arr||[]).map(r=>parse(r,groupType));
+    units=units.filter(u=>(!q||u.name.toLowerCase().includes(q))&&(filt==="all"||u.type===filt));
+    count+=units.length;
+    if(!units.length&&!gap&&(q||filt!=="all"))continue;
+    const [lab,sub,col]=TIERS[k];
+    html+=`<div class="row" style="--tc:var(${col})"><div class="rank"><b>${lab}</b><small>${sub}</small></div><div class="units">${units.map(u=>chip(u,list)).join("")}${gap?`<span class="gap">${esc(gap)}</span>`:""}</div></div>`;
+  }
+  return {html,count};
+}
+function render(){
+  const list=LISTS.find(l=>l.id===cur);
+  tabsEl.innerHTML=LISTS.map(l=>`<button role="tab" id="tab-${l.id}" aria-selected="${l.id===cur}" data-id="${l.id}">${l.tab}</button>`).join("");
+  introEl.innerHTML=`<div class="card"><h2>${list.title}</h2>${list.about.map(p=>`<p>${p}</p>`).join("")}<p class="src">Source: <a href="${list.url}" target="_blank" rel="noopener">Game8 · ${list.url.replace("https://","")}</a> · updated ${list.updated}</p></div>
+  <div class="card"><h3>Latest notes</h3><ul>${list.notes.map(n=>`<li>${n}</li>`).join("")}</ul></div>`;
+  let html="",total=0;
+  if(list.groups){
+    for(const g of ["ATK","SUP","DEF"]){
+      if(filt!=="all"&&filt!==g)continue;
+      const r=rowsFor(list.groups[g],list.gaps&&list.gaps[g],list,g);total+=r.count;
+      if(r.html)html+=`<div class="group-title"><i style="background:var(--${g.toLowerCase()})"></i>${GROUPNAMES[g]}</div>`+r.html;
+    }
+  }else if(list.sections){
+    for(const s of list.sections){
+      const r=rowsFor(s.tiers,null,list,null);total+=r.count;
+      if(r.html)html+=`<div class="group-title"><i style="background:var(--yellow)"></i>${esc(s.label)}</div>`+r.html;
+    }
+  }else{
+    const r=rowsFor(list.tiers,list.gaps,list,null);total+=r.count;html=r.html;
+  }
+  if(!total&&!html)html=`<div class="empty">No units match. Try a shorter search, or switch the type filter back to All.</div>`;
+  tiersEl.innerHTML=html;
+}
+tabsEl.addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;cur=b.dataset.id;try{localStorage.setItem("ggeTab",cur)}catch(err){}render();});
+document.getElementById("filt").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;filt=b.dataset.f;document.querySelectorAll("#filt button").forEach(x=>x.setAttribute("aria-pressed",x===b));render();});
+qEl.addEventListener("input",render);
+render();
+</script>
+
+</body>
+</html>
