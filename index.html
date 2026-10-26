@@ -67,17 +67,23 @@ button:focus-visible,input:focus-visible{outline:2px solid var(--yellow);outline
 .rank{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;color:#fff;padding:10px 4px;background:var(--tc)}
 .rank b{font-family:var(--display);font-size:30px;line-height:1}
 .rank small{font-family:var(--mono);font-size:11px;opacity:.9}
-.units{display:flex;flex-wrap:wrap;gap:6px;padding:10px;align-content:flex-start;min-width:0}
-.u{display:inline-flex;align-items:center;gap:6px;background:var(--chip);border:1px solid var(--line);padding:4px 8px;border-radius:2px;font-weight:500;max-width:100%}
-.u span{overflow-wrap:anywhere}
-.u img.th{width:40px;height:40px;object-fit:cover;border-radius:2px;flex:none;background:var(--line)}
-.u em{font-style:normal;font-family:var(--mono);font-size:10.5px;color:var(--muted);white-space:nowrap}
-.u.new{border-color:var(--yellow);box-shadow:inset 3px 0 0 var(--yellow)}
+.units{display:grid;grid-template-columns:repeat(auto-fill,minmax(98px,1fr));gap:8px;padding:10px;align-content:start;min-width:0}
+.u{display:flex;flex-direction:column;align-items:center;gap:4px;background:var(--chip);border:1px solid var(--line);padding:6px 4px 5px;border-radius:2px;font-weight:500;min-width:0;cursor:pointer;position:relative}
+.u:hover{border-color:var(--muted)}
+.u:focus-visible{outline:2px solid var(--yellow);outline-offset:1px}
+.u .pic{width:75px;height:75px;flex:none;border-radius:2px;background:var(--line);overflow:hidden}
+.u img.th{width:75px;height:75px;object-fit:cover;display:block}
+.u .nm{display:block;max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:12.5px;line-height:1.3;text-align:center}
+.u.open{z-index:2}
+.u.open .nm{white-space:normal;overflow-wrap:anywhere}
+.u .meta{display:flex;gap:4px;align-items:center;justify-content:center;flex-wrap:wrap}
+.u em{font-style:normal;font-family:var(--mono);font-size:10px;color:var(--muted);white-space:nowrap}
+.u.new{border-color:var(--yellow);box-shadow:inset 0 3px 0 var(--yellow)}
 .t{font-family:var(--mono);font-size:10.5px;font-weight:500;padding:1px 4px;border-radius:2px;white-space:nowrap}
 .t.ATK{color:var(--atk);border:1px solid var(--atk)}.t.SUP{color:var(--sup);border:1px solid var(--sup)}.t.DEF{color:var(--def);border:1px solid var(--def)}
-.gap{font-size:13px;color:var(--muted);padding:10px;font-style:italic}
+.gap{font-size:13px;color:var(--muted);padding:10px;font-style:italic;grid-column:1/-1}
 .empty{color:var(--muted);padding:10px;font-size:13px}
-@media (max-width:520px){.row{grid-template-columns:62px minmax(0,1fr)}.rank b{font-size:22px}}
+@media (max-width:520px){.row{grid-template-columns:52px minmax(0,1fr)}.rank b{font-size:22px}.units{grid-template-columns:repeat(auto-fill,minmax(90px,1fr));gap:6px;padding:8px}}
 footer{color:var(--muted);font-size:13px;display:flex;flex-direction:column;gap:6px;border-top:1px solid var(--line);padding-top:14px}
 footer p{margin:0;max-width:90ch}
 footer a{color:var(--blue)}
@@ -285,7 +291,8 @@ function parse(raw,groupType){
 }
 function chip(u,list){
   const isNew=list.new.includes(u.name);
-  return `<span class="u${isNew?" new":""}" title="${isNew?"Newly added":""}">${u.img!=null?`<img class="th" src="https://img.game8.jp/${THUMBS[u.img]}/show" alt="" loading="lazy" width="40" height="40" onerror="this.remove()">`:""}<span>${esc(u.name)}</span>${u.rest.length?`<em>${u.rest.join(" ")}</em>`:""}${u.shownType?`<b class="t ${u.shownType}">${u.shownType}</b>`:""}</span>`;
+  const full=esc(u.name)+(isNew?" (newly added)":"");
+  return `<div class="u${isNew?" new":""}" title="${full}" tabindex="0" role="button" aria-label="${full}"><span class="pic">${u.img!=null?`<img class="th" src="https://img.game8.jp/${THUMBS[u.img]}/show" alt="" loading="lazy" width="75" height="75" onerror="this.remove()">`:""}</span><span class="nm">${esc(u.name)}</span><span class="meta">${u.rest.length?`<em>${u.rest.join(" ")}</em>`:""}${u.shownType?`<b class="t ${u.shownType}">${u.shownType}</b>`:""}</span></div>`;
 }
 function rowsFor(tiers,gaps,list,groupType){
   const q=qEl.value.trim().toLowerCase();let html="",count=0;
@@ -328,6 +335,8 @@ function render(){
 tabsEl.addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;cur=b.dataset.id;try{localStorage.setItem("ggeTab",cur)}catch(err){}render();});
 document.getElementById("filt").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;filt=b.dataset.f;document.querySelectorAll("#filt button").forEach(x=>x.setAttribute("aria-pressed",x===b));render();});
 qEl.addEventListener("input",render);
+tiersEl.addEventListener("click",e=>{const u=e.target.closest(".u");if(u)u.classList.toggle("open");});
+tiersEl.addEventListener("keydown",e=>{if((e.key==="Enter"||e.key===" ")&&e.target.classList.contains("u")){e.preventDefault();e.target.classList.toggle("open");}});
 render();
 </script>
 
