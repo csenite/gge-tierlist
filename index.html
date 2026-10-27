@@ -214,8 +214,8 @@ const LISTS=[
 
 {id:"sp",tab:"SP upgrade",title:"Best units to SP upgrade",
  url:"https://game8.jp/ggene-eternal/684033",updated:"Oct 26, 2026",
- about:["Which units to SP-upgrade first, ranked separately for Attack, Support and Defense roles.",
-  "Rarity tags are left off on this list because Game8 shows the role through the table each unit sits in."],
+ about:["Which units to SP-upgrade first. Game8 ranks Attack, Support and Defense units in separate tables; here they share one tier list, Attack first in each tier. Use the type filter to see one role.",
+  "Rarity tags are left off on this list because Game8 doesn't show them here."],
  notes:["Four units were added through the <i>Mobile Suit Gundam Side Story 0079: Rise from the Ashes</i> event and the Gundam 00 Story Challenge.",
   "<b>Graham's Union Flag Custom II (GN Flag)</b> rates SSS for SP upgrading. Story progress gives you its dedicated SP material, so upgrading it is recommended. It is strong against Gundam 00 enemies and carries a MAP weapon usable after moving."],
  new:["Graham's Union Flag Custom II (GN Flag)"],
@@ -245,8 +245,8 @@ const LISTS=[
 
 {id:"ssp",tab:"SSP upgrade",title:"Best units to SSP upgrade",
  url:"https://game8.jp/ggene-eternal/750190",updated:"Oct 26, 2026",
- about:["Which units to SSP-upgrade first, ranked separately for Attack, Support and Defense roles.",
-  "Game8 doesn't label the three tables. They are grouped here by the role tags of the units inside them."],
+ about:["Which units to SSP-upgrade first. Game8 ranks Attack, Support and Defense units in separate tables; here they share one tier list, Attack first in each tier. Use the type filter to see one role.",
+  "Game8 doesn't label the three tables. Each was matched to a role by the role tags of the units inside it."],
  notes:["<b>GM Sniper II (White Dingo Team)</b> is Game8's pick among the new units because SSP upgrading gives it underwater terrain adaptability.",
   "<b>Rhinosaurus Type B</b> gets range 6 on both of its debuff weapons. Its weak points are low movement and poor terrain adaptability."],
  new:["GM Sniper II (White Dingo Team)","Rhinosaurus Type B"],
@@ -295,12 +295,14 @@ function chip(u,list){
   return `<div class="u${isNew?" new":""}" title="${full}" tabindex="0" role="button" aria-label="${full}"><span class="pic">${u.img!=null?`<img class="th" src="https://img.game8.jp/${THUMBS[u.img]}/show" alt="" loading="lazy" width="75" height="75" onerror="this.remove()">`:""}</span><span class="nm">${esc(u.name)}</span><span class="meta">${u.rest.length?`<em>${u.rest.join(" ")}</em>`:""}${u.shownType?`<b class="t ${u.shownType}">${u.shownType}</b>`:""}</span></div>`;
 }
 function rowsFor(tiers,gaps,list,groupType){
+  return rowsForParts([{tiers,gaps,groupType}],list);
+}
+function rowsForParts(parts,list){
   const q=qEl.value.trim().toLowerCase();let html="",count=0;
   for(const k of ORDER){
-    const arr=tiers[k];const gap=gaps&&gaps[k];
-    if(!arr&&!gap)continue;
-    const ti=((TI[list.id]||{})[groupType||"_"]||{})[k]||[];
-    let units=(arr||[]).map((r,i)=>Object.assign(parse(r,groupType),{img:ti[i]}));
+    const gap=parts.map(p=>p.gaps&&p.gaps[k]).filter(Boolean).join(" ");
+    if(!parts.some(p=>p.tiers[k])&&!gap)continue;
+    let units=parts.flatMap(p=>{const ti=((TI[list.id]||{})[p.groupType||"_"]||{})[k]||[];return (p.tiers[k]||[]).map((r,i)=>Object.assign(parse(r,p.groupType),{img:ti[i]}));});
     units=units.filter(u=>(!q||u.name.toLowerCase().includes(q))&&(filt==="all"||u.type===filt));
     count+=units.length;
     if(!units.length&&!gap&&(q||filt!=="all"))continue;
@@ -316,11 +318,8 @@ function render(){
   <div class="card"><h3>Latest notes</h3><ul>${list.notes.map(n=>`<li>${n}</li>`).join("")}</ul></div>`;
   let html="",total=0;
   if(list.groups){
-    for(const g of ["ATK","SUP","DEF"]){
-      if(filt!=="all"&&filt!==g)continue;
-      const r=rowsFor(list.groups[g],list.gaps&&list.gaps[g],list,g);total+=r.count;
-      if(r.html)html+=`<div class="group-title"><i style="background:var(--${g.toLowerCase()})"></i>${GROUPNAMES[g]}</div>`+r.html;
-    }
+    const r=rowsForParts(["ATK","SUP","DEF"].map(g=>({tiers:list.groups[g],gaps:list.gaps&&list.gaps[g],groupType:g})),list);
+    total+=r.count;html=r.html;
   }else if(list.sections){
     for(const s of list.sections){
       const r=rowsFor(s.tiers,null,list,null);total+=r.count;
