@@ -287,7 +287,7 @@ function parse(raw,groupType){
   const [name,tag=""]=raw.split("|");const parts=tag.split(" ").filter(Boolean);
   let type=parts.find(p=>GROUPNAMES[p])||groupType||null;
   const rest=parts.filter(p=>!GROUPNAMES[p]);
-  return {name,type,shownType:parts.find(p=>GROUPNAMES[p]),rest};
+  return {name,type,shownType:type,rest};
 }
 function chip(u,list){
   const isNew=list.new.includes(u.name);
