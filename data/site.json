@@ -5,7 +5,7 @@
    "tab": "UR",
    "title": "Strongest UR units (high difficulty)",
    "url": "https://game8.jp/ggene-eternal/682964",
-   "updated": "Oct 26, 2026",
+   "updated": "Oct 31, 2026",
    "about": [
     "This is Game8's main tier table for UR units (including their EX forms) in high-difficulty content. It has 89 units. Tiers run from SSS (Tier 0) down to D (Tier 6). Higher-tier units have better firepower or survivability and can be used in more quests.",
     "Each role is judged on its own terms. Attack units are rated on single-hit damage. Support units are rated on how many range-5 debuff weapons they carry and on their abilities. Defense units are rated on shields, damage reduction and similar defensive tools.",
@@ -19,8 +19,8 @@
     "Best in Master League Season 17: Gundam F91 (Twin V.S.B.R.) and Gundam Barbatos Lupus Rex."
    ],
    "new": [
-    "Reborns Gundam",
-    "Gundam Dynames"
+    "Dijeh (Char Aznable)",
+    "Neo Zeong"
    ],
    "tiers": {
     "SSS": [
@@ -143,6 +143,16 @@
      }
     ],
     "S": [
+     {
+      "n": "Dijeh (Char Aznable)",
+      "t": "EX ATK",
+      "i": "13151397/05df6e7e787bc65b0a3f8d5522f0622e.webp"
+     },
+     {
+      "n": "Neo Zeong",
+      "t": "UR DEF",
+      "i": "13151399/a0fbc4c8976978b79877607b996c3abb.webp"
+     },
      {
       "n": "Gundam Dynames",
       "t": "UR ATK",
