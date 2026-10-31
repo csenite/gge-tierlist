@@ -115,10 +115,9 @@ def soshage_meta(data):
 def page(template="template.html"):
     data = json.loads((ROOT / "data/site.json").read_text())
     series_meta(data)
-    if template != "template.html":
-        soshage_meta(data)
-        if data.get("sosMissing"):
-            print("no soshage match:", ", ".join(sorted(set(data["sosMissing"]))))
+    soshage_meta(data)
+    if data.get("sosMissing"):
+        print("no soshage match:", ", ".join(sorted(set(data["sosMissing"]))))
     blob = json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
     tpl = (ROOT / template).read_text()
     assert tpl.count("/*DATA*/") == 1
