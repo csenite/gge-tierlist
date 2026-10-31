@@ -98,14 +98,14 @@ def soshage_meta(data):
                         missing.append(u["n"])
                         if ss:
                             used.update(s["id"] for s in ss)
-                            sos[key] = {"n": u["n"], "th": f"https://img.game8.jp/{u['i']}/show",
+                            sos[key] = {"n": u["n"], "th": f"https://img.game8.jp/{u['i']}/show", "r": want or 5,
                                         "s": [[s["en"], logo(s)] for s in ss]}
                         continue
                     ss = [series[i] for i in m["series"] if i in series]
                     if not ss:
                         missing.append(u["n"])
                     used.update(s["id"] for s in ss)
-                    sos[key] = {"n": re.sub(r"\s*\(EX\)$", "", m["en"]), "th": thumb(m),
+                    sos[key] = {"n": re.sub(r"\s*\(EX\)$", "", m["en"]), "th": thumb(m), "r": m["rarity"],
                                 "s": [[s["en"], logo(s)] for s in ss]}
     data["sos"] = sos
     data["sosSeries"] = sorted({series[i]["en"] for i in used}, key=lambda x: x.casefold())
