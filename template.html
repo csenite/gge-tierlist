@@ -1,0 +1,176 @@
+<title>G Generation Eternal Tiers</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Barlow:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: a hangar-console index. Tab rail of the six Game8 lists, then tier rows (rank plate left, unit chips right). RX-78 tricolor accents. */
+:root{
+  --bg:#eef1f6; --panel:#ffffff; --ink:#151b2b; --muted:#5b6478; --line:#d5dbe6;
+  --blue:#1d4fbf; --red:#c4262e; --yellow:#e9a800; --chip:#f4f6fa;
+  --atk:#c4262e; --sup:#946b00; --def:#1d4fbf;
+  --t0:#c4262e; --t1:#e3601c; --t2:#e9a800; --t3:#3a9b4f; --t4:#1d4fbf; --t5:#6a4fb8; --t6:#6b7280;
+  --display:"Chakra Petch","Barlow",system-ui,sans-serif;
+  --body:"Barlow",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0f1420; --panel:#171e2e; --ink:#e8ecf4; --muted:#9aa4b8; --line:#2a3347;
+  --blue:#6f9bff; --red:#ff6b6f; --yellow:#ffc533; --chip:#1f2739;
+  --atk:#ff7a7d; --sup:#ffc533; --def:#7fa6ff;
+  --t0:#ff5c61; --t1:#ff8a4a; --t2:#ffc533; --t3:#5cc874; --t4:#6f9bff; --t5:#a58bff; --t6:#9aa4b8;
+  color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f1420; --panel:#171e2e; --ink:#e8ecf4; --muted:#9aa4b8; --line:#2a3347;
+  --blue:#6f9bff; --red:#ff6b6f; --yellow:#ffc533; --chip:#1f2739;
+  --atk:#ff7a7d; --sup:#ffc533; --def:#7fa6ff;
+  --t0:#ff5c61; --t1:#ff8a4a; --t2:#ffc533; --t3:#5cc874; --t4:#6f9bff; --t5:#a58bff; --t6:#9aa4b8;
+  color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.5;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 48px}
+.wrap{max-width:1180px;margin:0 auto;display:flex;flex-direction:column;gap:20px}
+header{padding-block:28px 4px;display:flex;flex-direction:column;gap:8px}
+.stripe{display:flex;gap:4px;height:6px;width:120px}
+.stripe span{flex:1}
+.stripe span:nth-child(1){background:var(--blue)}.stripe span:nth-child(2){background:var(--red)}.stripe span:nth-child(3){background:var(--yellow)}
+h1{font-family:var(--display);font-weight:700;font-size:clamp(28px,4.4vw,44px);line-height:1.05;margin:0;letter-spacing:.01em;text-wrap:balance}
+.sub{color:var(--muted);max-width:68ch;margin:0}
+nav{display:flex;flex-wrap:wrap;gap:6px;border-bottom:2px solid var(--line);padding-bottom:10px}
+nav button{font-family:var(--display);font-weight:600;font-size:14px;letter-spacing:.04em;text-transform:uppercase;
+  background:transparent;color:var(--muted);border:1px solid var(--line);padding:8px 12px;cursor:pointer;border-radius:2px}
+nav button:hover{color:var(--ink);border-color:var(--muted)}
+nav button[aria-selected="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+button:focus-visible,input:focus-visible{outline:2px solid var(--yellow);outline-offset:2px}
+.tools{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.tools input{flex:1 1 240px;min-width:0;font:inherit;padding:9px 12px;border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:2px}
+.filt{display:flex;gap:4px;flex-wrap:wrap}
+.filt button{font-family:var(--mono);font-size:12px;padding:7px 10px;border:1px solid var(--line);background:var(--panel);color:var(--muted);cursor:pointer;border-radius:2px}
+.filt button[aria-pressed="true"]{color:var(--ink);border-color:var(--ink)}
+.intro{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:16px}
+@media (max-width:760px){.intro{grid-template-columns:1fr}}
+.card{background:var(--panel);border:1px solid var(--line);padding:16px 18px;border-radius:2px;min-width:0}
+.card h2{font-family:var(--display);font-size:22px;margin:0 0 6px;text-wrap:balance}
+.card h3{font-family:var(--display);font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 8px}
+.card p{margin:0 0 8px;max-width:72ch}.card p:last-child{margin-bottom:0}
+.card ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px}
+.src{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.src a{color:var(--blue)}
+.tiers{display:flex;flex-direction:column;gap:8px}
+.group-title{font-family:var(--display);font-weight:700;font-size:18px;letter-spacing:.06em;text-transform:uppercase;margin:14px 0 2px;display:flex;align-items:center;gap:8px}
+.group-title i{width:10px;height:10px;display:inline-block}
+.row{display:grid;grid-template-columns:92px minmax(0,1fr);background:var(--panel);border:1px solid var(--line);border-radius:2px;overflow:hidden}
+.rank{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;color:#fff;padding:10px 4px;background:var(--tc)}
+.rank b{font-family:var(--display);font-size:30px;line-height:1}
+.rank small{font-family:var(--mono);font-size:11px;opacity:.9}
+.units{display:grid;grid-template-columns:repeat(auto-fill,minmax(98px,1fr));gap:8px;padding:10px;align-content:start;min-width:0}
+.u{display:flex;flex-direction:column;align-items:center;gap:4px;background:var(--chip);border:1px solid var(--line);padding:6px 4px 5px;border-radius:2px;font-weight:500;min-width:0;cursor:pointer;position:relative}
+.u:hover{border-color:var(--muted)}
+.u:focus-visible{outline:2px solid var(--yellow);outline-offset:1px}
+.u .pic{width:75px;height:75px;flex:none;border-radius:2px;background:var(--line);overflow:hidden}
+.u img.th{width:75px;height:75px;object-fit:cover;display:block}
+.u .nm{display:block;max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:12.5px;line-height:1.3;text-align:center}
+.u.open{z-index:2}
+.u.open .nm{white-space:normal;overflow-wrap:anywhere}
+.u .meta{display:flex;gap:4px;align-items:center;justify-content:center;flex-wrap:wrap}
+.u em{font-style:normal;font-family:var(--mono);font-size:10px;color:var(--muted);white-space:nowrap}
+.u.new{border-color:var(--yellow);box-shadow:inset 0 3px 0 var(--yellow)}
+.t{font-family:var(--mono);font-size:10.5px;font-weight:500;padding:1px 4px;border-radius:2px;white-space:nowrap}
+.t.ATK{color:var(--atk);border:1px solid var(--atk)}.t.SUP{color:var(--sup);border:1px solid var(--sup)}.t.DEF{color:var(--def);border:1px solid var(--def)}
+.gap{font-size:13px;color:var(--muted);padding:10px;font-style:italic;grid-column:1/-1}
+.empty{color:var(--muted);padding:10px;font-size:13px}
+@media (max-width:520px){.row{grid-template-columns:52px minmax(0,1fr)}.rank b{font-size:22px}.units{grid-template-columns:repeat(auto-fill,minmax(90px,1fr));gap:6px;padding:8px}}
+footer{color:var(--muted);font-size:13px;display:flex;flex-direction:column;gap:6px;border-top:1px solid var(--line);padding-top:14px}
+footer p{margin:0;max-width:90ch}
+footer a{color:var(--blue)}
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="stripe"><span></span><span></span><span></span></div>
+    <h1>SD Gundam G Generation Eternal Tier Lists</h1>
+    <p class="sub">Every Game8 (Japan) ranking in one place, translated into English with official unit names. Pick a list, search for a unit, or filter by Attack, Support or Defense.</p>
+  </header>
+  <section class="intro" id="intro"></section>
+  <nav id="tabs" role="tablist" aria-label="Tier lists"></nav>
+  <div class="tools">
+    <input id="q" type="search" placeholder="Search units, e.g. Barbatos, Phenex, Wing Zero" aria-label="Search units">
+    <div class="filt" id="filt" role="group" aria-label="Filter by type">
+      <button data-f="all" aria-pressed="true">All</button>
+      <button data-f="ATK" aria-pressed="false">Attack</button>
+      <button data-f="SUP" aria-pressed="false">Support</button>
+      <button data-f="DEF" aria-pressed="false">Defense</button>
+    </div>
+  </div>
+  <section class="tiers" id="tiers" aria-live="polite"></section>
+  <footer>
+    <p><strong>How to read the tags.</strong> ATK, SUP and DEF are the unit's role (Attack, Support, Defense). EX, UR, SSR and SR are rarities. SD marks SD Gundam character units such as Knight Gundam. Every unit has its role. Where a Game8 ranking left the role off, it comes from Game8's own unit list and its type filter (game8.jp/ggene-eternal/683026).</p>
+    <p><strong>Translation.</strong> Unit names follow Bandai's official English naming where it exists. A handful of SD Gundam Gaiden and side-story units have no settled English name yet, so those use the closest standard romanization. Game8's explanations are translated by hand and lightly condensed.</p>
+    <p><strong>Freshness.</strong> Every tier on every list was read from Game8 on October 26, 2026. Game8 updates these rankings about once a week, so check the linked pages for later changes.</p>
+  </footer>
+</div>
+
+<script>
+const TIERS={SSS:["SSS","Tier 0","--t0"],SS:["SS","Tier 1","--t1"],S:["S","Tier 2","--t2"],A:["A","Tier 3","--t3"],B:["B","Tier 4","--t4"],C:["C","Tier 5","--t5"],D:["D","Tier 6","--t6"]};
+const ORDER=["SSS","SS","S","A","B","C","D"];
+const DATA=/*DATA*/;
+const LISTS=DATA.lists;
+const GROUPNAMES={ATK:"Attack",SUP:"Support",DEF:"Defense"};
+const tabsEl=document.getElementById("tabs"),tiersEl=document.getElementById("tiers"),introEl=document.getElementById("intro"),qEl=document.getElementById("q");
+let cur=LISTS[0].id,filt="all";
+try{const h=location.hash.slice(1);if(LISTS.some(l=>l.id===h))cur=h;else{const s=localStorage.getItem("ggeTab");if(LISTS.some(l=>l.id===s))cur=s;}}catch(e){}
+
+const esc=s=>s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+function parse(raw,groupType){
+  const name=raw.n;const parts=(raw.t||"").split(" ").filter(Boolean);
+  let type=parts.find(p=>GROUPNAMES[p])||groupType||null;
+  const rest=parts.filter(p=>!GROUPNAMES[p]);
+  return {name,type,shownType:type,rest};
+}
+function chip(u,list){
+  const isNew=list.new.includes(u.name);
+  const full=esc(u.name)+(isNew?" (newly added)":"");
+  return `<div class="u${isNew?" new":""}" title="${full}" tabindex="0" role="button" aria-label="${full}"><span class="pic">${u.img!=null?`<img class="th" src="https://img.game8.jp/${u.img}/show" alt="" loading="lazy" width="75" height="75" onerror="this.remove()">`:""}</span><span class="nm">${esc(u.name)}</span><span class="meta">${u.rest.length?`<em>${u.rest.join(" ")}</em>`:""}${u.shownType?`<b class="t ${u.shownType}">${u.shownType}</b>`:""}</span></div>`;
+}
+function rowsFor(tiers,gaps,list,groupType){
+  return rowsForParts([{tiers,gaps,groupType}],list);
+}
+function rowsForParts(parts,list){
+  const q=qEl.value.trim().toLowerCase();let html="",count=0;
+  for(const k of ORDER){
+    const gap=parts.map(p=>p.gaps&&p.gaps[k]).filter(Boolean).join(" ");
+    if(!parts.some(p=>p.tiers[k])&&!gap)continue;
+    let units=parts.flatMap(p=>(p.tiers[k]||[]).map(r=>Object.assign(parse(r,p.groupType),{img:r.i})));
+    units=units.filter(u=>(!q||u.name.toLowerCase().includes(q))&&(filt==="all"||u.type===filt));
+    count+=units.length;
+    if(!units.length&&!gap&&(q||filt!=="all"))continue;
+    const [lab,sub,col]=TIERS[k];
+    html+=`<div class="row" style="--tc:var(${col})"><div class="rank"><b>${lab}</b><small>${sub}</small></div><div class="units">${units.map(u=>chip(u,list)).join("")}${gap?`<span class="gap">${esc(gap)}</span>`:""}</div></div>`;
+  }
+  return {html,count};
+}
+function render(){
+  const list=LISTS.find(l=>l.id===cur);
+  tabsEl.innerHTML=LISTS.map(l=>`<button role="tab" id="tab-${l.id}" aria-selected="${l.id===cur}" data-id="${l.id}">${l.tab}</button>`).join("");
+  introEl.innerHTML=`<div class="card"><h2>${list.title}</h2>${list.about.map(p=>`<p>${p}</p>`).join("")}<p class="src">Source: <a href="${list.url}" target="_blank" rel="noopener">Game8 · ${list.url.replace("https://","")}</a> · updated ${list.updated}</p></div>
+  <div class="card"><h3>Latest notes</h3><ul>${list.notes.map(n=>`<li>${n}</li>`).join("")}</ul></div>`;
+  let html="",total=0;
+  if(list.groups){
+    const r=rowsForParts(["ATK","SUP","DEF"].map(g=>({tiers:list.groups[g],gaps:list.gaps&&list.gaps[g],groupType:g})),list);
+    total+=r.count;html=r.html;
+  }else if(list.sections){
+    for(const s of list.sections){
+      const r=rowsFor(s.tiers,null,list,null);total+=r.count;
+      if(r.html)html+=`<div class="group-title"><i style="background:var(--yellow)"></i>${esc(s.label)}</div>`+r.html;
+    }
+  }else{
+    const r=rowsFor(list.tiers,list.gaps,list,null);total+=r.count;html=r.html;
+  }
+  if(!total&&!html)html=`<div class="empty">No units match. Try a shorter search, or switch the type filter back to All.</div>`;
+  tiersEl.innerHTML=html;
+}
+tabsEl.addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;cur=b.dataset.id;try{localStorage.setItem("ggeTab",cur)}catch(err){}render();});
+document.getElementById("filt").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;filt=b.dataset.f;document.querySelectorAll("#filt button").forEach(x=>x.setAttribute("aria-pressed",x===b));render();});
+qEl.addEventListener("input",render);
+tiersEl.addEventListener("click",e=>{const u=e.target.closest(".u");if(u)u.classList.toggle("open");});
+tiersEl.addEventListener("keydown",e=>{if((e.key==="Enter"||e.key===" ")&&e.target.classList.contains("u")){e.preventDefault();e.target.classList.toggle("open");}});
+render();
+</script>

@@ -1,0 +1,64 @@
+name: Weekly tier list update
+on:
+  schedule:
+    - cron: "41 0 * * 6"   # Saturday 08:41 Malaysia time
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ["data/names.json", "data/site.json", "template.html", "scripts/**"]
+permissions:
+  contents: write
+  issues: write
+concurrency:
+  group: weekly-update
+  cancel-in-progress: false
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      ISSUE_TITLE: Tier list needs translation
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install requests beautifulsoup4
+      - name: Read Game8 and update data
+        id: scrape
+        run: |
+          set +e
+          python scripts/scrape.py
+          echo "code=$?" >> "$GITHUB_OUTPUT"
+      - name: Stop on a failed read
+        if: steps.scrape.outputs.code != '0' && steps.scrape.outputs.code != '2'
+        run: |
+          body="The weekly read of Game8 failed, so the site was not changed. Log: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+          gh issue create --title "Weekly tier list update failed" --body "$body"
+          exit 1
+      - name: Build and publish
+        if: steps.scrape.outputs.code == '0'
+        run: |
+          python scripts/build.py
+          git add data index.html
+          if git diff --cached --quiet; then echo "Nothing changed"; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Weekly update from Game8"
+          git push
+      - name: Open or update the translation issue
+        if: hashFiles('report.md') != ''
+        run: |
+          gh label create needs-translation --color FBCA04 --description "New Game8 text needs an English translation" --force
+          n=$(gh issue list --label needs-translation --state open --json number --jq '.[0].number')
+          if [ -n "$n" ]; then
+            gh issue edit "$n" --body-file report.md
+          else
+            gh issue create --title "$ISSUE_TITLE" --label needs-translation --body-file report.md
+          fi
+      - name: Close the translation issue when nothing is left
+        if: hashFiles('report.md') == '' && steps.scrape.outputs.code == '0' && github.event_name == 'push'
+        run: |
+          for n in $(gh issue list --label needs-translation --state open --json number --jq '.[].number'); do
+            gh issue close "$n" --comment "Every unit has an English name and the site is up to date."
+          done
