@@ -18,9 +18,11 @@ def norm(name):
     m = re.findall(r"\(([^()]*)\)", s)
     for part in m:
         bits = re.split(r"[/／]", part)
-        if any(b in RARITY or b in ("攻撃", "支援", "耐久", "ユニット") for b in bits):
+        tagged = [b for b in bits if b in RARITY or b in ("攻撃", "支援", "耐久", "ユニット")]
+        if tagged:
             hint = next((RARITY[b] for b in bits if b in RARITY), hint)
-            s = s.replace(f"({part})", "")
+            rest = "/".join(b for b in bits if b not in tagged)
+            s = s.replace(f"({part})", f"({rest})" if rest else "")
     s = re.sub(r"[［【\[]", "(", s)
     s = re.sub(r"[］】\]]", ")", s)
     s = s.translate(str.maketrans("べぺへぱばびぴぶぷぼぽ", "ベペヘパバビピブプボポ"))

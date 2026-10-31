@@ -76,8 +76,8 @@ button:focus-visible,input:focus-visible{outline:2px solid var(--yellow);outline
 .u em{font-style:normal;font-family:var(--mono);font-size:10px;color:var(--muted);white-space:nowrap}
 .u.new{border-color:var(--yellow);box-shadow:inset 0 3px 0 var(--yellow)}
 .u .pic{position:relative}
-.u .sis{position:absolute;right:1px;bottom:1px;display:flex;flex-direction:column;align-items:flex-end;gap:1px;pointer-events:none}
-.u .si{height:14px;width:auto;max-width:40px;object-fit:contain;display:block;filter:drop-shadow(0 0 1px rgba(0,0,0,.9))}
+.u .sis{position:absolute;right:2px;bottom:2px;display:flex;flex-direction:column;align-items:flex-end;gap:1px;pointer-events:none}
+.u .si{height:16px;width:auto;max-width:60px;object-fit:contain;display:block;filter:drop-shadow(0 0 1px rgba(0,0,0,.9))}
 .t{font-family:var(--mono);font-size:10.5px;font-weight:500;padding:1px 4px;border-radius:2px;white-space:nowrap}
 .t.ATK{color:var(--atk);border:1px solid var(--atk)}.t.SUP{color:var(--sup);border:1px solid var(--sup)}.t.DEF{color:var(--def);border:1px solid var(--def)}
 .gap{font-size:13px;color:var(--muted);padding:10px;font-style:italic;grid-column:1/-1}
@@ -127,7 +127,7 @@ let cur=LISTS[0].id,filt="all",serF="";
 const SER=DATA.ser||{},SOS=DATA.sos||{};
 let serList=null;
 function fillSeries(list){
-  const names=list.id==="strongest"?(DATA.sosSeries||[]):(DATA.fams||[]);
+  const names=DATA.sosSeries||[];
   if(serList===names)return;serList=names;serF="";
   const sel=document.getElementById("ser");sel.innerHTML=`<option value="">All series</option>`+names.map(f=>`<option>${esc(f)}</option>`).join("");
 }
@@ -145,7 +145,7 @@ function parse(raw,groupType){
   const rest=parts.filter(p=>!GROUPNAMES[p]);
   return {name,type,shownType:type,rest};
 }
-function sosOf(u,list){return list.id==="strongest"?SOS[u.name]:null;}
+function sosOf(u,list){return SOS[u.key]||null;}
 function chip(u,list){
   const isNew=list.new.includes(u.name);
   const so=sosOf(u,list);
@@ -163,7 +163,7 @@ function rowsForParts(parts,list){
   for(const k of ORDER){
     const gap=parts.map(p=>p.gaps&&p.gaps[k]).filter(Boolean).join(" ");
     if(!parts.some(p=>p.tiers[k])&&!gap)continue;
-    let units=parts.flatMap(p=>(p.tiers[k]||[]).map(r=>Object.assign(parse(r,p.groupType),{img:r.i})));
+    let units=parts.flatMap(p=>(p.tiers[k]||[]).map(r=>Object.assign(parse(r,p.groupType),{img:r.i,key:r.k})));
     units=units.filter(u=>(!q||u.name.toLowerCase().includes(q)||((sosOf(u,list)||{}).n||"").toLowerCase().includes(q))&&(filt==="all"||u.type===filt)&&inSeries(u,list));
     count+=units.length;
     if(!units.length&&!gap&&(q||filt!=="all"||serF))continue;

@@ -54,38 +54,62 @@ def series_meta(data):
     data["fams"] = [f for f in ORDER if f in used]
 
 
-def soshage_meta(data, lists=("strongest",)):
-    """Official English names, thumbnails and series logos from soshage.com, keyed by the site's unit name."""
+def soshage_meta(data):
+    """Official English names, thumbnails and series logos from soshage.com, keyed by the site's unit name.
+
+    A unit gets the same soshage match on every tab; EX versions stay separate from their SSR versions.
+    """
     path = ROOT / "data/soshage.json"
     if not path.exists():
         return
-    from soshage import Soshage, thumb, logo
+    from soshage import Soshage, thumb, logo, RARITY
     S = Soshage.from_cache(path)
     series = {s["id"]: s for s in S.series}
     names = json.loads((ROOT / "data/names.json").read_text())
     jp_of = {}
     for jp, en in names.items():
         jp_of.setdefault(en, []).append(jp)
-    sos, used = {}, set()
+    sos, used, missing, done = {}, set(), [], {}
+    gpath = ROOT / "data/series.json"
+    gseries = json.loads(gpath.read_text())["units"] if gpath.exists() else {}
+    by_ja = {_norm(s["ja"]): s for s in S.series if s.get("ja")}
     for l in data["lists"]:
-        if l["id"] not in lists:
-            continue
         for g in (l["groups"].values() if "groups" in l else [l["tiers"]]):
             for v in g.values():
                 for u in v:
-                    ex = "EX" in u["t"].split()
+                    tags = u["t"].split()
+                    ex = "EX" in tags or (l["id"] == "strongest" and "UR" not in tags)
+                    key = u["n"] + ("|EX" if ex else "")
+                    u["k"] = key
+                    if key in done:
+                        continue
+                    want = 5 if ex or "UR" in tags else next((RARITY[t] for t in tags if t in RARITY), None)
                     cands = sorted(jp_of.get(u["n"], []), key=lambda j: ("EX" in j) != ex)
-                    m = next((m for m in (S.match(j, 5 if l["id"] == "strongest" else None) for j in cands) if m), None)
+                    m = next((m for m in (S.match(j, want) for j in cands) if m), None)
                     if m and ex and not m["en"].endswith("(EX)"):
                         m = next((x for x in (S.match(re.sub(r"画像$", "", j) + "（EX）", 5) for j in cands) if x), m)
+                    if m and not ex and m["en"].endswith("(EX)"):
+                        m = next((x for x in (S.match(j, want or 4) for j in cands) if x and not x["en"].endswith("(EX)")), m)
+                    done[key] = True
                     if not m:
+                        # Not on soshage yet: keep Game8's picture and use Game8's series, matched by Japanese name.
+                        jp_series = gseries.get(u["n"], [])
+                        ss = [by_ja[_norm(j)] for j in jp_series if _norm(j) in by_ja]
+                        missing.append(u["n"])
+                        if ss:
+                            used.update(s["id"] for s in ss)
+                            sos[key] = {"n": u["n"], "th": f"https://img.game8.jp/{u['i']}/show",
+                                        "s": [[s["en"], logo(s)] for s in ss]}
                         continue
                     ss = [series[i] for i in m["series"] if i in series]
+                    if not ss:
+                        missing.append(u["n"])
                     used.update(s["id"] for s in ss)
-                    sos[u["n"]] = {"n": re.sub(r"\s*\(EX\)$", "", m["en"]), "th": thumb(m),
-                                   "s": [[s["en"], logo(s)] for s in ss]}
+                    sos[key] = {"n": re.sub(r"\s*\(EX\)$", "", m["en"]), "th": thumb(m),
+                                "s": [[s["en"], logo(s)] for s in ss]}
     data["sos"] = sos
-    data["sosSeries"] = [s["en"] for s in S.series if s["id"] in used]
+    data["sosSeries"] = sorted({series[i]["en"] for i in used}, key=lambda x: x.casefold())
+    data["sosMissing"] = missing
 
 
 def page(template="template.html"):
@@ -93,6 +117,8 @@ def page(template="template.html"):
     series_meta(data)
     if template != "template.html":
         soshage_meta(data)
+        if data.get("sosMissing"):
+            print("no soshage match:", ", ".join(sorted(set(data["sosMissing"]))))
     blob = json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
     tpl = (ROOT / template).read_text()
     assert tpl.count("/*DATA*/") == 1
