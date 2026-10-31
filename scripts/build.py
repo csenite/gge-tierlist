@@ -1,6 +1,7 @@
 """Build index.html (GitHub Pages) and the bare artifact page from template.html + data/site.json."""
 import json
 import pathlib
+import re
 import sys
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
@@ -10,6 +11,22 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 HEAD = ('<!doctype html>\n<html lang="en">\n<head>\n<meta charset="utf-8">\n'
         '<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">\n'
         '<meta name="referrer" content="no-referrer">\n')
+
+
+def _norm(s):
+    return re.sub(r"（[^（）]*）|\s", "", s).upper()
+
+
+def find_icon(icons, name):
+    """Game8 spells some series differently in the unit data and the series list; match loosely."""
+    if name in icons:
+        return icons[name]
+    n = _norm(name)
+    norm = {_norm(k): v for k, v in icons.items()}
+    if n in norm:
+        return norm[n]
+    best = max((k for k in norm if k and n.startswith(k)), key=len, default=None)
+    return norm[best] if best else None
 
 
 def series_meta(data):
@@ -25,7 +42,7 @@ def series_meta(data):
     for n in sorted(names):
         jp = series["units"].get(n, [])
         fams = families(jp)
-        icon = next((series["icons"][s] for s in jp if s in series["icons"]), None)
+        icon = next((i for i in (find_icon(series["icons"], s) for s in jp) if i), None)
         if fams:
             ser[n] = {"f": fams, "i": icon}
             used.update(fams)

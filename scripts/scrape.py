@@ -162,8 +162,9 @@ def scrape(src):
             ur[k].append({"jp": jp, "i": img_key(it.get("image_url"))})
             sv = (it.get("filter_values") or {}).get("col_54")
             if sv:
-                ser["key"].setdefault(img_key(it.get("image_url")), sv.split(":"))
-                ser["title"].setdefault(jp, sv.split(":"))
+                parts = [x.strip() for x in sv.split(":") if x.strip()]
+                ser["key"].setdefault(img_key(it.get("image_url")), parts)
+                ser["title"].setdefault(jp, parts)
             for v in (it.get("filter_values") or {}).values():
                 for x in (v if isinstance(v, list) else [v]):
                     if x in ROLE:
@@ -182,7 +183,7 @@ def scrape(src):
             # UR records keep the series in col_54; SSR records in col_11 or col_59
             for col in ("col_54", "col_11", "col_59"):
                 v = u.get(col) or ""
-                parts = [x for x in v.split(":") if x]
+                parts = [x.strip() for x in v.split(":") if x.strip()]
                 if parts and (col == "col_54" or all(x in ser["icon"] for x in parts)):
                     ser["key"].setdefault(img_key(u.get("image_url")), parts)
                     ser["title"].setdefault(u["title"].strip(), parts)

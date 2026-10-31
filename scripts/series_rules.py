@@ -38,6 +38,7 @@ ORDER = [f for _, f in RULES]
 def families(series_list):
     out = []
     for s in series_list:
+        s = s.strip()
         for pat, fam in RULES:
             if re.search(pat, s):
                 if fam not in out:

@@ -75,7 +75,8 @@ button:focus-visible,input:focus-visible{outline:2px solid var(--yellow);outline
 .u .meta{display:flex;gap:4px;align-items:center;justify-content:center;flex-wrap:wrap}
 .u em{font-style:normal;font-family:var(--mono);font-size:10px;color:var(--muted);white-space:nowrap}
 .u.new{border-color:var(--yellow);box-shadow:inset 0 3px 0 var(--yellow)}
-.u .si{height:16px;width:auto;max-width:44px;object-fit:contain;display:block}
+.u .pic{position:relative}
+.u .si{position:absolute;top:2px;right:2px;height:20px;width:auto;max-width:52px;object-fit:contain;background:rgba(255,255,255,.92);border:1px solid var(--line);border-radius:2px;padding:1px;z-index:1}
 .t{font-family:var(--mono);font-size:10.5px;font-weight:500;padding:1px 4px;border-radius:2px;white-space:nowrap}
 .t.ATK{color:var(--atk);border:1px solid var(--atk)}.t.SUP{color:var(--sup);border:1px solid var(--sup)}.t.DEF{color:var(--def);border:1px solid var(--def)}
 .gap{font-size:13px;color:var(--muted);padding:10px;font-style:italic;grid-column:1/-1}
@@ -136,7 +137,7 @@ function parse(raw,groupType){
 function chip(u,list){
   const isNew=list.new.includes(u.name);
   const full=esc(u.name)+(isNew?" (newly added)":"");
-  return `<div class="u${isNew?" new":""}" title="${full}" tabindex="0" role="button" aria-label="${full}"><span class="pic">${u.img!=null?`<img class="th" src="https://img.game8.jp/${u.img}/show" alt="" loading="lazy" width="75" height="75" onerror="this.remove()">`:""}</span><span class="nm">${esc(u.name)}</span><span class="meta">${u.rest.length?`<em>${u.rest.join(" ")}</em>`:""}${u.shownType?`<b class="t ${u.shownType}">${u.shownType}</b>`:""}${(SER[u.name]||{}).i?`<img class="si" src="https://img.game8.jp/${SER[u.name].i}/show" alt="${esc(SER[u.name].f.join(", "))}" title="${esc(SER[u.name].f.join(", "))}" loading="lazy" onerror="this.remove()">`:""}</span></div>`;
+  return `<div class="u${isNew?" new":""}" title="${full}" tabindex="0" role="button" aria-label="${full}"><span class="pic">${list.id==="strongest"&&(SER[u.name]||{}).i?`<img class="si" src="https://img.game8.jp/${SER[u.name].i}/show" alt="${esc(SER[u.name].f.join(", "))}" title="${esc(SER[u.name].f.join(", "))}" loading="lazy" onerror="this.remove()">`:""}${u.img!=null?`<img class="th" src="https://img.game8.jp/${u.img}/show" alt="" loading="lazy" width="75" height="75" onerror="this.remove()">`:""}</span><span class="nm">${esc(u.name)}</span><span class="meta">${u.rest.length?`<em>${u.rest.join(" ")}</em>`:""}${u.shownType?`<b class="t ${u.shownType}">${u.shownType}</b>`:""}</span></div>`;
 }
 function rowsFor(tiers,gaps,list,groupType){
   return rowsForParts([{tiers,gaps,groupType}],list);
