@@ -1,0 +1,1539 @@
+{
+ "icons": {
+  "ADVANCE OF Z ティターンズの旗のもとに": "11263388/017a83d1234d8abd3c84a90fd6de3647.png",
+  "CCA-MSV": "11510062/fef9ee7d0e131b143faaea9d340f507f.png",
+  "F91-MSV": "12707127/a4d3ccaf2032fcfed529bb639a6af557.webp",
+  "G GENERATIONシリーズ": "11263408/cad6708a875d244cb188c222627adaca.png",
+  "GUNDAM EVOLVE": "11263351/28d4e694becebdd0aa75eb722378ea01.png",
+  "GUNDAM EXA": "13076581/e0c38a3b6ad46427d407cd860a8145ba.webp",
+  "GUNDAM SENTINEL": "11263396/b28d49e0910a68e3f92644d7abcabaa6.png",
+  "GUNDAM TACTICS MOBILITY FLEET0079": "11263385/daebe45cef6ea2ea68f362bb56247af3.png",
+  "GUNDAM THE BATTLE MASTER": "11263397/4c52d3fa0b73f501d3c6f0573791a9f3.png",
+  "Gのレコンギスタ": "11263392/66e3e9013acad02eb58b43c0ce85a7f4.png",
+  "M-MSV": "12041755/705664c483a6be2611ce682d0a7dd03f.webp",
+  "MS-X": "11263353/5e6b569bcd7f49f27e22c5d871e2ac40.png",
+  "MSV": "11263366/4486aca6b41c406354a9dcbf74aa2644.png",
+  "MSV-R": "11263361/6bf95d87d0cc39dbd13931b207f3d731.png",
+  "SDガンダムGX": "11263409/0019c8dc9f595ad08b0721e92d978ce7.png",
+  "SDガンダムワールド ガチャポン戦士 スクランブルウォーズ": "11353079/b222f16d3a9f9ee22e74283bbf58dee4.jpeg",
+  "SDガンダムワールド 三国創傑伝": "11649517/530d6106a1784995d7750c282ca1f29f.webp",
+  "SDガンダム外伝 ジークジオン編": "11649422/dce9a275a754dbb09e805fb4c1f2a9d0.webp",
+  "SDガンダム外伝 ラクロアンヒーローズ": "12818842/3523bcba52985afb3016da0bc734f45b.webp",
+  "SDコマンド戦記 G-ARMS": "11695749/24dc48833ca3d484b51acb5a2c609310.webp",
+  "SD戦国伝": "11695717/00087f9f98f95d7696c90202e5084fa6.webp",
+  "UC-MSV": "11816942/c8bc6c181e08464d63d591bf641148b6.webp",
+  "Z-MSV": "11263393/37f4bc7b52fc2dff8f2e72a6cbc313a0.png",
+  "∀ガンダム": "11263342/d8feabf391131f853de23b2ae103e10c.png",
+  "お台場ユニコーンガンダム立場": "12848261/5aeaf49b59ead8952a63eb3410d61f06.webp",
+  "ガンダムビルドファイターズ": "11472313/7726ad2813e64384ca8848dece564ad2.png",
+  "ガンダム新体験0087 グリーンダイバーズ": "11263375/eec403d9608f8b4011ba7734bd361ab8.png",
+  "ソレスタル ビーイング": "12442809/165234ff1ffdf0d118425ce72d2bbbc6.webp",
+  "ダブルフェイク アンダー・ザ・ガンダム": "11263399/81ad6780c64a8daa61a1d45e56c60e90.png",
+  "プラモ狂四郎": "11263357/66c3b8394d4c994d64e32e7129b86089.png",
+  "新機動戦記ガンダムW": "11263373/c994b9655484821e14417a1158dfd4a9.png",
+  "新機動戦記ガンダムW BATTLEFIELD OF PACIFIST": "12445567/09278335b1a9eef898eb6a0e75f10477.webp",
+  "新機動戦記ガンダムW Endless Waltz": "11472253/bbdae0dc57c7b017f3b8743b16c4a273.png",
+  "新機動戦記ガンダムW Endless Waltz 敗者たちの栄光": "11862207/1a255540dd5c0c94bbdc51f16b094bcb.webp",
+  "新機動戦記ガンダムW デュアルストーリー G-UNIT": "11263369/b7867d534623c232fd29fb8d61cc4409.png",
+  "模型戦士ガンプラビルダーズ ビギニングG": "11263398/5c0f0b0a5c9d21134135b3a75564ce9e.png",
+  "機動戦士Gundam GQuuuuuuX（ジークアクス）": "11263347/3339ff2a81f1d9f0f814dc4faac64fe7.png",
+  "機動戦士Vガンダム": "11263345/2d11be7ae60d545ee6578d1d137921a6.png",
+  "機動戦士Zガンダム": "11263395/b6f92a5e597ec8e684529446f362d1cf.png",
+  "機動戦士Zガンダム A New Translation": "11263389/a094188e9147633c79f4ca0ed48ea3f5.png",
+  "機動戦士Zガンダム Define": "11263372/6650ebdfe13e5a7c49aea254a6221312.png",
+  "機動戦士ガンダム": "11263343/3cc42840d1f17b4ed831c54b38c3726c.png",
+  "機動戦士ガンダム CROSS DIMENSION 0079": "11263358/c0479671505def473467236f06ede1cc.png",
+  "機動戦士ガンダム MS IGL002 重力戦線": "11263377/198ab8efdb2b234dcff706a369598f6e.png",
+  "機動戦士ガンダム MS IGLOO": "11263386/3a36602f1bbfb14883a8ad82af1c8d78.png",
+  "機動戦士ガンダム MS IGLOO 603": "11263380/28a818979d3c256aca223837281ed237.png",
+  "機動戦士ガンダム MSV-R ジョニー・ライデンの帰還": "11263410/6d2b4f34b2c5230e218f1a88ccde3174.png",
+  "機動戦士ガンダム THE ORIGIN": "11263401/c6769f1c5abdbb230d86f0ccc74c4b19.png",
+  "機動戦士ガンダム THE ORIGIN MSD": "11263359/f0fbb2a0c5ee70452204ee28883e0ab1.png",
+  "機動戦士ガンダム エクストリームバーサス": "11263363/525a595e09c458f79773b924d37ea38c.png",
+  "機動戦士ガンダム エコール・デュ・シエル 天空の学校": "11263364/00720bb53337c9b92e8149a2201e6e11.png",
+  "機動戦士ガンダム カタナ": "11263384/1d01794c2d1bfa96755bb22dbe2ae977.png",
+  "機動戦士ガンダム ギレンの野望": "11263390/c6d989c6369c279b020fbfe51580fb0e.png",
+  "機動戦士ガンダム シルエットフォーミュラ91": "12707661/68aef8dd9736415babb4ff8491bfd9e7.webp",
+  "機動戦士ガンダム ファントム・ブレット": "11263352/115c473c1b6a752d2a4c3a6024dacb1b.png",
+  "機動戦士ガンダム ヴァルプルギス": "11353044/a09988e6c63796e995e07c87afab4fc4.jpeg",
+  "機動戦士ガンダム 戦場の絆": "11263404/ed51c0e7a4be1301e2ca3f74b375fbbb.png",
+  "機動戦士ガンダム 水星の魔女": "11263381/b9f643bf0e6af3eefe8dd8c75df91873.png",
+  "機動戦士ガンダム 水星の魔女 PROLOGUE": "11263394/359a8b1c568adafaff12837dfe70aa10.png",
+  "機動戦士ガンダム 第08MS小隊": "11263371/958b21b860a723917dca8d7c6a4aa48f.png",
+  "機動戦士ガンダム 逆襲のシャア": "11263405/c6381ce5cbbd1916a695097a1dad4771.png",
+  "機動戦士ガンダム 鉄血のオルフェンズ": "11263370/2ec243215985e30d77cc85b0dd5b8329.png",
+  "機動戦士ガンダム 鉄血のオルフェンズ MSV": "11933671/9e2c6cd7cdd8b57b8bf743ce94106e0e.webp",
+  "機動戦士ガンダム 鉄血のオルフェンズ ウルズハント": "11932245/6761a47f64fea2f66f05e46ea3c2f070.webp",
+  "機動戦士ガンダム 鉄血のオルフェンズ 月鋼": "11263407/5b07d19c3ea610cd6a97bac9af091e6a.png",
+  "機動戦士ガンダム 閃光のハサウェイ": "12041558/80988a5e40e9b257a124d56733b530cf.webp",
+  "機動戦士ガンダム00": "11263346/d99b522dd1880e0db9edb0940664a29c.png",
+  "機動戦士ガンダム0083 REBELLION": "11408519/1d913f05fc9dd474e7b6395c810c94e3.jpeg",
+  "機動戦士ガンダム0083 STARDUST MEMORY": "11263354/24baaa5273fd37dd4adbedd0559886b5.png",
+  "機動戦士ガンダム00F": "13010982/8435b19da886ddf7747b2e8470bf9184.webp",
+  "機動戦士ガンダム00I": "11263378/f45bb59685a2a8550f8a4bcc66a05aed.png",
+  "機動戦士ガンダム00P": "11263350/5abdf2c15c882d17dfe523a261f90b38.png",
+  "機動戦士ガンダム00V": "11263349/aee64a77237c0b97881aed9efdf72ff4.png",
+  "機動戦士ガンダム0800 ポケットの中の戦争": "11263374/b2dd984a2d935f9af2a77e5b483f69d8.png",
+  "機動戦士ガンダムAGE": "11263344/ed509ddb2786ef342b9746f5d800d537.png",
+  "機動戦士ガンダムAGE EXA-LOG": "12353457/3be5f680e659af378dda79a2fb745611.webp",
+  "機動戦士ガンダムAGE UNKNOWN SOLDIERS": "11263368/fed481e15eacfe16b93550ef09566132.png",
+  "機動戦士ガンダムAGE 〜MEMORY OF EDEN〜": "11263348/b7fc0414f61d55cc186a057c0dd11e7d.png",
+  "機動戦士ガンダムF90": "11263367/a17454cbb925cf7ff9b417c71cbabd77.png",
+  "機動戦士ガンダムF90 クラスター": "12707364/72a31de8aaefb5845a51845259fa8782.webp",
+  "機動戦士ガンダムF91": "11816239/52ac77208b72f5ea2bf31dcdfb9288f0.webp",
+  "機動戦士ガンダムF91 フォーミュラー戦記0122": "12706724/425093cecaba22dddc078d55cb5295a8.webp",
+  "機動戦士ガンダムF91-MSV": "12707660/33bcd8a76cc146390b1787bf7d35512f.webp",
+  "機動戦士ガンダムNT": "11263382/ace131f339a457d85ca11092b0d99c03.png",
+  "機動戦士ガンダムSEED": "11263391/3032f45b54622df39727086d55c4ddaa.png",
+  "機動戦士ガンダムSEED ASTRAY": "11294076/a45ee2c017a7c2d9e7a09c4f27b1606e.png",
+  "機動戦士ガンダムSEED ASTRAY B": "11263402/4cfd05702d52ce8d3f164d0eab67b003.png",
+  "機動戦士ガンダムSEED ASTRAY R": "11294075/67df1b3f09a5e8b40bfb1349c81c67c9.png",
+  "機動戦士ガンダムSEED ASTRAY 天空の皇女": "12162309/d4226ca8a7db3df47a223788f68c05ae.webp",
+  "機動戦士ガンダムSEED C.E.73 STARGAZER": "12654007/1c7c83ceb2698b0b8a05295870458738.webp",
+  "機動戦士ガンダムSEED DESTINY": "11294077/6bbccbabb4f871d4aa20410188391046.png",
+  "機動戦士ガンダムSEED FREEDOM": "11263383/cf8c9c498fda40073595aabcc2e92018.png",
+  "機動戦士ガンダムSEED MSV": "11263403/9500146fe1ab742f9aee7f721e30ee4f.png",
+  "機動戦士ガンダムSEED Recollection": "11294073/b72f6b90751a1ed7d9cd158e83aba39c.png",
+  "機動戦士ガンダムSEED VS ASTRAY": "12305535/530608722dc204dddd6bc48603dc4984.webp",
+  "機動戦士ガンダムSEED X ASTRAY": "11294074/8631e94a7588d1f7a35bca7c2031c640.png",
+  "機動戦士ガンダムUC": "11263356/9549c0f358ae90dce72d7f2f3f897ae2.png",
+  "機動戦士ガンダムZZ": "11263406/ac896d17f2c03e94d77eaa6dd2152627.png",
+  "機動戦士ガンダムサンダーボルト": "11558864/2f673a3bf7a996f4949d8cecc688da79.webp",
+  "機動戦士ガンダム外伝 THE BLUE DESTINY": "11263365/51e00cf14a97fb8bc2ae9f9bef89beb9.png",
+  "機動戦士ガンダム外伝 ザ・ブルー・ディスティニー": "11263355/366a655e50ca16c25327438bad146fa1.png",
+  "機動戦士ガンダム外伝 ミッシングリンク": "11263400/d1d31ea3dbd6ee4a3aae1244b978fa4d.png",
+  "機動戦士ガンダム戦記 BATTLEFIELD RECORD U.C.0081": "11263360/2779776760b8ac7f2ebe9d26b8c83131.png",
+  "機動戦士ガンダム戦記 Lost War Chronicles": "11263411/2c0fb2ee21f07e42f9c130489153634b.png",
+  "機動戦士クロスボーン・ガンダム": "11263362/04c0cfb85e6bf3e309f05ac476cef123.png",
+  "機動新世紀ガンダムX": "11263387/56c0186ede4952c11ecc076285ac63f2.png",
+  "機動武闘伝Gガンダム": "11263379/f623b1ac4f0a484d6acd88fa2bde7160.png"
+ },
+ "units": {
+  "00 Raiser": [
+   "機動戦士ガンダム00"
+  ],
+  "00 Raiser (Final Battle)": [
+   "機動戦士ガンダム00"
+  ],
+  "1.5 Gundam": [
+   "機動戦士ガンダム00",
+   "機動戦士ガンダム00I"
+  ],
+  "Acguy Recon Type": [
+   "機動戦士ガンダムサンダーボルト",
+   "機動戦士ガンダム"
+  ],
+  "Adele (Starks)": [
+   "機動戦士ガンダムAGE",
+   "機動戦士ガンダムAGE UNKNOWN SOLDIERS"
+  ],
+  "Advanced GN-X": [
+   "機動戦士ガンダム00",
+   "機動戦士ガンダム00V"
+  ],
+  "Akatsuki (Shiranui)": [
+   "機動戦士ガンダムSEED DESTINY"
+  ],
+  "Altron Gundam": [
+   "新機動戦記ガンダムW"
+  ],
+  "Altron Gundam (EW)": [
+   "新機動戦記ガンダムW Endless Waltz",
+   "新機動戦記ガンダムW"
+  ],
+  "Aluzeus": [
+   "機動戦士ガンダム 閃光のハサウェイ",
+   "機動戦士ガンダム 逆襲のシャア"
+  ],
+  "Alvatore": [
+   "機動戦士ガンダム00"
+  ],
+  "Apsalus III": [
+   "機動戦士ガンダム 第08MS小隊",
+   "機動戦士ガンダム"
+  ],
+  "Arche Gundam": [
+   "機動戦士ガンダム00"
+  ],
+  "Arios Gundam GNHW/M": [
+   "機動戦士ガンダム00"
+  ],
+  "Atlas Gundam": [
+   "機動戦士ガンダムサンダーボルト",
+   "機動戦士ガンダム"
+  ],
+  "Banshee (Destroy Mode)": [
+   "機動戦士ガンダムUC"
+  ],
+  "Banshee Norn (Destroy Mode)": [
+   "機動戦士ガンダムUC"
+  ],
+  "Beargguy": [
+   "機動戦士ガンダム",
+   "模型戦士ガンプラビルダーズ ビギニングG"
+  ],
+  "Beginning Gundam": [
+   "模型戦士ガンプラビルダーズ ビギニングG"
+  ],
+  "Beguir-Pente (Dominicus Squad)": [
+   "機動戦士ガンダム 水星の魔女"
+  ],
+  "Berga Giros (Black Vanguard)": [
+   "機動戦士ガンダムF91"
+  ],
+  "Berga Giros (Enhanced Armament)": [
+   "機動戦士ガンダムF91-MSV",
+   "機動戦士ガンダムF91"
+  ],
+  "Bertigo": [
+   "機動新世紀ガンダムX"
+  ],
+  "Big Rang": [
+   "機動戦士ガンダム MS IGLOO",
+   "機動戦士ガンダム"
+  ],
+  "Big Zam": [
+   "機動戦士ガンダム"
+  ],
+  "Black Sephar Raziel": [
+   "機動戦士ガンダム00F",
+   "機動戦士ガンダム00"
+  ],
+  "Blaze ZAKU Phantom (Dearka Elsman)": [
+   "機動戦士ガンダムSEED DESTINY"
+  ],
+  "Blaze ZAKU Phantom (Rey Za Burrel)": [
+   "機動戦士ガンダムSEED DESTINY"
+  ],
+  "Blue Destiny Unit 1": [
+   "機動戦士ガンダム外伝 THE BLUE DESTINY",
+   "機動戦士ガンダム"
+  ],
+  "Blue Destiny Unit 1 [EXAM]": [
+   "機動戦士ガンダム",
+   "機動戦士ガンダム外伝 THE BLUE DESTINY"
+  ],
+  "Blue Destiny Unit 2 [EXAM]": [
+   "機動戦士ガンダム外伝 THE BLUE DESTINY",
+   "機動戦士ガンダム"
+  ],
+  "Blue Destiny Unit 3 [EXAM]": [
+   "機動戦士ガンダム外伝 THE BLUE DESTINY",
+   "機動戦士ガンダム"
+  ],
+  "Bolt Gundam (Super Mode)": [
+   "機動武闘伝Gガンダム"
+  ],
+  "Bruckeng (Lupe Cineau)": [
+   "機動戦士Vガンダム"
+  ],
+  "Build Strike Gundam Full Package": [
+   "ガンダムビルドファイターズ",
+   "機動戦士ガンダムSEED"
+  ],
+  "Byarlant Custom Unit 2": [
+   "機動戦士ガンダムUC",
+   "UC-MSV"
+  ],
+  "Casval's Gundam": [
+   "機動戦士ガンダム",
+   "機動戦士ガンダム ギレンの野望"
+  ],
+  "Char's Gelgoog": [
+   "機動戦士ガンダム"
+  ],
+  "Char's Zaku II (The Origin)": [
+   "機動戦士ガンダム THE ORIGIN",
+   "機動戦士ガンダム"
+  ],
+  "Cherudim Gundam GNHW/R": [
+   "機動戦士ガンダム00"
+  ],
+  "Chronos": [
+   "機動戦士ガンダムAGE"
+  ],
+  "Clowda (Lancelot Dawell)": [
+   "機動新世紀ガンダムX"
+  ],
+  "Command Gundam": [
+   "SDコマンド戦記 G-ARMS"
+  ],
+  "Crossbone Gundam X1 Kai": [
+   "機動戦士クロスボーン・ガンダム"
+  ],
+  "D Gundam First": [
+   "ダブルフェイク アンダー・ザ・ガンダム"
+  ],
+  "D Gundam Third": [
+   "ダブルフェイク アンダー・ザ・ガンダム",
+   "機動戦士ガンダム"
+  ],
+  "Dahgi Iris (Earth Federation)": [
+   "機動戦士ガンダムF91"
+  ],
+  "Darilbalde (Season 2)": [
+   "機動戦士ガンダム 水星の魔女"
+  ],
+  "Defarth": [
+   "機動戦士ガンダムAGE"
+  ],
+  "Demon King Satan Gundam": [
+   "SDガンダム外伝 ジークジオン編"
+  ],
+  "Destiny Gundam": [
+   "機動戦士ガンダムSEED DESTINY"
+  ],
+  "Destiny Impulse": [
+   "機動戦士ガンダムSEED MSV",
+   "機動戦士ガンダムSEED DESTINY"
+  ],
+  "Destroy Gundam": [
+   "機動戦士ガンダムSEED DESTINY"
+  ],
+  "Devil Gundam (1st Form)": [
+   "機動武闘伝Gガンダム"
+  ],
+  "Devil Gundam (Final Form)": [
+   "機動武闘伝Gガンダム"
+  ],
+  "Devil Gundam (Ultimate Gundam)": [
+   "機動武闘伝Gガンダム"
+  ],
+  "Dilanza (Guel, Final Battle)": [
+   "機動戦士ガンダム 水星の魔女"
+  ],
+  "Doggorla": [
+   "機動戦士Vガンダム"
+  ],
+  "Doven Wolf (Commander)": [
+   "機動戦士Zガンダム"
+  ],
+  "Dragon Gundam (Super Mode)": [
+   "機動武闘伝Gガンダム"
+  ],
+  "Dragoon Strike": [
+   "機動戦士ガンダムSEED Recollection",
+   "機動戦士ガンダムSEED"
+  ],
+  "Duel Gundam Assault Shroud": [
+   "機動戦士ガンダムSEED"
+  ],
+  "Efreet": [
+   "機動戦士ガンダム",
+   "機動戦士ガンダム CROSS DIMENSION 0079"
+  ],
+  "Efreet Nacht": [
+   "機動戦士ガンダム",
+   "機動戦士ガンダム戦記 BATTLEFIELD RECORD U.C.0081"
+  ],
+  "Enhanced ZZ Gundam": [
+   "機動戦士ガンダムZZ"
+  ],
+  "Ex-S Gundam": [
+   "GUNDAM SENTINEL",
+   "機動戦士ガンダムZZ"
+  ],
+  "Extreme Gundam Excelia": [
+   "GUNDAM EXA"
+  ],
+  "F80 Gunraid": [
+   "機動戦士ガンダムF90 クラスター",
+   "機動戦士ガンダムF91"
+  ],
+  "FAZZ": [
+   "GUNDAM SENTINEL",
+   "機動戦士ガンダムZZ"
+  ],
+  "Farsia": [
+   "機動戦士ガンダムAGE"
+  ],
+  "Fighter ZZ Gundam": [
+   "SDガンダム外伝 ジークジオン編"
+  ],
+  "Forbidden Gundam": [
+   "機動戦士ガンダムSEED"
+  ],
+  "Force Impulse Gundam": [
+   "機動戦士ガンダムSEED DESTINY"
+  ],
+  "Freedom Gundam": [
+   "機動戦士ガンダムSEED",
+   "機動戦士ガンダムSEED DESTINY"
+  ],
+  "Freedom Gundam [METEOR]": [
+   "機動戦士ガンダムSEED"
+  ],
+  "Full Armor 0 Gundam": [
+   "機動戦士ガンダム00",
+   "機動戦士ガンダム00V"
+  ],
+  "Full Armor Gundam": [
+   "MSV",
+   "G GENERATIONシリーズ"
+  ],
+  "Full Armor Gundam (Thunderbolt)": [
+   "機動戦士ガンダム サンダーボルト",
+   "機動戦士ガンダム\r"
+  ],
+  "Full Armor Gundam Mk-III": [
+   "M-MSV",
+   "機動戦士Zガンダム",
+   "機動戦士Zガンダム Define"
+  ],
+  "Full Armor Hyaku Shiki Kai": [
+   "機動戦士ガンダム逆襲のシャア"
+  ],
+  "Full Armor Knight Gundam (Two Sacred Treasures)": [
+   "SDガンダム外伝 ジークジオン編"
+  ],
+  "Full Armor Unicorn Gundam (Destroy Mode)": [
+   "機動戦士ガンダムUC"
+  ],
+  "Full Armor ZZ Gundam": [
+   "機動戦士ガンダムZZ"
+  ],
+  "G-3 Gundam": [
+   "機動戦士ガンダム",
+   "MSV-R"
+  ],
+  "G-Falcon Airmaster": [
+   "機動新世紀ガンダムX"
+  ],
+  "G-Falcon DX": [
+   "機動新世紀ガンダムX"
+  ],
+  "G-Falcon GX": [
+   "機動新世紀ガンダムX"
+  ],
+  "G-Falcon Leopard": [
+   "機動新世紀ガンダムX"
+  ],
+  "G-Self": [
+   "Gのレコンギスタ"
+  ],
+  "G-Xiphos": [
+   "機動戦士ガンダムAGE",
+   "機動戦士ガンダムAGE UNKNOWN SOLDIERS"
+  ],
+  "GM Sniper II": [
+   "機動戦士ガンダム",
+   "機動戦士ガンダム0800 ポケットの中の戦争"
+  ],
+  "GM Sniper II (White Dingo Team)": [
+   "機動戦士ガンダム外伝 コロニーの落ちた地で"
+  ],
+  "GN Arms Type-D": [
+   "機動戦士ガンダム00"
+  ],
+  "GN Arms Type-E": [
+   "機動戦士ガンダム00"
+  ],
+  "GN-X II Sword": [
+   "機動戦士ガンダム00F",
+   "機動戦士ガンダム00"
+  ],
+  "GN-X III (Federation Type)": [
+   "機動戦士ガンダム00"
+  ],
+  "GQuuuuuuX": [
+   "機動戦士Gundam GQuuuuuuX",
+   "機動戦士ガンダム"
+  ],
+  "GQuuuuuuX (Omega Psycommu Active)": [
+   "機動戦士ガンダム",
+   "機動戦士Gundam GQuuuuuuX（ジークアクス）"
+  ],
+  "Gaddes": [
+   "機動戦士ガンダム00"
+  ],
+  "Gadessa (Hiling Care)": [
+   "機動戦士ガンダム00"
+  ],
+  "Gaia Gundam (Andrew Waltfeld)": [
+   "機動戦士ガンダムSEED DESTINY"
+  ],
+  "Gaia Gundam (Andrew Waltfeld) [MA Mode]": [
+   "機動戦士ガンダムSEED DESTINY"
+  ],
+  "Gaplant (Ingrid 0)": [
+   "機動戦士ガンダム MSV-R ジョニー・ライデンの帰還"
+  ],
+  "Gaplant TR-5 [Hrairoo] Unit 1": [
+   "機動戦士Zガンダム A New Translation",
+   "ADVANCE OF Z ティターンズの旗のもとに",
+   "機動戦士Zガンダム"
+  ],
+  "Geara Doga (Rezin Schnyder)": [
+   "機動戦士ガンダム 逆襲のシャア"
+  ],
+  "Geara Zulu (Angelo Sauper)": [
+   "機動戦士ガンダムUC"
+  ],
+  "Geara Zulu (Erik)": [
+   "機動戦士ガンダムNT",
+   "機動戦士ガンダムUC"
+  ],
+  "Gelgoog (Anavel Gato)": [
+   "機動戦士ガンダム",
+   "機動戦士ガンダム0083 STARDUST MEMORY"
+  ],
+  "Gelgoog (Herbert von Kaspen)": [
+   "機動戦士ガンダム MS IGLOO",
+   "機動戦士ガンダム"
+  ],
+  "Gelgoog Ground Type (Visch Donahue)": [
+   "機動戦士ガンダム外伝 コロニーの落ちた地で"
+  ],
+  "Gelgoog Marine (Commander)": [
+   "機動戦士ガンダム",
+   "機動戦士ガンダム0083 STARDUST MEMORY"
+  ],
+  "Gemark": [
+   "機動戦士ガンダムZZ"
+  ],
+  "Gengaozo": [
+   "機動戦士Vガンダム"
+  ],
+  "Geodante": [
+   "SDガンダム外伝 ジークジオン編"
+  ],
+  "Giant Mud Golem": [
+   "SDガンダム外伝 ジークジオン編"
+  ],
+  "Giant Psycho Golem": [
+   "SDガンダム外伝 ジークジオン編"
+  ],
+  "God Gundam": [
+   "機動武闘伝Gガンダム"
+  ],
+  "Golden Knight": [
+   "SDガンダム外伝 ジークジオン編"
+  ],
+  "Gottratan": [
+   "機動戦士Vガンダム"
+  ],
+  "Gouf Custom": [
+   "機動戦士ガンダム 第08MS小隊",
+   "機動戦士ガンダム"
+  ],
+  "Gouf Ignited (Heine Westenfluss)": [
+   "機動戦士ガンダムSEED DESTINY"
+  ],
+  "Gouf Ignited (Yzak Jule)": [
+   "機動戦士ガンダムSEED DESTINY"
+  ],
+  "Gouf Vigilante": [
+   "機動戦士ガンダム",
+   "MSV-R"
+  ],
+  "Graham's Union Flag Custom II (GN Flag)": [
+   "機動戦士ガンダム00"
+  ],
+  "Grand Master Gundam": [
+   "機動武闘伝Gガンダム"
+  ],
+  "Granzam": [
+   "機動戦士ガンダムF91 フォーミュラー戦記0122",
+   "機動戦士ガンダムF91"
+  ],
+  "Graze Ein": [
+   "機動戦士ガンダム 鉄血のオルフェンズ"
+  ],
+  "Graze Ritter (Commander / Duel Spec)": [
+   "機動戦士ガンダム 鉄血のオルフェンズ"
+  ],
+  "Great Zeong": [
+   "G GENERATIONシリーズ",
+   "機動戦士ガンダム"
+  ],
+  "Gromlin": [
+   "G GENERATIONシリーズ",
+   "機動戦士ガンダム"
+  ],
+  "GuAIZ (Commander Type)": [
+   "機動戦士ガンダムSEED"
+  ],
+  "Gublo (Thunderbolt)": [
+   "機動戦士ガンダムサンダーボルト",
+   "機動戦士ガンダム"
+  ],
+  "Guncannon Aqua": [
+   "機動戦士ガンダムサンダーボルト",
+   "機動戦士ガンダム"
+  ],
+  "Gundam": [
+   "機動戦士ガンダム"
+  ],
+  "Gundam AGE-1 Flat": [
+   "機動戦士ガンダムAGE"
+  ],
+  "Gundam AGE-1 Normal": [
+   "機動戦士ガンダムAGE"
+  ],
+  "Gundam AGE-1 Razor": [
+   "機動戦士ガンダムAGE"
+  ],
+  "Gundam AGE-1 Sodia": [
+   "機動戦士ガンダムAGE 〜MEMORY OF EDEN〜"
+  ],
+  "Gundam AGE-1 Spallow": [
+   "機動戦士ガンダムAGE"
+  ],
+  "Gundam AGE-1 Titus": [
+   "機動戦士ガンダムAGE"
+  ],
+  "Gundam AGE-1 Unit 2 Assault Jacket": [
+   "機動戦士ガンダムAGE",
+   "機動戦士ガンダムAGE UNKNOWN SOLDIERS"
+  ],
+  "Gundam AGE-2 Artimes": [
+   "機動戦士ガンダムAGE",
+   "機動戦士ガンダムAGE EXA-LOG"
+  ],
+  "Gundam AGE-2 Double Bullet": [
+   "機動戦士ガンダムAGE"
+  ],
+  "Gundam AGE-2 Normal": [
+   "機動戦士ガンダムAGE"
+  ],
+  "Gundam Aerial": [
+   "機動戦士ガンダム 水星の魔女"
+  ],
+  "Gundam Aerial Rebuild": [
+   "機動戦士ガンダム 水星の魔女"
+  ],
+  "Gundam Airmaster Burst": [
+   "機動新世紀ガンダムX"
+  ],
+  "Gundam Aquarius": [
+   "新機動戦記ガンダムW",
+   "G GENERATIONシリーズ"
+  ],
+  "Gundam Ashtaron Hermit Crab": [
+   "機動新世紀ガンダムX"
+  ],
+  "Gundam Astaroth": [
+   "機動戦士ガンダム 鉄血のオルフェンズ",
+   "機動戦士ガンダム 鉄血のオルフェンズ 月鋼"
+  ],
+  "Gundam Astaroth Origin": [
+   "機動戦士ガンダム 鉄血のオルフェンズ",
+   "機動戦士ガンダム 鉄血のオルフェンズ 月鋼"
+  ],
+  "Gundam Astaroth Rinascimento": [
+   "機動戦士ガンダム 鉄血のオルフェンズ",
+   "機動戦士ガンダム 鉄血のオルフェンズ 月鋼"
+  ],
+  "Gundam Astraea Type-F2": [
+   "機動戦士ガンダム00F",
+   "機動戦士ガンダム00"
+  ],
+  "Gundam Astray Blue Frame Second G Sniper Pack": [
+   "機動戦士ガンダムSEED",
+   "機動戦士ガンダムSEED ASTRAY",
+   "機動戦士ガンダムSEED X ASTRAY"
+  ],
+  "Gundam Astray Blue Frame Second L": [
+   "機動戦士ガンダムSEED ASTRAY",
+   "機動戦士ガンダムSEED"
+  ],
+  "Gundam Astray Blue Frame Second L (Lohengrin Launcher)": [
+   "機動戦士ガンダムSEED ASTRAY B",
+   "機動戦士ガンダムSEED"
+  ],
+  "Gundam Astray Gold Frame Amaterasu": [
+   "機動戦士ガンダムSEED ASTRAY 天空の皇女",
+   "機動戦士ガンダムSEED DESTINY"
+  ],
+  "Gundam Astray Gold Frame Amatsu": [
+   "機動戦士ガンダムSEED ASTRAY",
+   "機動戦士ガンダムSEED"
+  ],
+  "Gundam Astray Gold Frame Amatsu Mina": [
+   "機動戦士ガンダムSEED ASTRAY",
+   "機動戦士ガンダムSEED",
+   "機動戦士ガンダムSEED DESTINY"
+  ],
+  "Gundam Astray Red Frame": [
+   "機動戦士ガンダムSEED ASTRAY",
+   "機動戦士ガンダムSEED"
+  ],
+  "Gundam Astray Red Frame Flight Unit": [
+   "機動戦士ガンダムSEED ASTRAY B",
+   "機動戦士ガンダムSEED ASTRAY",
+   "機動戦士ガンダムSEED"
+  ],
+  "Gundam Astray Red Frame Kai": [
+   "機動戦士ガンダムSEED VS ASTRAY",
+   "機動戦士ガンダムSEED ASTRAY",
+   "機動戦士ガンダムSEED DESTINY"
+  ],
+  "Gundam Astray Red Frame Powered Red": [
+   "機動戦士ガンダムSEED ASTRAY R",
+   "機動戦士ガンダムSEED"
+  ],
+  "Gundam Avalanche Astraea Type-F Dash": [
+   "機動戦士ガンダム00P",
+   "機動戦士ガンダム00"
+  ],
+  "Gundam Bael": [
+   "機動戦士ガンダム 鉄血のオルフェンズ"
+  ],
+  "Gundam Barbatos (6th Form)": [
+   "機動戦士ガンダム 鉄血のオルフェンズ"
+  ],
+  "Gundam Barbatos (Adapt)": [
+   "機動戦士ガンダム 鉄血のオルフェンズ"
+  ],
+  "Gundam Barbatos Lupus": [
+   "機動戦士ガンダム 鉄血のオルフェンズ"
+  ],
+  "Gundam Barbatos Lupus Rex": [
+   "機動戦士ガンダム 鉄血のオルフェンズ"
+  ],
+  "Gundam Barbatos Lupus Rex (Alaya-Vijnana Limiter Off / Damaged)": [
+   "機動戦士ガンダム 鉄血のオルフェンズ"
+  ],
+  "Gundam Belphegor": [
+   "機動新世紀ガンダムX"
+  ],
+  "Gundam Calibarn": [
+   "機動戦士ガンダム 水星の魔女"
+  ],
+  "Gundam Calibarn (Final Battle)": [
+   "機動戦士ガンダム 水星の魔女"
+  ],
+  "Gundam Dantalion (Half Cowl T)": [
+   "機動戦士ガンダム 鉄血のオルフェンズ",
+   "機動戦士ガンダム 鉄血のオルフェンズ 月鋼"
+  ],
+  "Gundam Dantalion (T-Booster)": [
+   "機動戦士ガンダム 鉄血のオルフェンズ",
+   "機動戦士ガンダム 鉄血のオルフェンズ 月鋼"
+  ],
+  "Gundam Deathscythe Hell": [
+   "新機動戦記ガンダムW"
+  ],
+  "Gundam Deathscythe Hell (EW)": [
+   "新機動戦記ガンダムW Endless Waltz",
+   "新機動戦記ガンダムW"
+  ],
+  "Gundam Delta Kai": [
+   "機動戦士ガンダムUC",
+   "UC-MSV"
+  ],
+  "Gundam Double X": [
+   "機動新世紀ガンダムX"
+  ],
+  "Gundam Dynames": [
+   "機動戦士ガンダム00"
+  ],
+  "Gundam Epyon": [
+   "新機動戦記ガンダムW"
+  ],
+  "Gundam Epyon (EW / Sturm und Drang)": [
+   "新機動戦記ガンダムW Endless Waltz",
+   "新機動戦記ガンダムW",
+   "新機動戦記ガンダムW Endless Waltz 敗者たちの栄光\r"
+  ],
+  "Gundam Epyon (EW)": [
+   "新機動戦記ガンダムW Endless Waltz 敗者たちの栄光",
+   "新機動戦記ガンダムW",
+   "新機動戦記ガンダムW Endless Waltz"
+  ],
+  "Gundam Exia": [
+   "機動戦士ガンダム00"
+  ],
+  "Gundam Exia [TRANS-AM]": [
+   "機動戦士ガンダム00"
+  ],
+  "Gundam Ez8": [
+   "機動戦士ガンダム 第08MS小隊",
+   "機動戦士ガンダム"
+  ],
+  "Gundam Ez8 Heavy Armed Custom": [
+   "GGENERATIONシリーズ",
+   "機動戦士ガンダム"
+  ],
+  "Gundam Ez8 High Mobility Custom": [
+   "GGENERATIONシリーズ",
+   "機動戦士ガンダム"
+  ],
+  "Gundam F90": [
+   "機動戦士ガンダムF90"
+  ],
+  "Gundam F90 (A.D.S. Mixed Equipment)": [
+   "機動戦士ガンダムF90",
+   "機動戦士ガンダムF91"
+  ],
+  "Gundam F90 (Mars Independent Zeon Forces)": [
+   "機動戦士ガンダムF90",
+   "機動戦士ガンダムF91"
+  ],
+  "Gundam F90 Unit 2": [
+   "機動戦士ガンダムF90",
+   "機動戦士ガンダムF91"
+  ],
+  "Gundam F90II I-Type": [
+   "機動戦士ガンダムF90",
+   "機動戦士ガンダムF91"
+  ],
+  "Gundam F90II L-Type": [
+   "機動戦士ガンダムF90",
+   "機動戦士ガンダムF91"
+  ],
+  "Gundam F91": [
+   "機動戦士ガンダムF91"
+  ],
+  "Gundam F91 (Twin V.S.B.R.)": [
+   "機動戦士ガンダムF91-MSV",
+   "機動戦士ガンダムF91"
+  ],
+  "Gundam Flauros (Ryusei-Go)": [
+   "機動戦士ガンダム 鉄血のオルフェンズ"
+  ],
+  "Gundam GP00": [
+   "機動戦士ガンダム",
+   "機動戦士ガンダム ファントム・ブレット"
+  ],
+  "Gundam GP01 (Chobham Armor)": [
+   "機動戦士ガンダム0083 REBELLION",
+   "機動戦士ガンダム THE ORIGIN",
+   "機動戦士ガンダム"
+  ],
+  "Gundam GP01Fb (Full Burnern)": [
+   "機動戦士ガンダム0083 STARDUST MEMORY",
+   "機動戦士ガンダム"
+  ],
+  "Gundam GP02": [
+   "機動戦士ガンダム0083 STARDUST MEMORY",
+   "機動戦士ガンダム"
+  ],
+  "Gundam GP03": [
+   "機動戦士ガンダム0083 STARDUST MEMORY",
+   "機動戦士ガンダム"
+  ],
+  "Gundam GP04": [
+   "機動戦士ガンダム0083 STARDUST MEMORY",
+   "機動戦士ガンダム"
+  ],
+  "Gundam Geminass 01": [
+   "新機動戦記ガンダムW",
+   "新機動戦記ガンダムW デュアルストーリー G-UNIT"
+  ],
+  "Gundam Geminass 02": [
+   "新機動戦記ガンダムW",
+   "新機動戦記ガンダムW デュアルストーリー G-UNIT"
+  ],
+  "Gundam Gremory": [
+   "機動戦士ガンダム 鉄血のオルフェンズ",
+   "機動戦士ガンダム 鉄血のオルフェンズ 月鋼"
+  ],
+  "Gundam Gusion Rebake": [
+   "機動戦士ガンダム 鉄血のオルフェンズ"
+  ],
+  "Gundam Gusion Rebake Full City": [
+   "機動戦士ガンダム 鉄血のオルフェンズ"
+  ],
+  "Gundam Hajiroboshi": [
+   "機動戦士ガンダム 鉄血のオルフェンズ ウルズハント",
+   "機動戦士ガンダム 鉄血のオルフェンズ"
+  ],
+  "Gundam Heavyarms Custom (EW)": [
+   "新機動戦記ガンダムW Endless Waltz",
+   "新機動戦記ガンダムW\r"
+  ],
+  "Gundam Kimaris Vidar": [
+   "機動戦士ガンダム 鉄血のオルフェンズ"
+  ],
+  "Gundam Leopard Destroy": [
+   "機動新世紀ガンダムX"
+  ],
+  "Gundam Lfrith Thorn": [
+   "機動戦士ガンダム 水星の魔女"
+  ],
+  "Gundam Lfrith Thorn (with Gundvolva)": [
+   "機動戦士ガンダム 水星の魔女"
+  ],
+  "Gundam Lfrith Ur": [
+   "機動戦士ガンダム 水星の魔女"
+  ],
+  "Gundam Lfrith Ur (with Gundvolva)": [
+   "機動戦士ガンダム 水星の魔女"
+  ],
+  "Gundam Maxter (Super Mode)": [
+   "機動武闘伝Gガンダム"
+  ],
+  "Gundam Mk-II Prototype 0": [
+   "機動戦士ガンダム ギレンの野望",
+   "機動戦士Zガンダム",
+   "機動戦士Zガンダム A New Translation"
+  ],
+  "Gundam Mk-III": [
+   "機動戦士Zガンダム A New Translation",
+   "機動戦士ガンダムZZ",
+   "機動戦士Zガンダム",
+   "Z-MSV"
+  ],
+  "Gundam Mk-IV": [
+   "G GENERATIONシリーズ",
+   "機動戦士Zガンダム",
+   "機動戦士Zガンダム A New Translation"
+  ],
+  "Gundam Mk-V": [
+   "GUNDAM SENTINEL",
+   "機動戦士ガンダムZZ"
+  ],
+  "Gundam NT-1": [
+   "機動戦士ガンダム",
+   "機動戦士ガンダム0800 ポケットの中の戦争"
+  ],
+  "Gundam NT-1 (Chobham Armor)": [
+   "機動戦士ガンダム0800 ポケットの中の戦争",
+   "機動戦士ガンダム"
+  ],
+  "Gundam Pharact (Season 2)": [
+   "機動戦士ガンダム 水星の魔女"
+  ],
+  "Gundam Pixie": [
+   "機動戦士ガンダム",
+   "機動戦士ガンダム CROSS DIMENSION 0079"
+  ],
+  "Gundam Pixie & Efreet": [
+   "機動戦士ガンダム CROSS DIMENSION 0079",
+   "機動戦士ガンダム"
+  ],
+  "Gundam Plutone": [
+   "機動戦士ガンダム00",
+   "機動戦士ガンダム00P"
+  ],
+  "Gundam Raziel": [
+   "機動戦士ガンダム00",
+   "機動戦士ガンダム00P"
+  ],
+  "Gundam Rose (Super Mode)": [
+   "機動武闘伝Gガンダム"
+  ],
+  "Gundam Sandrock Custom (EW)": [
+   "新機動戦記ガンダムW Endless Waltz",
+   "新機動戦記ガンダムW"
+  ],
+  "Gundam Schwarzette": [
+   "機動戦士ガンダム 水星の魔女"
+  ],
+  "Gundam Spiegel": [
+   "機動武闘伝Gガンダム"
+  ],
+  "Gundam TR-1 [Hazel Rah]": [
+   "機動戦士Zガンダム A New Translation",
+   "ADVANCE OF Z ティターンズの旗のもとに",
+   "機動戦士Zガンダム"
+  ],
+  "Gundam Throne Eins Turbulenz": [
+   "機動戦士ガンダム00"
+  ],
+  "Gundam Unit 2 (Early Type)": [
+   "機動戦士ガンダム",
+   "機動戦士ガンダム THE ORIGIN"
+  ],
+  "Gundam Virsago Chest Break": [
+   "機動新世紀ガンダムX"
+  ],
+  "Gundam Vual Juhana": [
+   "機動戦士ガンダム 鉄血のオルフェンズ",
+   "機動戦士ガンダム 鉄血のオルフェンズ 月鋼"
+  ],
+  "Gundam X Divider": [
+   "機動新世紀ガンダムX"
+  ],
+  "Gunner ZAKU Warrior (Dearka Elsman)": [
+   "機動戦士ガンダムSEED DESTINY"
+  ],
+  "Gunner ZAKU Warrior (Lunamaria Hawke)": [
+   "機動戦士ガンダムSEED DESTINY"
+  ],
+  "Gyan Eos": [
+   "機動戦士ガンダム",
+   "MSV-R"
+  ],
+  "Gyan Krieger": [
+   "機動戦士ガンダム",
+   "機動戦士ガンダム ギレンの野望"
+  ],
+  "Halphas Gundam": [
+   "GGENERATIONシリーズ"
+  ],
+  "Haro": [
+   "GGENERATIONシリーズ"
+  ],
+  "Hashmal": [
+   "機動戦士ガンダム 鉄血のオルフェンズ"
+  ],
+  "Hi-ν Gundam": [
+   "機動戦士ガンダム逆襲のシャア"
+  ],
+  "High Mobility Gelgoog (Johnny Ridden)": [
+   "機動戦士ガンダム",
+   "MSV"
+  ],
+  "High Mobility Gelgoog Kai (Johnny Ridden)": [
+   "機動戦士ガンダム MSV-R ジョニー・ライデンの帰還"
+  ],
+  "Hildolfr": [
+   "機動戦士ガンダム MS IGLOO",
+   "機動戦士ガンダム"
+  ],
+  "Hyaku Shiki": [
+   "機動戦士Zガンダム",
+   "機動戦士Zガンダム A New Translation",
+   "機動戦士ガンダムZZ"
+  ],
+  "Hyakuren (Amida)": [
+   "機動戦士ガンダム 鉄血のオルフェンズ"
+  ],
+  "Hyperion Gundam": [
+   "機動戦士ガンダムSEED X ASTRAY",
+   "機動戦士ガンダムSEED",
+   "機動戦士ガンダムSEED ASTRAY"
+  ],
+  "II Neo Zeong": [
+   "機動戦士ガンダムNT",
+   "機動戦士ガンダムUC"
+  ],
+  "Infinite Justice Gundam": [
+   "機動戦士ガンダムSEED DESTINY"
+  ],
+  "Infinite Justice Gundam (METEOR)": [
+   "機動戦士ガンダムSEED DESTINY"
+  ],
+  "Jagd Arche Gundam": [
+   "機動戦士ガンダム00V",
+   "機動戦士ガンダム00"
+  ],
+  "Jegan (ECOAS)": [
+   "機動戦士ガンダムUC"
+  ],
+  "Jenice Kai (Enil Custom)": [
+   "機動新世紀ガンダムX"
+  ],
+  "Justice Gundam": [
+   "機動戦士ガンダムSEED"
+  ],
+  "Justice Gundam [METEOR]": [
+   "機動戦士ガンダムSEED"
+  ],
+  "Knight Gundam": [
+   "SDガンダム外伝 ジークジオン編"
+  ],
+  "Knight Gundam (Centaur Form)": [
+   "SDガンダム外伝 ジークジオン編"
+  ],
+  "Knight Sazabi": [
+   "SDガンダム外伝 ジークジオン編"
+  ],
+  "Knight Zeong": [
+   "SDガンダム外伝 ジークジオン編"
+  ],
+  "Kshatriya Repaired": [
+   "機動戦士ガンダムUC"
+  ],
+  "Kämpfer": [
+   "機動戦士ガンダム0800 ポケットの中の戦争",
+   "機動戦士ガンダム"
+  ],
+  "Le Cygne": [
+   "機動戦士ガンダム エコール・デュ・シエル 天空の学校",
+   "機動戦士Zガンダム",
+   "機動戦士Zガンダム Define"
+  ],
+  "Legend Gundam": [
+   "機動戦士ガンダムSEED DESTINY"
+  ],
+  "Liu Bei Unicorn Gundam": [
+   "SDガンダムワールド 三国創傑伝"
+  ],
+  "Mack Knife (Barara Peor)": [
+   "Gのレコンギスタ"
+  ],
+  "Martial Artist Nemo": [
+   "SDガンダム外伝 ジークジオン編"
+  ],
+  "Master Gundam": [
+   "機動武闘伝Gガンダム"
+  ],
+  "Messer Type-F Naked (Commander)": [
+   "機動戦士ガンダム 閃光のハサウェイ",
+   "機動戦士ガンダム 逆襲のシャア"
+  ],
+  "Michaelis (Season 2)": [
+   "機動戦士ガンダム 水星の魔女"
+  ],
+  "Monster Black Dragon": [
+   "SDガンダム外伝 ジークジオン編"
+  ],
+  "Murasame (Flight Test Type)": [
+   "機動戦士ガンダムSEED Recollection",
+   "機動戦士ガンダムSEED"
+  ],
+  "Musha Ghost": [
+   "SDガンダム外伝 ラクロアンヒーローズ"
+  ],
+  "Musha Gundam": [
+   "SD戦国伝 武者七人衆編"
+  ],
+  "Narrative Gundam A-Packs": [
+   "機動戦士ガンダムNT",
+   "機動戦士ガンダムUC"
+  ],
+  "Narrative Gundam B-Packs": [
+   "機動戦士ガンダムNT",
+   "機動戦士ガンダムUC"
+  ],
+  "Narrative Gundam C-Packs (Awakened)": [
+   "機動戦士ガンダムNT",
+   "機動戦士ガンダムUC"
+  ],
+  "Neo Zeong": [
+   "機動戦士ガンダムUC"
+  ],
+  "Netix": [
+   "G GENERATIONシリーズ",
+   "機動戦士Zガンダム",
+   "機動戦士Zガンダム A New Translation"
+  ],
+  "Neue Ziel": [
+   "機動戦士ガンダム0083 STARDUST MEMORY",
+   "機動戦士ガンダム"
+  ],
+  "Neue Ziel II": [
+   "G GENERATIONシリーズ",
+   "機動戦士Zガンダム A New Translation",
+   "機動戦士Zガンダム"
+  ],
+  "Nightingale": [
+   "機動戦士ガンダム逆襲のシャア"
+  ],
+  "Overon (Armor Form)": [
+   "機動戦士ガンダムZZ",
+   "機動戦士ガンダム ヴァルプルギス"
+  ],
+  "Pale Rider (Ground Heavy Armor)": [
+   "機動戦士ガンダム",
+   "機動戦士ガンダム外伝 ミッシングリンク"
+  ],
+  "Patulia": [
+   "機動新世紀ガンダムX"
+  ],
+  "Penelope": [
+   "機動戦士ガンダム 閃光のハサウェイ",
+   "機動戦士ガンダム 逆襲のシャア"
+  ],
+  "Perfect Strike Gundam": [
+   "機動戦士ガンダムSEED"
+  ],
+  "Perfect Zeong": [
+   "MSV",
+   "G GENERATIONシリーズ"
+  ],
+  "Phoenix Gundam (Power Unleashed)": [
+   "G GENERATIONシリーズ"
+  ],
+  "Prototype Kämpfer": [
+   "機動戦士ガンダム",
+   "機動戦士ガンダム0800 ポケットの中の戦争"
+  ],
+  "Providence Gundam": [
+   "機動戦士ガンダムSEED"
+  ],
+  "Psycho Gundam": [
+   "機動戦士Zガンダム",
+   "機動戦士Zガンダム A New Translation"
+  ],
+  "Psycho Gundam Mk-II": [
+   "機動戦士Zガンダム",
+   "機動戦士ガンダムZZ"
+  ],
+  "Psycho Gundam Mk-III": [
+   "機動戦士ガンダムZZ",
+   "GUNDAM THE BATTLE MASTER"
+  ],
+  "Psycho Haro": [
+   "G GENERATIONシリーズ"
+  ],
+  "Psycho Zaku": [
+   "機動戦士ガンダム サンダーボルト",
+   "機動戦士ガンダム"
+  ],
+  "Qubeley": [
+   "機動戦士Zガンダム A New Translation",
+   "機動戦士Zガンダム"
+  ],
+  "Qubeley (ZZ)": [
+   "機動戦士ガンダムZZ"
+  ],
+  "Qubeley Mk-II (Elpeo Ple)": [
+   "機動戦士ガンダムZZ"
+  ],
+  "Quin Mantha": [
+   "機動戦士ガンダムZZ"
+  ],
+  "RF Gelgoog (Charles Rowchester)": [
+   "機動戦士ガンダムF91 フォーミュラー戦記0122",
+   "機動戦士ガンダムF91"
+  ],
+  "Rafflesia": [
+   "機動戦士ガンダムF91"
+  ],
+  "ReZEL (Commander Type)": [
+   "機動戦士ガンダムUC"
+  ],
+  "Reborns Gundam": [
+   "機動戦士ガンダム00"
+  ],
+  "Red Gundam": [
+   "機動戦士ガンダム",
+   "機動戦士Gundam GQuuuuuuX（ジークアクス）"
+  ],
+  "Red Warrior": [
+   "機動戦士ガンダム",
+   "プラモ狂四郎"
+  ],
+  "Regenerate Gundam": [
+   "機動戦士ガンダムSEED ASTRAY R",
+   "機動戦士ガンダムSEED ASTRAY",
+   "機動戦士ガンダムSEED"
+  ],
+  "Reginlaze (Iok)": [
+   "機動戦士ガンダム 鉄血のオルフェンズ"
+  ],
+  "Reginlaze (Julieta)": [
+   "機動戦士ガンダム 鉄血のオルフェンズ"
+  ],
+  "Reginlaze Julia (Ground Combat)": [
+   "機動戦士ガンダム 鉄血のオルフェンズ"
+  ],
+  "Regnant": [
+   "機動戦士ガンダム00"
+  ],
+  "Rhinosaurus Type B": [
+   "機動戦士ガンダム外伝 コロニーの落ちた地で"
+  ],
+  "Rig Contio": [
+   "機動戦士Vガンダム"
+  ],
+  "Rig Ring": [
+   "G GENERATIONシリーズ",
+   "機動戦士Vガンダム"
+  ],
+  "Rig Shokew (Imperial Guard)": [
+   "機動戦士Vガンダム"
+  ],
+  "Rising Freedom Gundam": [
+   "機動戦士ガンダムSEED FREEDOM"
+  ],
+  "S Gundam": [
+   "機動戦士ガンダムZZ",
+   "GUNDAM SENTINEL"
+  ],
+  "Saikoro Gundam": [
+   "SDガンダムワールド ガチャポン戦士 スクランブルウォーズ",
+   "機動戦士Zガンダム",
+   "機動戦士Zガンダム A New Translation"
+  ],
+  "Sandaime Daishogun": [
+   "SD戦国伝 武者七人衆編"
+  ],
+  "Sazabi": [
+   "機動戦士ガンダム逆襲のシャア"
+  ],
+  "Scorpio": [
+   "新機動戦記ガンダムW",
+   "新機動戦記ガンダムW BATTLEFIELD OF PACIFIST"
+  ],
+  "Second V": [
+   "機動戦士Vガンダム"
+  ],
+  "Seravee Gundam GNHW/B": [
+   "機動戦士ガンダム00"
+  ],
+  "Shamblo": [
+   "機動戦士ガンダムUC"
+  ],
+  "Shiden (Orga)": [
+   "機動戦士ガンダム 鉄血のオルフェンズ"
+  ],
+  "Shining Gundam": [
+   "機動武闘伝Gガンダム"
+  ],
+  "Shining Gundam (Super Mode)": [
+   "機動武闘伝Gガンダム"
+  ],
+  "Sinanju": [
+   "機動戦士ガンダムUC"
+  ],
+  "Sinanju Stein": [
+   "機動戦士ガンダムNT",
+   "機動戦士ガンダムUC"
+  ],
+  "Slash ZAKU Phantom (Yzak Jule)": [
+   "機動戦士ガンダムSEED DESTINY"
+  ],
+  "Sorcerer ν Gundam": [
+   "SDガンダム外伝 ジークジオン編"
+  ],
+  "Stargazer": [
+   "機動戦士ガンダムSEED C.E.73 STARGAZER",
+   "機動戦士ガンダムSEED DESTINY"
+  ],
+  "Strike Freedom Gundam": [
+   "機動戦士ガンダムSEED DESTINY"
+  ],
+  "Strike Freedom Gundam (METEOR)": [
+   "機動戦士ガンダムSEED DESTINY"
+  ],
+  "Strike Noir Gundam": [
+   "機動戦士ガンダムSEED C.E.73 STARGAZER",
+   "機動戦士ガンダムSEED DESTINY"
+  ],
+  "Strike Rouge (I.W.S.P.)": [
+   "機動戦士ガンダムSEED MSV",
+   "機動戦士ガンダムSEED"
+  ],
+  "Striker Custom": [
+   "機動戦士ガンダム カタナ"
+  ],
+  "Super Hyperion Gundam": [
+   "機動戦士ガンダムSEED X ASTRAY",
+   "機動戦士ガンダムSEED ASTRAY",
+   "機動戦士ガンダムSEED"
+  ],
+  "Superbia GN-X": [
+   "機動戦士ガンダム00",
+   "機動戦士ガンダム00V"
+  ],
+  "Susanowo": [
+   "機動戦士ガンダム00"
+  ],
+  "Sword Calamity Gundam": [
+   "機動戦士ガンダムSEED",
+   "機動戦士ガンダムSEED MSV"
+  ],
+  "Swordsman Zeta Gundam": [
+   "SDガンダム外伝 ジークジオン編"
+  ],
+  "Tallgeese": [
+   "新機動戦記ガンダムW"
+  ],
+  "Tallgeese II": [
+   "新機動戦記ガンダムW"
+  ],
+  "Tallgeese III": [
+   "新機動戦記ガンダムW Endless Waltz",
+   "新機動戦記ガンダムW"
+  ],
+  "The Gundam": [
+   "機動戦士ガンダムAGE",
+   "機動戦士ガンダムAGE UNKNOWN SOLDIERS"
+  ],
+  "The O": [
+   "機動戦士Zガンダム A New Translation",
+   "機動戦士Zガンダム"
+  ],
+  "Tieren All-Region Type": [
+   "機動戦士ガンダム00"
+  ],
+  "Titania": [
+   "G GENERATIONシリーズ",
+   "機動戦士Zガンダム",
+   "機動戦士Zガンダム A New Translation"
+  ],
+  "Ulube's Gundam": [
+   "機動武闘伝Gガンダム"
+  ],
+  "Unicorn Gundam (Destroy Mode / Awakened)": [
+   "機動戦士ガンダムUC"
+  ],
+  "Unicorn Gundam (Destroy Mode)": [
+   "機動戦士ガンダムUC"
+  ],
+  "Unicorn Gundam 03 Phenex (Destroy Mode)": [
+   "機動戦士ガンダムNT",
+   "機動戦士ガンダムUC"
+  ],
+  "Unicorn Gundam 03 Phenex (Unicorn Mode)": [
+   "機動戦士ガンダムNT",
+   "機動戦士ガンダムUC"
+  ],
+  "Unicorn Gundam Ver. TWC FINAL": [
+   "機動戦士ガンダムUC"
+  ],
+  "V-Dash Gundam Hexa": [
+   "機動戦士Vガンダム"
+  ],
+  "V2 Assault Gundam": [
+   "機動戦士Vガンダム"
+  ],
+  "V2 Assault-Buster Gundam": [
+   "機動戦士Vガンダム"
+  ],
+  "V2 Buster Gundam": [
+   "機動戦士Vガンダム"
+  ],
+  "V2 Gundam": [
+   "機動戦士Vガンダム"
+  ],
+  "Val Walo": [
+   "機動戦士ガンダム0083 STARDUST MEMORY",
+   "機動戦士ガンダム"
+  ],
+  "Vayeate Shuivan": [
+   "新機動戦記ガンダムW デュアルストーリー G-UNIT",
+   "新機動戦記ガンダムW"
+  ],
+  "Versal Knight Gundam": [
+   "SDガンダム外伝 ジークジオン編"
+  ],
+  "Victory Gundam": [
+   "機動戦士Vガンダム"
+  ],
+  "Victory Gundam Hexa": [
+   "機動戦士Vガンダム"
+  ],
+  "Wadom": [
+   "∀ガンダム"
+  ],
+  "White Gundam": [
+   "機動戦士ガンダム",
+   "機動戦士Gundam GQuuuuuuX（ジークアクス）"
+  ],
+  "Windam (Neo Lorrnoke)": [
+   "機動戦士ガンダムSEED DESTINY"
+  ],
+  "Wing Gundam (EW)": [
+   "新機動戦記ガンダムW Endless Waltz 敗者たちの栄光",
+   "新機動戦記ガンダムW"
+  ],
+  "Wing Gundam Proto Zero (EW)": [
+   "新機動戦記ガンダムW Endless Waltz 敗者たちの栄光",
+   "新機動戦記ガンダムW Endless Waltz",
+   "新機動戦記ガンダムW"
+  ],
+  "Wing Gundam Zero": [
+   "新機動戦記ガンダムW"
+  ],
+  "Wing Gundam Zero (EW)": [
+   "新機動戦記ガンダムW Endless Waltz",
+   "新機動戦記ガンダムW"
+  ],
+  "X Astray": [
+   "機動戦士ガンダムSEED X ASTRAY",
+   "機動戦士ガンダムSEED",
+   "機動戦士ガンダムSEED ASTRAY"
+  ],
+  "XK": [
+   "機動戦士ガンダム 鉄血のオルフェンズ MSV",
+   "機動戦士ガンダム 鉄血のオルフェンズ"
+  ],
+  "ZAKU Warrior (Live Concert)": [
+   "機動戦士ガンダムSEED DESTINY"
+  ],
+  "ZZ Gundam": [
+   "機動戦士ガンダムZZ"
+  ],
+  "Zaku II (Dozle Zabi)": [
+   "機動戦士ガンダム",
+   "MSV"
+  ],
+  "Zaku II (Shin Matsunaga)": [
+   "機動戦士ガンダム",
+   "MSV-R"
+  ],
+  "Zaku II Kai": [
+   "機動戦士ガンダム",
+   "機動戦士ガンダム0800 ポケットの中の戦争"
+  ],
+  "Zaku III Kai": [
+   "機動戦士ガンダムZZ"
+  ],
+  "Zanneck": [
+   "機動戦士Vガンダム"
+  ],
+  "Zanspine": [
+   "G GENERATIONシリーズ",
+   "機動戦士Vガンダム"
+  ],
+  "Zeck Eins": [
+   "機動戦士ガンダムZZ",
+   "GUNDAM SENTINEL"
+  ],
+  "Zeck Zwei": [
+   "GUNDAM SENTINEL",
+   "機動戦士ガンダムZZ"
+  ],
+  "Zeong": [
+   "機動戦士ガンダム"
+  ],
+  "Zero-Shiki": [
+   "機動戦士Zガンダム A New Translation",
+   "機動戦士Zガンダム",
+   "機動戦士Zガンダム Define"
+  ],
+  "Zeta Gundam": [
+   "機動戦士Zガンダム A New Translation",
+   "機動戦士ガンダムZZ",
+   "機動戦士Zガンダム"
+  ],
+  "Zeta Gundam Unit 3": [
+   "機動戦士Zガンダム A New Translation",
+   "機動戦士Zガンダム",
+   "ガンダム新体験0087 グリーンダイバーズ"
+  ],
+  "Zeta Gundam Unit 3 B Type": [
+   "機動戦士Zガンダム A New Translation",
+   "機動戦士Zガンダム",
+   "GUNDAM EVOLVE"
+  ],
+  "Zeta Gundam Unit 3 P2 Type": [
+   "機動戦士Zガンダム A New Translation",
+   "機動戦士Zガンダム",
+   "GUNDAM EVOLVE"
+  ],
+  "Zeydra": [
+   "機動戦士ガンダムAGE"
+  ],
+  "Zodiac": [
+   "GUNDAM SENTINEL",
+   "機動戦士ガンダムZZ"
+  ],
+  "Zolo (Kronokle Asher)": [
+   "機動戦士Vガンダム"
+  ],
+  "Zoloat (League Militaire)": [
+   "機動戦士Vガンダム"
+  ],
+  "Zuda (Unit 1)": [
+   "機動戦士ガンダム",
+   "機動戦士ガンダム MS IGLOO"
+  ],
+  "Ξ Gundam": [
+   "機動戦士ガンダム 閃光のハサウェイ",
+   "機動戦士ガンダム 逆襲のシャア"
+  ],
+  "α Azieru": [
+   "機動戦士ガンダム逆襲のシャア"
+  ],
+  "β Azieru": [
+   "機動戦士ガンダム逆襲のシャア"
+  ],
+  "ν Gundam": [
+   "機動戦士ガンダム逆襲のシャア"
+  ],
+  "ν Gundam (Double Fin Funnel)": [
+   "CCA-MSV",
+   "機動戦士ガンダム 逆襲のシャア"
+  ],
+  "∀ Gundam (Turn A)": [
+   "∀ガンダム"
+  ]
+ }
+}

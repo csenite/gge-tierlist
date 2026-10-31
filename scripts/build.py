@@ -1,6 +1,10 @@
 """Build index.html (GitHub Pages) and the bare artifact page from template.html + data/site.json."""
 import json
 import pathlib
+import sys
+
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+from series_rules import ORDER, families  # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 HEAD = ('<!doctype html>\n<html lang="en">\n<head>\n<meta charset="utf-8">\n'
@@ -8,22 +12,49 @@ HEAD = ('<!doctype html>\n<html lang="en">\n<head>\n<meta charset="utf-8">\n'
         '<meta name="referrer" content="no-referrer">\n')
 
 
-def page():
+def series_meta(data):
+    """English series families and a Game8 series icon for every unit on the site."""
+    path = ROOT / "data/series.json"
+    if not path.exists():
+        return
+    series = json.loads(path.read_text())
+    names = {u["n"] for l in data["lists"]
+             for g in (l["groups"].values() if "groups" in l else [l["tiers"]])
+             for v in g.values() for u in v}
+    ser, used = {}, set()
+    for n in sorted(names):
+        jp = series["units"].get(n, [])
+        fams = families(jp)
+        icon = next((series["icons"][s] for s in jp if s in series["icons"]), None)
+        if fams:
+            ser[n] = {"f": fams, "i": icon}
+            used.update(fams)
+    data["ser"] = ser
+    data["fams"] = [f for f in ORDER if f in used]
+
+
+def page(template="template.html"):
     data = json.loads((ROOT / "data/site.json").read_text())
+    series_meta(data)
     blob = json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
-    tpl = (ROOT / "template.html").read_text()
+    tpl = (ROOT / template).read_text()
     assert tpl.count("/*DATA*/") == 1
     return tpl.replace("/*DATA*/", blob)
+
+
+def full_doc(s):
+    i = s.index("</style>") + len("</style>")
+    return (HEAD + s[:i]
+            + "\n<style>body{margin:0;font-size:14px}img{max-width:100%}[hidden]{display:none!important}</style>\n</head>\n<body>\n"
+            + s[i:] + "\n</body>\n</html>\n")
 
 
 def main():
     s = page()
     (ROOT / "artifact.html").write_text(s)
-    i = s.index("</style>") + len("</style>")
-    (ROOT / "index.html").write_text(
-        HEAD + s[:i]
-        + "\n<style>body{margin:0;font-size:14px}img{max-width:100%}[hidden]{display:none!important}</style>\n</head>\n<body>\n"
-        + s[i:] + "\n</body>\n</html>\n")
+    (ROOT / "index.html").write_text(full_doc(s))
+    if (ROOT / "template-preview.html").exists():
+        (ROOT / "preview.html").write_text(full_doc(page("template-preview.html")))
 
 
 if __name__ == "__main__":

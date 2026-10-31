@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths: ["data/names.json", "data/site.json", "template.html", "scripts/**"]
+    paths: ["data/**", "template.html", "template-preview.html", "scripts/**"]
 permissions:
   contents: write
   issues: write
@@ -40,7 +40,7 @@ jobs:
         if: steps.scrape.outputs.code == '0'
         run: |
           python scripts/build.py
-          git add data index.html
+          git add data index.html preview.html 2>/dev/null || git add data index.html
           if git diff --cached --quiet; then echo "Nothing changed"; exit 0; fi
           git config user.name "github-actions[bot]"
           git config user.email "41898283+github-actions[bot]@users.noreply.github.com"

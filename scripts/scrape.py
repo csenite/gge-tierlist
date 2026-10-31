@@ -153,24 +153,42 @@ def scrape(src):
             game8[lid][g] = parse_table(tabs[lab])
     board = src.json(UR_BOARD, "board3.json")
     ur, ur_roles = {}, {}
+    ser = {"key": {}, "title": {}, "icon": {}}
     for t in board["tiers"]:
         k = tier_of(t.get("label") or t.get("value"))
         ur[k] = []
         for it in t["items"]:
             jp = it["title"].strip()
             ur[k].append({"jp": jp, "i": img_key(it.get("image_url"))})
+            sv = (it.get("filter_values") or {}).get("col_54")
+            if sv:
+                ser["key"].setdefault(img_key(it.get("image_url")), sv.split(":"))
+                ser["title"].setdefault(jp, sv.split(":"))
             for v in (it.get("filter_values") or {}).values():
                 for x in (v if isinstance(v, list) else [v]):
                     if x in ROLE:
                         ur_roles[jp] = ROLE[x]
     game8["strongest"] = {"_": ur}
     roles = {}
-    for cat in src.json(UNIT_JSON, "ggene_unit.json"):
+    cats = src.json(UNIT_JSON, "ggene_unit.json")
+    for cat in cats:
+        for u in cat.get("db_data", []):
+            if u.get("col_1") == "シリーズ" and u.get("image_url"):
+                ser["icon"][u["title"].strip()] = img_key(u["image_url"])
+    for cat in cats:
         for u in cat.get("db_data", []):
             if u.get("col_2") in ROLE:
                 roles[u["title"].strip()] = ROLE[u["col_2"]]
+            # UR records keep the series in col_54; SSR records in col_11 or col_59
+            for col in ("col_54", "col_11", "col_59"):
+                v = u.get(col) or ""
+                parts = [x for x in v.split(":") if x]
+                if parts and (col == "col_54" or all(x in ser["icon"] for x in parts)):
+                    ser["key"].setdefault(img_key(u.get("image_url")), parts)
+                    ser["title"].setdefault(u["title"].strip(), parts)
+                    break
     roles.update(ur_roles)
-    return game8, dates, notes, roles
+    return game8, dates, notes, roles, ser
 
 
 def units_of(lst):
@@ -212,7 +230,7 @@ def main():
     state = json.loads(state_path.read_text()) if state_path.exists() else {"dates": {}, "notes": {}}
     lists = {l["id"]: l for l in site["lists"]}
 
-    game8, dates, notes, roles = scrape(Source(args.local))
+    game8, dates, notes, roles, ser = scrape(Source(args.local))
     check_counts(game8, lists)
 
     by_key = {}
@@ -259,6 +277,29 @@ def main():
             if moved:
                 changes.append(lid)
 
+    # Series per English unit name; existing entries (including hand-filled ones) are kept.
+    series_path = ROOT / "data/series.json"
+    series = json.loads(series_path.read_text()) if series_path.exists() else {"units": {}, "icons": {}}
+    jp_of = {}
+    for jp, en in names.items():
+        jp_of.setdefault(en, []).append(re.sub(r"画像$", "", jp).strip())
+    no_series = []
+    for lid, groups in game8.items():
+        for g in groups.values():
+            for v in g.values():
+                for u in v:
+                    en = names.get(u["jp"]) or by_key.get(u["i"])
+                    if not en or en in series["units"]:
+                        continue
+                    found = ser["key"].get(u["i"]) or next(
+                        (ser["title"][j] for j in [re.sub(r"画像$", "", u["jp"]).strip()] + jp_of.get(en, [])
+                         if j in ser["title"]), None)
+                    if found:
+                        series["units"][en] = found
+                    elif en not in no_series:
+                        no_series.append(en)
+    series["icons"].update(ser["icon"])
+
     report = []
     if unknown:
         report.append("## Units that need an English name\n")
@@ -276,6 +317,12 @@ def main():
         report.append("\n## Game8 commentary changed (the site's \"Latest notes\" may need a new translation)\n")
         for pid in changed_notes:
             report.append(f"### {BASE}{pid}\n\n```\n{notes[pid]}\n```\n")
+
+    if no_series:
+        report.append("\n## Units with no series on Game8 yet\n")
+        report.append("Add each to `data/series.json` under `units` as `\"English name\": [\"Game8 series name\"]`. "
+                      "They show without a series icon until then.\n")
+        report.extend(f"- {en}" for en in no_series)
 
     if unknown:
         pathlib.Path(args.report).write_text("\n".join(report) + "\n")
@@ -295,6 +342,7 @@ def main():
         if moved and dates.get(PAGES[lid]):
             l["updated"] = fmt_date(dates[PAGES[lid]])
     site_path.write_text(json.dumps(site, ensure_ascii=False, indent=1) + "\n")
+    series_path.write_text(json.dumps(series, ensure_ascii=False, indent=1, sort_keys=True) + "\n")
     names_path.write_text(json.dumps(dict(sorted(names.items())), ensure_ascii=False, indent=1) + "\n")
     state = {"dates": dates, "notes": {pid: hashlib.sha1(t.encode()).hexdigest() for pid, t in notes.items()}}
     state_path.write_text(json.dumps(state, ensure_ascii=False, indent=1) + "\n")
