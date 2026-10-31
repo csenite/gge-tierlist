@@ -14,18 +14,9 @@ jobs:
           rm -rf probe && mkdir -p probe/js
           UA='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36'
           get() { echo "$1 $(curl -sS -L -A "$UA" -o "$2" -w '%{http_code}' "$1") $(wc -c < "$2")" | tee -a probe/status.txt; }
-          base=https://soshage.com/gget/_app/immutable
-          get "$base/entry/app.ZTq-sn81.js" probe/js/app.js
-          get "$base/entry/start.CxurtY14.js" probe/js/start.js
-          for i in 1 2 3 4; do
-            for u in $(grep -oh '"\.\.\?/[A-Za-z0-9_./-]*\.js"' probe/js/*.js | tr -d '"' | sort -u); do
-              n=$(echo "$u" | sed 's#^\.\./##; s#^\./#chunks/#'); f="probe/js/$(echo $n | tr / _)"
-              [ -f "$f" ] && continue
-              curl -sS -A "$UA" -o "$f" "$base/$n" || true
-            done
+          for u in https://img.kusoge.xyz/ggenet/series/logo_l_series_0010.webp https://img.kusoge.xyz/ggenet/series/logo_l_series_0010.png https://img.kusoge.xyz/ggenet/thumb/thum_g0010u00150.webp; do
+            echo "$u $(curl -sS -o /dev/null -w '%{http_code} %{content_type}' -A "$UA" "$u")" | tee -a probe/status.txt
           done
-          ls probe/js | wc -l | tee -a probe/status.txt
-          grep -oh 'ggenet/[A-Za-z0-9_/${}.]*' probe/js/*.js | sort | uniq -c | tee -a probe/status.txt || true
       - name: Save
         run: |
           git config user.name "github-actions[bot]"
