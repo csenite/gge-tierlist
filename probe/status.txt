@@ -1,0 +1,3 @@
+https://img.kusoge.xyz/ggenet/series/logo_l_series_0010.webp 200 image/webp
+https://img.kusoge.xyz/ggenet/series/logo_l_series_0010.png 404 text/html
+https://img.kusoge.xyz/ggenet/thumb/thum_g0010u00150.webp 200 image/webp
