@@ -62,7 +62,7 @@ def soshage_meta(data):
     path = ROOT / "data/soshage.json"
     if not path.exists():
         return
-    from soshage import Soshage, thumb, logo, RARITY
+    from soshage import Soshage, thumb, logo, RARITY, ROLE
     S = Soshage.from_cache(path)
     series = {s["id"]: s for s in S.series}
     names = json.loads((ROOT / "data/names.json").read_text())
@@ -74,22 +74,32 @@ def soshage_meta(data):
     gseries = json.loads(gpath.read_text())["units"] if gpath.exists() else {}
     by_ja = {_norm(s["ja"]): s for s in S.series if s.get("ja")}
     for l in data["lists"]:
-        for g in (l["groups"].values() if "groups" in l else [l["tiers"]]):
+        for gname, g in (l["groups"].items() if "groups" in l else [("", l["tiers"])]):
             for v in g.values():
                 for u in v:
                     tags = u["t"].split()
                     ex = "EX" in tags or (l["id"] == "strongest" and "UR" not in tags)
-                    key = u["n"] + ("|EX" if ex else "")
+                    ur = not ex and "UR" in tags
+                    typ = next((t for t in tags if t in ROLE), gname or None)
+                    role = ROLE.get(typ)
+                    # The same English name can be an EX, a UR and one or two SSR units with different types.
+                    key = "|".join([u["n"], "EX" if ex else "UR" if ur else "", typ or ""])
                     u["k"] = key
                     if key in done:
                         continue
                     want = 5 if ex or "UR" in tags else next((RARITY[t] for t in tags if t in RARITY), None)
                     cands = sorted(jp_of.get(u["n"], []), key=lambda j: ("EX" in j) != ex)
-                    m = next((m for m in (S.match(j, want) for j in cands) if m), None)
+                    m = next((m for m in (S.match(j, want, role=role, close=False) for j in cands) if m), None)
+                    if ur and (not m or m["rarity"] != 5):
+                        # soshage lists rarity-5 units under their "(EX)" name
+                        m = next((x for x in (S.match(re.sub(r"[（(][^（(]*[)）]$", "", re.sub(r"画像$", "", j)) + "（EX）", 5, role=role, close=False)
+                                              for j in cands) if x), m)
                     if m and ex and not m["en"].endswith("(EX)"):
-                        m = next((x for x in (S.match(re.sub(r"画像$", "", j) + "（EX）", 5) for j in cands) if x), m)
-                    if m and not ex and m["en"].endswith("(EX)"):
-                        m = next((x for x in (S.match(j, want or 4) for j in cands) if x and not x["en"].endswith("(EX)")), m)
+                        m = next((x for x in (S.match(re.sub(r"画像$", "", j) + "（EX）", 5, role=role, close=False) for j in cands) if x), m)
+                    if m and not ex and not ur and m["en"].endswith("(EX)"):
+                        m = next((x for x in (S.match(j, want or 4, role=role, close=False) for j in cands) if x and not x["en"].endswith("(EX)")), m)
+                    if m and (ex or ur) and m["rarity"] != 5:
+                        m = None  # soshage only has a lower-rarity version so far
                     done[key] = True
                     if not m:
                         # Not on soshage yet: keep Game8's picture and use Game8's series, matched by Japanese name.
@@ -105,7 +115,7 @@ def soshage_meta(data):
                     if not ss:
                         missing.append(u["n"])
                     used.update(s["id"] for s in ss)
-                    sos[key] = {"n": re.sub(r"\s*\(EX\)$", "", m["en"]), "th": thumb(m), "r": m["rarity"],
+                    sos[key] = {"n": re.sub(r"\s*\(EX\)$", "", m["en"]), "th": thumb(m), "r": m["rarity"], "ro": m.get("role"),
                                 "s": [[s["en"], logo(s)] for s in ss]}
     data["sos"] = sos
     data["sosSeries"] = sorted({series[i]["en"] for i in used}, key=lambda x: x.casefold())

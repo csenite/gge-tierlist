@@ -10,6 +10,7 @@ import unicodedata
 API = "https://soshage.com/ggetapi/{lang}/{path}"
 IMG = "https://img.kusoge.xyz/ggenet/"
 RARITY = {"N": 1, "R": 2, "SR": 3, "SSR": 4, "UR": 5}
+ROLE = {"ATK": 1, "DEF": 2, "SUP": 3}
 
 
 def norm(name):
@@ -34,6 +35,7 @@ def norm(name):
     s = s.replace("()", "")
     s = s.replace("・", "").replace("=", "").replace(" ", "").replace("ー", "-").replace("―", "-").replace("－", "-")
     s = s.replace("O", "0") if re.search(r"O(ガンダム|\b)", s) else s
+    s = s.replace(".", "")
     return s, hint
 
 
@@ -88,17 +90,24 @@ class Soshage:
         d = {"series": self.series, "units": self.units}
         pathlib.Path(path).write_text(json.dumps(d, ensure_ascii=False, separators=(",", ":")))
 
-    def match(self, jp, rarity=None, close=True):
+    def match(self, jp, rarity=None, close=True, role=None):
+        """role: 1=ATK, 2=DEF, 3=SUP. Some units exist twice at the same rarity with different roles."""
         key, hint = norm(jp)
         cands = self.by_norm.get(key, [])
         want = rarity or hint
         if len(cands) > 1 and want:
             exact = [c for c in cands if c["rarity"] == want]
             cands = exact or cands
+        if len(cands) > 1 and role:
+            cands = [c for c in cands if c.get("role") == role] or cands
         if len(cands) > 1:
             cands = sorted(cands, key=lambda c: -c["rarity"])
         if cands:
             return cands[0]
+        form = re.sub(r"[(（［\[][^()（）［］\[\]]*形態[)）］\]]", "", jp)
+        if form != jp:
+            # Game8 lists some transformed forms (MA mode etc.) separately; soshage has the unit once.
+            return self.match(form, rarity, close, role)
         if not close:
             return None
         # Game8 and the game spell some names slightly differently; accept a close match.
@@ -106,6 +115,8 @@ class Soshage:
             pool = self.by_norm[k]
             if want:
                 pool = [c for c in pool if c["rarity"] == want] or pool
+            if role:
+                pool = [c for c in pool if c.get("role") == role] or pool
             return sorted(pool, key=lambda c: -c["rarity"])[0]
         return None
 

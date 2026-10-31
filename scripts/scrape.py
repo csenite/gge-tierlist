@@ -20,7 +20,7 @@ import time
 import requests
 from bs4 import BeautifulSoup
 
-from soshage import Soshage
+from soshage import Soshage, ROLE as SOS_ROLE
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 BASE = "https://game8.jp/ggene-eternal/"
@@ -248,12 +248,12 @@ def main():
     sos = Soshage.from_cache(sos_path) if sos_path.exists() else None
     auto, guess = {}, {}
 
-    def from_soshage(jp, lid):
+    def from_soshage(jp, lid, role):
         """Official English name from soshage, without the "(EX)" the site shows as a tag."""
         if not sos:
             return None
         want = 5 if lid == "strongest" else 4 if lid in ("ssr", "gacha") else None
-        m = sos.match(jp, want, close=False)
+        m = sos.match(jp, want, close=False, role=SOS_ROLE.get(role))
         if m:
             auto[jp] = re.sub(r"\s*\(EX\)$", "", m["en"])
             return auto[jp]
@@ -279,7 +279,7 @@ def main():
                 row = []
                 for u in tiers[k]:
                     en = (in_list[u["i"]]["n"] if u["i"] in in_list else by_key.get(u["i"]) or names.get(u["jp"])
-                          or from_soshage(u["jp"], lid))
+                          or from_soshage(u["jp"], lid, roles.get(u["jp"]) or g))
                     if not en:
                         unknown.append((lid, g, k, u))
                         continue
