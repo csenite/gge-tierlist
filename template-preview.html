@@ -75,10 +75,9 @@ button:focus-visible,input:focus-visible{outline:2px solid var(--yellow);outline
 .u .meta{display:flex;gap:4px;align-items:center;justify-content:center;flex-wrap:wrap}
 .u em{font-style:normal;font-family:var(--mono);font-size:10px;color:var(--muted);white-space:nowrap}
 .u.new{border-color:var(--yellow);box-shadow:inset 0 3px 0 var(--yellow)}
-.u .top{display:flex;gap:4px;align-items:flex-start;justify-content:center;max-width:100%}
-.u .sis{display:flex;flex-direction:column;gap:3px;width:40px;flex:none}
-.u .si{width:40px;height:auto;max-height:24px;object-fit:contain;display:block}
-.tiers.wide .units{grid-template-columns:repeat(auto-fill,minmax(128px,1fr))}
+.u .pic{position:relative}
+.u .sis{position:absolute;right:1px;bottom:1px;display:flex;flex-direction:column;align-items:flex-end;gap:1px;pointer-events:none}
+.u .si{height:14px;width:auto;max-width:40px;object-fit:contain;display:block;filter:drop-shadow(0 0 1px rgba(0,0,0,.9))}
 .t{font-family:var(--mono);font-size:10.5px;font-weight:500;padding:1px 4px;border-radius:2px;white-space:nowrap}
 .t.ATK{color:var(--atk);border:1px solid var(--atk)}.t.SUP{color:var(--sup);border:1px solid var(--sup)}.t.DEF{color:var(--def);border:1px solid var(--def)}
 .gap{font-size:13px;color:var(--muted);padding:10px;font-style:italic;grid-column:1/-1}
@@ -125,8 +124,18 @@ const LISTS=DATA.lists;
 const GROUPNAMES={ATK:"Attack",SUP:"Support",DEF:"Defense"};
 const tabsEl=document.getElementById("tabs"),tiersEl=document.getElementById("tiers"),introEl=document.getElementById("intro"),qEl=document.getElementById("q");
 let cur=LISTS[0].id,filt="all",serF="";
-const SER=DATA.ser||{};
-{const sel=document.getElementById("ser");for(const f of DATA.fams||[]){const o=document.createElement("option");o.value=o.textContent=f;sel.appendChild(o);}}
+const SER=DATA.ser||{},SOS=DATA.sos||{};
+let serList=null;
+function fillSeries(list){
+  const names=list.id==="strongest"?(DATA.sosSeries||[]):(DATA.fams||[]);
+  if(serList===names)return;serList=names;serF="";
+  const sel=document.getElementById("ser");sel.innerHTML=`<option value="">All series</option>`+names.map(f=>`<option>${esc(f)}</option>`).join("");
+}
+function inSeries(u,list){
+  if(!serF)return true;
+  const so=sosOf(u,list);
+  return so?so.s.some(x=>x[0]===serF):((SER[u.name]||{}).f||[]).includes(serF);
+}
 try{const h=location.hash.slice(1);if(LISTS.some(l=>l.id===h))cur=h;else{const s=localStorage.getItem("ggeTab");if(LISTS.some(l=>l.id===s))cur=s;}}catch(e){}
 
 const esc=s=>s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
@@ -136,10 +145,15 @@ function parse(raw,groupType){
   const rest=parts.filter(p=>!GROUPNAMES[p]);
   return {name,type,shownType:type,rest};
 }
+function sosOf(u,list){return list.id==="strongest"?SOS[u.name]:null;}
 function chip(u,list){
   const isNew=list.new.includes(u.name);
-  const full=esc(u.name)+(isNew?" (newly added)":"");
-  return `<div class="u${isNew?" new":""}" title="${full}" tabindex="0" role="button" aria-label="${full}"><span class="top"><span class="pic">${u.img!=null?`<img class="th" src="https://img.game8.jp/${u.img}/show" alt="" loading="lazy" width="75" height="75" onerror="this.remove()">`:""}</span>${list.id==="strongest"&&((SER[u.name]||{}).is||[]).length?`<span class="sis">${SER[u.name].is.map(x=>`<img class="si" src="https://img.game8.jp/${x[0]}/show" alt="${esc(x[1])}" title="${esc(x[1])}" loading="lazy" onerror="this.remove()">`).join("")}</span>`:""}</span><span class="nm">${esc(u.name)}</span><span class="meta">${u.rest.length?`<em>${u.rest.join(" ")}</em>`:""}${u.shownType?`<b class="t ${u.shownType}">${u.shownType}</b>`:""}</span></div>`;
+  const so=sosOf(u,list);
+  const shown=so?so.n:u.name;
+  const full=esc(shown)+(isNew?" (newly added)":"");
+  const th=so?so.th:(u.img!=null?`https://img.game8.jp/${u.img}/show`:null);
+  const logos=so&&so.s.length?`<span class="sis">${so.s.filter(x=>x[1]).map(x=>`<img class="si" src="${x[1]}" alt="${esc(x[0])}" title="${esc(x[0])}" loading="lazy" onerror="this.remove()">`).join("")}</span>`:"";
+  return `<div class="u${isNew?" new":""}" title="${full}" tabindex="0" role="button" aria-label="${full}"><span class="pic">${th?`<img class="th" src="${th}" alt="" loading="lazy" width="75" height="75" onerror="this.remove()">`:""}${logos}</span><span class="nm">${esc(shown)}</span><span class="meta">${u.rest.length?`<em>${u.rest.join(" ")}</em>`:""}${u.shownType?`<b class="t ${u.shownType}">${u.shownType}</b>`:""}</span></div>`;
 }
 function rowsFor(tiers,gaps,list,groupType){
   return rowsForParts([{tiers,gaps,groupType}],list);
@@ -150,7 +164,7 @@ function rowsForParts(parts,list){
     const gap=parts.map(p=>p.gaps&&p.gaps[k]).filter(Boolean).join(" ");
     if(!parts.some(p=>p.tiers[k])&&!gap)continue;
     let units=parts.flatMap(p=>(p.tiers[k]||[]).map(r=>Object.assign(parse(r,p.groupType),{img:r.i})));
-    units=units.filter(u=>(!q||u.name.toLowerCase().includes(q))&&(filt==="all"||u.type===filt)&&(!serF||((SER[u.name]||{}).f||[]).includes(serF)));
+    units=units.filter(u=>(!q||u.name.toLowerCase().includes(q)||((sosOf(u,list)||{}).n||"").toLowerCase().includes(q))&&(filt==="all"||u.type===filt)&&inSeries(u,list));
     count+=units.length;
     if(!units.length&&!gap&&(q||filt!=="all"||serF))continue;
     const [lab,sub,col]=TIERS[k];
@@ -160,6 +174,7 @@ function rowsForParts(parts,list){
 }
 function render(){
   const list=LISTS.find(l=>l.id===cur);
+  fillSeries(list);
   tabsEl.innerHTML=LISTS.map(l=>`<button role="tab" id="tab-${l.id}" aria-selected="${l.id===cur}" data-id="${l.id}">${l.tab}</button>`).join("");
   introEl.innerHTML=`<div class="card"><h2>${list.title}</h2>${list.about.map(p=>`<p>${p}</p>`).join("")}<p class="src">Source: <a href="${list.url}" target="_blank" rel="noopener">Game8 · ${list.url.replace("https://","")}</a> · updated ${list.updated}</p></div>
   <div class="card"><h3>Latest notes</h3><ul>${list.notes.map(n=>`<li>${n}</li>`).join("")}</ul></div>`;
@@ -177,7 +192,6 @@ function render(){
   }
   if(!total&&!html)html=`<div class="empty">No units match. Try a shorter search, or set the filters back to All.</div>`;
   tiersEl.innerHTML=html;
-  tiersEl.classList.toggle("wide",list.id==="strongest");
 }
 tabsEl.addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;cur=b.dataset.id;try{localStorage.setItem("ggeTab",cur)}catch(err){}render();});
 document.getElementById("ser").addEventListener("change",e=>{serF=e.target.value;render();});

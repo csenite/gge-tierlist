@@ -54,9 +54,45 @@ def series_meta(data):
     data["fams"] = [f for f in ORDER if f in used]
 
 
+def soshage_meta(data, lists=("strongest",)):
+    """Official English names, thumbnails and series logos from soshage.com, keyed by the site's unit name."""
+    path = ROOT / "data/soshage.json"
+    if not path.exists():
+        return
+    from soshage import Soshage, thumb, logo
+    S = Soshage.from_cache(path)
+    series = {s["id"]: s for s in S.series}
+    names = json.loads((ROOT / "data/names.json").read_text())
+    jp_of = {}
+    for jp, en in names.items():
+        jp_of.setdefault(en, []).append(jp)
+    sos, used = {}, set()
+    for l in data["lists"]:
+        if l["id"] not in lists:
+            continue
+        for g in (l["groups"].values() if "groups" in l else [l["tiers"]]):
+            for v in g.values():
+                for u in v:
+                    ex = "EX" in u["t"].split()
+                    cands = sorted(jp_of.get(u["n"], []), key=lambda j: ("EX" in j) != ex)
+                    m = next((m for m in (S.match(j, 5 if l["id"] == "strongest" else None) for j in cands) if m), None)
+                    if m and ex and not m["en"].endswith("(EX)"):
+                        m = next((x for x in (S.match(re.sub(r"画像$", "", j) + "（EX）", 5) for j in cands) if x), m)
+                    if not m:
+                        continue
+                    ss = [series[i] for i in m["series"] if i in series]
+                    used.update(s["id"] for s in ss)
+                    sos[u["n"]] = {"n": re.sub(r"\s*\(EX\)$", "", m["en"]), "th": thumb(m),
+                                   "s": [[s["en"], logo(s)] for s in ss]}
+    data["sos"] = sos
+    data["sosSeries"] = [s["en"] for s in S.series if s["id"] in used]
+
+
 def page(template="template.html"):
     data = json.loads((ROOT / "data/site.json").read_text())
     series_meta(data)
+    if template != "template.html":
+        soshage_meta(data)
     blob = json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
     tpl = (ROOT / template).read_text()
     assert tpl.count("/*DATA*/") == 1
