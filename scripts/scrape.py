@@ -1,8 +1,9 @@
 """Read Game8's G Generation Eternal tier lists and update data/site.json.
 
 Units are matched to the site's existing English entries by their Game8
-thumbnail, then by Japanese name through data/names.json. A unit that can't be
-matched needs a human translation: the script then leaves site.json alone and
+thumbnail, then by Japanese name through data/names.json, then to soshage.com's
+official English name (data/soshage.json, refreshed by scripts/soshage.py). A unit
+that can't be matched needs a human translation: the script then leaves site.json alone and
 writes report.md, so a partial update is never published.
 
 Exit codes: 0 = done (site.json may have changed), 2 = needs translation.
@@ -18,6 +19,8 @@ import time
 
 import requests
 from bs4 import BeautifulSoup
+
+from soshage import Soshage
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 BASE = "https://game8.jp/ggene-eternal/"
@@ -241,6 +244,25 @@ def main():
                 for u in v:
                     by_key.setdefault(u["i"], u["n"])
 
+    sos_path = ROOT / "data/soshage.json"
+    sos = Soshage.from_cache(sos_path) if sos_path.exists() else None
+    auto, guess = {}, {}
+
+    def from_soshage(jp, lid):
+        """Official English name from soshage, without the "(EX)" the site shows as a tag."""
+        if not sos:
+            return None
+        want = 5 if lid == "strongest" else 4 if lid in ("ssr", "gacha") else None
+        m = sos.match(jp, want, close=False)
+        if m:
+            auto[jp] = re.sub(r"\s*\(EX\)$", "", m["en"])
+            return auto[jp]
+        # A close but not exact match is often a sibling unit, so it only goes in the report as a hint.
+        m = sos.match(jp, want)
+        if m:
+            guess[jp] = m["en"]
+        return None
+
     unknown, changes = [], []
     new_lists = {}
     for lid, groups in game8.items():
@@ -256,7 +278,8 @@ def main():
                     continue
                 row = []
                 for u in tiers[k]:
-                    en = in_list[u["i"]]["n"] if u["i"] in in_list else by_key.get(u["i"]) or names.get(u["jp"])
+                    en = (in_list[u["i"]]["n"] if u["i"] in in_list else by_key.get(u["i"]) or names.get(u["jp"])
+                          or from_soshage(u["jp"], lid))
                     if not en:
                         unknown.append((lid, g, k, u))
                         continue
@@ -311,13 +334,17 @@ def main():
             if u["jp"] in seen:
                 continue
             seen.add(u["jp"])
+            hint = f" (closest soshage name: {guess[u['jp']]})" if u["jp"] in guess else ""
             report.append(f"- `{u['jp']}` ({lid}{'' if g == '_' else ' ' + g}, tier {k}, role {roles.get(u['jp'], '?')}) "
-                          f"https://img.game8.jp/{u['i']}/show")
+                          f"https://img.game8.jp/{u['i']}/show{hint}")
     changed_notes = [pid for pid, t in notes.items() if state["notes"].get(pid) not in (None, hashlib.sha1(t.encode()).hexdigest())]
     if changed_notes:
         report.append("\n## Game8 commentary changed (the site's \"Latest notes\" may need a new translation)\n")
         for pid in changed_notes:
             report.append(f"### {BASE}{pid}\n\n```\n{notes[pid]}\n```\n")
+
+    if auto:
+        print("named from soshage:", ", ".join(f"{jp} = {en}" for jp, en in auto.items()))
 
     if no_series:
         report.append("\n## Units with no series on Game8 yet\n")

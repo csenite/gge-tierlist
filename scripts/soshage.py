@@ -2,7 +2,9 @@
 thumbnails and series for every unit."""
 import difflib
 import json
+import pathlib
 import re
+import sys
 import unicodedata
 
 API = "https://soshage.com/ggetapi/{lang}/{path}"
@@ -53,7 +55,8 @@ class Soshage:
             if not e:
                 continue
             rec = {"id": u["id"], "en": e["name"].strip(), "ja": u["name"].strip(), "icon": e["icon"],
-                   "rarity": e["rarity"], "series": [x["series_id"] for x in e.get("series_set") or []]}
+                   "rarity": e["rarity"], "series": [x["series_id"] for x in e.get("series_set") or []],
+                   "role": e.get("role")}
             self.units.append(rec)
             self.by_norm.setdefault(norm(rec["ja"])[0], []).append(rec)
 
@@ -72,7 +75,20 @@ class Soshage:
         load = lambda n: json.load(open(f"{folder}/{n}"))
         return cls(load("unit_en.json"), load("unit_ja.json"), load("series_en.json"), load("series_ja.json"))
 
-    def match(self, jp, rarity=None):
+    @classmethod
+    def fetch(cls):
+        """Download the English and Japanese unit and series lists from soshage.com."""
+        import requests
+        get = lambda lang, path: requests.get(API.format(lang=lang, path=path), timeout=120,
+                                              headers={"User-Agent": "gge-tierlist"}).json()
+        unit = "unit?order_by=rarity:desc"
+        return cls(get("en", unit), get("ja", unit), get("en", "series/v2"), get("ja", "series/v2"))
+
+    def save(self, path):
+        d = {"series": self.series, "units": self.units}
+        pathlib.Path(path).write_text(json.dumps(d, ensure_ascii=False, separators=(",", ":")))
+
+    def match(self, jp, rarity=None, close=True):
         key, hint = norm(jp)
         cands = self.by_norm.get(key, [])
         want = rarity or hint
@@ -83,9 +99,10 @@ class Soshage:
             cands = sorted(cands, key=lambda c: -c["rarity"])
         if cands:
             return cands[0]
+        if not close:
+            return None
         # Game8 and the game spell some names slightly differently; accept a close match.
-        close = difflib.get_close_matches(key, list(self.by_norm), n=3, cutoff=0.88)
-        for k in close:
+        for k in difflib.get_close_matches(key, list(self.by_norm), n=3, cutoff=0.88):
             pool = self.by_norm[k]
             if want:
                 pool = [c for c in pool if c["rarity"] == want] or pool
@@ -99,3 +116,18 @@ def thumb(unit):
 
 def logo(series):
     return f"{IMG}series/logo_l_{series['logo']}.webp" if series.get("logo") else None
+
+
+if __name__ == "__main__":
+    # Refresh data/soshage.json. A failed download keeps the old copy, so the daily update still runs.
+    out = pathlib.Path(__file__).resolve().parent.parent / "data/soshage.json"
+    try:
+        S = Soshage.fetch()
+    except Exception as e:
+        print("soshage download failed, keeping the old copy:", e)
+        sys.exit(0)
+    if len(S.units) < 1000 or len(S.series) < 50:
+        print(f"soshage returned only {len(S.units)} units and {len(S.series)} series, keeping the old copy")
+        sys.exit(0)
+    S.save(out)
+    print(f"soshage: {len(S.units)} units, {len(S.series)} series")

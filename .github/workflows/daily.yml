@@ -24,6 +24,8 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install requests beautifulsoup4
+      - name: Refresh soshage's official names and pictures
+        run: python scripts/soshage.py
       - name: Read Game8 and update data
         id: scrape
         run: |
@@ -44,7 +46,7 @@ jobs:
           if git diff --cached --quiet; then echo "Nothing changed"; exit 0; fi
           git config user.name "github-actions[bot]"
           git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
-          git commit -m "Daily update from Game8"
+          git commit -m "Daily update from Game8 and soshage"
           git push
       - name: Open or update the translation issue
         if: hashFiles('report.md') != ''
