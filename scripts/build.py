@@ -42,9 +42,13 @@ def series_meta(data):
     for n in sorted(names):
         jp = series["units"].get(n, [])
         fams = families(jp)
-        icon = next((i for i in (find_icon(series["icons"], s) for s in jp) if i), None)
+        icons = []
+        for s in jp:
+            i = find_icon(series["icons"], s)
+            if i and i not in [x[0] for x in icons]:
+                icons.append([i, (families([s]) or [s])[0]])
         if fams:
-            ser[n] = {"f": fams, "i": icon}
+            ser[n] = {"f": fams, "i": icons[0][0] if icons else None, "is": icons}
             used.update(fams)
     data["ser"] = ser
     data["fams"] = [f for f in ORDER if f in used]
