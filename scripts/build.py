@@ -115,7 +115,7 @@ def soshage_meta(data):
                     if not ss:
                         missing.append(u["n"])
                     used.update(s["id"] for s in ss)
-                    sos[key] = {"n": re.sub(r"\s*\(EX\)$", "", m["en"]), "th": thumb(m), "r": m["rarity"], "ro": m.get("role"),
+                    sos[key] = {"n": re.sub(r"\s*\(EX\)$", "", m["en"]), "th": thumb(m), "r": m["rarity"], "ro": m.get("role"), "a": m.get("acq"),
                                 "s": [[s["en"], logo(s)] for s in ss]}
     data["sos"] = sos
     data["sosSeries"] = sorted({series[i]["en"] for i in used}, key=lambda x: x.casefold())

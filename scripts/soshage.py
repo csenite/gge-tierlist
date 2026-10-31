@@ -58,7 +58,7 @@ class Soshage:
                 continue
             rec = {"id": u["id"], "en": e["name"].strip(), "ja": u["name"].strip(), "icon": e["icon"],
                    "rarity": e["rarity"], "series": [x["series_id"] for x in e.get("series_set") or []],
-                   "role": e.get("role")}
+                   "role": e.get("role"), "acq": e.get("acquisition")}
             self.units.append(rec)
             self.by_norm.setdefault(norm(rec["ja"])[0], []).append(rec)
 
