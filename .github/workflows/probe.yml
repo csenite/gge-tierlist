@@ -1,0 +1,22 @@
+name: Probe page
+on:
+  push:
+    branches: [probe]
+permissions:
+  contents: write
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch
+        run: |
+          rm -rf probe && mkdir -p probe
+          UA='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36'
+          echo "$(curl -sS -L -A "$UA" -o probe/soshage_unit.html -w '%{http_code}' https://soshage.com/gget/unit) $(wc -c < probe/soshage_unit.html)" | tee probe/status.txt
+      - name: Save
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add probe
+          git commit -m "Probe results" && git push origin HEAD:probe-results --force
