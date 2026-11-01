@@ -374,7 +374,7 @@ def main():
     names_path.write_text(json.dumps(dict(sorted(names.items())), ensure_ascii=False, indent=1) + "\n")
     state = {"dates": dates, "notes": {pid: hashlib.sha1(t.encode()).hexdigest() for pid, t in notes.items()}}
     state_path.write_text(json.dumps(state, ensure_ascii=False, indent=1) + "\n")
-    if report:
+    if report and (unknown or changed_notes):
         pathlib.Path(args.report).write_text("\n".join(report) + "\n")
     print("changed lists:", ", ".join(changes) or "none")
     return 0
