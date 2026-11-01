@@ -507,8 +507,8 @@
    ],
    "notes": [
     "The top SSS tier is unchanged this update.",
-    "<b>New: GM Sniper II (White Dingo Team)</b> and <b>Extreme Gundam Excelia</b> enter at S. GM Sniper II carries a range-5 weapon that lowers enemy attack, which makes it easy to use.",
-    "<b>New: Graham's Union Flag Custom II (GN Flag)</b> enters at A. <b>Gelgoog Ground Type (Visch Donahue)</b> and <b>Rhinosaurus Type B</b> enter at B."
+    "<b>New: Gundam Zirius (SSR, Defense)</b> and <b>Dark Gundam Jr. (SSR, Support)</b> enter at S, added with the Mobile Suit Gundam EIGHT collab and the Strong Enemy Assault special mode. Zirius's Support Defense move rises to 6 under a tension condition. Dark Gundam Jr. has move 5 and range 5, which makes it an easy debuffer to use.",
+    "<b>New: GM Sniper II (White Dingo)</b> enters at S, <b>Graham's Union Flag Custom II \"GN Flag\"</b> at A, and <b>Visch Donahue's Gelgoog Ground Type</b> and <b>Rhinoceros Type B</b> at B."
    ],
    "new": [
     "Gundam Zirius",
@@ -3421,8 +3421,8 @@
     "Rarity tags are left off on this list because Game8 doesn't show them here."
    ],
    "notes": [
-    "Four units were added through the <i>Mobile Suit Gundam Side Story 0079: Rise from the Ashes</i> event and the Gundam 00 Story Challenge.",
-    "<b>Graham's Union Flag Custom II (GN Flag)</b> rates SSS for SP upgrading. Story progress gives you its dedicated SP material, so upgrading it is recommended. It is strong against Gundam 00 enemies and carries a MAP weapon usable after moving."
+    "<b>New: Gundam Zirius (SSR, Defense)</b> and <b>Dark Gundam Jr. (SSR, Support)</b> were added with the Mobile Suit Gundam EIGHT collab. Zirius is recommended for SP upgrading, since its panel missions give you the SP material.",
+    "For hard Eternal Road stages, focus on Attack units, since they deal the most damage. Defense units also gain survivability from their stat boosts, so the best approach is usually to SP-upgrade the units you can't clear Eternal Road without."
    ],
    "new": [
     "Dark Gundam Jr.",
@@ -4789,8 +4789,8 @@
     "Game8 doesn't label the three tables. Each was matched to a role by the role tags of the units inside it."
    ],
    "notes": [
-    "<b>GM Sniper II (White Dingo Team)</b> is Game8's pick among the new units because SSP upgrading gives it underwater terrain adaptability.",
-    "<b>Rhinosaurus Type B</b> gets range 6 on both of its debuff weapons. Its weak points are low movement and poor terrain adaptability."
+    "<b>New: Gundam Zirius (SSR, Defense)</b> gets 2 MAP weapon charges and a range-5 attack-debuff SSP weapon. <b>Dark Gundam Jr. (SSR, Support)</b> gets range 6 on its special weapon debuff and a range-5 defense-down SSP weapon. SSP upgrading is recommended for both.",
+    "Low on attack units? Pick the Attack type first. SSP weapons have high accuracy, so Byarlant Custom 02 and Gundam Flauros \"Ryusei-Go\" become much more usable. Support units that reach range 6 after SSP upgrading are also good picks, since they can debuff without counterattacks."
    ],
    "new": [
     "Dark Gundam Jr.",
