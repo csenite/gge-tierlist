@@ -499,7 +499,7 @@
    "tab": "SSR dev & events",
    "title": "Strongest SSR units (development & events)",
    "url": "https://game8.jp/ggene-eternal/685124",
-   "updated": "Oct 26, 2026",
+   "updated": "Nov 1, 2026",
    "about": [
     "Game8's ranking of SSR-rarity units. Useful for picking which SSRs to build before you have many EX or UR units.",
     "Game8 splits this ranking in two. This tab covers units you get from Development or events. Gacha SSRs are on the SSR gacha tab.",
@@ -511,7 +511,8 @@
     "<b>New: Graham's Union Flag Custom II (GN Flag)</b> enters at A. <b>Gelgoog Ground Type (Visch Donahue)</b> and <b>Rhinosaurus Type B</b> enter at B."
    ],
    "new": [
-    "GM Sniper II (White Dingo Team)"
+    "Gundam Zirius",
+    "Dark Gundam Jr."
    ],
    "tiers": {
     "SSS": [
@@ -1008,6 +1009,16 @@
       "n": "GM Sniper II (White Dingo Team)",
       "t": "SSR DEF",
       "i": "13103587/4471b7ac7a944144a50d33a09f65eb14.webp"
+     },
+     {
+      "n": "Gundam Zirius",
+      "t": "",
+      "i": "13151661/984556b0d08d24aedc83194662d6dbaa.webp"
+     },
+     {
+      "n": "Dark Gundam Jr.",
+      "t": "",
+      "i": "13151664/7c08fc9c12cadb690d2fe1b1b5b89bf4.webp"
      }
     ],
     "A": [
@@ -3404,7 +3415,7 @@
    "tab": "SP upgrade",
    "title": "Best units to SP upgrade",
    "url": "https://game8.jp/ggene-eternal/684033",
-   "updated": "Oct 26, 2026",
+   "updated": "Nov 1, 2026",
    "about": [
     "Which units to SP-upgrade first. Game8 ranks Attack, Support and Defense units in separate tables; here they share one tier list, Attack first in each tier. Use the type filter to see one role.",
     "Rarity tags are left off on this list because Game8 doesn't show them here."
@@ -3414,7 +3425,8 @@
     "<b>Graham's Union Flag Custom II (GN Flag)</b> rates SSS for SP upgrading. Story progress gives you its dedicated SP material, so upgrading it is recommended. It is strong against Gundam 00 enemies and carries a MAP weapon usable after moving."
    ],
    "new": [
-    "Graham's Union Flag Custom II (GN Flag)"
+    "Dark Gundam Jr.",
+    "Gundam Zirius"
    ],
    "groups": {
     "ATK": {
@@ -4160,9 +4172,14 @@
      ],
      "A": [
       {
-       "n": "Gundam AGE-1 Spallow",
+       "n": "Gundam AGE-2 Artimes",
        "t": "",
-       "i": "12353399/71b3e89e8cc96a2debf72ac6d6276dd5.webp"
+       "i": "12353384/167aa032bc74419f49bae2e3668614c8.webp"
+      },
+      {
+       "n": "Dark Gundam Jr.",
+       "t": "",
+       "i": "13151664/7c08fc9c12cadb690d2fe1b1b5b89bf4.webp"
       },
       {
        "n": "Zanneck",
@@ -4205,14 +4222,14 @@
        "i": "12353380/11020836bade2fcc2614b62e8dafa05f.webp"
       },
       {
-       "n": "Gundam AGE-2 Artimes",
-       "t": "",
-       "i": "12353384/167aa032bc74419f49bae2e3668614c8.webp"
-      },
-      {
        "n": "Zeong",
        "t": "",
        "i": "11272559/7f9c99d49a9c92bca3935e27d20777ad.png"
+      },
+      {
+       "n": "Gundam AGE-1 Spallow",
+       "t": "",
+       "i": "12353399/71b3e89e8cc96a2debf72ac6d6276dd5.webp"
       },
       {
        "n": "Gundam AGE-1 Flat",
@@ -4426,6 +4443,11 @@
        "n": "Gundam Epyon (EW)",
        "t": "",
        "i": "12838374/e52aef86b74951b3a84c8fe267de3795.webp"
+      },
+      {
+       "n": "Gundam Zirius",
+       "t": "",
+       "i": "13151661/984556b0d08d24aedc83194662d6dbaa.webp"
       }
      ],
      "SS": [
@@ -4761,7 +4783,7 @@
    "tab": "SSP upgrade",
    "title": "Best units to SSP upgrade",
    "url": "https://game8.jp/ggene-eternal/750190",
-   "updated": "Oct 26, 2026",
+   "updated": "Nov 1, 2026",
    "about": [
     "Which units to SSP-upgrade first. Game8 ranks Attack, Support and Defense units in separate tables; here they share one tier list, Attack first in each tier. Use the type filter to see one role.",
     "Game8 doesn't label the three tables. Each was matched to a role by the role tags of the units inside it."
@@ -4771,8 +4793,8 @@
     "<b>Rhinosaurus Type B</b> gets range 6 on both of its debuff weapons. Its weak points are low movement and poor terrain adaptability."
    ],
    "new": [
-    "GM Sniper II (White Dingo Team)",
-    "Rhinosaurus Type B"
+    "Dark Gundam Jr.",
+    "Gundam Zirius"
    ],
    "groups": {
     "ATK": {
@@ -5401,6 +5423,11 @@
        "i": "12445518/567c1449344e9080a98b491352ccd27f.webp"
       },
       {
+       "n": "Dark Gundam Jr.",
+       "t": "",
+       "i": "13151664/7c08fc9c12cadb690d2fe1b1b5b89bf4.webp"
+      },
+      {
        "n": "Extreme Gundam Excelia",
        "t": "SSR SUP",
        "i": "13076605/16b66829f3cecdbaa5c527b71d0dc764.webp"
@@ -5810,74 +5837,19 @@
      ],
      "S": [
       {
-       "n": "GN Arms Type-E",
-       "t": "",
-       "i": "11271579/ebcb3c49a0736fd498735ff43ba07868.jpeg"
-      },
-      {
-       "n": "Psycho Gundam",
-       "t": "",
-       "i": "11274255/912800b672690d2a85986f2a531fdc0c.png"
-      },
-      {
-       "n": "Providence Gundam",
-       "t": "",
-       "i": "11271781/c911d7724483a611a26b76d9c46839a7.png"
-      },
-      {
-       "n": "Tallgeese II",
-       "t": "",
-       "i": "11271550/a1aca806c311cddf4a0e6bbabb51710d.png"
-      },
-      {
-       "n": "Windam (Neo Lorrnoke)",
-       "t": "",
-       "i": "11519628/214804a861ebda8bb05da12b69517b81.jpeg"
-      },
-      {
-       "n": "Destiny Gundam",
-       "t": "",
-       "i": "11511398/45db769b99562d4a512131bfcca0848c.png"
-      },
-      {
-       "n": "Knight Sazabi",
-       "t": "SD",
-       "i": "11649734/40ded40adec462ac396fc16e554ce862.webp"
-      },
-      {
-       "n": "Gundam Astaroth Origin",
-       "t": "",
-       "i": "11784291/864c226b09f8d70152b0172fbedaf561.webp"
-      },
-      {
        "n": "Unicorn Gundam (Destroy Mode)",
        "t": "SSR",
        "i": "11817037/afe4902146a3e952e9efbd2952f2295e.webp"
       },
       {
-       "n": "Gaia Gundam (Andrew Waltfeld)",
+       "n": "Gundam Zirius",
        "t": "",
-       "i": "12161890/42a9ee7fc519e302e08cb2c59a9d3986.webp"
+       "i": "13151661/984556b0d08d24aedc83194662d6dbaa.webp"
       },
       {
-       "n": "Darilbalde (Season 2)",
+       "n": "GM Sniper II (White Dingo Team)",
        "t": "SSR DEF",
-       "i": "12162410/42b612de8cd554d8bbafe3ca7fa3f5a0.webp"
-      },
-      {
-       "n": "Gundam Aerial",
-       "t": "SSR DEF",
-       "i": "12162400/3914e85c7d3e91607e990cdeaed3a6f2.webp"
-      },
-      {
-       "n": "Gelgoog (Herbert von Kaspen)",
-       "t": "SSR DEF",
-       "i": "12214545/a8347501ff1abb470964a1cedcc916d2.webp"
-      },
-      {
-       "n": "Tieren All-Region Type",
-       "t": "SSR DEF",
-       "i": "12445521/ea0f9dbacac0abd3f59c6b5c561ae6f1.webp"
+       "i": "13103587/4471b7ac7a944144a50d33a09f65eb14.webp"
       },
       {
        "n": "Tallgeese III",
@@ -5885,9 +5857,69 @@
        "i": "12444386/3bd4b49ffe067bcb049f8a5c99857da5.webp"
       },
       {
-       "n": "GM Sniper II (White Dingo Team)",
+       "n": "Tieren All-Region Type",
        "t": "SSR DEF",
-       "i": "13103587/4471b7ac7a944144a50d33a09f65eb14.webp"
+       "i": "12445521/ea0f9dbacac0abd3f59c6b5c561ae6f1.webp"
+      },
+      {
+       "n": "Gelgoog (Herbert von Kaspen)",
+       "t": "SSR DEF",
+       "i": "12214545/a8347501ff1abb470964a1cedcc916d2.webp"
+      },
+      {
+       "n": "Gundam Aerial",
+       "t": "SSR DEF",
+       "i": "12162400/3914e85c7d3e91607e990cdeaed3a6f2.webp"
+      },
+      {
+       "n": "Darilbalde (Season 2)",
+       "t": "SSR DEF",
+       "i": "12162410/42b612de8cd554d8bbafe3ca7fa3f5a0.webp"
+      },
+      {
+       "n": "Gaia Gundam (Andrew Waltfeld)",
+       "t": "",
+       "i": "12161890/42a9ee7fc519e302e08cb2c59a9d3986.webp"
+      },
+      {
+       "n": "GN Arms Type-E",
+       "t": "",
+       "i": "11271579/ebcb3c49a0736fd498735ff43ba07868.jpeg"
+      },
+      {
+       "n": "Gundam Astaroth Origin",
+       "t": "",
+       "i": "11784291/864c226b09f8d70152b0172fbedaf561.webp"
+      },
+      {
+       "n": "Knight Sazabi",
+       "t": "SD",
+       "i": "11649734/40ded40adec462ac396fc16e554ce862.webp"
+      },
+      {
+       "n": "Destiny Gundam",
+       "t": "",
+       "i": "11511398/45db769b99562d4a512131bfcca0848c.png"
+      },
+      {
+       "n": "Windam (Neo Lorrnoke)",
+       "t": "",
+       "i": "11519628/214804a861ebda8bb05da12b69517b81.jpeg"
+      },
+      {
+       "n": "Tallgeese II",
+       "t": "",
+       "i": "11271550/a1aca806c311cddf4a0e6bbabb51710d.png"
+      },
+      {
+       "n": "Providence Gundam",
+       "t": "",
+       "i": "11271781/c911d7724483a611a26b76d9c46839a7.png"
+      },
+      {
+       "n": "Psycho Gundam",
+       "t": "",
+       "i": "11274255/912800b672690d2a85986f2a531fdc0c.png"
       }
      ],
      "A": [
