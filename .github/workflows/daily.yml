@@ -1,7 +1,7 @@
 name: Daily tier list update
 on:
   schedule:
-    - cron: "41 0 * * *"   # every day 08:41 Malaysia time
+    - cron: "17 23 * * *"  # every day 07:17 Malaysia time; GitHub often starts scheduled runs up to an hour late
   workflow_dispatch:
   push:
     branches: [main]

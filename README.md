@@ -10,7 +10,7 @@ Live at https://csenite.github.io/gge-tierlist/
 - `scripts/soshage.py` downloads soshage.com's official English names, thumbnails and series into
   `data/soshage.json`. The page shows those names, pictures and series logos.
 
-Every day at 08:41 Malaysia time, `.github/workflows/daily.yml` refreshes the soshage data, then
+Every day at 07:17 Malaysia time (GitHub may start it up to an hour late), `.github/workflows/daily.yml` refreshes the soshage data, then
 runs the scraper. A new Game8 unit gets its English name from soshage when the Japanese names match.
 If every unit has an English name it rebuilds and publishes the site.
 If Game8 added a unit that isn't on soshage yet, or changed its commentary, it leaves the
