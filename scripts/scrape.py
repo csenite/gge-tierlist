@@ -235,6 +235,15 @@ def scrape(src):
         for u in cat.get("db_data", []):
             if u.get("col_2") in ROLE:
                 roles[u["title"].strip()] = ROLE[u["col_2"]]
+            # Banner backup for UR board items whose 恒常or限定 value is blank: col_57, or the gacha name in col_4
+            b = u.get("col_57") or ""
+            g = u.get("col_4") or ""
+            if b not in ("限定", "恒常") and g.endswith("ガチャ"):
+                b = "恒常" if g.startswith("恒常") else "限定"
+            k = img_key(u.get("image_url"))
+            if b in ("限定", "恒常") and k and k not in ser["banner"]:
+                ser["banner"].setdefault("_unit:" + u["title"].strip(), "L" if b == "限定" else "N")
+                ser["banner"].setdefault("_key:" + k, "L" if b == "限定" else "N")
             # UR records keep the series in col_54; SSR records in col_11 or col_59
             for col in ("col_54", "col_11", "col_59"):
                 v = u.get(col) or ""
@@ -356,8 +365,11 @@ def main():
                         tags = " ".join(x for x in [("EX" if "（EX）" in u["jp"] else "UR") if lid == "strongest" else "",
                                                     "" if g != "_" else role] if x)
                     rec = {"n": en, "t": tags, "i": u["i"]}
-                    if lid == "strongest" and u["i"] in ser["banner"]:
-                        rec["b"] = ser["banner"][u["i"]]
+                    if lid == "strongest":
+                        b = (ser["banner"].get(u["i"]) or ser["banner"].get("_key:" + u["i"])
+                             or ser["banner"].get("_unit:" + u["jp"]))
+                        if b:
+                            rec["b"] = b
                     row.append(rec)
                 out[g][k] = row
         if out != old_groups:
