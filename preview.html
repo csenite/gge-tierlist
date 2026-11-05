@@ -98,7 +98,7 @@ button.slogo:hover,button.slogo:focus-visible{background:#2a3450;outline:2px sol
 .u.open{z-index:2}
 .u.open .nm{white-space:normal;overflow-wrap:anywhere}
 .u .meta{display:flex;gap:4px;align-items:center;justify-content:center;flex-wrap:wrap}
-.u em.lim{color:var(--red);font-weight:700}
+.u.lim{border:2px solid #d4a017;box-shadow:0 0 8px rgba(212,160,23,.55);background:linear-gradient(180deg,rgba(212,160,23,.18),var(--chip) 60%)}
 .u em{font-style:normal;font-family:var(--mono);font-size:10px;color:var(--muted);white-space:nowrap}
 .u.new{border-color:var(--yellow);box-shadow:inset 0 3px 0 var(--yellow)}
 .u .sis{position:absolute;right:6%;bottom:6%;display:flex;flex-direction:column;align-items:flex-end;gap:1px;pointer-events:none}
@@ -191,7 +191,7 @@ function chip(u,list){
   const logos=so&&so.s.length?`<span class="sis">${so.s.filter(x=>x[1]).map(x=>`<img class="si" src="${x[1]}" alt="${esc(x[0])}" title="${esc(x[0])}" loading="lazy" onerror="this.remove()">`).join("")}</span>`:"";
   const r=so&&so.r?so.r:(u.rest.includes("SSR")?4:5),tn=TYPEN[u.shownType];
   const icons=`<img class="ic ra" src="${KX}icon/UI_Common_RarityIcon_${r}.webp" alt="" loading="lazy" onerror="this.remove()">${tn?`<img class="ic ty" src="${KX}icon/UI_Common_TypeIcon_${tn}_S.webp" alt="" loading="lazy" onerror="this.remove()">`:""}${so&&so.a?`<img class="ic src" src="${KX}icon/UI_Common_Icon_Source_${so.a}.webp" alt="" loading="lazy" onerror="this.remove()">`:""}`;
-  return `<div class="u${isNew?" new":""}" title="${full}" tabindex="0" role="button" aria-label="${full}">${u.pos?`<span class="pos">${u.pos}</span>`:""}<span class="pic" style="background-image:url(${KX}frame/UI_Common_Tmb_Square_Supporter_Base_${r}.webp)">${th?`<img class="th" src="${th}" alt="" loading="lazy" onerror="this.remove()">`:""}${icons}${logos}</span><span class="nm">${esc(shown)}</span><span class="meta">${u.b==="L"?`<em class="lim">LIMITED</em>`:""}${u.rest.length?`<em>${u.rest.join(" ")}</em>`:""}${u.shownType?`<b class="t ${u.shownType}">${u.shownType}</b>`:""}</span></div>`;
+  return `<div class="u${isNew?" new":""}${u.b==="L"?" lim":""}" title="${full}${u.b==="L"?" (limited banner)":""}" tabindex="0" role="button" aria-label="${full}">${u.pos?`<span class="pos">${u.pos}</span>`:""}<span class="pic" style="background-image:url(${KX}frame/UI_Common_Tmb_Square_Supporter_Base_${r}.webp)">${th?`<img class="th" src="${th}" alt="" loading="lazy" onerror="this.remove()">`:""}${icons}${logos}</span><span class="nm">${esc(shown)}</span><span class="meta">${u.rest.length?`<em>${u.rest.join(" ")}</em>`:""}${u.shownType?`<b class="t ${u.shownType}">${u.shownType}</b>`:""}</span></div>`;
 }
 function keep(u,list,q){
   return (!q||u.name.toLowerCase().includes(q)||((sosOf(u,list)||{}).n||"").toLowerCase().includes(q))&&(filt==="all"||u.type===filt)&&inSeries(u,list)&&(list.id==="strongest"?(banF==="all"||u.b===banF):(!feaF||!!(sosOf(u,list)||{}).fa));
