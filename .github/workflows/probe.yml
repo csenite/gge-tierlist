@@ -14,7 +14,7 @@ jobs:
           rm -rf probe && mkdir -p probe/js
           UA='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36'
           get() { echo "$1 $(curl -sS -L -A "$UA" -o "$2" -w '%{http_code}' "$1") $(wc -c < "$2")" | tee -a probe/status.txt; }
-          get https://game8.jp/api/user_rating_tier_boards/3 probe/board3.json
+          curl -sS -A "$UA" -H 'Referer: https://game8.jp/' -H 'Accept-Language: ja' -o probe/board3.json https://game8.jp/api/user_rating_tier_boards/3; echo board done >> probe/status.txt
       - name: Save
         run: |
           git config user.name "github-actions[bot]"
