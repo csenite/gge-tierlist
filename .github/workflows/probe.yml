@@ -14,9 +14,7 @@ jobs:
           rm -rf probe && mkdir -p probe/js
           UA='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36'
           get() { echo "$1 $(curl -sS -L -A "$UA" -o "$2" -w '%{http_code}' "$1") $(wc -c < "$2")" | tee -a probe/status.txt; }
-          for u in https://img.kusoge.xyz/ggenet/series/logo_l_series_0010.webp https://img.kusoge.xyz/ggenet/series/logo_l_series_0010.png https://img.kusoge.xyz/ggenet/thumb/thum_g0010u00150.webp; do
-            echo "$u $(curl -sS -o /dev/null -w '%{http_code} %{content_type}' -A "$UA" "$u")" | tee -a probe/status.txt
-          done
+          get https://game8.jp/ggene-eternal/684093 probe/684093.html
       - name: Save
         run: |
           git config user.name "github-actions[bot]"
