@@ -203,13 +203,18 @@ def scrape(src):
             game8[lid][g] = parse_table(tabs[lab])
     board = src.json(UR_BOARD, "board3.json")
     ur, ur_roles = {}, {}
-    ser = {"key": {}, "title": {}, "icon": {}}
+    ser = {"key": {}, "title": {}, "icon": {}, "banner": {}}
     for t in board["tiers"]:
         k = tier_of(t.get("label") or t.get("value"))
         ur[k] = []
         for it in t["items"]:
             jp = it["title"].strip()
             ur[k].append({"jp": jp, "i": img_key(it.get("image_url"))})
+            # col_57 「恒常or限定」: permanent or limited gacha banner
+            b = (it.get("filter_values") or {}).get("col_57")
+            b = b[0] if isinstance(b, list) and b else b
+            if b in ("限定", "恒常"):
+                ser["banner"][img_key(it.get("image_url"))] = "L" if b == "限定" else "N"
             sv = (it.get("filter_values") or {}).get("col_54")
             if sv:
                 parts = [x.strip() for x in sv.split(":") if x.strip()]
@@ -350,7 +355,10 @@ def main():
                         role = roles.get(u["jp"]) or (g if g != "_" else "")
                         tags = " ".join(x for x in [("EX" if "（EX）" in u["jp"] else "UR") if lid == "strongest" else "",
                                                     "" if g != "_" else role] if x)
-                    row.append({"n": en, "t": tags, "i": u["i"]})
+                    rec = {"n": en, "t": tags, "i": u["i"]}
+                    if lid == "strongest" and u["i"] in ser["banner"]:
+                        rec["b"] = ser["banner"][u["i"]]
+                    row.append(rec)
                 out[g][k] = row
         if out != old_groups:
             strip = lambda gs: {g: {k: [(u["n"], u["t"]) for u in v] for k, v in t.items()} for g, t in gs.items()}
