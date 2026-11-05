@@ -14,25 +14,7 @@ jobs:
           rm -rf probe && mkdir -p probe/js
           UA='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36'
           get() { echo "$1 $(curl -sS -L -A "$UA" -o "$2" -w '%{http_code}' "$1") $(wc -c < "$2")" | tee -a probe/status.txt; }
-          get https://game8.jp/ggene-eternal/684285 probe/684285.html; sleep 2
-          get https://game8.jp/ggene-eternal/785541 probe/785541.html; sleep 2
-          get https://game8.jp/ggene-eternal/786112 probe/786112.html; sleep 2
-          get https://game8.jp/ggene-eternal/786219 probe/786219.html; sleep 2
-          get https://game8.jp/ggene-eternal/785907 probe/785907.html; sleep 2
-          get https://game8.jp/ggene-eternal/786218 probe/786218.html; sleep 2
-          get https://game8.jp/ggene-eternal/785595 probe/785595.html; sleep 2
-          get https://game8.jp/ggene-eternal/786110 probe/786110.html; sleep 2
-          get https://game8.jp/ggene-eternal/787219 probe/787219.html; sleep 2
-          get https://game8.jp/ggene-eternal/684286 probe/684286.html; sleep 2
-          get https://game8.jp/ggene-eternal/687740 probe/687740.html; sleep 2
-          get https://game8.jp/ggene-eternal/785550 probe/785550.html; sleep 2
-          get https://game8.jp/ggene-eternal/786121 probe/786121.html; sleep 2
-          get https://game8.jp/ggene-eternal/785601 probe/785601.html; sleep 2
-          get https://game8.jp/ggene-eternal/786098 probe/786098.html; sleep 2
-          get https://game8.jp/ggene-eternal/785799 probe/785799.html; sleep 2
-          get https://game8.jp/ggene-eternal/786101 probe/786101.html; sleep 2
-          get https://game8.jp/ggene-eternal/786103 probe/786103.html; sleep 2
-          get https://game8.jp/ggene-eternal/785606 probe/785606.html; sleep 2
+          get https://game8.jp/api/user_rating_tier_boards/3 probe/board3.json
       - name: Save
         run: |
           git config user.name "github-actions[bot]"
