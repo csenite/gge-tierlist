@@ -53,6 +53,7 @@ class Soshage:
         self.series.sort(key=lambda s: s["sort"])
         self.units = []
         self.by_norm = {}
+        tags = {}
         for u in units_ja:
             e = en.get(u["id"])
             if not e:
@@ -62,8 +63,14 @@ class Soshage:
                    "role": e.get("role"), "acq": e.get("acquisition")}
             if any(t.get("tag_id") == FIERCE_ASSAULT for t in e.get("tags") or []):
                 rec["fa"] = 1
+            for t in e.get("tags") or []:
+                tags.setdefault(t["tag_id"], {"id": t["tag_id"], "en": t["tag"]["name"]})
+            for t in u.get("tags") or []:
+                if t["tag_id"] in tags:
+                    tags[t["tag_id"]]["ja"] = t["tag"]["name"]
             self.units.append(rec)
             self.by_norm.setdefault(norm(rec["ja"])[0], []).append(rec)
+        self.tags = sorted(tags.values(), key=lambda t: t["id"])
 
     @classmethod
     def from_cache(cls, path):
@@ -71,6 +78,7 @@ class Soshage:
         d = json.load(open(path))
         obj = cls.__new__(cls)
         obj.series, obj.units, obj.by_norm = d["series"], d["units"], {}
+        obj.tags = d.get("tags", [])
         for rec in obj.units:
             obj.by_norm.setdefault(norm(rec["ja"])[0], []).append(rec)
         return obj
@@ -90,7 +98,7 @@ class Soshage:
         return cls(get("en", unit), get("ja", unit), get("en", "series/v2"), get("ja", "series/v2"))
 
     def save(self, path):
-        d = {"series": self.series, "units": self.units}
+        d = {"series": self.series, "units": self.units, "tags": self.tags}
         pathlib.Path(path).write_text(json.dumps(d, ensure_ascii=False, separators=(",", ":")))
 
     def match(self, jp, rarity=None, close=True, role=None):

@@ -84,8 +84,15 @@ def soshage_meta(data):
     gpath = ROOT / "data/series.json"
     gseries = json.loads(gpath.read_text())["units"] if gpath.exists() else {}
     by_ja = {_norm(s["ja"]): s for s in S.series if s.get("ja")}
+    tag_ja = {_norm(t["ja"]): t for t in getattr(S, "tags", []) if t.get("ja")}
     for l in data["lists"]:
-        if "rows" in l:
+        if "rows" in l and l["id"] == "bytag":
+            for r in l["rows"]:
+                # Game8's tag name -> soshage's English tag name
+                t = tag_ja.get(_norm(r["s"])) or tag_ja.get(_norm(r["s"] + "シリーズ"))
+                r["en"] = t["en"] if t else r["label"]
+                r["img"] = None
+        elif "rows" in l:
             for r in l["rows"]:
                 # Game8's series name -> soshage's English name and logo
                 s = by_ja.get(_norm(r["s"]))

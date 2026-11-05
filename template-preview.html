@@ -69,6 +69,7 @@ button:focus-visible,input:focus-visible{outline:2px solid var(--yellow);outline
 .slogo small{font-size:10px;line-height:1.25;overflow-wrap:anywhere}
 button.slogo{border:0;font:inherit;cursor:pointer;width:100%}
 button.slogo:hover,button.slogo:focus-visible{background:#2a3450;outline:2px solid var(--yellow);outline-offset:-2px}
+.slogo .tname{font-family:var(--display);font-weight:700;font-size:15px;line-height:1.2;overflow-wrap:anywhere}
 .slogo em{font-style:normal;font-family:var(--mono);font-size:10px;color:var(--yellow)}
 .sback{display:flex;align-items:center;gap:12px;flex-wrap:wrap;background:#1b2233;color:#fff;padding:10px 12px;border-radius:2px}
 .sback img{height:40px;width:auto}
@@ -182,7 +183,7 @@ function seriesRows(list){
     if(!units.length)continue;
     const logo=r.img?`<img src="${r.img}" alt="" loading="lazy" onerror="this.remove()">`:"";
     const full=r.tiers&&Object.keys(r.tiers).length;
-    html+=`<div class="row srow"><${full?`button type="button" data-ser="${idx}"`:"div"} class="rank slogo" title="${esc(r.en)}${full?" (open its tier list)":""}">${logo}<small>${esc(r.en)}</small>${full?`<em>Tier list ›</em>`:""}</${full?"button":"div"}><div class="units">${units.map(u=>chip(u,list)).join("")}</div></div>`;
+    html+=`<div class="row srow"><${full?`button type="button" data-ser="${idx}"`:"div"} class="rank slogo" title="${esc(r.en)}${full?" (open its tier list)":""}">${logo}${logo?`<small>${esc(r.en)}</small>`:`<span class="tname">${esc(r.en)}</span>`}${full?`<em>Tier list ›</em>`:""}</${full?"button":"div"}><div class="units">${units.map(u=>chip(u,list)).join("")}</div></div>`;
   }
   return {html,count};
 }
@@ -213,7 +214,7 @@ function render(){
   if(list.rows&&openSer!=null&&list.rows[openSer]){
     const s=list.rows[openSer];
     const r=rowsFor(s.tiers,null,list,null);total+=r.count;
-    html=`<div class="sback"><button type="button" id="sback">‹ All series</button>${s.img?`<img src="${s.img}" alt="" onerror="this.remove()">`:""}<b>${esc(s.en)}</b>${s.page?`<a href="https://game8.jp/ggene-eternal/${s.page}" target="_blank" rel="noopener">Game8 page</a>`:""}</div>`+r.html;
+    html=`<div class="sback"><button type="button" id="sback">‹ All ${list.id==="bytag"?"tags":"series"}</button>${s.img?`<img src="${s.img}" alt="" onerror="this.remove()">`:""}<b>${esc(s.en)}</b>${s.page?`<a href="https://game8.jp/ggene-eternal/${s.page}" target="_blank" rel="noopener">Game8 page</a>`:""}</div>`+r.html;
   }else if(list.rows){
     const r=seriesRows(list);total+=r.count;html=r.html;
   }else if(list.groups){

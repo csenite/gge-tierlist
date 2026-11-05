@@ -41,7 +41,8 @@ TABLES = {
     "ssp": ("750190", {"ATK": "攻撃", "SUP": "支援", "DEF": "耐久"}),
 }
 PAGES = {"strongest": "682964", **{k: v[0] for k, v in TABLES.items()}}
-BY_SERIES = "684093"  # 「シリーズ別最強とおすすめ機体」: one row per series, its best units in order
+BY_SERIES = "684093"  # one row per series (and per tag), its best units in order; each links to its own tier page
+ROW_TABLES = {"byseries": "シリーズ別最強", "bytag": "タグ別最強"}
 
 
 class Source:
@@ -110,9 +111,9 @@ def parse_table(table):
     return tiers
 
 
-def parse_series_table(soup):
-    """Rows of the series table: [{"s": series name, "label": Game8's short name, "logo": img key, "units": [...]}]."""
-    h = next((h for h in soup.find_all("h3") if "シリーズ別最強" in h.get_text()), None)
+def parse_series_table(soup, heading="シリーズ別最強"):
+    """Rows of the series (or tag) table: [{"s": name, "label": Game8's short name, "logo": img key, "page": id, "units": [...]}]."""
+    h = next((h for h in soup.find_all("h3") if heading in h.get_text()), None)
     table = h.find_next("table") if h else None
     if not table:
         raise RuntimeError(f"{BY_SERIES}: series table not found")
@@ -126,7 +127,7 @@ def parse_series_table(soup):
         page = re.search(r"/(\d+)$", link.get("href") or "") if link else None
         units = [{"jp": re.sub(r"画像$", "", (u.get("alt") or "").strip()),
                   "i": img_key(u.get("data-src") or u.get("src"))} for u in tds[1].find_all("img")]
-        rows.append({"s": re.sub(r"画像$", "", (logo.get("alt") or "").strip()) if logo else "",
+        rows.append({"s": re.sub(r"画像$", "", (logo.get("alt") or "").strip()) if logo else tds[0].get_text(strip=True),
                      "label": tds[0].get_text(" ", strip=True),
                      "logo": img_key(logo.get("data-src") or logo.get("src")) if logo else None,
                      "page": page.group(1) if page else None,
@@ -145,8 +146,10 @@ def parse_series_page(soup, pid):
         raise RuntimeError(f"{pid}: series tier table not found or unreadable")
     # data-filter on each unit picture holds its rarity and role, e.g. "UR 攻撃"
     filters = {img_key(i.get("data-src") or i.get("src")): (i.get("data-filter") or "") for i in table.find_all("img")}
-    for k, v in tiers.items():
-        v[:] = [u for u in v if u["jp"].endswith("画像")]  # drop overlay badges such as "overlay-1"
+    for k in list(tiers):
+        v = tiers[k] = [u for u in tiers[k] if u["jp"].endswith("画像")]  # drop overlay badges such as "overlay-1"
+        if not v:
+            del tiers[k]
         for u in v:
             u["jp"] = re.sub(r"画像$", "", u["jp"])
             u["f"] = filters.get(u["i"], "")
@@ -238,8 +241,9 @@ def scrape(src):
     roles.update(ur_roles)
     html = src.page(BY_SERIES)
     dates[BY_SERIES] = date_modified(html)
-    ser["rows"] = parse_series_table(BeautifulSoup(html, "html.parser"))
-    for r in ser["rows"]:
+    soup = BeautifulSoup(html, "html.parser")
+    ser["rows"] = {lid: parse_series_table(soup, kw) for lid, kw in ROW_TABLES.items()}
+    for r in [r for rows in ser["rows"].values() for r in rows]:
         if r["page"]:
             html = src.page(r["page"])
             dates[r["page"]] = date_modified(html)
@@ -355,12 +359,15 @@ def main():
             if moved:
                 changes.append(lid)
 
-    # Strongest units by series: one row per series, units in Game8's order,
-    # plus each series page's own tier list (opened by clicking the series).
-    by_series, by_series_added = [], []
-    if "byseries" in lists:
-        old_rows = lists["byseries"]["rows"]
-        known = {u["i"]: u for r in old_rows for u in r["units"] + [x for v in (r.get("tiers") or {}).values() for x in v]}
+    # Strongest units by series and by tag: one row each, units in Game8's order,
+    # plus each series/tag page's own tier list (opened by clicking the row).
+    row_lists = {}
+    for rlid, rows in ser["rows"].items():
+        if rlid not in lists:
+            continue
+        added = []
+        known = {u["i"]: u for r in lists[rlid]["rows"]
+                 for u in r["units"] + [x for v in (r.get("tiers") or {}).values() for x in v]}
 
         def resolve(u, label, flt=""):
             jp = u["jp"]
@@ -369,23 +376,25 @@ def main():
             fr = flt.split()
             role = (roles.get(jp) or roles.get(jp + "画像") or next((ROLE[x] for x in fr if x in ROLE), "")
                     or next((v for k, v in ROLE.items() if k in jp), ""))
-            en = by_key.get(u["i"]) or names.get(jp) or names.get(jp + "画像") or from_soshage(jp + "画像", "byseries", role)
+            en = by_key.get(u["i"]) or names.get(jp) or names.get(jp + "画像") or from_soshage(jp + "画像", rlid, role)
             if not en:
-                unknown.append(("byseries", "_", label, u))
+                unknown.append((rlid, "_", label, u))
                 return None
             names.setdefault(jp + "画像", en)
             rar = ("EX" if "（EX）" in jp else next((x for x in ("UR", "SSR", "SR") if x in fr), "")
                    or next((x for x in ("SSR", "SR") if re.search(rf"[（／/]{x}[）／/]", jp)), ""))
-            by_series_added.append(en)
+            added.append(en)
             known[u["i"]] = {"n": en, "t": " ".join(x for x in (rar, role) if x), "i": u["i"]}
             return known[u["i"]]
 
-        for r in ser["rows"]:
+        out = []
+        for r in rows:
             row = [x for x in (resolve(u, r["label"]) for u in r["units"]) if x]
             tiers = {k: [x for x in (resolve(u, f"{r['label']} {k}", u.get("f", "")) for u in v) if x]
                      for k, v in (r.get("tiers") or {}).items()}
-            by_series.append({"s": r["s"], "label": r["label"], "logo": r["logo"], "page": r["page"],
-                              "units": row, "tiers": tiers})
+            out.append({"s": r["s"], "label": r["label"], "logo": r["logo"], "page": r["page"],
+                        "units": row, "tiers": tiers})
+        row_lists[rlid] = (out, added)
 
     # Series per English unit name; existing entries (including hand-filled ones) are kept.
     series_path = ROOT / "data/series.json"
@@ -443,16 +452,16 @@ def main():
         print(f"{len(unknown)} unit(s) need translation; site.json left unchanged")
         return 2
 
-    if by_series and "byseries" in lists:
-        l = lists["byseries"]
+    for rlid, (rows, added) in row_lists.items():
+        l = lists[rlid]
         strip = lambda rows: [(r["s"], [u["n"] for u in r["units"]],
                                {k: [u["n"] for u in v] for k, v in (r.get("tiers") or {}).items()}) for r in rows]
-        if strip(by_series) != strip(l["rows"]):
-            changes.append("byseries")
+        if strip(rows) != strip(l["rows"]):
+            changes.append(rlid)
             if dates.get(BY_SERIES):
                 l["updated"] = fmt_date(dates[BY_SERIES])
-            l["new"] = sorted(set(by_series_added))
-        l["rows"] = by_series
+            l["new"] = sorted(set(added))
+        l["rows"] = rows
     for lid, (out, added, moved) in new_lists.items():
         l = lists[lid]
         if "groups" in l:
