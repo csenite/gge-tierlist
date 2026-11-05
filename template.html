@@ -105,6 +105,7 @@ footer a{color:var(--blue)}
       <button data-f="DEF" aria-pressed="false">Defense</button>
     </div>
     <select id="ser" aria-label="Filter by series"><option value="">All series</option></select>
+    <div class="filt"><button id="fea" aria-pressed="false" title="Units from the Fierce Enemy Assault event">Fierce Enemy Assault</button></div>
     </div>
   </div>
   <section class="tiers" id="tiers" aria-live="polite"></section>
@@ -166,7 +167,7 @@ function rowsForParts(parts,list){
     const gap=parts.map(p=>p.gaps&&p.gaps[k]).filter(Boolean).join(" ");
     if(!parts.some(p=>p.tiers[k])&&!gap)continue;
     let units=parts.flatMap(p=>(p.tiers[k]||[]).map(r=>Object.assign(parse(r,p.groupType),{img:r.i,key:r.k})));
-    units=units.filter(u=>(!q||u.name.toLowerCase().includes(q)||((sosOf(u,list)||{}).n||"").toLowerCase().includes(q))&&(filt==="all"||u.type===filt)&&inSeries(u,list));
+    units=units.filter(u=>(!q||u.name.toLowerCase().includes(q)||((sosOf(u,list)||{}).n||"").toLowerCase().includes(q))&&(filt==="all"||u.type===filt)&&inSeries(u,list)&&(!feaF||!!(sosOf(u,list)||{}).fa));
     count+=units.length;
     if(!units.length&&!gap&&(q||filt!=="all"||serF))continue;
     const [lab,sub,col]=TIERS[k];
@@ -196,6 +197,8 @@ function render(){
   tiersEl.innerHTML=html;
 }
 tabsEl.addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;cur=b.dataset.id;try{localStorage.setItem("ggeTab",cur)}catch(err){}render();});
+let feaF=false;
+document.getElementById("fea").addEventListener("click",e=>{feaF=!feaF;e.currentTarget.setAttribute("aria-pressed",feaF);render();});
 document.getElementById("ser").addEventListener("change",e=>{serF=e.target.value;render();});
 document.getElementById("filt").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;filt=b.dataset.f;document.querySelectorAll("#filt button").forEach(x=>x.setAttribute("aria-pressed",x===b));render();});
 qEl.addEventListener("input",render);

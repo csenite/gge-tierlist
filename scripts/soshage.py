@@ -11,6 +11,7 @@ API = "https://soshage.com/ggetapi/{lang}/{path}"
 IMG = "https://img.kusoge.xyz/ggenet/"
 RARITY = {"N": 1, "R": 2, "SR": 3, "SSR": 4, "UR": 5}
 ROLE = {"ATK": 1, "DEF": 2, "SUP": 3}
+FIERCE_ASSAULT = 1095  # soshage tag "Fierce Enemy Assault" (強敵襲来)
 
 
 def norm(name):
@@ -59,6 +60,8 @@ class Soshage:
             rec = {"id": u["id"], "en": e["name"].strip(), "ja": u["name"].strip(), "icon": e["icon"],
                    "rarity": e["rarity"], "series": [x["series_id"] for x in e.get("series_set") or []],
                    "role": e.get("role"), "acq": e.get("acquisition")}
+            if any(t.get("tag_id") == FIERCE_ASSAULT for t in e.get("tags") or []):
+                rec["fa"] = 1
             self.units.append(rec)
             self.by_norm.setdefault(norm(rec["ja"])[0], []).append(rec)
 
