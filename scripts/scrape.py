@@ -340,6 +340,8 @@ def main():
             guess[jp] = m["en"]
         return None
 
+    bpath = ROOT / "data/banner.json"
+    banner_fix = json.loads(bpath.read_text()) if bpath.exists() else {}
     unknown, changes = [], []
     new_lists = {}
     for lid, groups in game8.items():
@@ -372,7 +374,7 @@ def main():
                     rec = {"n": en, "t": tags, "i": u["i"]}
                     if lid == "strongest":
                         b = (ser["banner"].get(u["i"]) or ser["banner"].get("_key:" + u["i"])
-                             or ser["banner"].get("_unit:" + u["jp"]))
+                             or ser["banner"].get("_unit:" + u["jp"]) or banner_fix.get(en))
                         if b:
                             rec["b"] = b
                     row.append(rec)
