@@ -63,6 +63,11 @@ button:focus-visible,input:focus-visible{outline:2px solid var(--yellow);outline
 .rank{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;color:#fff;padding:10px 4px;background:var(--tc)}
 .rank b{font-family:var(--display);font-size:30px;line-height:1}
 .rank small{font-family:var(--mono);font-size:11px;opacity:.9}
+.srow{grid-template-columns:140px minmax(0,1fr)}
+.slogo{background:#1b2233;gap:6px;text-align:center}
+.slogo img{width:100%;max-width:124px;height:auto;display:block}
+.slogo small{font-size:10px;line-height:1.25;overflow-wrap:anywhere}
+.u .pos{position:absolute;top:2px;left:3px;z-index:2;font-family:var(--display);font-weight:700;font-size:13px;line-height:1;color:var(--muted)}
 .units{display:grid;grid-template-columns:repeat(auto-fill,minmax(calc(var(--c) + 12px),1fr));gap:8px;padding:10px;align-content:start;min-width:0;--c:112px}
 .u{display:flex;flex-direction:column;align-items:center;gap:4px;background:var(--chip);border:1px solid var(--line);padding:6px 4px 5px;border-radius:2px;font-weight:500;min-width:0;cursor:pointer;position:relative}
 .u .pic{width:var(--c);height:var(--c);flex:none;position:relative;background:center/100% 100% no-repeat}
@@ -81,7 +86,7 @@ button:focus-visible,input:focus-visible{outline:2px solid var(--yellow);outline
 .t.ATK{color:var(--atk);border:1px solid var(--atk)}.t.SUP{color:var(--sup);border:1px solid var(--sup)}.t.DEF{color:var(--def);border:1px solid var(--def)}
 .gap{font-size:13px;color:var(--muted);padding:10px;font-style:italic;grid-column:1/-1}
 .empty{color:var(--muted);padding:10px;font-size:13px}
-@media (max-width:520px){.row{grid-template-columns:52px minmax(0,1fr)}.rank b{font-size:22px}.units{--c:78px;gap:6px;padding:8px}}
+@media (max-width:520px){.row{grid-template-columns:52px minmax(0,1fr)}.srow{grid-template-columns:84px minmax(0,1fr)}.slogo small{font-size:9px}.rank b{font-size:22px}.units{--c:78px;gap:6px;padding:8px}}
 footer{color:var(--muted);font-size:13px;display:flex;flex-direction:column;gap:6px;border-top:1px solid var(--line);padding-top:14px}
 footer p{margin:0;max-width:90ch}
 footer a{color:var(--blue)}
@@ -156,7 +161,21 @@ function chip(u,list){
   const logos=so&&so.s.length?`<span class="sis">${so.s.filter(x=>x[1]).map(x=>`<img class="si" src="${x[1]}" alt="${esc(x[0])}" title="${esc(x[0])}" loading="lazy" onerror="this.remove()">`).join("")}</span>`:"";
   const r=so&&so.r?so.r:(u.rest.includes("SSR")?4:5),tn=TYPEN[u.shownType];
   const icons=`<img class="ic ra" src="${KX}icon/UI_Common_RarityIcon_${r}.webp" alt="" loading="lazy" onerror="this.remove()">${tn?`<img class="ic ty" src="${KX}icon/UI_Common_TypeIcon_${tn}_S.webp" alt="" loading="lazy" onerror="this.remove()">`:""}${so&&so.a?`<img class="ic src" src="${KX}icon/UI_Common_Icon_Source_${so.a}.webp" alt="" loading="lazy" onerror="this.remove()">`:""}`;
-  return `<div class="u${isNew?" new":""}" title="${full}" tabindex="0" role="button" aria-label="${full}"><span class="pic" style="background-image:url(${KX}frame/UI_Common_Tmb_Square_Supporter_Base_${r}.webp)">${th?`<img class="th" src="${th}" alt="" loading="lazy" onerror="this.remove()">`:""}${icons}${logos}</span><span class="nm">${esc(shown)}</span><span class="meta">${u.rest.length?`<em>${u.rest.join(" ")}</em>`:""}${u.shownType?`<b class="t ${u.shownType}">${u.shownType}</b>`:""}</span></div>`;
+  return `<div class="u${isNew?" new":""}" title="${full}" tabindex="0" role="button" aria-label="${full}">${u.pos?`<span class="pos">${u.pos}</span>`:""}<span class="pic" style="background-image:url(${KX}frame/UI_Common_Tmb_Square_Supporter_Base_${r}.webp)">${th?`<img class="th" src="${th}" alt="" loading="lazy" onerror="this.remove()">`:""}${icons}${logos}</span><span class="nm">${esc(shown)}</span><span class="meta">${u.rest.length?`<em>${u.rest.join(" ")}</em>`:""}${u.shownType?`<b class="t ${u.shownType}">${u.shownType}</b>`:""}</span></div>`;
+}
+function keep(u,list,q){
+  return (!q||u.name.toLowerCase().includes(q)||((sosOf(u,list)||{}).n||"").toLowerCase().includes(q))&&(filt==="all"||u.type===filt)&&inSeries(u,list)&&(!feaF||!!(sosOf(u,list)||{}).fa);
+}
+function seriesRows(list){
+  const q=qEl.value.trim().toLowerCase();let html="",count=0;
+  for(const r of list.rows){
+    const units=r.units.map((x,i)=>Object.assign(parse(x,null),{img:x.i,key:x.k,pos:i+1})).filter(u=>keep(u,list,q));
+    count+=units.length;
+    if(!units.length)continue;
+    const logo=r.img?`<img src="${r.img}" alt="" loading="lazy" onerror="this.remove()">`:"";
+    html+=`<div class="row srow"><div class="rank slogo" title="${esc(r.en)}">${logo}<small>${esc(r.en)}</small></div><div class="units">${units.map(u=>chip(u,list)).join("")}</div></div>`;
+  }
+  return {html,count};
 }
 function rowsFor(tiers,gaps,list,groupType){
   return rowsForParts([{tiers,gaps,groupType}],list);
@@ -167,7 +186,7 @@ function rowsForParts(parts,list){
     const gap=parts.map(p=>p.gaps&&p.gaps[k]).filter(Boolean).join(" ");
     if(!parts.some(p=>p.tiers[k])&&!gap)continue;
     let units=parts.flatMap(p=>(p.tiers[k]||[]).map(r=>Object.assign(parse(r,p.groupType),{img:r.i,key:r.k})));
-    units=units.filter(u=>(!q||u.name.toLowerCase().includes(q)||((sosOf(u,list)||{}).n||"").toLowerCase().includes(q))&&(filt==="all"||u.type===filt)&&inSeries(u,list)&&(!feaF||!!(sosOf(u,list)||{}).fa));
+    units=units.filter(u=>keep(u,list,q));
     count+=units.length;
     if(!units.length&&!gap&&(q||filt!=="all"||serF))continue;
     const [lab,sub,col]=TIERS[k];
@@ -180,9 +199,11 @@ function render(){
   fillSeries(list);
   tabsEl.innerHTML=LISTS.map(l=>`<button role="tab" id="tab-${l.id}" aria-selected="${l.id===cur}" data-id="${l.id}">${l.tab}</button>`).join("");
   introEl.innerHTML=`<div class="card"><h2>${list.title}</h2>${list.about.map(p=>`<p>${p}</p>`).join("")}<p class="src">Source: <a href="${list.url}" target="_blank" rel="noopener">Game8 · ${list.url.replace("https://","")}</a> · updated ${list.updated}</p></div>
-  <div class="card"><h3>Latest notes</h3><ul>${list.notes.map(n=>`<li>${n}</li>`).join("")}</ul></div>`;
+  ${list.notes.length?`<div class="card"><h3>Latest notes</h3><ul>${list.notes.map(n=>`<li>${n}</li>`).join("")}</ul></div>`:""}`;
   let html="",total=0;
-  if(list.groups){
+  if(list.rows){
+    const r=seriesRows(list);total+=r.count;html=r.html;
+  }else if(list.groups){
     const r=rowsForParts(["ATK","SUP","DEF"].map(g=>({tiers:list.groups[g],gaps:list.gaps&&list.gaps[g],groupType:g})),list);
     total+=r.count;html=r.html;
   }else if(list.sections){

@@ -36,7 +36,8 @@ def series_meta(data):
         return
     series = json.loads(path.read_text())
     names = {u["n"] for l in data["lists"]
-             for g in (l["groups"].values() if "groups" in l else [l["tiers"]])
+             for g in (l["groups"].values() if "groups" in l else
+                       [{r["label"]: r["units"] for r in l["rows"]}] if "rows" in l else [l["tiers"]])
              for v in g.values() for u in v}
     ser, used = {}, set()
     for n in sorted(names):
@@ -74,7 +75,14 @@ def soshage_meta(data):
     gseries = json.loads(gpath.read_text())["units"] if gpath.exists() else {}
     by_ja = {_norm(s["ja"]): s for s in S.series if s.get("ja")}
     for l in data["lists"]:
-        for gname, g in (l["groups"].items() if "groups" in l else [("", l["tiers"])]):
+        if "rows" in l:
+            for r in l["rows"]:
+                # Game8's series name -> soshage's English name and logo
+                s = by_ja.get(_norm(r["s"]))
+                r["en"] = s["en"] if s else r["label"]
+                r["img"] = logo(s) if s and s.get("logo") else (f"https://img.game8.jp/{r['logo']}/show" if r.get("logo") else None)
+        for gname, g in (l["groups"].items() if "groups" in l else
+                         [("", {r["label"]: r["units"] for r in l["rows"]})] if "rows" in l else [("", l["tiers"])]):
             for v in g.values():
                 for u in v:
                     tags = u["t"].split()

@@ -41,6 +41,7 @@ TABLES = {
     "ssp": ("750190", {"ATK": "攻撃", "SUP": "支援", "DEF": "耐久"}),
 }
 PAGES = {"strongest": "682964", **{k: v[0] for k, v in TABLES.items()}}
+BY_SERIES = "684093"  # 「シリーズ別最強とおすすめ機体」: one row per series, its best units in order
 
 
 class Source:
@@ -107,6 +108,29 @@ def parse_table(table):
                               "i": img_key(u.get("data-src") or u.get("src"))})
         tiers[k] = units
     return tiers
+
+
+def parse_series_table(soup):
+    """Rows of the series table: [{"s": series name, "label": Game8's short name, "logo": img key, "units": [...]}]."""
+    h = next((h for h in soup.find_all("h3") if "シリーズ別最強" in h.get_text()), None)
+    table = h.find_next("table") if h else None
+    if not table:
+        raise RuntimeError(f"{BY_SERIES}: series table not found")
+    rows = []
+    for tr in table.find_all("tr"):
+        tds = tr.find_all("td")
+        if len(tds) < 2:
+            continue
+        logo = tds[0].find("img")
+        units = [{"jp": re.sub(r"画像$", "", (u.get("alt") or "").strip()),
+                  "i": img_key(u.get("data-src") or u.get("src"))} for u in tds[1].find_all("img")]
+        rows.append({"s": re.sub(r"画像$", "", (logo.get("alt") or "").strip()) if logo else "",
+                     "label": tds[0].get_text(" ", strip=True),
+                     "logo": img_key(logo.get("data-src") or logo.get("src")) if logo else None,
+                     "units": units})
+    if len(rows) < 5 or any(not r["units"] for r in rows):
+        raise RuntimeError(f"{BY_SERIES}: read {len(rows)} series rows; page layout may have changed")
+    return rows
 
 
 def notes_text(soup):
@@ -192,10 +216,15 @@ def scrape(src):
                     ser["title"].setdefault(u["title"].strip(), parts)
                     break
     roles.update(ur_roles)
+    html = src.page(BY_SERIES)
+    dates[BY_SERIES] = date_modified(html)
+    ser["rows"] = parse_series_table(BeautifulSoup(html, "html.parser"))
     return game8, dates, notes, roles, ser
 
 
 def units_of(lst):
+    if "rows" in lst:
+        return {"_": {r["label"]: r["units"] for r in lst["rows"]}}
     if "groups" in lst:
         return {g: lst["groups"][g] for g in lst["groups"]}
     return {"_": lst["tiers"]}
@@ -301,6 +330,29 @@ def main():
             if moved:
                 changes.append(lid)
 
+    # Strongest units by series: one row per series, units in Game8's order.
+    by_series, by_series_added = [], []
+    if "byseries" in lists:
+        old_rows = lists["byseries"]["rows"]
+        known = {u["i"]: u for r in old_rows for u in r["units"]}
+        for r in ser["rows"]:
+            row = []
+            for u in r["units"]:
+                jp = u["jp"]
+                if u["i"] in known:
+                    row.append(known[u["i"]])
+                    continue
+                en = by_key.get(u["i"]) or names.get(jp) or names.get(jp + "画像") or from_soshage(jp + "画像", "byseries", roles.get(jp))
+                if not en:
+                    unknown.append(("byseries", "_", r["label"], u))
+                    continue
+                names.setdefault(jp + "画像", en)
+                rar = "EX" if "（EX）" in jp else next((x for x in ("SSR", "SR") if re.search(rf"[（／/]{x}[）／/]", jp)), "")
+                role = roles.get(jp) or roles.get(jp + "画像") or next((v for k, v in ROLE.items() if k in jp), "")
+                by_series_added.append(en)
+                row.append({"n": en, "t": " ".join(x for x in (rar, role) if x), "i": u["i"]})
+            by_series.append({"s": r["s"], "label": r["label"], "logo": r["logo"], "units": row})
+
     # Series per English unit name; existing entries (including hand-filled ones) are kept.
     series_path = ROOT / "data/series.json"
     series = json.loads(series_path.read_text()) if series_path.exists() else {"units": {}, "icons": {}}
@@ -357,6 +409,15 @@ def main():
         print(f"{len(unknown)} unit(s) need translation; site.json left unchanged")
         return 2
 
+    if by_series and "byseries" in lists:
+        l = lists["byseries"]
+        strip = lambda rows: [(r["s"], [u["n"] for u in r["units"]]) for r in rows]
+        if strip(by_series) != strip(l["rows"]):
+            changes.append("byseries")
+            if dates.get(BY_SERIES):
+                l["updated"] = fmt_date(dates[BY_SERIES])
+            l["new"] = sorted(set(by_series_added))
+        l["rows"] = by_series
     for lid, (out, added, moved) in new_lists.items():
         l = lists[lid]
         if "groups" in l:
