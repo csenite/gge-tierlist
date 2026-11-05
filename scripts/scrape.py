@@ -225,6 +225,11 @@ def scrape(src):
                     if x in ROLE:
                         ur_roles[jp] = ROLE[x]
     game8["strongest"] = {"_": ur}
+    # Last banner backup: the UR page marks limited units with 【期間限定】 next to their name
+    for sp in soups[PAGES["strongest"]].find_all("span", string="期間限定"):
+        td = sp.find_parent("td")
+        for a in (td.find_all("a") if td else []):
+            ser["banner"].setdefault("_unit:" + a.get_text(strip=True), "L")
     roles = {}
     cats = src.json(UNIT_JSON, "ggene_unit.json")
     for cat in cats:
