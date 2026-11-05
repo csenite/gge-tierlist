@@ -67,6 +67,14 @@ button:focus-visible,input:focus-visible{outline:2px solid var(--yellow);outline
 .slogo{background:#1b2233;gap:6px;text-align:center}
 .slogo img{width:100%;max-width:124px;height:auto;display:block}
 .slogo small{font-size:10px;line-height:1.25;overflow-wrap:anywhere}
+button.slogo{border:0;font:inherit;cursor:pointer;width:100%}
+button.slogo:hover,button.slogo:focus-visible{background:#2a3450;outline:2px solid var(--yellow);outline-offset:-2px}
+.slogo em{font-style:normal;font-family:var(--mono);font-size:10px;color:var(--yellow)}
+.sback{display:flex;align-items:center;gap:12px;flex-wrap:wrap;background:#1b2233;color:#fff;padding:10px 12px;border-radius:2px}
+.sback img{height:40px;width:auto}
+.sback b{font-size:16px}
+.sback a{color:#fff;font-size:12px;margin-left:auto}
+.sback button{font:inherit;font-size:13px;padding:6px 10px;border:1px solid #fff6;background:transparent;color:#fff;border-radius:2px;cursor:pointer}
 .u .pos{position:absolute;top:2px;left:3px;z-index:2;font-family:var(--display);font-weight:700;font-size:13px;line-height:1;color:var(--muted)}
 .units{display:grid;grid-template-columns:repeat(auto-fill,minmax(calc(var(--c) + 12px),1fr));gap:8px;padding:10px;align-content:start;min-width:0;--c:112px}
 .u{display:flex;flex-direction:column;align-items:center;gap:4px;background:var(--chip);border:1px solid var(--line);padding:6px 4px 5px;border-radius:2px;font-weight:500;min-width:0;cursor:pointer;position:relative}
@@ -168,12 +176,13 @@ function keep(u,list,q){
 }
 function seriesRows(list){
   const q=qEl.value.trim().toLowerCase();let html="",count=0;
-  for(const r of list.rows){
+  for(const [idx,r] of list.rows.entries()){
     const units=r.units.map((x,i)=>Object.assign(parse(x,null),{img:x.i,key:x.k,pos:i+1})).filter(u=>keep(u,list,q));
     count+=units.length;
     if(!units.length)continue;
     const logo=r.img?`<img src="${r.img}" alt="" loading="lazy" onerror="this.remove()">`:"";
-    html+=`<div class="row srow"><div class="rank slogo" title="${esc(r.en)}">${logo}<small>${esc(r.en)}</small></div><div class="units">${units.map(u=>chip(u,list)).join("")}</div></div>`;
+    const full=r.tiers&&Object.keys(r.tiers).length;
+    html+=`<div class="row srow"><${full?`button type="button" data-ser="${idx}"`:"div"} class="rank slogo" title="${esc(r.en)}${full?" (open its tier list)":""}">${logo}<small>${esc(r.en)}</small>${full?`<em>Tier list ›</em>`:""}</${full?"button":"div"}><div class="units">${units.map(u=>chip(u,list)).join("")}</div></div>`;
   }
   return {html,count};
 }
@@ -201,7 +210,11 @@ function render(){
   introEl.innerHTML=`<div class="card"><h2>${list.title}</h2>${list.about.map(p=>`<p>${p}</p>`).join("")}<p class="src">Source: <a href="${list.url}" target="_blank" rel="noopener">Game8 · ${list.url.replace("https://","")}</a> · updated ${list.updated}</p></div>
   ${list.notes.length?`<div class="card"><h3>Latest notes</h3><ul>${list.notes.map(n=>`<li>${n}</li>`).join("")}</ul></div>`:""}`;
   let html="",total=0;
-  if(list.rows){
+  if(list.rows&&openSer!=null&&list.rows[openSer]){
+    const s=list.rows[openSer];
+    const r=rowsFor(s.tiers,null,list,null);total+=r.count;
+    html=`<div class="sback"><button type="button" id="sback">‹ All series</button>${s.img?`<img src="${s.img}" alt="" onerror="this.remove()">`:""}<b>${esc(s.en)}</b>${s.page?`<a href="https://game8.jp/ggene-eternal/${s.page}" target="_blank" rel="noopener">Game8 page</a>`:""}</div>`+r.html;
+  }else if(list.rows){
     const r=seriesRows(list);total+=r.count;html=r.html;
   }else if(list.groups){
     const r=rowsForParts(["ATK","SUP","DEF"].map(g=>({tiers:list.groups[g],gaps:list.gaps&&list.gaps[g],groupType:g})),list);
@@ -217,13 +230,17 @@ function render(){
   if(!total&&!html)html=`<div class="empty">No units match. Try a shorter search, or set the filters back to All.</div>`;
   tiersEl.innerHTML=html;
 }
-tabsEl.addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;cur=b.dataset.id;try{localStorage.setItem("ggeTab",cur)}catch(err){}render();});
+let openSer=null;
+tabsEl.addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;cur=b.dataset.id;openSer=null;try{localStorage.setItem("ggeTab",cur)}catch(err){}render();});
 let feaF=false;
 document.getElementById("fea").addEventListener("click",e=>{feaF=!feaF;e.currentTarget.setAttribute("aria-pressed",feaF);render();});
 document.getElementById("ser").addEventListener("change",e=>{serF=e.target.value;render();});
 document.getElementById("filt").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;filt=b.dataset.f;document.querySelectorAll("#filt button").forEach(x=>x.setAttribute("aria-pressed",x===b));render();});
 qEl.addEventListener("input",render);
-tiersEl.addEventListener("click",e=>{const u=e.target.closest(".u");if(u)u.classList.toggle("open");});
+tiersEl.addEventListener("click",e=>{
+  const sb=e.target.closest("[data-ser]");if(sb){openSer=+sb.dataset.ser;render();document.getElementById("tiers").scrollIntoView({block:"start"});return;}
+  if(e.target.closest("#sback")){openSer=null;render();return;}
+  const u=e.target.closest(".u");if(u)u.classList.toggle("open");});
 tiersEl.addEventListener("keydown",e=>{if((e.key==="Enter"||e.key===" ")&&e.target.classList.contains("u")){e.preventDefault();e.target.classList.toggle("open");}});
 render();
 </script>

@@ -17,6 +17,16 @@ def _norm(s):
     return re.sub(r"（[^（）]*）|\s", "", s).upper()
 
 
+def _row_units(l):
+    """The By series tab's units: each row's top 5 and each series' own tier list."""
+    out = {}
+    for r in l["rows"]:
+        out[r["label"]] = r["units"]
+        for k, v in (r.get("tiers") or {}).items():
+            out[r["label"] + " " + k] = v
+    return out
+
+
 def find_icon(icons, name):
     """Game8 spells some series differently in the unit data and the series list; match loosely."""
     if name in icons:
@@ -37,7 +47,7 @@ def series_meta(data):
     series = json.loads(path.read_text())
     names = {u["n"] for l in data["lists"]
              for g in (l["groups"].values() if "groups" in l else
-                       [{r["label"]: r["units"] for r in l["rows"]}] if "rows" in l else [l["tiers"]])
+                       [_row_units(l)] if "rows" in l else [l["tiers"]])
              for v in g.values() for u in v}
     ser, used = {}, set()
     for n in sorted(names):
@@ -82,7 +92,7 @@ def soshage_meta(data):
                 r["en"] = s["en"] if s else r["label"]
                 r["img"] = logo(s) if s and s.get("logo") else (f"https://img.game8.jp/{r['logo']}/show" if r.get("logo") else None)
         for gname, g in (l["groups"].items() if "groups" in l else
-                         [("", {r["label"]: r["units"] for r in l["rows"]})] if "rows" in l else [("", l["tiers"])]):
+                         [("", _row_units(l))] if "rows" in l else [("", l["tiers"])]):
             for v in g.values():
                 for u in v:
                     tags = u["t"].split()

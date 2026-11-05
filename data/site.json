@@ -6189,7 +6189,7 @@
    "updated": "Oct 16, 2026",
    "about": [
     "Game8's pick of the strongest units in each series, best first. Handy when an event or a Master League season boosts one series.",
-    "Each row is one series. The number on a card is its place in that series, from 1 (best) to 5."
+    "Each row is one series. The number on a card is its place in that series, from 1 (best) to 5. Click a series logo to open that series's full tier list from SSS down."
    ],
    "notes": [],
    "new": [],
@@ -6198,6 +6198,7 @@
      "s": "機動戦士ガンダム",
      "label": "1stガンダム",
      "logo": "11263343/3cc42840d1f17b4ed831c54b38c3726c.png",
+     "page": "684296",
      "units": [
       {
        "n": "Char's Zaku II (The Origin)",
@@ -6224,12 +6225,377 @@
        "t": "SSR ATK",
        "i": "12565176/3f722f83bdf4962aa54b4ab48f495467.webp"
       }
-     ]
+     ],
+     "tiers": {
+      "SSS": [
+       {
+        "n": "Char's Zaku II (The Origin)",
+        "t": "EX ATK",
+        "i": "11450507/313185c9c8c1f5a078c67f5783f2ca0b.jpeg"
+       },
+       {
+        "n": "Kämpfer",
+        "t": "EX ATK",
+        "i": "12076934/1fd18ba046e3fc959ad26de073e64901.webp"
+       }
+      ],
+      "SS": [
+       {
+        "n": "Psycho Zaku",
+        "t": "EX SUP",
+        "i": "11588780/f5340e6d9bdcf5b17e4239398556beb1.webp"
+       },
+       {
+        "n": "Zeong",
+        "t": "EX ATK",
+        "i": "11824459/a6f58ebf73cc3d55cbce1b8110e6a3bb.webp"
+       },
+       {
+        "n": "Gundam GP03",
+        "t": "EX DEF",
+        "i": "11847308/7f3f74588ca7252d2119e4e42b991537.webp"
+       },
+       {
+        "n": "Blue Destiny Unit 1",
+        "t": "EX ATK",
+        "i": "11975365/f25e86ee7bcd24c1be60f3d92be5e309.webp"
+       }
+      ],
+      "S": [
+       {
+        "n": "Gundam Ez8",
+        "t": "EX ATK",
+        "i": "11259887/095f3ecb0569b22ee499f578695682e0.jpeg"
+       },
+       {
+        "n": "Gundam GP02",
+        "t": "EX SUP",
+        "i": "11408067/49f0b5ed01b93192345764a16c4f0061.jpeg"
+       },
+       {
+        "n": "Neue Ziel",
+        "t": "EX ATK",
+        "i": "11847307/7c8a91b3314096ae456fce27f77e4be1.webp"
+       },
+       {
+        "n": "Casval's Gundam",
+        "t": "SSR ATK",
+        "i": "11272557/aaa06abdddc3183352585916a6b724bd.png"
+       },
+       {
+        "n": "Psycho Zaku",
+        "t": "SSR ATK",
+        "i": "11559188/032400d97c990aa25ff88293251a3bb4.webp"
+       },
+       {
+        "n": "Gundam GP03",
+        "t": "SSR ATK",
+        "i": "11847488/f9f87f4aafdc2a3de6b22572760582f4.webp"
+       }
+      ],
+      "A": [
+       {
+        "n": "Striker Custom",
+        "t": "EX ATK",
+        "i": "11259891/ce145f08c7d507eba6856b18f25301db.jpeg"
+       },
+       {
+        "n": "Gouf Custom",
+        "t": "EX DEF",
+        "i": "12390842/1e7f2f1a78310889ed705fb10bc277d3.webp"
+       },
+       {
+        "n": "Big Rang",
+        "t": "EX SUP",
+        "i": "12213417/9a19db11c6ab4429db1959032c5b787a.webp"
+       },
+       {
+        "n": "Char's Zaku II (The Origin)",
+        "t": "SSR SUP",
+        "i": "12494972/71de0d7d3a62600c4420e4c57ead909c.webp"
+       },
+       {
+        "n": "Gouf Custom",
+        "t": "SSR ATK",
+        "i": "12391932/4b0a553670c5543c932c71d0d49ec464.webp"
+       },
+       {
+        "n": "Apsalus III",
+        "t": "SSR ATK",
+        "i": "12391165/6de12b499eff51ccc0357cfd94acbd84.webp"
+       },
+       {
+        "n": "Kämpfer",
+        "t": "SSR ATK",
+        "i": "12139047/56026edb5a34d82d7aeae637c1420f02.webp"
+       },
+       {
+        "n": "Gundam GP04",
+        "t": "SSR ATK",
+        "i": "11847490/35f29f1b158a55d2ee1d028f97770d89.webp"
+       },
+       {
+        "n": "Full Armor Gundam (Thunderbolt)",
+        "t": "SSR SUP",
+        "i": "11559187/828cff23940c7ca06187f5bbfa853578.webp"
+       },
+       {
+        "n": "G-3 Gundam",
+        "t": "SSR ATK",
+        "i": "11272558/95f92d8b31b7bcc2872e4468225a50df.png"
+       },
+       {
+        "n": "Big Zam",
+        "t": "SSR ATK",
+        "i": "11272556/420c40c7b27caad1f50348fbe78b8fad.png"
+       },
+       {
+        "n": "Red Warrior",
+        "t": "SSR ATK",
+        "i": "11264858/a911ba7b6fc13059935fdd40f0187d22.jpeg"
+       }
+      ],
+      "B": [
+       {
+        "n": "Full Armor Gundam (Thunderbolt)",
+        "t": "EX DEF",
+        "i": "11824423/1ba471abd17d47d1c87827b1c585d045.webp"
+       },
+       {
+        "n": "Gundam",
+        "t": "EX DEF",
+        "i": "11259886/105ce9a943d0797788dcf061ed6b3e93.jpeg"
+       },
+       {
+        "n": "Gromlin",
+        "t": "SSR ATK",
+        "i": "12530894/0c53ae71d539d5262ce103721252feb1.webp"
+       },
+       {
+        "n": "Gelgoog (Herbert von Kaspen)",
+        "t": "SSR DEF",
+        "i": "12214545/a8347501ff1abb470964a1cedcc916d2.webp"
+       },
+       {
+        "n": "Hildolfr",
+        "t": "SSR SUP",
+        "i": "12214475/9c8dc37f4a1d3168aed0c1426aaf5306.webp"
+       },
+       {
+        "n": "Big Rang",
+        "t": "SSR ATK",
+        "i": "12214505/2462e6698a04a9ff2903811491241914.webp"
+       },
+       {
+        "n": "Gundam NT-1 (Chobham Armor)",
+        "t": "SSR DEF",
+        "i": "12139041/f45cc8e958b7a0fa00a54f1176ff136e.webp"
+       },
+       {
+        "n": "Blue Destiny Unit 3 [EXAM]",
+        "t": "SSR DEF",
+        "i": "11974951/f84769543c2d2ce6e9466dfc275992e4.webp"
+       },
+       {
+        "n": "Blue Destiny Unit 2 [EXAM]",
+        "t": "SSR ATK",
+        "i": "11974950/5f289d3da8d6f2c84eb58f6e0afb352d.webp"
+       },
+       {
+        "n": "Neue Ziel",
+        "t": "SSR DEF",
+        "i": "11847489/788bd9bdd287eb24d9bd308f8544f06a.webp"
+       },
+       {
+        "n": "Heavy Gundam",
+        "t": "SSR ATK",
+        "i": "11558896/041631a664c9692ba293d6429444aaa8.webp"
+       },
+       {
+        "n": "Gundam GP01 (Chobham Armor)",
+        "t": "SSR DEF",
+        "i": "11408348/08197f6d44be62c86f9b99f7e80270f2.jpeg"
+       },
+       {
+        "n": "Val Walo",
+        "t": "SSR DEF",
+        "i": "11408435/64a9f067f2d8ae22ddeaa1033c617c20.jpeg"
+       },
+       {
+        "n": "Gundam GP01Fb (Full Burnern)",
+        "t": "SSR ATK",
+        "i": "11408433/9409f591b67983bea208ef7ce1e85f95.jpeg"
+       },
+       {
+        "n": "Zeong",
+        "t": "SSR SUP",
+        "i": "11272559/7f9c99d49a9c92bca3935e27d20777ad.png"
+       },
+       {
+        "n": "Red Gundam",
+        "t": "SSR SUP",
+        "i": "11274081/56246461494a42e28887d11e4a39e01d.png"
+       },
+       {
+        "n": "GM Sniper II",
+        "t": "SSR SUP",
+        "i": "11264849/0576a2989b71e5c3002095456308f86e.jpeg"
+       },
+       {
+        "n": "Blue Destiny Unit 1 [EXAM]",
+        "t": "SSR ATK",
+        "i": "11264868/69efb229c7ce4ed8bc320c14bed660a4.jpeg"
+       },
+       {
+        "n": "Beargguy",
+        "t": "SSR SUP",
+        "i": "11264884/8814aef40ccbf1ddcd371eb4b5b6e751.jpeg"
+       },
+       {
+        "n": "Gundam GP00",
+        "t": "SSR DEF",
+        "i": "11264845/301ff00f8ec395280c612d2e74906a7f.jpeg"
+       }
+      ],
+      "C": [
+       {
+        "n": "Zaku II (Dozle Zabi)",
+        "t": "SSR ATK",
+        "i": "11264894/98beeb4adebe988efe1afc4e04976687.jpeg"
+       },
+       {
+        "n": "Gundam Unit 2 (Early Type)",
+        "t": "SSR DEF",
+        "i": "11264840/42da131cc0c627229b4a037410ed90c6.jpeg"
+       },
+       {
+        "n": "Char's Gelgoog",
+        "t": "SSR ATK",
+        "i": "11264879/4941101d66c700099b3d9f51dc7f947e.jpeg"
+       },
+       {
+        "n": "Gyan Eos",
+        "t": "SSR DEF",
+        "i": "11272560/4a0322b90e550b263ab8500f8cc5e30c.png"
+       },
+       {
+        "n": "Zuda (Unit 1)",
+        "t": "SSR SUP",
+        "i": "11264841/8ce700746552a2c04407f625944fe9f0.jpeg"
+       },
+       {
+        "n": "GQuuuuuuX",
+        "t": "SSR SUP",
+        "i": "11477460/8407623fd28da6a3af3459f517579a39.jpeg"
+       },
+       {
+        "n": "Gundam Ez8",
+        "t": "SSR SUP",
+        "i": "12391167/2fad60c140ef1939cdf50776b1e45f30.webp"
+       },
+       {
+        "n": "White Gundam",
+        "t": "SSR DEF",
+        "i": "11264891/c228fe59e3ee833fb4b9d96e618bd163.jpeg"
+       },
+       {
+        "n": "Gundam Ez8 Heavy Armed Custom",
+        "t": "SSR DEF",
+        "i": "11264837/5ee1b319e01e2d46f2d1f8c0f5e8f59f.jpeg"
+       },
+       {
+        "n": "Gundam Ez8 High Mobility Custom",
+        "t": "SSR SUP",
+        "i": "11264843/93a37a2565b83b82e52da60978be1f5a.jpeg"
+       },
+       {
+        "n": "Gyan Krieger",
+        "t": "SSR ATK",
+        "i": "11264834/283da3b4f3a12d1b91e3e81ed75b8d98.jpeg"
+       },
+       {
+        "n": "Gouf Vigilante",
+        "t": "SSR ATK",
+        "i": "11264875/8f756c50df4c6b9ce1b5e77efbe0965c.jpeg"
+       },
+       {
+        "n": "Gelgoog (Anavel Gato)",
+        "t": "SSR ATK",
+        "i": "11264850/9a2d34b1731669dab7b5771c86b01d3e.jpeg"
+       },
+       {
+        "n": "Gelgoog Marine (Commander)",
+        "t": "SSR ATK",
+        "i": "11264867/0d26ea284407beecce941a0a8328ad69.jpeg"
+       },
+       {
+        "n": "Efreet Nacht",
+        "t": "SSR ATK",
+        "i": "11264869/32beffe27275d09f99c6e6086acf82e3.jpeg"
+       },
+       {
+        "n": "Pale Rider (Ground Heavy Armor)",
+        "t": "SSR SUP",
+        "i": "11264888/24b1d90a7577fc23085f87d2187b32e9.jpeg"
+       },
+       {
+        "n": "Zaku II (Shin Matsunaga)",
+        "t": "SSR DEF",
+        "i": "11264897/c7a69a9b5b456be9feb1eabfd17ee275.jpeg"
+       },
+       {
+        "n": "GQuuuuuuX (Omega Psycommu Active)",
+        "t": "SSR ATK",
+        "i": "11264896/ed6d29260b82643d0d7e208bb01ba5de.jpeg"
+       },
+       {
+        "n": "Efreet",
+        "t": "SSR SUP",
+        "i": "11264852/f55b606274486a015b47f2de431b55c9.jpeg"
+       },
+       {
+        "n": "Gundam Pixie",
+        "t": "SSR ATK",
+        "i": "11264865/4470a9ecfd3f452e1ae403752766a0b4.jpeg"
+       },
+       {
+        "n": "Prototype Kämpfer",
+        "t": "SSR ATK",
+        "i": "11264857/e289c761cc8bf94ee15d598ebecad910.jpeg"
+       },
+       {
+        "n": "High Mobility Gelgoog (Johnny Ridden)",
+        "t": "SSR SUP",
+        "i": "11264883/8ba523ed462010fbb6d21a18f99d4bd2.jpeg"
+       },
+       {
+        "n": "Zaku II Kai",
+        "t": "SSR DEF",
+        "i": "11264856/e26242e72fa9a630efcdb652f7ead99b.jpeg"
+       },
+       {
+        "n": "Gundam NT-1",
+        "t": "SSR ATK",
+        "i": "11264895/34ab5f44079d44df9eea121cad5946e0.jpeg"
+       },
+       {
+        "n": "Big Rang",
+        "t": "SSR DEF",
+        "i": "11264855/e24df0bb4e2422b31a036b62880c5d42.jpeg"
+       },
+       {
+        "n": "Hildolfr",
+        "t": "SSR ATK",
+        "i": "11264871/b7e6bed1d0845b2b7790fa7b4f1e53ea.jpeg"
+       }
+      ]
+     }
     },
     {
      "s": "機動戦士ガンダムZZ",
      "label": "ガンダムZZ",
      "logo": "11263406/ac896d17f2c03e94d77eaa6dd2152627.png",
+     "page": "684269",
      "units": [
       {
        "n": "Zeta Gundam",
@@ -6256,12 +6622,157 @@
        "t": "EX ATK",
        "i": "12494785/37ffc88c97881cfcd85d47262f0385d6.webp"
       }
-     ]
+     ],
+     "tiers": {
+      "SSS": [
+       {
+        "n": "Zeta Gundam",
+        "t": "EX ATK",
+        "i": "11381073/488eba5bd825d5fc5dd1adde7f715b18.jpeg"
+       },
+       {
+        "n": "Qubeley (ZZ)",
+        "t": "EX ATK",
+        "i": "11717823/10190950cab8ae73a36a27762306d6eb.webp"
+       }
+      ],
+      "SS": [
+       {
+        "n": "Ex-S Gundam",
+        "t": "EX ATK",
+        "i": "12494785/37ffc88c97881cfcd85d47262f0385d6.webp"
+       }
+      ],
+      "S": [
+       {
+        "n": "Full Armor ZZ Gundam",
+        "t": "EX DEF",
+        "i": "11717824/20180dc0562136f797433a5ca9802598.webp"
+       },
+       {
+        "n": "S Gundam",
+        "t": "SSR ATK",
+        "i": "11264885/66049af3a947576f12d28c43416b49f2.jpeg"
+       }
+      ],
+      "A": [
+       {
+        "n": "Zeta Gundam",
+        "t": "SUP",
+        "i": "11272516/cb2d244809553752b274962b8d83b9f6.png"
+       },
+       {
+        "n": "Full Armor ZZ Gundam",
+        "t": "SSR ATK",
+        "i": "11272484/fe2d19e6e66818fdb0a85242460b4f61.png"
+       },
+       {
+        "n": "Psycho Gundam Mk-III",
+        "t": "SSR DEF",
+        "i": "11272471/cfd30f39f3e69fc3f20399e9d7766d5d.png"
+       },
+       {
+        "n": "Qubeley Mk-II (Elpeo Ple)",
+        "t": "SSR SUP",
+        "i": "11718129/ff6dd62df1bc399ac8d18a67d1b161fe.webp"
+       },
+       {
+        "n": "Hyaku Shiki",
+        "t": "SSR SUP",
+        "i": "12041710/07f7315788d29e14fc1f3bdd2c1d263d.webp"
+       },
+       {
+        "n": "Enhanced ZZ Gundam",
+        "t": "SR ATK",
+        "i": "12037097/95a1189c8b9cf641cce5223a126039ef.webp"
+       }
+      ],
+      "B": [
+       {
+        "n": "Hyaku Shiki",
+        "t": "SSR ATK",
+        "i": "11272487/989322642a3d15aaa157c4571c64fb49.png"
+       },
+       {
+        "n": "Qubeley (ZZ)",
+        "t": "SSR SUP",
+        "i": "11272477/7b6e027cab4799f60a4c1f2f51d6fa1e.png"
+       },
+       {
+        "n": "Quin Mantha",
+        "t": "SSR DEF",
+        "i": "11272474/c84a7e9539f071879b2b6421a5608165.png"
+       },
+       {
+        "n": "Overon (Armor Form)",
+        "t": "SSR ATK",
+        "i": "11353723/cb82621ceb4a29f9d8d1fb527c6f272c.jpeg"
+       },
+       {
+        "n": "FAZZ",
+        "t": "SSR SUP",
+        "i": "12494718/aead646b66990184739aa7c935fc131c.webp"
+       },
+       {
+        "n": "Gundam Mk-V",
+        "t": "SSR ATK",
+        "i": "12494717/5a64f3ace3e52378ee079c0e1fe96a67.webp"
+       },
+       {
+        "n": "Zodiac",
+        "t": "SSR ATK",
+        "i": "12494720/86e39593e201b5e7d59d91401911ed83.webp"
+       },
+       {
+        "n": "ZZ Gundam",
+        "t": "SR ATK",
+        "i": "11451465/2acc32c553c268dac18fccb1d63d5cfd.jpeg"
+       }
+      ],
+      "C": [
+       {
+        "n": "Zeck Eins",
+        "t": "SSR SUP",
+        "i": "11264880/08c671f8aa8025c6b48e7b7f7f2570bf.jpeg"
+       },
+       {
+        "n": "Gundam Mk-III",
+        "t": "SSR DEF",
+        "i": "11264859/d46ee915c2c1445039f9fdb0cd2d533f.jpeg"
+       },
+       {
+        "n": "Doven Wolf (Commander)",
+        "t": "SSR DEF",
+        "i": "11264853/e7aafc5972becfbd90acb9ebfe29ee5b.jpeg"
+       },
+       {
+        "n": "Zaku III Kai",
+        "t": "SSR DEF",
+        "i": "11272481/4a9f6d135089b875d3b438a412376f40.png"
+       },
+       {
+        "n": "Gemark",
+        "t": "SSR ATK",
+        "i": "11272479/5cc5152e72af3e8e8d2dd4f40f9c5898.png"
+       },
+       {
+        "n": "Gyan Custom",
+        "t": "SSR DEF",
+        "i": "11791500/3ccc452ee203f0c40cb069a917b7d0f1.webp"
+       },
+       {
+        "n": "Zeck Zwei",
+        "t": "SSR SUP",
+        "i": "12494719/eb873db5259d1525e91889ef1ecfb8f6.webp"
+       }
+      ]
+     }
     },
     {
      "s": "機動武闘伝Gガンダム",
      "label": "Gガンダム",
      "logo": "11263379/f623b1ac4f0a484d6acd88fa2bde7160.png",
+     "page": "684288",
      "units": [
       {
        "n": "Master Gundam",
@@ -6288,12 +6799,107 @@
        "t": "SUP",
        "i": "11817044/1cb83c3fc1709534961b2a4710fce896.webp"
       }
-     ]
+     ],
+     "tiers": {
+      "SSS": [
+       {
+        "n": "God Gundam",
+        "t": "EX ATK",
+        "i": "11824417/d1b4c4d618779681a7fdc341898c5666.webp"
+       }
+      ],
+      "SS": [
+       {
+        "n": "Master Gundam",
+        "t": "EX ATK",
+        "i": "11662960/8301ab90a210f44db0aad73b56f0bd4c.webp"
+       },
+       {
+        "n": "Devil Gundam (Final Form)",
+        "t": "ATK",
+        "i": "11817039/f5d6eda08f44076220acc84c32d3a934.webp"
+       }
+      ],
+      "S": [
+       {
+        "n": "Gundam Rose (Super Mode)",
+        "t": "SSR DEF",
+        "i": "12562266/1cf500caffc6df4d2d7b992ce07bc084.webp"
+       },
+       {
+        "n": "God Gundam",
+        "t": "SSR DEF",
+        "i": "11817042/a8a92b49aa276ce54ea53a105c9b246b.webp"
+       },
+       {
+        "n": "Shining Gundam (Super Mode)",
+        "t": "SUP",
+        "i": "11817044/1cb83c3fc1709534961b2a4710fce896.webp"
+       }
+      ],
+      "A": [
+       {
+        "n": "Master Gundam",
+        "t": "SSR ATK",
+        "i": "11273590/d8e3ea03da0fb259f8f3598f73f08b2e.png"
+       },
+       {
+        "n": "Dragon Gundam (Super Mode)",
+        "t": "SSR ATK",
+        "i": "12562265/826d24e2ea51c4836f477dfb7ad09403.webp"
+       },
+       {
+        "n": "Grand Master Gundam",
+        "t": "SSR SUP",
+        "i": "11817043/3deb8045a74917e436e6bacbe201b014.webp"
+       },
+       {
+        "n": "Ulube's Gundam",
+        "t": "SSR SUP",
+        "i": "11817033/cc47889e3451310715b63a082eb1d53d.webp"
+       },
+       {
+        "n": "Shining Gundam",
+        "t": "SR ATK",
+        "i": "11357996/4b0c1b6316e0e2b09aaf9a19e4d311e6.jpeg"
+       }
+      ],
+      "B": [
+       {
+        "n": "Gundam Spiegel",
+        "t": "SSR SUP",
+        "i": "11273593/cc028708a54e7b310f222908e934160e.png"
+       },
+       {
+        "n": "Gundam Maxter (Super Mode)",
+        "t": "SSR DEF",
+        "i": "12562267/5cc5ff4441eb1524d5c12a3c1d25e920.webp"
+       },
+       {
+        "n": "Bolt Gundam (Super Mode)",
+        "t": "SSR SUP",
+        "i": "12562264/abf9aa76a8a965ed896545614a15cc56.webp"
+       }
+      ],
+      "C": [
+       {
+        "n": "Devil Gundam (Ultimate Gundam)",
+        "t": "SSR DEF",
+        "i": "11264862/d15771c645f09d62433c36ce5c362e59.jpeg"
+       },
+       {
+        "n": "Devil Gundam (1st Form)",
+        "t": "SSR DEF",
+        "i": "11273584/8f6436cb465a18951c2c7e0e6c51e175.png"
+       }
+      ]
+     }
     },
     {
      "s": "新機動戦記ガンダムW",
      "label": "ガンダムW",
      "logo": "11263373/c994b9655484821e14417a1158dfd4a9.png",
+     "page": "684289",
      "units": [
       {
        "n": "Wing Gundam Zero (EW)",
@@ -6320,12 +6926,137 @@
        "t": "SSR ATK",
        "i": "12444395/e1ff58b7646ce429a00f61becd59f856.webp"
       }
-     ]
+     ],
+     "tiers": {
+      "SSS": [
+       {
+        "n": "Wing Gundam Zero (EW)",
+        "t": "EX ATK",
+        "i": "12442096/d43db6124e8a82fbc2d1565f66af3e62.webp"
+       }
+      ],
+      "SS": [
+       {
+        "n": "Tallgeese III",
+        "t": "EX SUP",
+        "i": "12442097/8a3b6746a36a63166e1363be75d82e59.webp"
+       }
+      ],
+      "S": [
+       {
+        "n": "Gundam Deathscythe Hell (EW)",
+        "t": "EX DEF",
+        "i": "11472299/8f46cca0cdec6122b678eb25855deb06.png"
+       },
+       {
+        "n": "Wing Gundam Zero",
+        "t": "SSR SUP",
+        "i": "11271568/f1fdbb6d75efdbf54719934beb79a2eb.png"
+       },
+       {
+        "n": "Wing Gundam Zero (EW)",
+        "t": "SSR SUP",
+        "i": "12444385/f389d010ce0d4c0da6fd4b8ff3d2fa0b.webp"
+       },
+       {
+        "n": "Altron Gundam (EW)",
+        "t": "SSR ATK",
+        "i": "12444389/7dcf79a36e1ebc1b5c65b26b3035e1f9.webp"
+       },
+       {
+        "n": "Gundam Deathscythe Hell (EW)",
+        "t": "SSR ATK",
+        "i": "12444395/e1ff58b7646ce429a00f61becd59f856.webp"
+       },
+       {
+        "n": "Gundam Epyon (EW / Sturm und Drang)",
+        "t": "SSR ATK",
+        "i": "12444383/3c0d6ab3e274271347c0a25d0625fcc6.webp"
+       }
+      ],
+      "A": [
+       {
+        "n": "Gundam Epyon",
+        "t": "SSR ATK",
+        "i": "11271556/34f1918450a0f5d19cbb2d5c5db69969.png"
+       },
+       {
+        "n": "Vayeate Shuivan",
+        "t": "SSR ATK",
+        "i": "11472359/a81501488a965daedbbbcb0f48f72499.jpeg"
+       },
+       {
+        "n": "Wing Gundam (EW)",
+        "t": "SSR ATK",
+        "i": "11862333/bbcc4ce624a447c85740ab2e918889d0.webp"
+       },
+       {
+        "n": "Gundam Sandrock Custom (EW)",
+        "t": "SSR ATK",
+        "i": "12444388/955597e985e60177974150138ee2a79d.webp"
+       },
+       {
+        "n": "Tallgeese III",
+        "t": "SSR DEF",
+        "i": "12444386/3bd4b49ffe067bcb049f8a5c99857da5.webp"
+       },
+       {
+        "n": "Gundam Heavyarms Custom (EW)",
+        "t": "SSR SUP",
+        "i": "12444387/db09acef27222b177571c283690cd159.webp"
+       },
+       {
+        "n": "Scorpio",
+        "t": "SSR DEF",
+        "i": "12445526/8062026861f2b05e99d360a5664942d7.webp"
+       },
+       {
+        "n": "Wing Gundam Proto Zero (EW)",
+        "t": "SR ATK",
+        "i": "12496706/2de3fce0c61b3469d60c1e00861e9aef.webp"
+       }
+      ],
+      "B": [
+       {
+        "n": "Gundam Geminass 02",
+        "t": "SSR DEF",
+        "i": "11264848/d308a31dab654b4fc0238ce4001eb2af.jpeg"
+       },
+       {
+        "n": "Tallgeese II",
+        "t": "SSR DEF",
+        "i": "11271550/a1aca806c311cddf4a0e6bbabb51710d.png"
+       },
+       {
+        "n": "Altron Gundam",
+        "t": "SSR ATK",
+        "i": "11271529/450fd3ec2740a13bd4053a4a6e61dec1.png"
+       },
+       {
+        "n": "Gundam Aquarius",
+        "t": "SSR SUP",
+        "i": "11271504/5f98f6ddb6b4b35db1e9ea52006fcc58.png"
+       }
+      ],
+      "C": [
+       {
+        "n": "Gundam Geminass 01",
+        "t": "SSR ATK",
+        "i": "11264846/763d065e2b48cda6d53d449a30b4a1e5.jpeg"
+       },
+       {
+        "n": "Gundam Deathscythe Hell",
+        "t": "SSR ATK",
+        "i": "11271549/3fda2a472fab9198bc70a1f2af121324.png"
+       }
+      ]
+     }
     },
     {
      "s": "機動新世紀ガンダムX",
      "label": "ガンダムX",
      "logo": "11263387/56c0186ede4952c11ecc076285ac63f2.png",
+     "page": "684290",
      "units": [
       {
        "n": "Gundam Double X",
@@ -6352,12 +7083,112 @@
        "t": "SSR ATK",
        "i": "12254693/257c2b4d0a12ede2e80be5905324f903.webp"
       }
-     ]
+     ],
+     "tiers": {
+      "SSS": [
+       {
+        "n": "Gundam Double X",
+        "t": "EX ATK",
+        "i": "12254353/ca5b339761321ee2f6e403824b8986c3.webp"
+       }
+      ],
+      "SS": [
+       {
+        "n": "Gundam Virsago Chest Break",
+        "t": "EX SUP",
+        "i": "12254356/b6052b199105e80e18462680c56248e5.webp"
+       },
+       {
+        "n": "G-Falcon DX",
+        "t": "SSR ATK",
+        "i": "12254688/2b734d5e8e42f97d0d3daa96c8d4ae7d.webp"
+       },
+       {
+        "n": "Gundam Virsago Chest Break",
+        "t": "SSR ATK",
+        "i": "12254693/257c2b4d0a12ede2e80be5905324f903.webp"
+       }
+      ],
+      "S": [
+       {
+        "n": "Gundam Airmaster Burst",
+        "t": "SSR SUP",
+        "i": "12254683/9dd0964ad0c0f82bc8f8f6309f9c61cb.webp"
+       },
+       {
+        "n": "Gundam Double X",
+        "t": "SSR DEF",
+        "i": "12254687/e4b2ed6e1835ea2fab6fb129a772085b.webp"
+       },
+       {
+        "n": "Gundam Leopard Destroy",
+        "t": "SSR ATK",
+        "i": "12254691/b73d16bae351903e809b7d29310b143a.webp"
+       },
+       {
+        "n": "Gundam Ashtaron Hermit Crab",
+        "t": "SSR DEF",
+        "i": "12254694/19a5b6a32bf1559da6026e9f3fd32a62.webp"
+       }
+      ],
+      "A": [
+       {
+        "n": "Gundam X Divider",
+        "t": "SSR DEF",
+        "i": "11274279/17068e8a68239646c517f08860b7bdfd.png"
+       },
+       {
+        "n": "G-Falcon GX",
+        "t": "SSR SUP",
+        "i": "12254880/bcea173df317284a7bbc2522132975b0.webp"
+       },
+       {
+        "n": "G-Falcon Airmaster",
+        "t": "SSR SUP",
+        "i": "12254391/98682a9cc7681fedfba3cd63f94a6a4d.webp"
+       },
+       {
+        "n": "Gundam Belphegor",
+        "t": "SSR ATK",
+        "i": "12254696/29b2f7a7397131bc4279f96a380292d6.webp"
+       }
+      ],
+      "B": [
+       {
+        "n": "Bertigo",
+        "t": "SSR SUP",
+        "i": "11274278/3d3cdcd41bd446ee96e9d08e550c2ac7.png"
+       },
+       {
+        "n": "Patulia",
+        "t": "SSR ATK",
+        "i": "11274275/1b11631d47a54eca5e8d3f759fa4cbec.png"
+       },
+       {
+        "n": "G-Falcon Leopard",
+        "t": "SSR ATK",
+        "i": "12254392/fecfca883801824a6d92dce2d1e4a850.webp"
+       },
+       {
+        "n": "Clowda (Lancelot Dawell)",
+        "t": "SSR DEF",
+        "i": "12254393/d6b79474c01ce803724cd36a1cb40355.webp"
+       }
+      ],
+      "C": [
+       {
+        "n": "Jenice Kai (Enil Custom)",
+        "t": "SSR ATK",
+        "i": "11264847/3a99e930bb11f9dcd0863cdd7925cbe9.jpeg"
+       }
+      ]
+     }
     },
     {
      "s": "機動戦士ガンダムSEED",
      "label": "ガンダムSEED",
      "logo": "11263391/3032f45b54622df39727086d55c4ddaa.png",
+     "page": "684291",
      "units": [
       {
        "n": "Freedom Gundam",
@@ -6384,12 +7215,157 @@
        "t": "SSR SUP",
        "i": "12494995/6091e49f23d7c213d70e7f4b56f2c937.webp"
       }
-     ]
+     ],
+     "tiers": {
+      "SSS": [
+       {
+        "n": "Providence Gundam",
+        "t": "EX SUP",
+        "i": "12076933/17309c9e4deb046a82eca7752dc86e4e.webp"
+       }
+      ],
+      "SS": [
+       {
+        "n": "Freedom Gundam",
+        "t": "EX SUP",
+        "i": "11259884/bd0ef6e373eeeda4c68c60b17974d809.jpeg"
+       },
+       {
+        "n": "Justice Gundam",
+        "t": "EX DEF",
+        "i": "11293210/2346aaa9d757a54e97f3654baa023e01.png"
+       },
+       {
+        "n": "Gundam Astray Gold Frame Amatsu",
+        "t": "ATK",
+        "i": "11294276/5d7b4a36762843ac6639f62058a9bad8.png"
+       },
+       {
+        "n": "Super Hyperion Gundam",
+        "t": "SSR DEF",
+        "i": "11306124/179e1ebad147ac1cea831f1f77e57aa6.jpeg"
+       },
+       {
+        "n": "Freedom Gundam",
+        "t": "SR ATK",
+        "i": "11294917/b4ed8f9f0cf03839804c6309f7699164.jpeg"
+       }
+      ],
+      "S": [
+       {
+        "n": "Build Strike Gundam Full Package",
+        "t": "EX SUP",
+        "i": "11472298/77e141e4b709ed715b4d3891c8da38b0.png"
+       },
+       {
+        "n": "Gundam Astray Gold Frame Amatsu Mina",
+        "t": "EX DEF",
+        "i": "12305580/5b5cc7e4ac922e5e05a12257df0872a3.webp"
+       },
+       {
+        "n": "Freedom Gundam [METEOR]",
+        "t": "SSR SUP",
+        "i": "11271782/bcc4d3d7ffe915ca910b5544e3a1057e.png"
+       },
+       {
+        "n": "Hyperion Gundam",
+        "t": "SSR ATK",
+        "i": "12306093/8dae1da1af7fc393bf253e056c3f4adf.webp"
+       },
+       {
+        "n": "Gundam Astray Gold Frame Amatsu Mina",
+        "t": "SSR SUP",
+        "i": "12494995/6091e49f23d7c213d70e7f4b56f2c937.webp"
+       }
+      ],
+      "A": [
+       {
+        "n": "Perfect Strike Gundam",
+        "t": "SSR SUP",
+        "i": "11271783/a0f72bba81c42741a798286ddda7ef5a.png"
+       },
+       {
+        "n": "Justice Gundam [METEOR]",
+        "t": "SSR ATK",
+        "i": "11271784/747166d2d6ce228805578c6a9ff17f48.png"
+       },
+       {
+        "n": "Dragoon Strike",
+        "t": "SSR ATK",
+        "i": "11295330/8480a8940a4675b9ab7ea2f31a760b09.png"
+       },
+       {
+        "n": "X Astray",
+        "t": "SSR SUP",
+        "i": "12306088/2a34607c19f1c24196067b15dfb4cbcd.webp"
+       },
+       {
+        "n": "Forbidden Gundam",
+        "t": "SR DEF",
+        "i": "11307844/15a09abf96ad56abd71c9bc78b23b8aa.png"
+       }
+      ],
+      "B": [
+       {
+        "n": "Providence Gundam",
+        "t": "SSR DEF",
+        "i": "11271781/c911d7724483a611a26b76d9c46839a7.png"
+       },
+       {
+        "n": "Strike Rouge (I.W.S.P.)",
+        "t": "SSR SUP",
+        "i": "11374544/da0df73c68deb5f003c36168ec505d8c.jpeg"
+       },
+       {
+        "n": "Regenerate Gundam",
+        "t": "SSR ATK",
+        "i": "11460049/d43ec0c479288535804dbf312ecf0567.jpeg"
+       },
+       {
+        "n": "Gundam Astray Red Frame Flight Unit",
+        "t": "SSR DEF",
+        "i": "11381071/208e3d7a379a3790b56b7848f80882f2.jpeg"
+       },
+       {
+        "n": "Duel Gundam Assault Shroud",
+        "t": "SSR ATK",
+        "i": "12077041/53658aa58762abd11291e9d9876cfaee.webp"
+       },
+       {
+        "n": "Gundam Astray Blue Frame Second G Sniper Pack",
+        "t": "SSR ATK",
+        "i": "12508835/d2a6f3f323503e3f12bf257e7e8ce332.webp"
+       },
+       {
+        "n": "Justice Gundam",
+        "t": "SR ATK",
+        "i": "11451952/743aa62e0c682fda7d8513c70aeab62a.jpeg"
+       }
+      ],
+      "C": [
+       {
+        "n": "GuAIZ (Commander Type)",
+        "t": "SSR ATK",
+        "i": "11264873/c008232c8602d1b99bb60e2a935b169a.jpeg"
+       },
+       {
+        "n": "Sword Calamity Gundam",
+        "t": "SSR ATK",
+        "i": "11264878/5174abbef1b41df1f75f3b7d8d2a1fad.jpeg"
+       },
+       {
+        "n": "Murasame (Flight Test Type)",
+        "t": "SSR SUP",
+        "i": "11295365/68672df9226b3edbeb498bec5212190c.png"
+       }
+      ]
+     }
     },
     {
      "s": "機動戦士ガンダム00",
      "label": "ダブルオー",
      "logo": "11263346/d99b522dd1880e0db9edb0940664a29c.png",
+     "page": "684292",
      "units": [
       {
        "n": "00 Raiser (Final Battle)",
@@ -6416,12 +7392,152 @@
        "t": "SSR SUP",
        "i": "12494920/6349fde381554215c437d3f07d037251.webp"
       }
-     ]
+     ],
+     "tiers": {
+      "SSS": [
+       {
+        "n": "00 Raiser (Final Battle)",
+        "t": "EX DEF",
+        "i": "12442095/33dca03dc2323da349f52d45f11f7ece.webp"
+       }
+      ],
+      "SS": [
+       {
+        "n": "00 Raiser (Final Battle)",
+        "t": "SSR ATK",
+        "i": "12444068/9afc158c65e7ecfaa1c84241cbb43027.webp"
+       }
+      ],
+      "S": [
+       {
+        "n": "Gundam Exia",
+        "t": "EX ATK",
+        "i": "11259889/dacc68fd680c58b6cf86d48995633f3e.jpeg"
+       },
+       {
+        "n": "Cherudim Gundam GNHW/R",
+        "t": "SSR DEF",
+        "i": "12444078/fa402867916a6fa39b2ce23b1bcaea5a.webp"
+       },
+       {
+        "n": "Reborns Gundam",
+        "t": "SSR ATK",
+        "i": "12444084/f005d46ce975390b748540e78367a7dd.webp"
+       },
+       {
+        "n": "Gundam Throne Eins Turbulenz",
+        "t": "SSR SUP",
+        "i": "12444095/bad23241adc633f17dee23f5bd4c62c9.webp"
+       },
+       {
+        "n": "Gundam Dynames",
+        "t": "SSR SUP",
+        "i": "12494920/6349fde381554215c437d3f07d037251.webp"
+       }
+      ],
+      "A": [
+       {
+        "n": "00 Raiser",
+        "t": "SSR SUP",
+        "i": "12447284/12203a188bf293a2d031757d1922fadf.webp"
+       },
+       {
+        "n": "Seravee Gundam GNHW/B",
+        "t": "SSR SUP",
+        "i": "12444080/2e81519b237775149effe5aaa5fd1d56.webp"
+       }
+      ],
+      "B": [
+       {
+        "n": "1.5 Gundam",
+        "t": "SSR DEF",
+        "i": "11264887/7c4273adf54de16910796b43b1f6e468.jpeg"
+       },
+       {
+        "n": "GN Arms Type-D",
+        "t": "SSR SUP",
+        "i": "11271580/cafe61d2ee94816bbfa96554f0afa5d6.jpeg"
+       },
+       {
+        "n": "Tieren All-Region Type",
+        "t": "SSR DEF",
+        "i": "12442574/0ab39388d980e160e5c0f7b3e011df31.webp"
+       },
+       {
+        "n": "Gundam Exia [TRANS-AM]",
+        "t": "SSR ATK",
+        "i": "12443206/1bcae94b20511d703f00ddd020b26b6e.webp"
+       },
+       {
+        "n": "Full Armor 0 Gundam",
+        "t": "SSR DEF",
+        "i": "12444067/50ac83c452b296d822ce70248cc6773b.webp"
+       },
+       {
+        "n": "Arios Gundam GNHW/M",
+        "t": "SSR SUP",
+        "i": "12444070/ae8cda715c7ea54df361192783ca8eb3.webp"
+       },
+       {
+        "n": "Arche Gundam",
+        "t": "SSR ATK",
+        "i": "12444093/6c0464fdc3530f490f6b9348d9e3e3d6.webp"
+       },
+       {
+        "n": "Susanowo",
+        "t": "SSR ATK",
+        "i": "12444094/083b2290053602bb1013d85cc67c9df5.webp"
+       }
+      ],
+      "C": [
+       {
+        "n": "Superbia GN-X",
+        "t": "SSR DEF",
+        "i": "11264842/6b0d2b35ee3dacd442a029c5ce8d1eff.jpeg"
+       },
+       {
+        "n": "Advanced GN-X",
+        "t": "SSR SUP",
+        "i": "11264889/da5e919efeb52a8205b24264ff9e9eee.jpeg"
+       },
+       {
+        "n": "Gundam Plutone",
+        "t": "SSR ATK",
+        "i": "11264877/f70ca570ee7a7bc281bb86dfe675a601.jpeg"
+       },
+       {
+        "n": "Gundam Raziel",
+        "t": "SSR SUP",
+        "i": "11264870/f34646709dbdfc9acd9a18ad94d506bd.jpeg"
+       },
+       {
+        "n": "GN Arms Type-E",
+        "t": "SSR DEF",
+        "i": "11271579/ebcb3c49a0736fd498735ff43ba07868.jpeg"
+       },
+       {
+        "n": "Alvatore",
+        "t": "SSR ATK",
+        "i": "11271581/bb0e83584b63eb0717faf2fececa8f27.jpeg"
+       },
+       {
+        "n": "Gaddes",
+        "t": "SSR SUP",
+        "i": "12442575/9945d59d56e0dc8bd146acde2a4dca2b.webp"
+       },
+       {
+        "n": "Gadessa (Hiling Care)",
+        "t": "SSR ATK",
+        "i": "12442573/1e26b55a8e10237eca8acdcdfcf56eb4.webp"
+       }
+      ]
+     }
     },
     {
      "s": "機動戦士ガンダム 鉄血のオルフェンズ",
      "label": "鉄血のオルフェンズ",
      "logo": "11263370/2ec243215985e30d77cc85b0dd5b8329.png",
+     "page": "684293",
      "units": [
       {
        "n": "Gundam Astaroth Rinascimento",
@@ -6448,12 +7564,167 @@
        "t": "SSR ATK",
        "i": "11933836/fab72d74f72159b20dfbff545e019a92.webp"
       }
-     ]
+     ],
+     "tiers": {
+      "SSS": [
+       {
+        "n": "Gundam Barbatos Lupus Rex",
+        "t": "EX ATK",
+        "i": "11932045/57a665f084495eacabf7ca0f8cb81c62.webp"
+       }
+      ],
+      "SS": [
+       {
+        "n": "Gundam Astaroth Rinascimento",
+        "t": "EX SUP",
+        "i": "11824457/e57dcac3952d920e35a1ca2a1145de4c.webp"
+       },
+       {
+        "n": "Gundam Barbatos Lupus Rex",
+        "t": "SSR ATK",
+        "i": "11932478/4142b1d37041c0b2be2d670a0bed2ca2.webp"
+       },
+       {
+        "n": "Gundam Flauros (Ryusei-Go)",
+        "t": "SSR ATK",
+        "i": "11933836/fab72d74f72159b20dfbff545e019a92.webp"
+       }
+      ],
+      "S": [
+       {
+        "n": "Gundam Barbatos (6th Form)",
+        "t": "EX DEF",
+        "i": "11259890/3e32acc2a1d07a664c95e38655823581.jpeg"
+       },
+       {
+        "n": "Gundam Barbatos Lupus",
+        "t": "SSR ATK",
+        "i": "11932446/d934a0e0272fe0b8a26725dd1081a7a7.webp"
+       },
+       {
+        "n": "Gundam Kimaris Vidar",
+        "t": "SSR SUP",
+        "i": "11933935/36de6aef0e7c4e4f50eaa3fc9a65b9c6.webp"
+       }
+      ],
+      "A": [
+       {
+        "n": "Gundam Kimaris Vidar",
+        "t": "EX DEF",
+        "i": "12213414/41e9f4489583a9d51eea2445664f5c00.webp"
+       },
+       {
+        "n": "Gundam Vual Juhana",
+        "t": "SSR DEF",
+        "i": "11783809/cf3ed38a21d5549a368bc0b166ed1b2c.webp"
+       },
+       {
+        "n": "Gundam Dantalion (T-Booster)",
+        "t": "SSR SUP",
+        "i": "11783810/1b61c2ebf4383cc6eadc8706588b9fb2.webp"
+       },
+       {
+        "n": "Gundam Astaroth Origin",
+        "t": "SSR DEF",
+        "i": "11784291/864c226b09f8d70152b0172fbedaf561.webp"
+       },
+       {
+        "n": "Gundam Gusion Rebake Full City",
+        "t": "SSR SUP",
+        "i": "11932320/9d97340d30cda112cada62fc6c28bec7.webp"
+       },
+       {
+        "n": "Gundam Barbatos Lupus Rex (Alaya-Vijnana Limiter Off / Damaged)",
+        "t": "SSR SUP",
+        "i": "11932555/90490a4543042389bde1c54cd067eaa6.webp"
+       }
+      ],
+      "B": [
+       {
+        "n": "Gundam Barbatos (6th Form)",
+        "t": "SSR ATK",
+        "i": "11273568/1e5542b85ca61f13f744d02b426bcbd3.png"
+       },
+       {
+        "n": "Gundam Gusion Rebake",
+        "t": "SSR SUP",
+        "i": "11273567/f7941370d50de883e6d2822e9d6c59d8.png"
+       },
+       {
+        "n": "Gundam Astaroth Rinascimento",
+        "t": "SSR ATK",
+        "i": "11783811/26244f7d8da379281d71bd17a212a794.webp"
+       },
+       {
+        "n": "Gundam Gremory",
+        "t": "SSR SUP",
+        "i": "11784294/263bd6691117f24274b5347cc7b24bc9.webp"
+       },
+       {
+        "n": "Hashmal",
+        "t": "SSR ATK",
+        "i": "11932760/de06ff20529243f1e5de4b32abb2dacf.webp"
+       },
+       {
+        "n": "Gundam Hajiroboshi",
+        "t": "SSR ATK",
+        "i": "11932241/6fe9e7bc7f4e3aaeabc973e290b2f8af.webp"
+       },
+       {
+        "n": "Gundam Bael",
+        "t": "SSR ATK",
+        "i": "11933752/275d91a8b0ef1f1d41f2020988c661e1.webp"
+       },
+       {
+        "n": "Reginlaze Julia (Ground Combat)",
+        "t": "SSR DEF",
+        "i": "11933529/235252c96c04bf0327d90fa89e8890d1.webp"
+       },
+       {
+        "n": "Gundam Barbatos (Adapt)",
+        "t": "SSR SUP",
+        "i": "11955737/8ec54dc81820f988ed908f5b97af35cd.webp"
+       }
+      ],
+      "C": [
+       {
+        "n": "Gundam Astaroth",
+        "t": "SSR ATK",
+        "i": "11264886/f7974c75eb57782a86fae738eb6a75bf.jpeg"
+       },
+       {
+        "n": "Graze Ritter (Commander / Duel Spec)",
+        "t": "SSR DEF",
+        "i": "11264838/a6455b367f0f9bfbb564899582e734ed.jpeg"
+       },
+       {
+        "n": "Hyakuren (Amida)",
+        "t": "SSR ATK",
+        "i": "11264864/d92fd1428478f74a8b181eeea0204310.jpeg"
+       },
+       {
+        "n": "Graze Ein",
+        "t": "SSR DEF",
+        "i": "11273566/115752d85a9ee25c2442fce39eeb5352.png"
+       },
+       {
+        "n": "Gundam Dantalion (Half Cowl T)",
+        "t": "SSR ATK",
+        "i": "11784293/f7f5c92aae04d262b70967c15853fcbd.webp"
+       },
+       {
+        "n": "XK",
+        "t": "SSR DEF",
+        "i": "11933639/5023fbad728dc00639f92e6e72c06da3.webp"
+       }
+      ]
+     }
     },
     {
      "s": "機動戦士ガンダム 水星の魔女",
      "label": "水星の魔女",
      "logo": "11263381/b9f643bf0e6af3eefe8dd8c75df91873.png",
+     "page": "684294",
      "units": [
       {
        "n": "Gundam Exia",
@@ -6480,12 +7751,112 @@
        "t": "EX SUP",
        "i": "12494786/dd0b70a9877f00506d46e3ecf964ca42.webp"
       }
-     ]
+     ],
+     "tiers": {
+      "SSS": [
+       {
+        "n": "Gundam Calibarn (Final Battle)",
+        "t": "EX ATK",
+        "i": "12161461/a1f776bbdf543fcfb370ff052b1c0a39.webp"
+       }
+      ],
+      "SS": [
+       {
+        "n": "Gundam Aerial",
+        "t": "EX SUP",
+        "i": "11259936/a6e7ad13d1aa762424af8837d4b8902f.jpeg"
+       },
+       {
+        "n": "Gundam Pharact (Season 2)",
+        "t": "EX SUP",
+        "i": "12494786/dd0b70a9877f00506d46e3ecf964ca42.webp"
+       }
+      ],
+      "S": [
+       {
+        "n": "Gundam Aerial Rebuild",
+        "t": "EX DEF",
+        "i": "11932046/da3f4898a657a0059a9f01a4f6398ba8.webp"
+       },
+       {
+        "n": "Gundam Aerial Rebuild",
+        "t": "ATK",
+        "i": "11273710/4deb8002bb985ad651a1162632c9eb98.png"
+       },
+       {
+        "n": "Gundam Calibarn",
+        "t": "SSR SUP",
+        "i": "12162407/3e24a8efb93e190b5e4521aeae49d3ad.webp"
+       }
+      ],
+      "A": [
+       {
+        "n": "Gundam Schwarzette",
+        "t": "SSR ATK",
+        "i": "12162409/1dfc33073390441572b3de21a5f1bc60.webp"
+       },
+       {
+        "n": "Darilbalde (Season 2)",
+        "t": "SSR DEF",
+        "i": "12162410/42b612de8cd554d8bbafe3ca7fa3f5a0.webp"
+       },
+       {
+        "n": "Michaelis (Season 2)",
+        "t": "SSR SUP",
+        "i": "12162403/a7c9cfc7586dbd42046ced1d73e024ec.webp"
+       },
+       {
+        "n": "Gundam Pharact (Season 2)",
+        "t": "SSR ATK",
+        "i": "12162404/785c2e17af8bc6e9803447b07bcfc8b2.webp"
+       },
+       {
+        "n": "Beguir-Pente (Dominicus Squad)",
+        "t": "SSR SUP",
+        "i": "12162401/a252df8af86dd51b94e5641b613be8e0.webp"
+       },
+       {
+        "n": "Gundam Aerial",
+        "t": "SSR DEF",
+        "i": "12162400/3914e85c7d3e91607e990cdeaed3a6f2.webp"
+       }
+      ],
+      "B": [
+       {
+        "n": "Gundam Lfrith Ur",
+        "t": "SSR DEF",
+        "i": "11273712/5687b29272ac09b35e347f50a874cb04.png"
+       },
+       {
+        "n": "Gundam Lfrith Thorn",
+        "t": "SSR SUP",
+        "i": "11273711/cadf977acfa8773db6906c9340927684.png"
+       },
+       {
+        "n": "Gundam Lfrith Ur (with Gundvolva)",
+        "t": "SSR ATK",
+        "i": "12161884/064f6472a88ee48577747647d4cf7c94.webp"
+       },
+       {
+        "n": "Gundam Lfrith Thorn (with Gundvolva)",
+        "t": "SSR DEF",
+        "i": "12161885/24c333ece0309b262019c1d8d73801af.webp"
+       }
+      ],
+      "C": [
+       {
+        "n": "Dilanza (Guel, Final Battle)",
+        "t": "SSR SUP",
+        "i": "12161886/6687985519c6c096d39a8ec5916af74c.webp"
+       }
+      ]
+     }
     },
     {
      "s": "機動戦士Zガンダム",
      "label": "Zガンダム",
      "logo": "11263395/b6f92a5e597ec8e684529446f362d1cf.png",
+     "page": "684337",
      "units": [
       {
        "n": "Le Cygne",
@@ -6512,12 +7883,132 @@
        "t": "EX SUP",
        "i": "11372334/854f4e2bdba8287cf58951383b6144c2.jpeg"
       }
-     ]
+     ],
+     "tiers": {
+      "SSS": [
+       {
+        "n": "Zeta Gundam",
+        "t": "EX ATK",
+        "i": "11381073/488eba5bd825d5fc5dd1adde7f715b18.jpeg"
+       }
+      ],
+      "SS": [
+       {
+        "n": "Le Cygne",
+        "t": "EX SUP",
+        "i": "11259937/b9b3e36fd96dfbaa3651bc6ef2d1d5f3.jpeg"
+       },
+       {
+        "n": "The O",
+        "t": "EX SUP",
+        "i": "11372334/854f4e2bdba8287cf58951383b6144c2.jpeg"
+       },
+       {
+        "n": "Zeta Gundam Unit 3 P2 Type",
+        "t": "SUP",
+        "i": "11272514/fb2c30367e9924479b9e163f5942114f.png"
+       }
+      ],
+      "S": [
+       {
+        "n": "Full Armor Gundam Mk-III",
+        "t": "SSR SUP",
+        "i": "12041767/a7bc7bb7206856142693a5ef692156db.webp"
+       }
+      ],
+      "A": [
+       {
+        "n": "Zeta Gundam Unit 3",
+        "t": "SSR SUP",
+        "i": "11264881/de4caae7e0a886f35a9444dc5c3412fc.jpeg"
+       },
+       {
+        "n": "Zeta Gundam",
+        "t": "SUP",
+        "i": "11272516/cb2d244809553752b274962b8d83b9f6.png"
+       },
+       {
+        "n": "Psycho Gundam",
+        "t": "DEF",
+        "i": "11274255/912800b672690d2a85986f2a531fdc0c.png"
+       },
+       {
+        "n": "Neue Ziel II",
+        "t": "SSR DEF",
+        "i": "11847295/b71559b71812645dcb39f14ae5383ddc.webp"
+       },
+       {
+        "n": "Hyaku Shiki",
+        "t": "SSR SUP",
+        "i": "12041710/07f7315788d29e14fc1f3bdd2c1d263d.webp"
+       }
+      ],
+      "B": [
+       {
+        "n": "Zeta Gundam Unit 3 B Type",
+        "t": "SSR DEF",
+        "i": "11264861/9a3935fe5c23fca9a9d80a595782179e.jpeg"
+       },
+       {
+        "n": "The O",
+        "t": "SSR DEF",
+        "i": "11272511/034104386f64c9e496badf08a6a20c7e.png"
+       },
+       {
+        "n": "Qubeley",
+        "t": "SSR SUP",
+        "i": "11272513/7c42060b7e973bcdab560155e27c6f0e.png"
+       },
+       {
+        "n": "Hyaku Shiki",
+        "t": "SSR ATK",
+        "i": "11272487/989322642a3d15aaa157c4571c64fb49.png"
+       },
+       {
+        "n": "Saikoro Gundam",
+        "t": "SSR DEF",
+        "i": "11353724/b8ac090cd69f0b4ca7aabaf51c50ee12.jpeg"
+       },
+       {
+        "n": "Gundam Mk-II Prototype 0",
+        "t": "SSR SUP",
+        "i": "11408349/0678cbcc07d9a152b5d9dd5281cf7538.jpeg"
+       },
+       {
+        "n": "Titania",
+        "t": "SSR DEF",
+        "i": "11740910/81ecb247acb8a98d17610b99885dd22f.webp"
+       }
+      ],
+      "C": [
+       {
+        "n": "Gundam Mk-III",
+        "t": "SSR DEF",
+        "i": "11264859/d46ee915c2c1445039f9fdb0cd2d533f.jpeg"
+       },
+       {
+        "n": "Zero-Shiki",
+        "t": "SSR SUP",
+        "i": "11264854/16cd44ea5f5cd6f9d200583f79a6ab87.jpeg"
+       },
+       {
+        "n": "Gaplant TR-5 [Hrairoo] Unit 1",
+        "t": "SSR ATK",
+        "i": "11382022/6d6f9d01c176c444f2544408e36590e4.jpeg"
+       },
+       {
+        "n": "Gundam TR-1 [Hazel Rah]",
+        "t": "SSR ATK",
+        "i": "11264839/fefd80e083c424e747faf3c4d070bed5.jpeg"
+       }
+      ]
+     }
     },
     {
      "s": "機動戦士ガンダム 逆襲のシャア",
      "label": "逆襲のシャア",
      "logo": "11263405/c6381ce5cbbd1916a695097a1dad4771.png",
+     "page": "784896",
      "units": [
       {
        "n": "ν Gundam",
@@ -6544,12 +8035,127 @@
        "t": "EX ATK",
        "i": "12041704/14939a0ecb2715b6c308cdcb333e4737.webp"
       }
-     ]
+     ],
+     "tiers": {
+      "SSS": [
+       {
+        "n": "Hi-ν Gundam",
+        "t": "EX ATK",
+        "i": "11516080/491b252657f5c1b1c25ae6b6264efd89.jpeg"
+       }
+      ],
+      "SS": [
+       {
+        "n": "ν Gundam",
+        "t": "EX SUP",
+        "i": "11259928/14e364297061dfd65e38d4e07234b8d7.jpeg"
+       },
+       {
+        "n": "Sazabi",
+        "t": "EX ATK",
+        "i": "11259885/f47c3927a64c577d6cf1105e3281b913.jpeg"
+       },
+       {
+        "n": "Ξ Gundam",
+        "t": "EX ATK",
+        "i": "12041704/14939a0ecb2715b6c308cdcb333e4737.webp"
+       },
+       {
+        "n": "Penelope",
+        "t": "EX DEF",
+        "i": "12041706/d550bb0098ce2628c6b46aaefd13217c.webp"
+       }
+      ],
+      "S": [
+       {
+        "n": "Hi-ν Gundam",
+        "t": "SSR DEF",
+        "i": "11511357/7c3b7381dd9e5a0b00460c1ef5bb7760.png"
+       },
+       {
+        "n": "Penelope",
+        "t": "SSR ATK",
+        "i": "12041646/e837e90f0ea6388b2e5c29582f3fc87f.webp"
+       },
+       {
+        "n": "Aluzeus",
+        "t": "SSR SUP",
+        "i": "12282205/88fa9b04a477583fc474c4bb24337ad1.webp"
+       }
+      ],
+      "A": [
+       {
+        "n": "ν Gundam",
+        "t": "SSR ATK",
+        "i": "11511358/067daabe1dd27b759df26722a5daee2c.png"
+       },
+       {
+        "n": "β Azieru",
+        "t": "SSR SUP",
+        "i": "11511359/658916fed17ca815656a30936ac8385d.png"
+       },
+       {
+        "n": "Ξ Gundam",
+        "t": "SSR DEF",
+        "i": "12041622/aa370387f4b517f4f2b7bbdf05fbff70.webp"
+       },
+       {
+        "n": "Messer Type-F Naked (Commander)",
+        "t": "SSR SUP",
+        "i": "12041903/e531e1115a6e45cf3ce9e0906912ae23.webp"
+       }
+      ],
+      "B": [
+       {
+        "n": "Sazabi",
+        "t": "SSR SUP",
+        "i": "11511361/dabb07e9d696b9056cee12626f43e34c.png"
+       },
+       {
+        "n": "Nightingale",
+        "t": "SSR ATK",
+        "i": "11511356/18220e99b5b0cb16766db15b71c5733f.png"
+       }
+      ],
+      "C": [
+       {
+        "n": "D Gundam First",
+        "t": "SSR DEF",
+        "i": "11264866/b62c60cc0184fb729648aeb6e03a26c3.jpeg"
+       },
+       {
+        "n": "Gaplant (Ingrid 0)",
+        "t": "SSR SUP",
+        "i": "11264833/3fe0768bf5323a86ddb132e21eeba5d4.jpeg"
+       },
+       {
+        "n": "High Mobility Gelgoog Kai (Johnny Ridden)",
+        "t": "SSR DEF",
+        "i": "11264872/64b4f4ef233c41b386a432f6d294a5f2.jpeg"
+       },
+       {
+        "n": "Full Armor Hyaku Shiki Kai",
+        "t": "SSR DEF",
+        "i": "11510146/bb5ac3e3c5eea17efa23d45716532e10.jpeg"
+       },
+       {
+        "n": "Geara Doga (Rezin Schnyder)",
+        "t": "SSR ATK",
+        "i": "11509999/d069d7846e5cbf28b765e6935e079245.png"
+       },
+       {
+        "n": "α Azieru",
+        "t": "SSR DEF",
+        "i": "11511360/2155314593f3c9c8f56449dd56012530.png"
+       }
+      ]
+     }
     },
     {
      "s": "機動戦士ガンダムUC",
      "label": "ユニコーン",
      "logo": "11263356/9549c0f358ae90dce72d7f2f3f897ae2.png",
+     "page": "784897",
      "units": [
       {
        "n": "Banshee Norn (Destroy Mode)",
@@ -6576,12 +8182,162 @@
        "t": "SSR ATK",
        "i": "12530676/73d3ad30c7df735a2df4909a56bef6b0.webp"
       }
-     ]
+     ],
+     "tiers": {
+      "SSS": [
+       {
+        "n": "Unicorn Gundam (Destroy Mode / Awakened)",
+        "t": "EX SUP",
+        "i": "11824419/b74814a8d19d450155ad77ab0c638f9a.webp"
+       },
+       {
+        "n": "Unicorn Gundam 03 Phenex (Destroy Mode)",
+        "t": "EX ATK",
+        "i": "12530069/15f7bab6a3a28ea0e7675a044d4b18ec.webp"
+       }
+      ],
+      "SS": [
+       {
+        "n": "Banshee Norn (Destroy Mode)",
+        "t": "EX DEF",
+        "i": "11662984/e47223e1c9d971f9fb6b8f060c4b62d8.webp"
+       },
+       {
+        "n": "Sinanju",
+        "t": "EX SUP",
+        "i": "11975360/33030b9f6f95e25442be3d769f9ac15f.webp"
+       },
+       {
+        "n": "Unicorn Gundam 03 Phenex (Destroy Mode)",
+        "t": "SSR ATK",
+        "i": "12530676/73d3ad30c7df735a2df4909a56bef6b0.webp"
+       }
+      ],
+      "S": [
+       {
+        "n": "Unicorn Gundam (Destroy Mode)",
+        "t": "EX ATK",
+        "i": "11259888/1e4da44c7a18cbecd1a5f99d97f174bf.jpeg"
+       },
+       {
+        "n": "Unicorn Gundam (Destroy Mode)",
+        "t": "SSR DEF",
+        "i": "11817037/afe4902146a3e952e9efbd2952f2295e.webp"
+       },
+       {
+        "n": "Full Armor Unicorn Gundam (Destroy Mode)",
+        "t": "SSR DEF",
+        "i": "11817041/e96ebf0345fe314a105725af11f2c9bb.webp"
+       },
+       {
+        "n": "Gundam Delta Kai",
+        "t": "SSR ATK",
+        "i": "11817032/22df277189c4df776761f079d848a6b1.webp"
+       },
+       {
+        "n": "Unicorn Gundam 03 Phenex (Unicorn Mode)",
+        "t": "SSR DEF",
+        "i": "12530673/49679eacecbc0e106e3bb64c156cb20c.webp"
+       },
+       {
+        "n": "Narrative Gundam C-Packs (Awakened)",
+        "t": "SSR SUP",
+        "i": "12530674/1fd54e100d1c8e50d1575fddc3eb6b2f.webp"
+       }
+      ],
+      "A": [
+       {
+        "n": "Narrative Gundam A-Packs",
+        "t": "EX DEF",
+        "i": "11259883/0febde9cd6747d2cef8d04be179a9d9e.jpeg"
+       },
+       {
+        "n": "Banshee Norn (Destroy Mode)",
+        "t": "SSR SUP",
+        "i": "11817036/868ff19376aca6679174f2840bd93c2f.webp"
+       },
+       {
+        "n": "Neo Zeong",
+        "t": "SSR ATK",
+        "i": "11817035/99a092bb4122429b47740ea78131d895.webp"
+       },
+       {
+        "n": "Kshatriya Repaired",
+        "t": "SSR SUP",
+        "i": "11817034/f7db280645af7d810968c39b31ce0052.webp"
+       },
+       {
+        "n": "Byarlant Custom Unit 2",
+        "t": "SSR ATK",
+        "i": "11817040/2f2ca28c0a54bc0e5a2b8514a39591bf.webp"
+       },
+       {
+        "n": "Narrative Gundam A-Packs",
+        "t": "SSR ATK",
+        "i": "12530677/2dfe269a382e064dae8c1a49b6f7488f.webp"
+       }
+      ],
+      "B": [
+       {
+        "n": "Shamblo",
+        "t": "SSR ATK",
+        "i": "11817038/fae4828191f4e34d76b8631ecbb77ea5.webp"
+       },
+       {
+        "n": "Sinanju",
+        "t": "SSR ATK",
+        "i": "11817031/81151c98160378582f0a44fb8993af2a.webp"
+       },
+       {
+        "n": "Narrative Gundam B-Packs",
+        "t": "SSR SUP",
+        "i": "12530678/88a62c9594cf9d87d797f611500126a2.webp"
+       },
+       {
+        "n": "II Neo Zeong",
+        "t": "SSR DEF",
+        "i": "12530675/fcfdc353c7acd92f19fbcf3f9fdd1e22.webp"
+       }
+      ],
+      "C": [
+       {
+        "n": "Geara Zulu (Angelo Sauper)",
+        "t": "SSR ATK",
+        "i": "12056353/0ba5300f1c4821855cc04cdcfb8aea3a.webp"
+       },
+       {
+        "n": "ReZEL (Commander Type)",
+        "t": "SSR SUP",
+        "i": "11816444/72a04688873e2141549120820db418c7.webp"
+       },
+       {
+        "n": "Jegan (ECOAS)",
+        "t": "SSR DEF",
+        "i": "11816291/cdb01b7e07b9ce9937dac04c8ea27aa7.webp"
+       },
+       {
+        "n": "Banshee (Destroy Mode)",
+        "t": "SSR ATK",
+        "i": "11817045/b770c289751ce7970f76e8c1a866acef.webp"
+       },
+       {
+        "n": "Geara Zulu (Erik)",
+        "t": "SSR SUP",
+        "i": "12530326/1865e6a0a3cbb2f580c001d9775920ad.webp"
+       },
+       {
+        "n": "Sinanju Stein",
+        "t": "SSR ATK",
+        "i": "12530672/9100ba9866920cc7e570d3f6bb76a560.webp"
+       }
+      ]
+     }
     },
     {
      "s": "機動戦士ガンダムNT",
      "label": "ナラティブ",
      "logo": "11263382/ace131f339a457d85ca11092b0d99c03.png",
+     "page": "784919",
      "units": [
       {
        "n": "Unicorn Gundam 03 Phenex (Destroy Mode)",
@@ -6608,12 +8364,77 @@
        "t": "SSR SUP",
        "i": "12530674/1fd54e100d1c8e50d1575fddc3eb6b2f.webp"
       }
-     ]
+     ],
+     "tiers": {
+      "SSS": [
+       {
+        "n": "Unicorn Gundam 03 Phenex (Destroy Mode)",
+        "t": "EX ATK",
+        "i": "12530069/15f7bab6a3a28ea0e7675a044d4b18ec.webp"
+       }
+      ],
+      "SS": [
+       {
+        "n": "Unicorn Gundam 03 Phenex (Destroy Mode)",
+        "t": "SSR ATK",
+        "i": "12530676/73d3ad30c7df735a2df4909a56bef6b0.webp"
+       }
+      ],
+      "S": [
+       {
+        "n": "Unicorn Gundam 03 Phenex (Unicorn Mode)",
+        "t": "SSR DEF",
+        "i": "12530673/49679eacecbc0e106e3bb64c156cb20c.webp"
+       },
+       {
+        "n": "Narrative Gundam C-Packs (Awakened)",
+        "t": "SSR SUP",
+        "i": "12530674/1fd54e100d1c8e50d1575fddc3eb6b2f.webp"
+       }
+      ],
+      "A": [
+       {
+        "n": "Narrative Gundam A-Packs",
+        "t": "EX DEF",
+        "i": "11259883/0febde9cd6747d2cef8d04be179a9d9e.jpeg"
+       },
+       {
+        "n": "Narrative Gundam A-Packs",
+        "t": "SSR ATK",
+        "i": "12530677/2dfe269a382e064dae8c1a49b6f7488f.webp"
+       }
+      ],
+      "B": [
+       {
+        "n": "Narrative Gundam B-Packs",
+        "t": "SSR SUP",
+        "i": "12530678/88a62c9594cf9d87d797f611500126a2.webp"
+       },
+       {
+        "n": "II Neo Zeong",
+        "t": "SSR DEF",
+        "i": "12530675/fcfdc353c7acd92f19fbcf3f9fdd1e22.webp"
+       }
+      ],
+      "C": [
+       {
+        "n": "Geara Zulu (Erik)",
+        "t": "SSR SUP",
+        "i": "12530326/1865e6a0a3cbb2f580c001d9775920ad.webp"
+       },
+       {
+        "n": "Sinanju Stein",
+        "t": "SSR ATK",
+        "i": "12530672/9100ba9866920cc7e570d3f6bb76a560.webp"
+       }
+      ]
+     }
     },
     {
      "s": "機動戦士ガンダムAGE",
      "label": "ガンダムAGE",
      "logo": "11263344/ed509ddb2786ef342b9746f5d800d537.png",
+     "page": "784899",
      "units": [
       {
        "n": "Gundam AGE-2 Normal",
@@ -6640,12 +8461,117 @@
        "t": "SSR SUP",
        "i": "12353380/11020836bade2fcc2614b62e8dafa05f.webp"
       }
-     ]
+     ],
+     "tiers": {
+      "SSS": [
+       {
+        "n": "Gundam AGE-2 Normal",
+        "t": "EX SUP",
+        "i": "12352669/9372d8ae727d11ef6a268d03b31a5102.webp"
+       }
+      ],
+      "SS": [
+       {
+        "n": "Gundam AGE-1 Normal",
+        "t": "EX ATK",
+        "i": "12352671/118f31261d61703cfeeb13d18e081ff9.webp"
+       }
+      ],
+      "S": [
+       {
+        "n": "Gundam AGE-1 Unit 2 Assault Jacket",
+        "t": "SSR DEF",
+        "i": "12353392/39ec3d8adbf363a190687a679b8df5cb.webp"
+       },
+       {
+        "n": "Gundam AGE-2 Double Bullet",
+        "t": "SSR ATK",
+        "i": "12353387/06d25011a6fdd2d80a2745fd2c884c28.webp"
+       }
+      ],
+      "A": [
+       {
+        "n": "Gundam AGE-1 Flat",
+        "t": "SSR SUP",
+        "i": "12352736/a159655bcbbcd41b858f833b91e18deb.webp"
+       },
+       {
+        "n": "Gundam AGE-1 Spallow",
+        "t": "SSR SUP",
+        "i": "12353399/71b3e89e8cc96a2debf72ac6d6276dd5.webp"
+       },
+       {
+        "n": "Gundam AGE-2 Artimes",
+        "t": "SSR SUP",
+        "i": "12353384/167aa032bc74419f49bae2e3668614c8.webp"
+       },
+       {
+        "n": "Zeydra",
+        "t": "SSR ATK",
+        "i": "12353382/0ce7b7e3c07987daa9af2fd6aedc692a.webp"
+       },
+       {
+        "n": "Chronos",
+        "t": "SSR SUP",
+        "i": "12353380/11020836bade2fcc2614b62e8dafa05f.webp"
+       }
+      ],
+      "B": [
+       {
+        "n": "G-Xiphos",
+        "t": "SSR SUP",
+        "i": "12353067/788ac65d4ebd34537f5daa9a0853ec07.webp"
+       },
+       {
+        "n": "Farsia",
+        "t": "SSR DEF",
+        "i": "12352735/1c423c2ec9b047cda07d92b1a4c948b5.webp"
+       },
+       {
+        "n": "Gundam AGE-2 Normal",
+        "t": "SSR DEF",
+        "i": "12353389/07dc36f4109158b27130c487dc007df4.webp"
+       }
+      ],
+      "C": [
+       {
+        "n": "Gundam AGE-1 Razor",
+        "t": "SSR ATK",
+        "i": "11264835/39bdf9eb28f1960b8389e92bbe8450ba.jpeg"
+       },
+       {
+        "n": "Gundam AGE-1 Normal",
+        "t": "SSR SUP",
+        "i": "11264844/db31a301281ff3d30e11fb438b60eae9.jpeg"
+       },
+       {
+        "n": "Adele (Starks)",
+        "t": "SSR ATK",
+        "i": "12352740/698cc5852d7b4ab27a39a9df5bac6a9e.webp"
+       },
+       {
+        "n": "The Gundam",
+        "t": "SSR ATK",
+        "i": "12353066/74cfe55f92e955405992a26035a27c3a.webp"
+       },
+       {
+        "n": "Gundam AGE-1 Titus",
+        "t": "SSR ATK",
+        "i": "12353395/2e823b986e0a9074aec9ccfcd630e3b4.webp"
+       },
+       {
+        "n": "Defarth",
+        "t": "SSR ATK",
+        "i": "12353376/d410b2d05d3cf1bb12858b7a8730be0a.webp"
+       }
+      ]
+     }
     },
     {
      "s": "機動戦士ガンダムSEED DESTINY",
      "label": "SEED DESTINY",
      "logo": "11294077/6bbccbabb4f871d4aa20410188391046.png",
+     "page": "784898",
      "units": [
       {
        "n": "Strike Freedom Gundam",
@@ -6672,7 +8598,161 @@
        "t": "SSR ATK",
        "i": "12162206/aec2026ff25cc17927a17b21f524b038.webp"
       }
-     ]
+     ],
+     "tiers": {
+      "SSS": [
+       {
+        "n": "Strike Freedom Gundam",
+        "t": "EX ATK",
+        "i": "11293212/aa60adea81016bc7cbaaadea0c0bf8a0.png"
+       },
+       {
+        "n": "Destiny Gundam",
+        "t": "EX ATK",
+        "i": "12161464/a3dd5bac79c0801823d9bbf5d1b7d8be.webp"
+       }
+      ],
+      "SS": [
+       {
+        "n": "Freedom Gundam",
+        "t": "EX SUP",
+        "i": "11259884/bd0ef6e373eeeda4c68c60b17974d809.jpeg"
+       },
+       {
+        "n": "Force Impulse Gundam",
+        "t": "EX SUP",
+        "i": "11519155/cfa1e26d672ce7d4101f2b371c1c38c5.jpeg"
+       },
+       {
+        "n": "Strike Freedom Gundam (METEOR)",
+        "t": "SSR ATK",
+        "i": "12162206/aec2026ff25cc17927a17b21f524b038.webp"
+       },
+       {
+        "n": "Freedom Gundam",
+        "t": "SR ATK",
+        "i": "11294917/b4ed8f9f0cf03839804c6309f7699164.jpeg"
+       }
+      ],
+      "S": [
+       {
+        "n": "Gundam Astray Red Frame Kai",
+        "t": "EX ATK",
+        "i": "12305579/fbc7dd8a17452f3d7a7785cc1bbd56d8.webp"
+       },
+       {
+        "n": "Gundam Astray Gold Frame Amatsu Mina",
+        "t": "EX DEF",
+        "i": "12305580/5b5cc7e4ac922e5e05a12257df0872a3.webp"
+       },
+       {
+        "n": "Strike Freedom Gundam",
+        "t": "SSR SUP",
+        "i": "12592173/cefc165c4691f557acf87ee4806208f6.webp"
+       },
+       {
+        "n": "Infinite Justice Gundam (METEOR)",
+        "t": "SSR SUP",
+        "i": "12162196/1380cc3913372c5b27b92057205de7e3.webp"
+       },
+       {
+        "n": "Gundam Astray Gold Frame Amaterasu",
+        "t": "SSR DEF",
+        "i": "12162208/c7d62e07a78b7739277078dc493bbc98.webp"
+       },
+       {
+        "n": "Gundam Astray Gold Frame Amatsu Mina",
+        "t": "SSR SUP",
+        "i": "12494995/6091e49f23d7c213d70e7f4b56f2c937.webp"
+       }
+      ],
+      "A": [
+       {
+        "n": "Destiny Impulse",
+        "t": "SSR ATK",
+        "i": "11510145/8b7e675f9896d19d665c4b78e7328fb1.jpeg"
+       },
+       {
+        "n": "Destiny Gundam",
+        "t": "SSR DEF",
+        "i": "11511398/45db769b99562d4a512131bfcca0848c.png"
+       },
+       {
+        "n": "Destroy Gundam",
+        "t": "SSR SUP",
+        "i": "11511543/3899e06ae83dc3b791a6442cdba67cad.png"
+       },
+       {
+        "n": "Infinite Justice Gundam",
+        "t": "SSR ATK",
+        "i": "12162195/40d8c46075a70357df0b9e890832291f.webp"
+       },
+       {
+        "n": "Akatsuki (Shiranui)",
+        "t": "SSR DEF",
+        "i": "12162198/2277e4f6d85ddfd106c348d1ce5f1076.webp"
+       },
+       {
+        "n": "ZAKU Warrior (Live Concert)",
+        "t": "SSR SUP",
+        "i": "12162699/7add5bb2937217eb8cd67442bde08832.webp"
+       }
+      ],
+      "B": [
+       {
+        "n": "Windam (Neo Lorrnoke)",
+        "t": "SSR DEF",
+        "i": "11784937/c6adb7223a21ddd8cdec0eafe210f3a8.webp"
+       },
+       {
+        "n": "Legend Gundam",
+        "t": "SSR ATK",
+        "i": "11511339/0aa742406051ec10a2d6d908ba79f0af.png"
+       },
+       {
+        "n": "Gouf Ignited (Yzak Jule)",
+        "t": "SSR ATK",
+        "i": "12161887/af71c8974d4605b034162f8c61ab2d8a.webp"
+       },
+       {
+        "n": "Blaze ZAKU Phantom (Dearka Elsman)",
+        "t": "SSR SUP",
+        "i": "12483160/2bea10c2615ae1093bf12068e3265bfe.webp"
+       },
+       {
+        "n": "Gaia Gundam (Andrew Waltfeld)",
+        "t": "SSR DEF",
+        "i": "12161890/42a9ee7fc519e302e08cb2c59a9d3986.webp"
+       },
+       {
+        "n": "Gouf Ignited (Heine Westenfluss)",
+        "t": "SSR ATK",
+        "i": "12161891/cf6cfceebd99d12b41d33663f1821e25.webp"
+       }
+      ],
+      "C": [
+       {
+        "n": "Gunner ZAKU Warrior (Lunamaria Hawke)",
+        "t": "SSR SUP",
+        "i": "12483139/b351baa2ab34a9b298ff6d3acf7d23c4.webp"
+       },
+       {
+        "n": "Blaze ZAKU Phantom (Rey Za Burrel)",
+        "t": "SSR DEF",
+        "i": "11510002/0aac3ed0077f1dbbee6782fd02b9d688.png"
+       },
+       {
+        "n": "Gunner ZAKU Warrior (Dearka Elsman)",
+        "t": "SSR SUP",
+        "i": "12483161/d92f7158a74bf53d39ec964464036a86.webp"
+       },
+       {
+        "n": "Slash ZAKU Phantom (Yzak Jule)",
+        "t": "SSR ATK",
+        "i": "11510000/e2ef49abfef56e41aec420b617ab842a.png"
+       }
+      ]
+     }
     }
    ]
   }
