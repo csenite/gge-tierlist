@@ -51,12 +51,15 @@ jobs:
       - name: Open or update the translation issue
         if: hashFiles('report.md') != ''
         run: |
-          gh label create needs-translation --color FBCA04 --description "New Game8 text needs an English translation" --force
-          n=$(gh issue list --label needs-translation --state open --json number --jq '.[0].number')
+          set +e
+          R="--repo $GITHUB_REPOSITORY"
+          try() { for i in 1 2 3; do out=$("$@" 2>&1) && { echo "$out"; return 0; }; echo "::warning::try $i failed: $out"; sleep 10; done; echo "::error::$* failed: $out"; return 1; }
+          try gh label create needs-translation $R --color FBCA04 --description "New Game8 text needs an English translation" --force
+          n=$(gh issue list $R --label needs-translation --state open --json number --jq '.[0].number')
           if [ -n "$n" ]; then
-            gh issue edit "$n" --body-file report.md
+            try gh issue edit "$n" $R --body-file report.md
           else
-            gh issue create --title "$ISSUE_TITLE" --label needs-translation --body-file report.md
+            try gh issue create $R --title "$ISSUE_TITLE" --label needs-translation --body-file report.md
           fi
       - name: Close the translation issue when nothing is left
         if: hashFiles('report.md') == '' && steps.scrape.outputs.code == '0' && github.event_name == 'push'
