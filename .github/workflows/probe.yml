@@ -14,20 +14,8 @@ jobs:
           rm -rf probe && mkdir -p probe/js
           UA='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36'
           get() { echo "$1 $(curl -sS -L -A "$UA" -o "$2" -w '%{http_code}' "$1") $(wc -c < "$2")" | tee -a probe/status.txt; }
-          get https://img.kusoge.xyz/ggenet/frame/UI_Common_Tmb_Square_Supporter_Base_1.webp probe/frame_1.webp
-          get https://img.kusoge.xyz/ggenet/frame/UI_Common_Tmb_Square_Supporter_Base_2.webp probe/frame_2.webp
-          get https://img.kusoge.xyz/ggenet/frame/UI_Common_Tmb_Square_Supporter_Base_3.webp probe/frame_3.webp
-          get https://img.kusoge.xyz/ggenet/frame/UI_Common_Tmb_Square_Supporter_Base_4.webp probe/frame_4.webp
-          get https://img.kusoge.xyz/ggenet/frame/UI_Common_Tmb_Square_Supporter_Base_5.webp probe/frame_5.webp
-          get https://img.kusoge.xyz/ggenet/frame/UI_Common_Tmb_Square_Supporter_Base_6.webp probe/frame_6.webp
-          get https://img.kusoge.xyz/ggenet/frame/UI_Common_Tmb_Square_Supporter_Base_7.webp probe/frame_7.webp
-          get https://img.kusoge.xyz/ggenet/frame/UI_Common_Tmb_Square_Base_5.webp probe/f_Base_5.webp
-          get https://img.kusoge.xyz/ggenet/frame/UI_Common_Tmb_Square_Frame_5.webp probe/f_Frame_5.webp
-          get https://img.kusoge.xyz/ggenet/frame/UI_Common_Tmb_Square_Gold.webp probe/f_Gold.webp
-          get https://img.kusoge.xyz/ggenet/frame/UI_Common_Tmb_Square_Supporter_Base_Gold.webp probe/f_Supporter_Base_Gold.webp
-          get https://img.kusoge.xyz/ggenet/frame/UI_Common_Tmb_Square_Supporter_Base_5_Limited.webp probe/f_Supporter_Base_5_Limited.webp
-          get https://img.kusoge.xyz/ggenet/frame/UI_Common_Tmb_Square_Supporter_Base_6.webp probe/f_Supporter_Base_6.webp
-          echo frames done >> probe/status.txt
+          get https://game8.jp/ggene-eternal/682964 probe/682964.html
+          echo ur done >> probe/status.txt
       - name: Save
         run: |
           git config user.name "github-actions[bot]"
