@@ -14,8 +14,18 @@ jobs:
           rm -rf probe && mkdir -p probe/js
           UA='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36'
           get() { echo "$1 $(curl -sS -L -A "$UA" -o "$2" -w '%{http_code}' "$1") $(wc -c < "$2")" | tee -a probe/status.txt; }
-          get https://game8.jp/ggene-eternal/682964 probe/682964.html
-          echo ur done >> probe/status.txt
+          get 'https://soshage.com/ggetapi/ja/unit?order_by=rarity:desc' ja.json
+          get 'https://soshage.com/ggetapi/en/unit?order_by=rarity:desc' en.json
+          python3 - <<'PY' > probe/hits.txt
+          import json
+          ja=json.load(open('ja.json'));en=json.load(open('en.json'))
+          ja=ja.get('data',ja) if isinstance(ja,dict) else ja; en=en.get('data',en) if isinstance(en,dict) else en
+          E={x['id']:x['name'] for x in en}
+          print('count',len(ja),'maxid',max(x['id'] for x in ja))
+          for x in ja:
+            if any(k in x['name'] for k in ('ハイドラ','グリープ','レプオス','L.O','ブースター')): print(x['id'],x['name'],'|',E.get(x['id']),x.get('rarity'))
+          PY
+          echo done >> probe/status.txt
       - name: Save
         run: |
           git config user.name "github-actions[bot]"
