@@ -1,0 +1,3 @@
+https://soshage.com/ggetapi/ja/unit?order_by=rarity:desc 200 27103047
+https://soshage.com/ggetapi/en/unit?order_by=rarity:desc 200 26900524
+done

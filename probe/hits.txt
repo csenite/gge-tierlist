@@ -1,0 +1,6 @@
+count 1325 maxid 1850005400
+1431001600 ガンダム・ダンタリオン(Tブースター装備) | Gundam Dantalion T-Booster 4
+1031001800 ジム改陸戦型(コルベット・ブースター装備) | GM Type C Ground Type (Corvette Booster) 3
+1098000210 ジム・インターセプトカスタム(フェロウブースター装備) | GM Interceptor Custom (Fellow Booster Equipped) 3
+1430000700 ガンダム・キマリス(ブースター装備) | Gundam Kimaris Booster 3
+1001000500 コア・ブースター | Core Booster 2
