@@ -5,7 +5,7 @@
    "tab": "UR",
    "title": "Strongest UR units (high difficulty)",
    "url": "https://game8.jp/ggene-eternal/682964",
-   "updated": "Nov 7, 2026",
+   "updated": "Nov 18, 2026",
    "about": [
     "This is Game8's main tier table for UR units (including their EX forms) in high-difficulty content. It has 91 units. Tiers run from SSS (Tier 0) down to D (Tier 6). Higher-tier units have better firepower or survivability and can be used in more quests.",
     "Each role is judged on its own terms. Attack units are rated on single-hit damage. Support units are rated on how many range-5 debuff weapons they carry and on their abilities. Defense units are rated on shields, damage reduction and similar defensive tools.",
@@ -21,8 +21,8 @@
     "Best in Master League Season 18: V2 Assault Buster Gundam, Altron Gundam (EW) and God Gundam, since Unstoppable and Red are boosted this season. For a Red lineup, Char Aznable (UR, Support, CCA-MSV) raises the ATK and DEF of Red units in the same squad by 7%, so a team built around Nightingale (UR, Support) is also recommended."
    ],
    "new": [
-    "Dijeh (Char Aznable)",
-    "Neo Zeong"
+    "Hydra Gundam",
+    "Gundam Griepe"
    ],
    "tiers": {
     "SSS": [
@@ -169,6 +169,11 @@
     ],
     "S": [
      {
+      "n": "Hydra Gundam",
+      "t": "UR ATK",
+      "i": "13220321/918b652e8c73cdcfd06957e5e6af381d.webp"
+     },
+     {
       "n": "Dijeh (Char Aznable)",
       "t": "EX ATK",
       "i": "13151397/05df6e7e787bc65b0a3f8d5522f0622e.webp",
@@ -302,6 +307,11 @@
      }
     ],
     "A": [
+     {
+      "n": "Gundam Griepe",
+      "t": "UR DEF",
+      "i": "13220325/97b9a18d3cd1ba06320bc650500dd79e.webp"
+     },
      {
       "n": "Infinite Justice Gundam",
       "t": "EX ATK",
@@ -592,7 +602,7 @@
    "tab": "SSR dev & events",
    "title": "Strongest SSR units (development & events)",
    "url": "https://game8.jp/ggene-eternal/685124",
-   "updated": "Nov 1, 2026",
+   "updated": "Nov 18, 2026",
    "about": [
     "Game8's ranking of SSR-rarity units. Useful for picking which SSRs to build before you have many EX or UR units.",
     "Game8 splits this ranking in two. This tab covers units you get from Development or events. Gacha SSRs are on the SSR gacha tab.",
@@ -605,8 +615,10 @@
     "The new units came with the G-UNIT event."
    ],
    "new": [
-    "Gundam Zirius",
-    "Dark Gundam Jr."
+    "Hydra Gundam",
+    "Gundam L.O. Booster",
+    "Gundam Griepe",
+    "Gundam Burnlapius"
    ],
    "tiers": {
     "SSS": [
@@ -1113,6 +1125,11 @@
       "n": "Dark Gundam Jr.",
       "t": "",
       "i": "13151664/7c08fc9c12cadb690d2fe1b1b5b89bf4.webp"
+     },
+     {
+      "n": "Hydra Gundam",
+      "t": "",
+      "i": "13220669/b3254a028e1e1a83b2dc144c8646490d.webp"
      }
     ],
     "A": [
@@ -1500,6 +1517,16 @@
       "n": "Graham's Union Flag Custom II (GN Flag)",
       "t": "SSR ATK",
       "i": "13103736/b4cd82fdd488eb21d9b8cbcc0d5962b0.webp"
+     },
+     {
+      "n": "Gundam L.O. Booster",
+      "t": "",
+      "i": "13220674/886e8426ca571f83da9483893f6a23fd.webp"
+     },
+     {
+      "n": "Gundam Griepe",
+      "t": "",
+      "i": "13220668/1f09db7239d7719b62043ddbb5b18ef9.webp"
      }
     ],
     "B": [
@@ -1692,6 +1719,11 @@
       "n": "Rhinosaurus Type B",
       "t": "SSR SUP",
       "i": "13103591/b50a0580a4eacaa68b75d333728240cf.webp"
+     },
+     {
+      "n": "Gundam Burnlapius",
+      "t": "",
+      "i": "13220690/e9bffd41d5b79a9583ba48b50d3d8283.webp"
      }
     ],
     "C": [
@@ -1763,7 +1795,7 @@
    "tab": "SSR gacha",
    "title": "Strongest SSR gacha units",
    "url": "https://game8.jp/ggene-eternal/685124",
-   "updated": "Oct 26, 2026",
+   "updated": "Nov 18, 2026",
    "about": [
     "The gacha half of Game8's SSR ranking. These are SSR units you pull from banners rather than build through Development or get from events.",
     "Game8 shows this table under the Gacha tab of the same SSR ranking page."
@@ -1771,7 +1803,10 @@
    "notes": [
     "Game8 gives no per-tier reasons for this table. The latest additions this update all landed in the Development & events list."
    ],
-   "new": [],
+   "new": [
+    "Gundam Aesculapius (PX Mode)",
+    "Gundam Burnlapius (PX Mode)"
+   ],
    "tiers": {
     "SSS": [
      {
@@ -1932,6 +1967,16 @@
       "n": "Victory Gundam Hexa",
       "t": "SSR DEF",
       "i": "13044870/942ea3b0cb504f513741434288d8e62b.webp"
+     },
+     {
+      "n": "Gundam Aesculapius (PX Mode)",
+      "t": "",
+      "i": "13220327/8956f987c1cc6f921813b8e6e0d701b7.webp"
+     },
+     {
+      "n": "Gundam Burnlapius (PX Mode)",
+      "t": "",
+      "i": "13220329/1fba42041c8812fda8410ed3bd6b699a.webp"
      }
     ],
     "A": [
@@ -2452,7 +2497,7 @@
    "tab": "Development",
    "title": "Best units to develop",
    "url": "https://game8.jp/ggene-eternal/684941",
-   "updated": "Oct 20, 2026",
+   "updated": "Nov 18, 2026",
    "about": [
     "Priority list for regular and event Development (turning units you own into new ones through the development tree).",
     "Develop high-firepower Attack units first, such as 00 Raiser (Final Battle) and Phenex (Destroy Mode). If you are short on damage dealers, work through Tier 0 first.",
@@ -2468,7 +2513,10 @@
     "Ultimate Development has its own short list. Open the Ultimate tab to see it."
    ],
    "new": [
-    "GM Sniper II (White Dingo Team)"
+    "Hydra Gundam",
+    "Gundam L.O. Booster",
+    "Gundam Griepe",
+    "Gundam Burnlapius"
    ],
    "tiers": {
     "SSS": [
@@ -2677,9 +2725,9 @@
     ],
     "S": [
      {
-      "n": "Atlas Gundam",
+      "n": "Gundam F91",
       "t": "SSR SUP",
-      "i": "12565173/7006754a2c045ebf35f6d6de593f103b.webp"
+      "i": "12707456/54dc7a29661ad75b5273cdc75c89330a.webp"
      },
      {
       "n": "Gundam Leopard Destroy",
@@ -2732,14 +2780,14 @@
       "i": "12530675/fcfdc353c7acd92f19fbcf3f9fdd1e22.webp"
      },
      {
+      "n": "Atlas Gundam",
+      "t": "SSR SUP",
+      "i": "12565173/7006754a2c045ebf35f6d6de593f103b.webp"
+     },
+     {
       "n": "Gundam Double X",
       "t": "SSR DEF",
       "i": "12254687/e4b2ed6e1835ea2fab6fb129a772085b.webp"
-     },
-     {
-      "n": "Gundam F91",
-      "t": "SSR SUP",
-      "i": "12707456/54dc7a29661ad75b5273cdc75c89330a.webp"
      },
      {
       "n": "Rafflesia",
@@ -2785,6 +2833,11 @@
       "n": "GM Sniper II (White Dingo Team)",
       "t": "SSR DEF",
       "i": "13103587/4471b7ac7a944144a50d33a09f65eb14.webp"
+     },
+     {
+      "n": "Hydra Gundam",
+      "t": "",
+      "i": "13220669/b3254a028e1e1a83b2dc144c8646490d.webp"
      },
      {
       "n": "God Gundam",
@@ -2899,14 +2952,9 @@
     ],
     "A": [
      {
-      "n": "Narrative Gundam B-Packs",
-      "t": "SSR SUP",
-      "i": "12530678/88a62c9594cf9d87d797f611500126a2.webp"
-     },
-     {
-      "n": "Gundam Ashtaron Hermit Crab",
-      "t": "SSR DEF",
-      "i": "12254694/19a5b6a32bf1559da6026e9f3fd32a62.webp"
+      "n": "Gundam Mk-IV",
+      "t": "SSR ATK",
+      "i": "12606706/60df89bd09f2510c1a73c9bc1a41ab60.webp"
      },
      {
       "n": "X Astray",
@@ -2974,9 +3022,9 @@
       "i": "12444387/db09acef27222b177571c283690cd159.webp"
      },
      {
-      "n": "Gundam Pharact (Season 2)",
-      "t": "SSR ATK",
-      "i": "12162404/785c2e17af8bc6e9803447b07bcfc8b2.webp"
+      "n": "Narrative Gundam B-Packs",
+      "t": "SSR SUP",
+      "i": "12530678/88a62c9594cf9d87d797f611500126a2.webp"
      },
      {
       "n": "Gromlin",
@@ -2984,9 +3032,9 @@
       "i": "12530894/0c53ae71d539d5262ce103721252feb1.webp"
      },
      {
-      "n": "Gundam Mk-IV",
-      "t": "SSR ATK",
-      "i": "12606706/60df89bd09f2510c1a73c9bc1a41ab60.webp"
+      "n": "Gundam Ashtaron Hermit Crab",
+      "t": "SSR DEF",
+      "i": "12254694/19a5b6a32bf1559da6026e9f3fd32a62.webp"
      },
      {
       "n": "Strike Noir Gundam",
@@ -3049,9 +3097,19 @@
       "i": "13046414/5b5b7f9ed5379d3bcb1c73704b3dde6d.webp"
      },
      {
-      "n": "Michaelis (Season 2)",
+      "n": "Gundam L.O. Booster",
+      "t": "",
+      "i": "13220674/886e8426ca571f83da9483893f6a23fd.webp"
+     },
+     {
+      "n": "Gundam Griepe",
+      "t": "",
+      "i": "13220668/1f09db7239d7719b62043ddbb5b18ef9.webp"
+     },
+     {
+      "n": "Sazabi",
       "t": "SSR SUP",
-      "i": "12162403/a7c9cfc7586dbd42046ced1d73e024ec.webp"
+      "i": "11511361/dabb07e9d696b9056cee12626f43e34c.png"
      },
      {
       "n": "Gundam Lfrith Thorn",
@@ -3114,34 +3172,9 @@
       "i": "11295330/8480a8940a4675b9ab7ea2f31a760b09.png"
      },
      {
-      "n": "Sazabi",
-      "t": "SSR SUP",
-      "i": "11511361/dabb07e9d696b9056cee12626f43e34c.png"
-     },
-     {
-      "n": "Destroy Gundam",
-      "t": "SUP",
-      "i": "11511543/3899e06ae83dc3b791a6442cdba67cad.png"
-     },
-     {
-      "n": "Full Armor Gundam (Thunderbolt)",
-      "t": "SSR SUP",
-      "i": "12579795/c7edfc4b86523b0d3c934f6d4e86ace7.webp"
-     },
-     {
-      "n": "Gundam Astaroth Rinascimento",
-      "t": "ATK",
-      "i": "11783811/26244f7d8da379281d71bd17a212a794.webp"
-     },
-     {
-      "n": "Shamblo",
-      "t": "ATK",
-      "i": "11817038/fae4828191f4e34d76b8631ecbb77ea5.webp"
-     },
-     {
-      "n": "Sinanju",
-      "t": "ATK",
-      "i": "11817031/81151c98160378582f0a44fb8993af2a.webp"
+      "n": "Gundam X Divider",
+      "t": "DEF",
+      "i": "11274279/17068e8a68239646c517f08860b7bdfd.png"
      },
      {
       "n": "Neue Ziel",
@@ -3149,24 +3182,14 @@
       "i": "11847489/788bd9bdd287eb24d9bd308f8544f06a.webp"
      },
      {
-      "n": "Gundam GP04",
+      "n": "Gundam Pharact (Season 2)",
       "t": "SSR ATK",
-      "i": "11847490/35f29f1b158a55d2ee1d028f97770d89.webp"
+      "i": "12162404/785c2e17af8bc6e9803447b07bcfc8b2.webp"
      },
      {
-      "n": "Reginlaze Julia (Ground Combat)",
-      "t": "SSR DEF",
-      "i": "11933529/235252c96c04bf0327d90fa89e8890d1.webp"
-     },
-     {
-      "n": "Gundam Gusion Rebake Full City",
+      "n": "Michaelis (Season 2)",
       "t": "SSR SUP",
-      "i": "11932320/9d97340d30cda112cada62fc6c28bec7.webp"
-     },
-     {
-      "n": "Blue Destiny Unit 2 [EXAM]",
-      "t": "SSR ATK",
-      "i": "11974950/5f289d3da8d6f2c84eb58f6e0afb352d.webp"
+      "i": "12162403/a7c9cfc7586dbd42046ced1d73e024ec.webp"
      },
      {
       "n": "Akatsuki (Shiranui)",
@@ -3174,19 +3197,49 @@
       "i": "12162198/2277e4f6d85ddfd106c348d1ce5f1076.webp"
      },
      {
-      "n": "Gundam X Divider",
-      "t": "DEF",
-      "i": "11274279/17068e8a68239646c517f08860b7bdfd.png"
+      "n": "Blue Destiny Unit 2 [EXAM]",
+      "t": "SSR ATK",
+      "i": "11974950/5f289d3da8d6f2c84eb58f6e0afb352d.webp"
      },
      {
-      "n": "Justice Gundam",
-      "t": "SR ATK",
-      "i": "11451952/743aa62e0c682fda7d8513c70aeab62a.jpeg"
+      "n": "Gundam Gusion Rebake Full City",
+      "t": "SSR SUP",
+      "i": "11932320/9d97340d30cda112cada62fc6c28bec7.webp"
      },
      {
-      "n": "ZZ Gundam",
-      "t": "SR ATK",
-      "i": "11451465/2acc32c553c268dac18fccb1d63d5cfd.jpeg"
+      "n": "Reginlaze Julia (Ground Combat)",
+      "t": "SSR DEF",
+      "i": "11933529/235252c96c04bf0327d90fa89e8890d1.webp"
+     },
+     {
+      "n": "Gundam GP04",
+      "t": "SSR ATK",
+      "i": "11847490/35f29f1b158a55d2ee1d028f97770d89.webp"
+     },
+     {
+      "n": "Destroy Gundam",
+      "t": "SUP",
+      "i": "11511543/3899e06ae83dc3b791a6442cdba67cad.png"
+     },
+     {
+      "n": "Sinanju",
+      "t": "ATK",
+      "i": "11817031/81151c98160378582f0a44fb8993af2a.webp"
+     },
+     {
+      "n": "Shamblo",
+      "t": "ATK",
+      "i": "11817038/fae4828191f4e34d76b8631ecbb77ea5.webp"
+     },
+     {
+      "n": "Gundam Astaroth Rinascimento",
+      "t": "ATK",
+      "i": "11783811/26244f7d8da379281d71bd17a212a794.webp"
+     },
+     {
+      "n": "Full Armor Gundam (Thunderbolt)",
+      "t": "SSR SUP",
+      "i": "12579795/c7edfc4b86523b0d3c934f6d4e86ace7.webp"
      },
      {
       "n": "Shining Gundam",
@@ -3197,6 +3250,16 @@
       "n": "Enhanced ZZ Gundam",
       "t": "SR ATK",
       "i": "12037097/95a1189c8b9cf641cce5223a126039ef.webp"
+     },
+     {
+      "n": "ZZ Gundam",
+      "t": "SR ATK",
+      "i": "11451465/2acc32c553c268dac18fccb1d63d5cfd.jpeg"
+     },
+     {
+      "n": "Justice Gundam",
+      "t": "SR ATK",
+      "i": "11451952/743aa62e0c682fda7d8513c70aeab62a.jpeg"
      }
     ],
     "B": [
@@ -3204,6 +3267,11 @@
       "n": "Gundam Dantalion (T-Booster)",
       "t": "SUP",
       "i": "11783810/1b61c2ebf4383cc6eadc8706588b9fb2.webp"
+     },
+     {
+      "n": "Gundam Burnlapius",
+      "t": "",
+      "i": "13220690/e9bffd41d5b79a9583ba48b50d3d8283.webp"
      },
      {
       "n": "Rhinosaurus Type B",
@@ -3405,7 +3473,7 @@
    "tab": "Ultimate dev",
    "title": "Ultimate Development priorities",
    "url": "https://game8.jp/ggene-eternal/684941",
-   "updated": "Oct 20, 2026",
+   "updated": "Nov 18, 2026",
    "about": [
     "Game8's separate ranking for Ultimate Development targets, from the same page as the regular Development list.",
     "Second V is the clear top pick."
@@ -3424,14 +3492,14 @@
     ],
     "SS": [
      {
-      "n": "Zeta Gundam Unit 3 P2 Type",
-      "t": "SUP",
-      "i": "11272514/fb2c30367e9924479b9e163f5942114f.png"
-     },
-     {
       "n": "Casval's Gundam",
       "t": "ATK",
       "i": "11272557/aaa06abdddc3183352585916a6b724bd.png"
+     },
+     {
+      "n": "Gundam Delta Kai",
+      "t": "ATK",
+      "i": "11817032/22df277189c4df776761f079d848a6b1.webp"
      },
      {
       "n": "Gundam Throne Eins Turbulenz",
@@ -3441,31 +3509,31 @@
     ],
     "S": [
      {
-      "n": "Gundam Delta Kai",
-      "t": "ATK",
-      "i": "11817032/22df277189c4df776761f079d848a6b1.webp"
+      "n": "Zeta Gundam Unit 3 P2 Type",
+      "t": "SUP",
+      "i": "11272514/fb2c30367e9924479b9e163f5942114f.png"
      },
-     {
-      "n": "Gundam Astray Gold Frame Amaterasu",
-      "t": "SSR DEF",
-      "i": "12162208/c7d62e07a78b7739277078dc493bbc98.webp"
-     },
-     {
-      "n": "Narrative Gundam C-Packs (Awakened)",
-      "t": "SSR SUP",
-      "i": "12530674/1fd54e100d1c8e50d1575fddc3eb6b2f.webp"
-     }
-    ],
-    "A": [
      {
       "n": "Super Hyperion Gundam",
       "t": "DEF",
       "i": "11306124/179e1ebad147ac1cea831f1f77e57aa6.jpeg"
      },
      {
+      "n": "Gundam Astray Gold Frame Amaterasu",
+      "t": "SSR DEF",
+      "i": "12162208/c7d62e07a78b7739277078dc493bbc98.webp"
+     }
+    ],
+    "A": [
+     {
       "n": "Gundam Epyon (EW / Sturm und Drang)",
       "t": "SSR ATK",
       "i": "12444383/3c0d6ab3e274271347c0a25d0625fcc6.webp"
+     },
+     {
+      "n": "Narrative Gundam C-Packs (Awakened)",
+      "t": "SSR SUP",
+      "i": "12530674/1fd54e100d1c8e50d1575fddc3eb6b2f.webp"
      }
     ],
     "B": [
@@ -3514,7 +3582,7 @@
    "tab": "SP upgrade",
    "title": "Best units to SP upgrade",
    "url": "https://game8.jp/ggene-eternal/684033",
-   "updated": "Nov 1, 2026",
+   "updated": "Nov 18, 2026",
    "about": [
     "Which units to SP-upgrade first. Game8 ranks Attack, Support and Defense units in separate tables; here they share one tier list, Attack first in each tier. Use the type filter to see one role.",
     "Rarity tags are left off on this list because Game8 doesn't show them here."
@@ -3530,8 +3598,12 @@
     "For hard Eternal Road stages, focus on Attack units, since they deal the most damage. Defense units also gain survivability from their stat boosts, so the best approach is usually to SP-upgrade the units you can't clear Eternal Road without."
    ],
    "new": [
-    "Dark Gundam Jr.",
-    "Gundam Zirius"
+    "Gundam Burnlapius (PX Mode)",
+    "Gundam Griepe",
+    "Hydra Gundam",
+    "Gundam Aesculapius (PX Mode)",
+    "Gundam L.O. Booster",
+    "Gundam Burnlapius"
    ],
    "groups": {
     "ATK": {
@@ -3734,6 +3806,11 @@
        "n": "Gublo (Thunderbolt)",
        "t": "",
        "i": "12570901/0751eec5d45d935a426a9ff0051f5dd5.webp"
+      },
+      {
+       "n": "Gundam Burnlapius (PX Mode)",
+       "t": "",
+       "i": "13220329/1fba42041c8812fda8410ed3bd6b699a.webp"
       }
      ],
      "A": [
@@ -3992,9 +4069,14 @@
      ],
      "C": [
       {
-       "n": "Defarth",
+       "n": "Gadessa (Hiling Care)",
        "t": "",
-       "i": "12353376/d410b2d05d3cf1bb12858b7a8730be0a.webp"
+       "i": "12445514/89cc6b2384725d92eb33395f28ebf73a.webp"
+      },
+      {
+       "n": "Gundam Griepe",
+       "t": "",
+       "i": "13220668/1f09db7239d7719b62043ddbb5b18ef9.webp"
       },
       {
        "n": "Zoloat (League Militaire)",
@@ -4047,14 +4129,14 @@
        "i": "12444093/6c0464fdc3530f490f6b9348d9e3e3d6.webp"
       },
       {
-       "n": "Gadessa (Hiling Care)",
-       "t": "",
-       "i": "12445514/89cc6b2384725d92eb33395f28ebf73a.webp"
-      },
-      {
        "n": "Gundam Geminass 01",
        "t": "",
        "i": "11264846/763d065e2b48cda6d53d449a30b4a1e5.jpeg"
+      },
+      {
+       "n": "Defarth",
+       "t": "",
+       "i": "12353376/d410b2d05d3cf1bb12858b7a8730be0a.webp"
       },
       {
        "n": "Gundam AGE-1 Titus",
@@ -4188,6 +4270,11 @@
        "n": "Hyaku Shiki",
        "t": "",
        "i": "12041710/07f7315788d29e14fc1f3bdd2c1d263d.webp"
+      },
+      {
+       "n": "Hydra Gundam",
+       "t": "",
+       "i": "13220669/b3254a028e1e1a83b2dc144c8646490d.webp"
       },
       {
        "n": "V2 Buster Gundam",
@@ -4379,9 +4466,14 @@
      ],
      "B": [
       {
-       "n": "G-Xiphos",
+       "n": "Arios Gundam GNHW/M",
        "t": "",
-       "i": "12353067/788ac65d4ebd34537f5daa9a0853ec07.webp"
+       "i": "12444070/ae8cda715c7ea54df361192783ca8eb3.webp"
+      },
+      {
+       "n": "Gundam Aesculapius (PX Mode)",
+       "t": "",
+       "i": "13220327/8956f987c1cc6f921813b8e6e0d701b7.webp"
       },
       {
        "n": "Extreme Gundam Excelia",
@@ -4424,14 +4516,14 @@
        "i": "12444387/db09acef27222b177571c283690cd159.webp"
       },
       {
-       "n": "Arios Gundam GNHW/M",
-       "t": "",
-       "i": "12444070/ae8cda715c7ea54df361192783ca8eb3.webp"
-      },
-      {
        "n": "Rising Freedom Gundam",
        "t": "",
        "i": "11264860/75bc75fe7a974674073341e09342f9a7.jpeg"
+      },
+      {
+       "n": "G-Xiphos",
+       "t": "",
+       "i": "12353067/788ac65d4ebd34537f5daa9a0853ec07.webp"
       },
       {
        "n": "G-Falcon Airmaster",
@@ -4716,6 +4808,11 @@
        "i": "13046429/25e8fcadc4d7c84c26cfd823dc28f717.webp"
       },
       {
+       "n": "Gundam L.O. Booster",
+       "t": "",
+       "i": "13220674/886e8426ca571f83da9483893f6a23fd.webp"
+      },
+      {
        "n": "Forbidden Gundam",
        "t": "SR",
        "i": "11307844/15a09abf96ad56abd71c9bc78b23b8aa.png"
@@ -4726,6 +4823,11 @@
        "n": "Gundam Lfrith Thorn (with Gundvolva)",
        "t": "",
        "i": "12161885/24c333ece0309b262019c1d8d73801af.webp"
+      },
+      {
+       "n": "Gundam Burnlapius",
+       "t": "",
+       "i": "13220690/e9bffd41d5b79a9583ba48b50d3d8283.webp"
       },
       {
        "n": "Rig Shokew (Imperial Guard)",
@@ -4888,7 +4990,7 @@
    "tab": "SSP upgrade",
    "title": "Best units to SSP upgrade",
    "url": "https://game8.jp/ggene-eternal/750190",
-   "updated": "Nov 1, 2026",
+   "updated": "Nov 18, 2026",
    "about": [
     "Which units to SSP-upgrade first. Game8 ranks Attack, Support and Defense units in separate tables; here they share one tier list, Attack first in each tier. Use the type filter to see one role.",
     "Game8 doesn't label the three tables. Each was matched to a role by the role tags of the units inside it."
@@ -4903,8 +5005,12 @@
     "Support units that reach range 6 after SSP upgrading are also good picks. They can debuff without taking counterattacks, so you can spend the SP normally used for Range Boost on firepower or accuracy. No current UR unit has a range-6 weapon apart from character or tension conditions, so if you already have strong attack units, support units are good SSP candidates too."
    ],
    "new": [
-    "Dark Gundam Jr.",
-    "Gundam Zirius"
+    "Gundam Burnlapius (PX Mode)",
+    "Gundam Griepe",
+    "Gundam Aesculapius (PX Mode)",
+    "Hydra Gundam",
+    "Gundam L.O. Booster",
+    "Gundam Burnlapius"
    ],
    "groups": {
     "ATK": {
@@ -4984,64 +5090,14 @@
      ],
      "S": [
       {
-       "n": "G-3 Gundam",
-       "t": "",
-       "i": "11272558/95f92d8b31b7bcc2872e4468225a50df.png"
-      },
-      {
-       "n": "Destiny Impulse",
-       "t": "",
-       "i": "11510145/8b7e675f9896d19d665c4b78e7328fb1.jpeg"
-      },
-      {
-       "n": "Gundam Flauros (Ryusei-Go)",
-       "t": "SSR",
-       "i": "11933738/e141a551bfca2f3e78b537945a3ef5aa.webp"
-      },
-      {
-       "n": "Gundam Leopard Destroy",
-       "t": "SSR ATK",
-       "i": "12254691/b73d16bae351903e809b7d29310b143a.webp"
-      },
-      {
-       "n": "Gundam Virsago Chest Break",
-       "t": "SSR ATK",
-       "i": "12254693/257c2b4d0a12ede2e80be5905324f903.webp"
-      },
-      {
-       "n": "Gundam AGE-2 Double Bullet",
-       "t": "SSR ATK",
-       "i": "12353387/06d25011a6fdd2d80a2745fd2c884c28.webp"
-      },
-      {
        "n": "Reborns Gundam",
        "t": "SSR ATK",
        "i": "12444084/f005d46ce975390b748540e78367a7dd.webp"
       },
       {
-       "n": "Gundam Deathscythe Hell (EW)",
-       "t": "SSR ATK",
-       "i": "12444395/e1ff58b7646ce429a00f61becd59f856.webp"
-      },
-      {
-       "n": "Narrative Gundam A-Packs",
-       "t": "SSR ATK",
-       "i": "12530677/2dfe269a382e064dae8c1a49b6f7488f.webp"
-      },
-      {
-       "n": "Gublo (Thunderbolt)",
-       "t": "SSR ATK",
-       "i": "12570901/0751eec5d45d935a426a9ff0051f5dd5.webp"
-      },
-      {
-       "n": "Giant Psycho Golem",
-       "t": "SD SSR ATK",
-       "i": "12877477/ddd1544b6653a5aeb354157d42d366db.webp"
-      },
-      {
-       "n": "Fighter ZZ Gundam",
-       "t": "SD SSR ATK",
-       "i": "12892209/65fb896ea7a3fd341df5ea7b058a4b7e.webp"
+       "n": "Gundam Burnlapius (PX Mode)",
+       "t": "",
+       "i": "13220329/1fba42041c8812fda8410ed3bd6b699a.webp"
       },
       {
        "n": "Gengaozo",
@@ -5049,9 +5105,64 @@
        "i": "13047143/6554c3e3f923223084be5fae8567d78d.webp"
       },
       {
-       "n": "Freedom Gundam",
-       "t": "SR",
-       "i": "11294917/b4ed8f9f0cf03839804c6309f7699164.jpeg"
+       "n": "Fighter ZZ Gundam",
+       "t": "SD SSR ATK",
+       "i": "12892209/65fb896ea7a3fd341df5ea7b058a4b7e.webp"
+      },
+      {
+       "n": "Giant Psycho Golem",
+       "t": "SD SSR ATK",
+       "i": "12877477/ddd1544b6653a5aeb354157d42d366db.webp"
+      },
+      {
+       "n": "Gublo (Thunderbolt)",
+       "t": "SSR ATK",
+       "i": "12570901/0751eec5d45d935a426a9ff0051f5dd5.webp"
+      },
+      {
+       "n": "Narrative Gundam A-Packs",
+       "t": "SSR ATK",
+       "i": "12530677/2dfe269a382e064dae8c1a49b6f7488f.webp"
+      },
+      {
+       "n": "Gundam Deathscythe Hell (EW)",
+       "t": "SSR ATK",
+       "i": "12444395/e1ff58b7646ce429a00f61becd59f856.webp"
+      },
+      {
+       "n": "G-3 Gundam",
+       "t": "",
+       "i": "11272558/95f92d8b31b7bcc2872e4468225a50df.png"
+      },
+      {
+       "n": "Gundam AGE-2 Double Bullet",
+       "t": "SSR ATK",
+       "i": "12353387/06d25011a6fdd2d80a2745fd2c884c28.webp"
+      },
+      {
+       "n": "Gundam Virsago Chest Break",
+       "t": "SSR ATK",
+       "i": "12254693/257c2b4d0a12ede2e80be5905324f903.webp"
+      },
+      {
+       "n": "Gundam Leopard Destroy",
+       "t": "SSR ATK",
+       "i": "12254691/b73d16bae351903e809b7d29310b143a.webp"
+      },
+      {
+       "n": "Gundam Flauros (Ryusei-Go)",
+       "t": "SSR",
+       "i": "11933738/e141a551bfca2f3e78b537945a3ef5aa.webp"
+      },
+      {
+       "n": "Destiny Impulse",
+       "t": "",
+       "i": "11510145/8b7e675f9896d19d665c4b78e7328fb1.jpeg"
+      },
+      {
+       "n": "Wing Gundam Proto Zero (EW)",
+       "t": "SR ATK",
+       "i": "12496706/2de3fce0c61b3469d60c1e00861e9aef.webp"
       },
       {
        "n": "Enhanced ZZ Gundam",
@@ -5059,9 +5170,9 @@
        "i": "12037097/95a1189c8b9cf641cce5223a126039ef.webp"
       },
       {
-       "n": "Wing Gundam Proto Zero (EW)",
-       "t": "SR ATK",
-       "i": "12496706/2de3fce0c61b3469d60c1e00861e9aef.webp"
+       "n": "Freedom Gundam",
+       "t": "SR",
+       "i": "11294917/b4ed8f9f0cf03839804c6309f7699164.jpeg"
       }
      ],
      "A": [
@@ -5193,9 +5304,14 @@
      ],
      "B": [
       {
-       "n": "Gundam Pharact (Season 2)",
+       "n": "Zeydra",
        "t": "SSR ATK",
-       "i": "12162404/785c2e17af8bc6e9803447b07bcfc8b2.webp"
+       "i": "12353382/0ce7b7e3c07987daa9af2fd6aedc692a.webp"
+      },
+      {
+       "n": "Gundam Griepe",
+       "t": "",
+       "i": "13220668/1f09db7239d7719b62043ddbb5b18ef9.webp"
       },
       {
        "n": "Graham's Union Flag Custom II (GN Flag)",
@@ -5253,14 +5369,14 @@
        "i": "12444388/955597e985e60177974150138ee2a79d.webp"
       },
       {
-       "n": "Zeydra",
-       "t": "SSR ATK",
-       "i": "12353382/0ce7b7e3c07987daa9af2fd6aedc692a.webp"
-      },
-      {
        "n": "Master Gundam",
        "t": "",
        "i": "11273590/d8e3ea03da0fb259f8f3598f73f08b2e.png"
+      },
+      {
+       "n": "Gundam Pharact (Season 2)",
+       "t": "SSR ATK",
+       "i": "12162404/785c2e17af8bc6e9803447b07bcfc8b2.webp"
       },
       {
        "n": "Blue Destiny Unit 2 [EXAM]",
@@ -5528,9 +5644,14 @@
      ],
      "S": [
       {
-       "n": "Gaddes",
+       "n": "Gundam Heavyarms Custom (EW)",
        "t": "SSR SUP",
-       "i": "12445518/567c1449344e9080a98b491352ccd27f.webp"
+       "i": "12444387/db09acef27222b177571c283690cd159.webp"
+      },
+      {
+       "n": "Gundam Aesculapius (PX Mode)",
+       "t": "",
+       "i": "13220327/8956f987c1cc6f921813b8e6e0d701b7.webp"
       },
       {
        "n": "Dark Gundam Jr.",
@@ -5598,14 +5719,14 @@
        "i": "12494972/71de0d7d3a62600c4420e4c57ead909c.webp"
       },
       {
-       "n": "Gundam Heavyarms Custom (EW)",
-       "t": "SSR SUP",
-       "i": "12444387/db09acef27222b177571c283690cd159.webp"
-      },
-      {
        "n": "Beargguy",
        "t": "",
        "i": "11264884/8814aef40ccbf1ddcd371eb4b5b6e751.jpeg"
+      },
+      {
+       "n": "Gaddes",
+       "t": "SSR SUP",
+       "i": "12445518/567c1449344e9080a98b491352ccd27f.webp"
       },
       {
        "n": "Gundam AGE-2 Artimes",
@@ -5678,6 +5799,11 @@
        "n": "Hildolfr",
        "t": "SSR SUP",
        "i": "12214475/9c8dc37f4a1d3168aed0c1426aaf5306.webp"
+      },
+      {
+       "n": "Hydra Gundam",
+       "t": "",
+       "i": "13220669/b3254a028e1e1a83b2dc144c8646490d.webp"
       },
       {
        "n": "Rhinosaurus Type B",
@@ -5905,11 +6031,6 @@
      ],
      "SS": [
       {
-       "n": "Quin Mantha",
-       "t": "",
-       "i": "11272474/c84a7e9539f071879b2b6421a5608165.png"
-      },
-      {
        "n": "Full Armor Hyaku Shiki Kai",
        "t": "",
        "i": "11510146/bb5ac3e3c5eea17efa23d45716532e10.jpeg"
@@ -5943,6 +6064,11 @@
        "n": "V2 Assault Gundam",
        "t": "SSR DEF",
        "i": "13047150/b4afcbd81e829f0213b42bffa85d16b3.webp"
+      },
+      {
+       "n": "Gundam L.O. Booster",
+       "t": "",
+       "i": "13220674/886e8426ca571f83da9483893f6a23fd.webp"
       }
      ],
      "S": [
@@ -6039,6 +6165,11 @@
        "i": "11264859/d46ee915c2c1445039f9fdb0cd2d533f.jpeg"
       },
       {
+       "n": "Quin Mantha",
+       "t": "",
+       "i": "11272474/c84a7e9539f071879b2b6421a5608165.png"
+      },
+      {
        "n": "Hi-ν Gundam",
        "t": "SSR",
        "i": "11511357/7c3b7381dd9e5a0b00460c1ef5bb7760.png"
@@ -6097,6 +6228,11 @@
        "n": "GN-X III (Federation Type)",
        "t": "SSR DEF",
        "i": "13010817/8ee574698eb7fa9cc442468a18f95476.webp"
+      },
+      {
+       "n": "Gundam Burnlapius",
+       "t": "",
+       "i": "13220690/e9bffd41d5b79a9583ba48b50d3d8283.webp"
       }
      ],
      "B": [
