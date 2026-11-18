@@ -12,8 +12,9 @@
     "Some units rate differently in the Master League (PvP), so this list is for PvE."
    ],
    "notes": [
-    "<b>New: Neo Zeong (UR, Defense)</b> is time-limited and only drops from the Neo Zeong & Dijeh gacha. It has useful tags such as Psycommu and One-Shot Killer, beam reduction, and an ability that lowers enemy shooting POWER in areas 1-4. Its EX is an attack debuff with range 5.",
-    "<b>New: Dijeh (Char Aznable) (EX, Attack)</b> has a unit skill that grants First Strike. It uses a lot of EN but deals high damage, and has useful tags such as Psycommu, Lightning-Fast and Tenacious.",
+    "<b>New: Hydra Gundam (UR, Attack)</b> enters at S. It raises its own firepower when it attacks, its move rises to 6 under a tension condition, and its EX weapon has range 4.",
+    "<b>New: Gundam Griepe (UR, Defense)</b> enters at A. It has useful tags such as Tough as Nails, Shippujinrai and Ace Unit, can debuff special and beam weapons, and its attack and mobility rise under a tension condition.",
+    "Both are permanent units, so they will appear in every new pickup gacha.",
     "Best Attack units: Gundam F91 (Twin V.S.B.R.), God Gundam, Wing Gundam Zero (EW) and V2 Assault Buster Gundam. God Gundam has the strongest firepower, F91 negates one incoming attack and has a wide MAP weapon, Wing Gundam Zero (EW) has a wide MAP weapon usable after moving, and V2 can act up to 4 times.",
     "Best Defense unit: 00 Raiser (Final Battle). Its unit skill and tension can greatly raise its attack, and pairing it with Setsuna F. Seiei (UR, Defense) adds a revival effect.",
     "Best Support units: Altron Gundam (EW), Zanspine and Reborns Gundam. Altron has strong firepower, Zanspine gains consecutive Chance Steps, and Reborns can use 3 support attacks and range-6 weapons early on.",
@@ -599,8 +600,9 @@
    ],
    "notes": [
     "The top SSS tier is unchanged this update.",
-    "<b>New: Gundam Zirius (SSR, Defense)</b> and <b>Dark Gundam Jr. (SSR, Support)</b> enter at S, added with the Mobile Suit Gundam EIGHT collab and the Strong Enemy Assault special mode. Zirius's Support Defense move rises to 6 under a tension condition. Dark Gundam Jr. has move 5 and range 5, which makes it an easy debuffer to use.",
-    "<b>New: GM Sniper II (White Dingo)</b> enters at S, <b>Graham's Union Flag Custom II \"GN Flag\"</b> at A, and <b>Visch Donahue's Gelgoog Ground Type</b> and <b>Rhinoceros Type B</b> at B."
+    "<b>New: Hydra Gundam (SSR, Support)</b>, <b>Gundam Aesculapius (PX Mode) (SSR, Support)</b>, <b>Gundam Burnlapius (PX Mode) (SSR, Attack)</b>, <b>Dark Gundam Jr. (SSR, Support)</b> and <b>Gundam Zirius (SSR, Defense)</b> enter at S, <b>Gundam L.O. Booster (SSR, Defense)</b> and <b>Gundam Griepe (SSR, Attack)</b> at A, and <b>Gundam Burnlapius (SSR, Defense)</b> at B.",
+    "Hydra Gundam and Gundam Aesculapius (PX Mode) are easy to use, and Gundam Burnlapius (PX Mode) is excellent because it can put out high firepower.",
+    "The new units came with the G-UNIT event."
    ],
    "new": [
     "Gundam Zirius",
@@ -2457,7 +2459,12 @@
     "Units with wide-area MAP weapons are also strong picks, so check whether a target has one before you develop it."
    ],
    "notes": [
-    "<b>New: GM Sniper II (White Dingo Team)</b> is recommended because of its range-5 attack-down debuff weapon.",
+    "<b>New: Gundam L.O. Booster (SSR, Defense)</b> is easy to use with move 5 and range 5. Its defense rises at 50% HP or less, and it can debuff special weapons and attack.",
+    "<b>New: Gundam Griepe (SSR, Attack)</b> is easy to use with move 5 and range 5. Its range-3 weapons have high POWER, but its attack is on the low side.",
+    "<b>New: Gundam Burnlapius (SSR, Defense)</b> raises its attack and defense when it attacks, and can debuff beam and physical weapons. Its weapon debuffs are a bit hard to use.",
+    "<b>New: Hydra Gundam (SSR, Support)</b> is easy to use with move 5 and range 5. Its attack rises under an HP condition, and it can debuff defense and special weapons. It is the most useful of the new units, so make sure to build it.",
+    "Prioritize high-firepower Attack units when developing. 00 Raiser (Final Battle) and Unicorn Gundam 03 Phenex (Destroy Mode) are recommended. Their move, range and weapons are excellent, so they are easy to use, and SP or SSP upgrades let them match UR units in firepower. They also perform well in Eternal Road and high-difficulty content such as Generation Tower, so if you have few Attack units, develop the SSS-tier units first.",
+    "Units with wide MAP weapons are also recommended. MAP weapons are useful for hitting several enemies at once, so check whether a unit has one before developing it.",
     "Ultimate Development has its own short list. Open the Ultimate tab to see it."
    ],
    "new": [
@@ -3513,7 +3520,13 @@
     "Rarity tags are left off on this list because Game8 doesn't show them here."
    ],
    "notes": [
-    "<b>New: Gundam Zirius (SSR, Defense)</b> and <b>Dark Gundam Jr. (SSR, Support)</b> were added with the Mobile Suit Gundam EIGHT collab. Zirius is recommended for SP upgrading, since its panel missions give you the SP material.",
+    "<b>New: Gundam Aesculapius (PX Mode) (SSR, Support)</b> is easy to use with move 5 and range 5. It can debuff beam and special weapons, and has an advantage against OZ-tag enemies.",
+    "<b>New: Gundam Burnlapius (PX Mode) (SSR, Attack)</b> has high attack, and its attack rises at 50% HP or more. Its tags are useful. It is gacha-exclusive.",
+    "<b>New: Gundam L.O. Booster (SSR, Defense)</b> is easy to use with move 5 and range 5. Its defense rises at 50% HP or less, and it can debuff special weapons and attack.",
+    "<b>New: Gundam Griepe (SSR, Attack)</b> is easy to use with move 5 and range 5. Its range-3 weapons have high POWER, but its attack is on the low side.",
+    "<b>New: Gundam Burnlapius (SSR, Defense)</b> raises its attack and defense when it attacks, and can debuff beam and physical weapons. Its weapon debuffs are a bit hard to use.",
+    "<b>New: Hydra Gundam (SSR, Support)</b> is easy to use with move 5 and range 5. Its attack rises under an HP condition, and it can debuff defense and special weapons.",
+    "The new units came with the G-UNIT event. Hydra Gundam is an easy-to-use debuff support, and Gundam Burnlapius (PX Mode) is a strong close-range attacker with high firepower.",
     "For hard Eternal Road stages, focus on Attack units, since they deal the most damage. Defense units also gain survivability from their stat boosts, so the best approach is usually to SP-upgrade the units you can't clear Eternal Road without."
    ],
    "new": [
@@ -4881,8 +4894,13 @@
     "Game8 doesn't label the three tables. Each was matched to a role by the role tags of the units inside it."
    ],
    "notes": [
-    "<b>New: Gundam Zirius (SSR, Defense)</b> gets 2 MAP weapon charges and a range-5 attack-debuff SSP weapon. <b>Dark Gundam Jr. (SSR, Support)</b> gets range 6 on its special weapon debuff and a range-5 defense-down SSP weapon. SSP upgrading is recommended for both.",
-    "Low on attack units? Pick the Attack type first. SSP weapons have high accuracy, so Byarlant Custom 02 and Gundam Flauros \"Ryusei-Go\" become much more usable. Support units that reach range 6 after SSP upgrading are also good picks, since they can debuff without counterattacks."
+    "<b>New: Gundam L.O. Booster (SSR, Defense)</b> is recommended. Its move rises to 6, and it gets an SSP weapon that debuffs attack at range 5.",
+    "<b>New: Gundam Aesculapius (PX Mode) (SSR, Support)</b> is also recommended. Its beam weapon debuff range rises to 6, and it gets an SSP weapon that debuffs special weapons at range 5.",
+    "<b>New: Gundam Burnlapius (PX Mode) (SSR, Attack)</b> is also recommended. Its move rises to 6, and it is a close-range attacker whose SSP weapon has high POWER.",
+    "The other new units also get SSP upgrades. Gundam Griepe (SSR, Attack) and Gundam Burnlapius (SSR, Defense) both have move 6 and high weapon POWER on their SSP weapons, and the defense-debuff weapon on Hydra Gundam (SSR, Support) rises to range 6.",
+    "Low on attack units? Pick the Attack type first. SSP weapons have high accuracy, so Byarlant Custom 02 and Gundam Flauros \"Ryusei-Go\" become much more usable.",
+    "Eternal Road also has missions limited to Development or Other units, so these units can be strong alternatives to gacha-exclusive units.",
+    "Support units that reach range 6 after SSP upgrading are also good picks. They can debuff without taking counterattacks, so you can spend the SP normally used for Range Boost on firepower or accuracy. No current UR unit has a range-6 weapon apart from character or tension conditions, so if you already have strong attack units, support units are good SSP candidates too."
    ],
    "new": [
     "Dark Gundam Jr.",
